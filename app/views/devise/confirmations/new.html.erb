@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="grad-bg text-center" data-parallax="scroll" data-image-src="<%= image_path("images/bg-img-12.jpg") %>" data-speed="0.6">
+    <div class="container">
+      <div class="row pt60 pb60">
+        <div class="col-sm-6 col-sm-offset-3 login-box ui form">
+          <h4>重發認證信</h4>
+          <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+              <%= devise_error_messages! %>
+
+              <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Resend confirmation instructions" ,class:"ui button fluid" %>
+              </div>
+          <% end %>
+          <%= link_to "註冊", new_registration_path(resource_name) ,class:"item ui button fluid"%>
+        </div> <!-- end login-box -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div>
+
+</div> <!-- end main -->

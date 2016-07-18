@@ -1,0 +1,138 @@
+hr{
+  margin-top: 5px !important;
+  margin-bottom:5px !important;
+}
+.header-shadow ul.main-menu{
+  margin-bottom: 0 ;
+}
+.ui.dropdown.selection.active.visible{
+  //height: 50%;
+}
+.my_margin{
+  margin:15px 0!important;
+}
+.ui.button{
+  margin-top: 15px !important;
+}
+.list-group{
+  .list-group-item:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }}
+.product_sidebar{
+  p{
+    margin-bottom: 5px;
+    font-weight:bolder;
+  }
+}
+.ui.bottom.attached.button{
+  margin-top: 0 !important;
+}
+.w100p{
+  width: 100%;
+
+}
+.dis_table
+{
+  display: table;
+}
+.dis_table_cell
+{
+  display: table-cell;
+  vertical-align:middle;
+  img{
+    max-width: 280px;
+  }
+}
+.ui.fluid.dropdown.return_orders_select{
+  width: 80%;
+  margin-top:5px;
+}
+.w50p{
+  width: 50%;
+}
+.w77p{
+  width: 77%;
+}
+.w67p{
+  width: 67%;
+}
+.w57p{
+  width: 57%;
+}
+.w47p{
+  width: 47%;
+}
+.font_red{
+  color: red;
+}
+#discount{
+  display: none;
+}
+.final_amount{
+  font-weight:bolder;
+  font-size: 15px;
+  color: red;
+}
+@media (max-width: 767px) {
+
+  .row.reorder-xs {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    direction: rtl;
+    margin-bottom: 30px;
+  }
+
+  .row.reorder-xs > [class*="col-"] {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    direction: ltr;
+  }
+}
+.ui.form .disabled.fields .field, .ui.form .disabled.field, .ui.form .field :disabled{
+  opacity:0.8 !important;
+}
+.user_sidebar{
+  .menu .item{
+    margin: 5px;
+    margin-left: 10px;
+  }
+  .menu .item.active{
+    padding-top: 3px;
+    padding-left: 3px;
+    border-radius: 3px;
+    background-color: honeydew;
+    a{
+      color: black;
+    }
+  }
+}
+tr:hover{
+  background-color: rgba(150,150,150,0.07);
+}
+
+  .pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+  }
+  .pagination>li:first-child>a, .pagination>li:first-child>span {
+    border-bottom-left-radius: 5px !important;
+    border-top-left-radius: 5px !important;
+  }
+.paginator{
+  text-align: center;
+}
+td a:hover {
+  color: #F95748!important;
+}

@@ -1,0 +1,43 @@
+<h5 class="underline">Categories</h5>
+<ul class="list-group mb60 product_sidebar">
+  <li class="list-group-item">
+    <%= link_to products_path(type: "qt"),class:"item" do%>
+        <div>
+          <span>QT系列</span><div class="ui horizontal label pull-right"><%= Product.qt.size %></div>
+        </div>
+        <span>Lorem ipsum dolor sit amn magni omnis quae.</span>
+    <% end %>
+  </li>
+  <li class="list-group-item">
+    <%= link_to products_path(type: "t1"),class:"item" do%>
+        <div>
+          <span>1T系列</span><div class="ui horizontal label pull-right"><%= Product.t1.size %></div>
+        </div>
+        <span>Lorem ipsum dolor sit amn magni omnis quae.</span>
+    <% end %>
+  </li>
+  <li class="list-group-item">
+    <%= link_to products_path(type: "switch"),class:"item" do%>
+        <div>
+          <span>全系列開關</span><div class="ui horizontal label pull-right"><%= Product.switch.size %></div>
+        </div>
+        <span>Lorem ipsum dolor sit amn magni omnis quae.</span>
+    <% end %>
+  </li>
+  <li class="list-group-item">
+    <%= link_to products_path(type: "plug"),class:"item" do%>
+        <div>
+          <span>全系列插座</span><div class="ui horizontal label pull-right"><%= Product.plug.size %></div>
+        </div>
+        <span>Lorem ipsum dolor sit amn magni omnis quae.</span>
+    <% end %>
+  </li>
+  <li class="list-group-item">
+    <%= link_to products_path(type: "rest"),class:"item" do%>
+        <div>
+          <span>其他</span><div class="ui horizontal label pull-right"><%= Product.rest.size %></div>
+        </div>
+        <span>Lorem ipsum dolor sit amn magni omnis quae.</span>
+    <% end %>
+  </li>
+</ul>

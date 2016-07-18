@@ -1,0 +1,160 @@
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <!-- ========== PAGE TITLE ========== -->
+  <div class="page-title-div gradient-bg" >
+    <div class="container">
+      <div class="row page-title-row">
+        <div class="col-md-6 col-sm-6">
+          <h1 class="page-title">Shop Details</h1>
+          <p>One stop solution for a stunning website.</p>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6 col-sm-6 hidden-xs">
+          <ol class="breadcrumb pull-right border-0">
+            <li><a href="#" class="trans">Home</a></li>
+            <li><a href="#" class="trans">Shop</a></li>
+            <li><a href="#" class="active trans">Details</a></li>
+          </ol>
+        </div> <!-- end col-md-6 -->
+      </div> <!-- end page-title-row -->
+    </div> <!-- end container -->
+  </div>
+
+  <!-- ========== CONTENT SECTION ========== -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row reorder-xs">
+        <div class="col-sm-5">
+          <div class="ui form">
+            <h4 class="ui dividing">Information</h4>
+            <div class="field">
+              <%= form_for @order do |f| %>
+                  <div class="two fields">
+                    <div class="six wide field">
+                      <%= f.label :name ,"NAME"%>
+                      <%= f.text_field :name,value: current_user.try(:name), :required => true %>
+                    </div>
+                    <div class="ten wide field">
+                      <%= f.label :phone ,"PHONE"%>
+                      <%= f.telephone_field :phone,value: current_user.try(:phone), :required => true %>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <%= f.label :email ,"EMAIL"%>
+                    <%= f.email_field :email ,value: current_user.alternate_email_check, :required => true%>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :address ,"ADDRESS"%>
+                    <%= f.text_field :address ,value: current_user.try(:address), :required => true%>
+                  </div>
+                  <div class="two fields">
+                    <div class="six wide field">
+                      <%= f.label :postcode ,"POSTCODE"%>
+                      <%= f.text_field :postcode,value: current_user.try(:postcode), :required => true %>
+                    </div>
+                    <div class="ten wide field">
+                      <%= f.label :ship_time ,"TIME"%>
+                      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], "都可以"),{},class:"ui dropdown fluid" %>
+                    </div>
+
+                  </div>
+                  <div class="field">
+                    <%= f.label :whoset ,"WHOSET"%>
+                    <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], "本公司派專業師傅安裝"),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :ps ,"COMMENT"%>
+                    <%= f.text_area :ps,rows:"3" %>
+                  </div>
+                  <% if current_cart.total == 0 %>
+                      <%= f.submit "尚未選購",class:"ui button red disabled fluid" %>
+                  <% else %>
+                      <%= f.submit "付款",class:"ui button red fluid"  %>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div> <!-- end col-md-3 -->
+
+        <div class="col-sm-7">
+          <% if current_cart.total == 0 %>
+              <h4 class="ui">您尚未訂購任何商品</h4>
+          <% else %>
+              <h4 class="ui">Cart Info</h4>
+              <div class="row">
+                <div class="col-md-2 col-xs-6">
+                <p>數量 : <%= current_cart.total %></p>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                <p>金額 : $<span id="amount"><%= current_cart.amount %></span>
+                  <span class="ui label left pointing red" id="discount">6折</span>
+                </p>
+                </div>
+                <div class="col-md-7 col-xs-12">
+                <p class="final_amount">總金額 : $<span id="final_amount"><%= current_cart.final_price %></span>
+                <span class="ui label left pointing red">
+                <i class="fa fa-truck " aria-hidden="true">運費 <%= current_cart.amount >= 2000 ? "免費" : Order.ship_fee %></i>
+                </span>
+                </p>
+                </div>
+
+              </div>
+              <% current_cart.line_items.each  do |item| %>
+                  <hr>
+                  <div class="row dis_table">
+                    <div class="dis_table_cell ml10 pull-left">
+                      <%= image_tag item.product.asset.url ,class:"w100p" %>
+                    </div>
+                    <div class="dis_table_cell pl30 w67p">
+                      <div class="">
+                        <%= item.product.name %>
+                        <span class="ml10"><%= item.show_voltage %></span>
+                        <%= link_to cancel_product_path(item,page:"new"),method:"post",class:"pull-right pr20" do%><i class="fa fa-times" aria-hidden="fales"></i><% end %>
+                      </div>
+                      <div>數量 : <%= item.qty %></div>
+                      <div>單價 : $<%= item.price %></div>
+                      <div>加總 : $<%= item.amount %></div>
+                    </div>
+                  </div>
+              <% end %>
+          <% end %>
+        </div> <!-- end col-md-9 -->
+
+
+
+
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </section> <!-- end content-section -->
+
+</div> <!-- end main -->
+
+<%= render "welcome/footer" %>
+
+<script>
+  $( document ).ready(function() {
+    $('.ui.dropdown').dropdown();
+    $('#whoset').on("change",function(){
+      var ship_fee = 0;
+      var amount = $('#amount').html();
+      var final_amount = $('#final_amount').html();
+      if (amount < 2000 ){
+        ship_fee = <%= Order.ship_fee %> ;
+      }
+      if ($(this).find("option:selected").val() == "自行安裝（打６折）"){
+        amount = <%= current_cart.amount %> * 0.6;
+        $('#amount').css('text-decoration','line-through');
+        $('#final_amount').html(amount+ship_fee);
+        $('#discount').css('display','inline');
+      }
+      if ($(this).find("option:selected").val() == "本公司派專業師傅安裝"){
+        $('#amount').css('text-decoration','none');
+        $('#final_amount').html(<%= current_cart.amount %>+ship_fee);
+        $('#discount').css('display','none');
+      }
+    });
+  });
+</script>

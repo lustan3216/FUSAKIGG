@@ -1,0 +1,45 @@
+<div class="main">
+
+  <div class="grad-bg text-center" data-parallax="scroll" data-image-src="<%= image_path("images/bg-img-12.jpg") %>" data-speed="0.6">
+    <div class="container">
+      <div class="row pt60 pb60">
+        <div class=" col-sm-6 col-sm-offset-3 login-box ui form">
+          <h4 >註冊</h4>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
+
+              <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+
+              <div class="field">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+
+              <div class="field">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div>
+                <div class="field">
+                  <ul>
+                  <li><%= link_to "登入", new_session_path(resource_name),class:"item" %></li>
+                  <li><%#= link_to "沒收到認證信?", new_confirmation_path(resource_name),class:"item" %></li>
+                  </ul>
+                </div>
+              <div class="actions">
+                <%= f.submit "Sign up",class:"ui primary button fluid" %>
+              </div>
+              <%= link_to "Facebook 登入", omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first), :class => 'primary ui button fluid facebook_signup' %>
+
+          <% end %>
+        </div> <!-- end login-box -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div>
+
+</div> <!-- end main -->

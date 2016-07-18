@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FUSAKI</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="header-shadow">
+
+<!-- ========== HEADER ========== -->
+<div class="header">
+  <div class="container-fluid">
+
+    <!-- ========== MENU ========== -->
+    <nav class="menu">
+      <div class="logo">
+        <%= link_to root_path do  %>
+            <h1>FUSAKI</h1>
+        <% end %>
+      </div> <!-- end logo -->
+      <!-- ========== MAIN MENU ========== -->
+      <ul class="main-menu">
+        <li class="menu-item">
+          <%= link_to_if current_user,cart_icon,new_order_path do
+            link_to cart_icon,new_session_path(:user) end%>
+        </li>
+        <li class="menu-item">
+          <%= link_to products_path do%>
+              <i class="menu-icon fa fa-magnet"></i>購物
+          <% end %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to qa_path do%>
+              <i class="menu-icon fa fa-magnet"></i>問與答
+          <% end %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to contact_path do%>
+              <i class="menu-icon fa fa-phone"></i>聯絡我們
+          <% end %>
+        </li>
+
+        <% if current_user  %>
+            <li class="menu-item">
+              <%= link_to nonpay_user_path(current_user) do  %>
+                  <i class="fa fa-bars"></i>設定
+              <% end %>
+        <% end %>
+        <!-- Sub Menu -->
+        </li> <!-- end menu-item -->
+
+        <li class="menu-item">
+          <% if current_user %>
+              <%= link_to destroy_user_session_path, :method => :delete do%>
+                  <i class="fa fa-diamond"></i> 登出</a>
+              <% end %>
+          <% else %>
+              <%= link_to new_session_path(:user) do%>
+                  <i class="fa fa-diamond"></i> 登入</a>
+              <% end  %>
+          <% end %>
+        </li>
+
+
+      </ul> <!-- end main-menu -->
+    </nav> <!-- end menu -->
+  </div> <!-- end container-fluid -->
+</div> <!-- end header -->
+
+<%= yield %>
+
+<script type="text/javascript" charset="utf-8">
+  $('.message .close').on('click', function() {
+        $(this).closest('.message')
+            .transition('fade')
+        ;});
+</script>
+</body>
+</html>

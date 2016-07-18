@@ -1,0 +1,26 @@
+<div class="main">
+
+  <div class="grad-bg text-center" data-parallax="scroll" data-image-src="<%= image_path("images/bg-img-12.jpg") %>" data-speed="0.6">
+    <div class="container">
+      <div class="row pt60 pb60">
+        <div class="col-sm-6 col-sm-offset-3 login-box ui form">
+          <h4 >忘記密碼</h4>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+              <%= devise_error_messages! %>
+
+              <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "發送重設密碼信",class:"ui primary button" %>
+              </div>
+          <% end %>
+        </div> <!-- end login-box -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div>
+
+</div> <!-- end main -->

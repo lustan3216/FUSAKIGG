@@ -1,0 +1,69 @@
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <!-- ========== PAGE TITLE ========== -->
+  <div class="page-title-div gradient-bg" >
+    <div class="container">
+      <div class="row page-title-row">
+        <div class="col-md-6 col-sm-6">
+          <h1 class="page-title">Shop Details</h1>
+          <p>One stop solution for a stunning website.</p>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6 col-sm-6 hidden-xs">
+          <ol class="breadcrumb pull-right border-0">
+            <li><a href="#" class="trans">Home</a></li>
+            <li><a href="#" class="trans">Shop</a></li>
+            <li><a href="#" class="active trans">Details</a></li>
+          </ol>
+        </div> <!-- end col-md-6 -->
+      </div> <!-- end page-title-row -->
+    </div> <!-- end container -->
+  </div>
+
+  <!-- ========== CONTENT SECTION ========== -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+         <%= render "sidebar" %>
+        </div> <!-- end col-md-3 -->
+
+        <div class="col-sm-9">
+          <table class="ui single line table">
+            <thead>
+            <tr>
+              <th class="">訂單編號</th>
+              <th class="">地址</th>
+              <th class="">訂單成立時間</th>
+              <th class="">總價格</th>
+              <th class="">修改</th>
+              <th class="">付款</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @orders.each  do |order| %>
+                <tr>
+                  <td><%= order.order_number %></td>
+                  <td><%= order.address %></td>
+                  <td><%= order.updated_at.strftime('%x')%></td>
+                  <td><%= order.final_price %></td>
+                  <td class="">
+                    <%= link_to edit_order_path(order) do%><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>
+                  </td>
+                  <td class="">
+                    <%= link_to order_path(order) do%><i class="fa fa-credit-card" aria-hidden="true"></i><% end %>
+                  </td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+    <div class="paginator">
+      <%= paginate @orders %>
+    </div>
+  </section> <!-- end content-section -->
+</div> <!-- end main -->
+<%= render "welcome/footer" %>

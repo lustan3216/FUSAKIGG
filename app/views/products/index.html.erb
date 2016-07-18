@@ -1,0 +1,74 @@
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <!-- ========== PAGE TITLE ========== -->
+  <div class="page-title-div gradient-bg" >
+    <div class="container">
+      <div class="row page-title-row">
+        <div class="col-md-6 col-sm-6">
+          <h1 class="page-title">Shop</h1>
+          <p>One stop solution for a stunning website.</p>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6 col-sm-6 hidden-xs">
+          <ol class="breadcrumb pull-right border-0">
+            <li><%= link_to "Home",root_path %></li>
+            <li><a href="#" class="active trans">Shop</a></li>
+          </ol>
+        </div> <!-- end col-md-6 -->
+      </div> <!-- end page-title-row -->
+    </div> <!-- end container -->
+  </div>
+
+  <!-- ========== BLOG SECTION ========== -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3">
+          <%= render "sidebar" %>
+        </div> <!-- end col-md-3 -->
+
+        <div class="col-md-9">
+        <% @products.each do |product| %>
+          <div class="col-md-4 col-sm-6 ">
+            <%= link_to product_path(product),class:"shop-box text-center mb40" do%>
+                <div class="ui fluid card link">
+                  <div class="image">
+                    <%= image_tag product.asset.url %>
+                  </div>
+                  <div class="content">
+                    <div class="description">
+                      <%= product.name %>
+                    </div>
+                    <div class="meta">
+                      <span class="pull-left">110V: <%= product.v110_price %></span>
+                      <span class="pull-right">220V: <%= product.v220_price %></span>
+                    </div>
+                  </div>
+                  <div class="ui bottom attached button">
+                    <i class="add icon"></i>
+                    Add Friend
+                  </div>
+                </div>
+            <% end %>
+          </div> <!-- end col-md-4 -->
+              <% end %>
+        </div> <!-- end col-md-9 -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </section> <!-- end content-section -->
+
+</div> <!-- end main -->
+
+<%= render "welcome/footer" %>
+
+<script type="text/javascript">
+//  $(function($) {
+//    $('.css-stars').barrating({
+//      theme: 'css-stars',
+//      showSelectedRating: false
+//    });
+//  });
+</script>

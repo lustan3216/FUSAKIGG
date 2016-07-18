@@ -1,0 +1,72 @@
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <!-- ========== PAGE TITLE ========== -->
+  <div class="page-title-div gradient-bg" >
+    <div class="container">
+      <div class="row page-title-row">
+        <div class="col-md-6 col-sm-6">
+          <h1 class="page-title">Shop Details</h1>
+          <p>One stop solution for a stunning website.</p>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6 col-sm-6 hidden-xs">
+          <ol class="breadcrumb pull-right border-0">
+            <li><a href="#" class="trans">Home</a></li>
+            <li><a href="#" class="trans">Shop</a></li>
+            <li><a href="#" class="active trans">Details</a></li>
+          </ol>
+        </div> <!-- end col-md-6 -->
+      </div> <!-- end page-title-row -->
+    </div> <!-- end container -->
+  </div>
+
+  <!-- ========== CONTENT SECTION ========== -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <%= render "users/sidebar" %>
+        </div> <!-- end col-md-3 -->
+
+        <div class="col-sm-9">
+
+          <div class="ui form">
+            <div class="field">
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                  <%= devise_error_messages! %>
+
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <% end %>
+
+                  <div class="field">
+                    <%= f.label :current_password,"舊密碼" %>
+                    <%= f.password_field :current_password, autocomplete: "off" %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :password ,"新密碼"%>
+                    <%= f.password_field :password, autocomplete: "off" %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :password_confirmation,"新密碼確認" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                  </div>
+
+                  <div class="actions">
+                    <%= f.submit "修改密碼" ,class:"ui red button"%>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </section> <!-- end content-section -->
+
+</div> <!-- end main -->
+<%= render "welcome/footer" %>
+

@@ -1,0 +1,32 @@
+.facebook_signup{
+  margin-top: 15px !important;
+}
+.main .login-box{
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 5px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+  h4{
+    text-align: center;
+    font-weight: 900;
+    border-bottom:1px solid #DEDEDE;
+    margin-bottom: 15px;
+  }
+  #error_explanation{
+    h2{
+      display: none;
+    }
+  }
+  li:before{
+    content: "•"; /* Insert content that looks like bullets */
+    padding-right: 8px;
+  }
+  li{
+    display: inline;
+
+  }
+}
+.checkbox label{
+  padding-left: 20px !important;
+}

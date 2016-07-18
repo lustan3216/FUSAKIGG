@@ -1,0 +1,50 @@
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <div class="grad-bg text-center" data-parallax="scroll" data-image-src="<%= image_path("images/bg-img-1.jpg") %>" data-speed="0.6">
+    <div class="container">
+      <div class="row pt60 pb60">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 login-box ui form">
+          <h4 >登入</h4>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <% if flash[:alert] %>
+                  <ul>
+                    <li class="alert login_alert"><%= flash[:alert] %></li>
+                  </ul>
+              <% end %>
+              <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+
+              <div class="field">
+                <%= f.label :password %>
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+
+              <% if devise_mapping.rememberable? -%>
+                  <div class="field">
+                    <div class="ui checkbox">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                    </div>
+                  </div>
+              <% end -%>
+              <div class="item">
+                <ul>
+                <li><%= link_to "註冊", new_registration_path(resource_name) ,class:"item "%></li>
+                <li><%= link_to "忘記密碼", new_password_path(resource_name) ,class:"item " %></li>
+                </ul>
+              </div>
+              <div class="actions">
+                <%= f.submit "登入" ,class:"ui button fluid red"%>
+              </div>
+              <%- if devise_mapping.omniauthable? %>
+              <%= link_to "Facebook 登入", omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first), :class => 'primary ui button fluid facebook_signup' %>
+                  <% end %>
+          <% end %>
+        </div> <!-- end login-box -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div>
+</div> <!-- end main -->

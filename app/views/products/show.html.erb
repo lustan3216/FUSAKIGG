@@ -1,0 +1,103 @@
+<!-- ========== MAIN ========== -->
+<div class="main">
+
+  <!-- ========== PAGE TITLE ========== -->
+  <div class="page-title-div gradient-bg" >
+    <div class="container">
+      <div class="row page-title-row">
+        <div class="col-md-6 col-sm-6">
+          <h1 class="page-title">Shop Details</h1>
+          <p>One stop solution for a stunning website.</p>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6 col-sm-6 hidden-xs">
+          <ol class="breadcrumb pull-right border-0">
+            <li><a href="#" class="trans">Home</a></li>
+            <li><a href="#" class="trans">Shop</a></li>
+            <li><a href="#" class="active trans">Details</a></li>
+          </ol>
+        </div> <!-- end col-md-6 -->
+      </div> <!-- end page-title-row -->
+    </div> <!-- end container -->
+  </div>
+
+  <!-- ========== CONTENT SECTION ========== -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <%= render "sidebar" %>
+        </div> <!-- end col-md-3 -->
+
+        <div class="col-md-9">
+
+          <div class="col-md-6">
+            <div class="owl-carousel owl-carousel-item ">
+              <div class="text-center">
+                <%= image_tag @product.asset.url %>
+              </div>
+              <div class="text-center">
+                <%= image_tag @product.asset.url %>
+              </div>
+              <div class="text-center">
+                <%= image_tag @product.asset.url %>
+              </div>
+            </div> <!-- end owl-carousel -->
+          </div> <!-- end col-md-6 -->
+
+          <div class="col-md-6">
+            <%= form_tag buy_product_path(@product) do %>
+                <h4><%= @product.name %></h4>
+                <div class="inline fields">
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', 'V110',true %>
+                    </div>
+                  </div>
+                </div>
+                <div class="inline fields">
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', 'V220'%>
+                    </div>
+                  </div>
+                </div>
+                <%= select_tag "qty", options_for_select( 1..10 ),class:"ui selection dropdown" %>
+                <%= submit_tag "Buy", :class => "ui button fluid my_margin red" %>
+            <% end %>
+            <div class="row">
+              <div class="col-md-12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+          </div> <!-- end col-md-6 -->
+
+        </div> <!-- end col-md-9 -->
+
+
+
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </section> <!-- end content-section -->
+
+</div> <!-- end main -->
+
+<%= render "welcome/footer" %>
+
+<script type="text/javascript">
+  $(function($) {
+    $('.owl-carousel-item').owlCarousel({
+      loop:false,
+      navRewind: false,
+      margin:10,
+      dots: true,
+      nav:false,
+      autoplay:true,
+      navText: [],
+      items: 1
+    });
+    $('select.dropdown').dropdown();
+    $('.ui.radio.checkbox').checkbox();
+  });
+</script>

@@ -44,6 +44,22 @@
                     <%= f.label :email ,"EMAIL"%>
                     <%= f.email_field :email ,value: current_user.alternate_email_check, :required => true%>
                   </div>
+                  <div class="three fields">
+                  <div class=" field">
+                    <%= f.label :zip ,"zip"%>
+                    <%= f.text_field :zip,value:"", id:"zip",name:"zip" ,placeholder:"郵遞區號" ,class:"disable"%>
+                  </div>
+                    <div class=" field">
+                      <%= f.label :county ,"COUNTY"%>
+                      <%= f.select :county, {},{},class:"ui dropdown fluid" ,id:"county",name:"county" %>
+                    </div>
+                    <div class=" field">
+                      <%= f.label :county ,"COUNTY"%>
+                      <%= f.select :county, {},{},class:"ui dropdown fluid" ,id:"district",name:"district" %>
+                    </div>
+                  <!--<select id="county" name="county"></select>-->
+                  <!--<select id="district" name="district"></select>-->
+                 </div>
 
                   <div class="field">
                     <%= f.label :address ,"ADDRESS"%>
@@ -135,8 +151,10 @@
 <%= render "welcome/footer" %>
 
 <script>
+  $(function() {
   $( document ).ready(function() {
     $('.ui.dropdown').dropdown();
+    $('form').tw_citySelector('select[name="county"]', 'select[name="district"]', 'input[name="zip"]');});
     $('#whoset').on("change",function(){
       var ship_fee = 0;
       var amount = $('#amount').html();

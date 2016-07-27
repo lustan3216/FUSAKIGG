@@ -13,10 +13,8 @@
 //= require jquery
 // require jquery-ui
 //= require jquery_ujs
-//= require main/vendor
-//= require main/main
 //= require main/modernizr
-// require main/init-slider
-// require main/init-cube-home
+//= require main/vendor
 //= require main/plugins
+//= require main/main
 //= require semantic_ui/semantic_ui

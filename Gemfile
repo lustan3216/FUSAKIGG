@@ -33,7 +33,6 @@ gem 'omniauth-facebook'
 gem 'faker'
 gem 'jquery-ui-rails'
 gem 'kaminari'
-gem 'bootstrap-sass' ,' ~>3.3.6'
 gem 'awesome_rails_console'
 gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
@@ -43,6 +42,7 @@ gem 'paperclip'
 gem 'sidekiq'
 gem 'sinatra',  :require => nil
 gem 'nokogiri'
+gem 'font-awesome-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 

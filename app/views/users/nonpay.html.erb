@@ -45,7 +45,7 @@
             <% @orders.each  do |order| %>
                 <tr>
                   <td><%= order.order_number %></td>
-                  <td><%= order.address %></td>
+                  <td><%= order.full_address %></td>
                   <td><%= order.updated_at.strftime('%x')%></td>
                   <td><%= order.final_price %></td>
                   <td class="">

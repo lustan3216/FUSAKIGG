@@ -1,6 +1,5 @@
 class AddZipCountryDistrictToOrder < ActiveRecord::Migration
   def change
-    add_column :orders,:zip,:string
     add_column :orders,:district,:string
     add_column :orders,:county,:string
   end

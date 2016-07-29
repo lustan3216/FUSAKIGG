@@ -63,6 +63,10 @@ class Order < ActiveRecord::Base
     price >= 2000 ? price : price + Order.ship_fee
   end
 
+  def full_address
+    [self.postcode.to_s , self.county , self.district , self.address].join("")
+  end
+
   private
 
   def assign_order_number

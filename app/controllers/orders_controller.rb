@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:name, :email,:address ,:phone ,:address,:postcode,
-                                  :ps,:ship_time,:whoset,:status)
+                                  :ps,:ship_time,:whoset,:status ,:county ,:district)
   end
 
 end

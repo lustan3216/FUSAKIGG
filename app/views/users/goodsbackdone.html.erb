@@ -46,7 +46,7 @@
             <% @return_orders.each  do |return_order| %>
                 <tr>
                   <td><%= return_order.order.order_number %></td>
-                  <td><%= return_order.order.address %></td>
+                  <td><%= return_order.order.full_address %></td>
                   <td><%= return_order.phone %></td>
                   <td><%= return_order.updated_at.strftime('%x') %></td>
                   <td><%= return_order.order.payment.payment_method %></td>

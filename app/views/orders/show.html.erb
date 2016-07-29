@@ -47,26 +47,36 @@
                     <%= f.label :email ,"EMAIL"%>
                     <%= f.email_field :email ,value: @order.email, :required => true%>
                   </div>
-
+                  <div class="three fields disabled">
+                    <div class=" field">
+                      <%= f.label :county ,"COUNTY"%>
+                      <%= f.select :county,  options_for_select([ f.object.county], f.object.county),{},class:"ui dropdown fluid"  %>
+                    </div>
+                    <div class=" field">
+                      <%= f.label :district ,"DISTRICT"%>
+                      <%= f.select :district ,options_for_select([ f.object.district], f.object.district),{},class:"ui dropdown fluid" %>
+                    </div>
+                    <div class=" field">
+                      <%= f.label :postcode ,"POSTCODE"%>
+                      <%= f.text_field :postcode , { include_blank:f.object.postcode}%>
+                    </div>
+                  </div>
                   <div class="field disabled">
                     <%= f.label :address ,"ADDRESS"%>
                     <%= f.text_field :address ,value: @order.address, :required => true%>
                   </div>
                   <div class="two fields ">
+
                     <div class="six wide field disabled">
-                      <%= f.label :postcode ,"POSTCODE"%>
-                      <%= f.text_field :postcode,value: @order.postcode, :required => true %>
-                    </div>
-                    <div class="ten wide field disabled">
                       <%= f.label :ship_time ,"TIME"%>
                       <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], f.object.ship_time),{},class:"ui dropdown fluid" %>
                     </div>
+                    <div class="ten wide field disabled">
+                      <%= f.label :whoset ,"WHOSET"%>
+                      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], f.object.whoset),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+                    </div>
+                  </div>
 
-                  </div>
-                  <div class="field disabled">
-                    <%= f.label :whoset ,"WHOSET"%>
-                    <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], f.object.whoset),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-                  </div>
 
                   <div class="field disabled">
                     <%= f.label :ps ,"COMMENT"%>

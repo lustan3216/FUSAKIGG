@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20160727140620) do
     t.datetime "updated_at",                        null: false
     t.string   "order_number"
     t.boolean  "paid",              default: false
-    t.string   "zip"
     t.string   "district"
     t.string   "county"
   end

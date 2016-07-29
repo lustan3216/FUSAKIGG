@@ -28,30 +28,30 @@
         <div class="col-sm-5">
           <div class="ui form">
             <h4 class="ui dividing">Information</h4>
-            <div class="field">
+            <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
               <%= form_for @order do |f| %>
                   <div class="two fields ">
                     <div class="six wide field">
                       <%= f.label :name ,"NAME"%>
-                      <%= f.text_field :name,value: @order.name, :required => true %>
+                      <%= f.text_field :name,value: @order.name ,require:true%>
                     </div>
                     <div class="ten wide field">
                       <%= f.label :phone ,"PHONE"%>
-                      <%= f.telephone_field :phone,value: @order.phone, :required => true %>
+                      <%= f.telephone_field :phone,value: @order.phone %>
                     </div>
                   </div>
                   <div class="field">
                     <%= f.label :email ,"EMAIL"%>
-                    <%= f.email_field :email ,value: @order.email, :required => true%>
+                    <%= f.email_field :email ,value: @order.email%>
                   </div>
                   <div class="three fields">
                     <div class=" field">
                       <%= f.label :county ,"COUNTY"%>
-                      <%= f.select :county, {},{},class:"ui dropdown fluid" ,id:"county", :required => true ,data:{selected: f.object.county }%>
+                      <%= f.select :county, {},{},class:"ui dropdown fluid" ,id:"county" ,data:{selected: f.object.county }%>
                     </div>
                     <div class=" field">
                       <%= f.label :district ,"district"%>
-                      <%= f.select :district, {}, {},class:"ui dropdown fluid" ,id:"district", :required => true ,data:{selected: f.object.district }%>
+                      <%= f.select :district, {}, {},class:"ui dropdown fluid" ,id:"district" ,data:{selected: f.object.district }%>
                     </div>
                     <div class=" field">
                       <%= f.label :postcode ,"postcode"%>
@@ -60,18 +60,18 @@
                   </div>
                   <div class="field">
                     <%= f.label :address ,"ADDRESS"%>
-                    <%= f.text_field :address ,value: @order.address, :required => true%>
+                    <%= f.text_field :address ,value: @order.address%>
                   </div>
                   <div class="two fields">
                     <div class="six wide field">
                       <%= f.label :ship_time ,"TIME"%>
-                      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], "都可以"),{},class:"ui dropdown fluid" %>
+                      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], f.object.ship_time),{},class:"ui dropdown fluid" %>
                     </div>
 
 
                     <div class="ten wide field">
                       <%= f.label :whoset ,"WHOSET"%>
-                      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], "本公司派專業師傅安裝"),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+                      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], f.object.whoset),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
                     </div>
                   </div>
 
@@ -79,7 +79,10 @@
                     <%= f.label :ps ,"COMMENT"%>
                     <%= f.text_area :ps,rows:"3" %>
                   </div>
-                  <%= f.submit "修改",class:"ui button red" %>
+                  <div class="ui error message">
+                    <ul class="list"></ul>
+                  </div>
+                  <%= f.submit "修改",class:"ui button red fluid submit" %>
               <% end %>
             </div>
           </div>
@@ -139,31 +142,12 @@
 </div> <!-- end main -->
 
 <%= render "welcome/footer" %>
+<script src="<%= asset_path("form_alert") %>"></script>
 
 <script>
-  $( document ).ready(function() {
-    $('.ui.dropdown').dropdown();
-    $("#county").siblings(".text").html("<%= @order.county %>")
-    $("#district").siblings(".text").html("<%= @order.district %>")
-    $('form').tw_citySelector('#county', '#district', '#postcode');
-    $('#whoset').on("change",function(){
-      var ship_fee = 0;
-      var amount = $('#amount').html();
-      var final_amount = $('#final_amount').html();
-      if (amount < 2000 ){
-        ship_fee = <%= Order.ship_fee %> ;
-      }
-      if ($(this).find("option:selected").val() == "自行安裝（打６折）"){
-        amount = <%= @order.amount %> * 0.6;
-        $('#amount').css('text-decoration','line-through');
-        $('#final_amount').html(amount+ship_fee);
-        $('#discount').css('display','inline');
-      }
-      if ($(this).find("option:selected").val() == "本公司派專業師傅安裝"){
-        $('#amount').css('text-decoration','none');
-        $('#final_amount').html(<%= @order.amount %>+ship_fee);
-        $('#discount').css('display','none');
-      }
-    });
-  });
+
+  $("#county").siblings(".text").html("<%= @order.county %>")
+  $("#district").siblings(".text").html("<%= @order.district %>")
+  $('form').tw_citySelector('#county', '#district', '#postcode');
 </script>
+<script src="<%= asset_path("order_select") %>"></script>

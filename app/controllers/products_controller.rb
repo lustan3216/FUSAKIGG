@@ -33,17 +33,6 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
-  def cancel
-    if params[:page]=="new"
-      current_cart.remove_product(params[:id])
-      redirect_to :back
-    elsif params[:page]=="show"
-      order = current_user.orders.find(params[:order_id])
-      order.remove_product(params[:id])
-      order.line_items.blank? ? (redirect_to nonpay_user_path) : (redirect_to :back)
-    end
-  end
-
   private
   def find_product
     @product = Product.find(params[:id])

@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     end
     member do
       post :buy
-      post :cancel
     end
   end
+  resource :line_items ,only: [:destroy]
+
   resources :users do
     member do
       get :confirm_email

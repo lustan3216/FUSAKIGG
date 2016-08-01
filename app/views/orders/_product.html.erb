@@ -1,0 +1,16 @@
+<hr>
+<div class="row dis_table">
+  <div class="dis_table_cell ml10 pull-left">
+    <%= image_tag item.product.asset.url ,class:"w100p" %>
+  </div>
+  <div class="dis_table_cell pl30 w67p">
+    <div class="">
+      <%= item.product.name %>
+      <span class="ml10"><%= item.show_voltage %></span>
+      <%= link_to line_items_path(id:item.id),method:"delete",class:"pull-right pr20",remote:true do%><i class="fa fa-times" aria-hidden="fales"></i><% end %>
+    </div>
+    <div>數量 : <%= render 'orders/spinner', qty: item.qty  %> </div>
+    <div>單價 : $<%= item.price %></div>
+    <div>加總 : $<%= item.amount %></div>
+  </div>
+</div>

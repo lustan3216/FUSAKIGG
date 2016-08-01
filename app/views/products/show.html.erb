@@ -62,28 +62,25 @@
                     </div>
                   </div>
                 </div>
-                <%= select_tag "qty", options_for_select( 1..10 ),class:"ui selection dropdown" %>
+                <%= render "orders/spinner" ,qty:1 %>
                 <%= submit_tag "Buy", :class => "ui button fluid my_margin red" %>
             <% end %>
             <div class="row">
+
               <div class="col-md-12">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
           </div> <!-- end col-md-6 -->
-
         </div> <!-- end col-md-9 -->
-
-
-
       </div> <!-- end row -->
     </div> <!-- end container -->
   </section> <!-- end content-section -->
 
 </div> <!-- end main -->
 
-<%= render "welcome/footer" %>
+<%= javascript_include_tag 'spinner' %>
 
 <script type="text/javascript">
   $(function($) {
@@ -97,7 +94,6 @@
       navText: [],
       items: 1
     });
-    $('select.dropdown').dropdown();
     $('.ui.radio.checkbox').checkbox();
   });
 </script>

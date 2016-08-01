@@ -10,8 +10,9 @@ class Order < ActiveRecord::Base
   has_many :line_items, :dependent => :destroy
   has_many :products, :through => :line_items
 
-
   before_validation :assign_order_number
+  validates :name, :email,:address ,:phone,:postcode, :ship_time,
+            :whoset,:county ,:district, presence: true
 
   def self.ship_fee
     100
@@ -55,7 +56,7 @@ class Order < ActiveRecord::Base
       amount +=  line.product.v220_price * line.qty if line.voltage == "V220"
     end
     return amount
-  end
+  end 
 
   def final_price(whoset = "本公司派專業師傅安裝")
     price = self.amount

@@ -22,7 +22,7 @@
  *= require semantic_ui/definitions/collections/form.less
  * require semantic_ui/definitions/collections/grid.less
  * require semantic_ui/definitions/elements/header.less
- * require semantic_ui/definitions/elements/icon.less
+ *= require semantic_ui/definitions/elements/icon.less
  * require semantic_ui/definitions/elements/image.less
  * require semantic_ui/definitions/elements/input.less
  * require semantic_ui/definitions/views/item.less

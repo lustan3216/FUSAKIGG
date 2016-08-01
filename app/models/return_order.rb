@@ -9,6 +9,8 @@ class ReturnOrder < ActiveRecord::Base
   scope :dealing , -> {where('status = ?',"處理中") }
   scope :return_done, -> { where('(status =? or status =?)',"OK" ,"ok"  ) }
 
+  validates :ps,:phone, presence: true
+
   def clone_return_line_item_by(params)
     items = params.select{|k,v| k.include?( "product")}.to_a
     items.each do |item|

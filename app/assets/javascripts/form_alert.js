@@ -20,6 +20,10 @@ $(document).ready(function () {
                 identifier: 'county',
                 rules: [{type   : 'empty', prompt : '請選擇縣市'}]
             },
+            postcode: {
+                identifier: 'postcode',
+                rules: [{type   : 'empty', prompt : '請選擇區鎮鄉'}]
+            },
             order_email: {
                 identifier: 'order_email',
                 rules: [{type   : 'email', prompt : '請輸入Email'}]

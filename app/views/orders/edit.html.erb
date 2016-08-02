@@ -28,7 +28,7 @@
         <div class="col-sm-5">
           <div class="ui form">
             <h4 class="ui dividing">Information</h4>
-            <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
+            <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= @order.amount %>">
               <%= form_for @order do |f| %>
                   <div class="two fields ">
                     <div class="six wide field">
@@ -83,7 +83,7 @@
                     <ul class="list"></ul>
                   </div>
                   <%= f.submit "修改",class:"ui button red fluid submit" %>
-              <% end %>
+
             </div>
           </div>
 
@@ -96,45 +96,30 @@
               <h4 class="ui">order Info</h4>
               <div class="row">
                 <div class="col-md-2 col-xs-6">
-                  <p>數量 : <%= @order.total %></p>
+                  <p>數量 : <span id="total"><%= @order.total %></span></p>
                 </div>
-                <div class="col-md-3 col-xs-6">
+                <div class="col-md-4 col-xs-6">
                   <p>金額 : $<span id="amount"><%= @order.amount %></span>
                     <span class="ui label left pointing red" id="discount">6折</span>
                   </p>
                 </div>
-                <div class="col-md-7 col-xs-12">
+                <div class="col-md-6 col-xs-12">
                   <p class="final_amount">總金額 : $<span id="final_amount"><%= @order.final_price %></span>
-                <span class="ui label left pointing red">
-                <i class="fa fa-truck " aria-hidden="true">運費 <%= @order.amount >= 2000 ? "免費" : Order.ship_fee %></i>
-                </span>
+                    <span class="ui label left pointing red">
+                      <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= @order.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
+                      <h2>ewqeqwe</h2>
+                    </span>
                   </p>
                 </div>
-
               </div>
               <% @order.line_items.each  do |item| %>
-                  <hr>
-                  <div class="row dis_table">
-                    <div class="dis_table_cell ml10 pull-left">
-                      <%= image_tag item.product.asset.url ,class:"w100p" %>
-                    </div>
-                    <div class="dis_table_cell pl30 w67p">
-                      <div class="">
-                        <%= item.product.name %>
-                        <span class="ml10"><%= item.show_voltage %></span>
-                      </div>
-                      <div>數量 : <%= item.qty %></div>
-                      <div>單價 : $<%= item.price %></div>
-                      <div>加總 : $<%= item.amount %></div>
-                    </div>
+                  <div id="product_item_<%= item.id %>" class="product_item">
+                    <%= render 'product',item:item %>
                   </div>
               <% end %>
           <% end %>
+              <% end %>
         </div> <!-- end col-md-9 -->
-
-
-
-
       </div> <!-- end row -->
     </div> <!-- end container -->
   </section> <!-- end content-section -->
@@ -142,9 +127,8 @@
 </div> <!-- end main -->
 
 <script>
-
+  $('form').tw_citySelector('#county', '#district', '#postcode');
   $("#county").siblings(".text").html("<%= @order.county %>")
   $("#district").siblings(".text").html("<%= @order.district %>")
-  $('form').tw_citySelector('#county', '#district', '#postcode');
 </script>
 <%= javascript_include_tag 'spinner_order' %>

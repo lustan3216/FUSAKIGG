@@ -106,8 +106,8 @@
                   <p>數量 : <%= @order.total %></p>
                 </div>
                 <div class="col-md-3 col-xs-6">
-                  <p>金額 : $<span id="amount"><%= @order.amount %></span>
-                    <span class="ui label left pointing red" id="discount">6折</span>
+                  <p>金額 : $<span id="amount" class="<%= discount_line_through %>"><%= @order.amount %></span>
+                    <span id="discount" class="ui label left pointing red <%= discount_label %>" >6折</span>
                   </p>
                 </div>
                 <div class="col-md-7 col-xs-12">

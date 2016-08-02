@@ -34,6 +34,13 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def update_item_qty(order_params)
+    items = order_params.select{|h| /\d/.match(h) }.map{|h,v|[h.to_i,v.to_i]}
+    items.each do |k,v|
+      self.line_items.find(k).update(qty: v)
+    end
+  end
+
   def total
     self.line_items.map{ |l| l.qty }.sum
   end
@@ -58,10 +65,11 @@ class Order < ActiveRecord::Base
     return amount
   end 
 
-  def final_price(whoset = "本公司派專業師傅安裝")
+  def final_price
     price = self.amount
-    price *=0.6 if whoset == "自行安裝（打６折）"
-    price >= 2000 ? price : price + Order.ship_fee
+    price *=0.6 if self.whoset == "自行安裝（打６折）"
+    price >= 2000 ? price.to_i : (price + Order.ship_fee).to_i
+
   end
 
   def full_address

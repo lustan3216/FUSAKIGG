@@ -16,7 +16,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-
     # @order = current_user.orders.find_by(address: order_params[:address],paid:false)
     # if @order.nil?
       current_cart.update_item_qty(order_params)
@@ -39,8 +38,9 @@ class OrdersController < ApplicationController
   end
 
   def update
-    @order.update(order_params)
-    render :edit
+    @order.update_item_qty(order_params)
+    @order.update(order_params.reject{|h| /\d/.match(h) })
+    redirect_to order_path(@order)
   end
 
   def checkout_pay2go

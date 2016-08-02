@@ -54,9 +54,13 @@
                   <td><%= "已完成" if order.status == ("ok" || "OK") %></td>
                   <td>
                     <% if order.return_order.try(:status) == ("ok" || "OK") %>
-                        已完成
+                        <%= link_to user_return_order_path(current_user,id: order) do  %>
+                            已完成
+                        <% end %>
                     <% elsif order.return_order %>
-                        處理中
+                        <%= link_to user_return_order_path(current_user,id: order) do  %>
+                            處理中
+                        <% end %>
                     <% else %>
                         <%= link_to new_user_return_order_path(current_user,id: order) do  %>
                             <i class="fa fa-retweet" aria-hidden="true"></i>

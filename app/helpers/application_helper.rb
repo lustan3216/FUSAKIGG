@@ -11,7 +11,7 @@ module ApplicationHelper
         Version: "1.2",
         LangType: "zn-TW",
         MerchantOrderNo: payment.external_id,
-        Amt: payment.amount,
+        Amt: payment.order.final_price,
         ItemDesc: payment.name,
         ReturnURL: pay2go_return_url,
         NotifyURL: Pay2go.notify_url,
@@ -28,15 +28,4 @@ module ApplicationHelper
     pay2go_params
   end
 
-  def magic(x)
-    doc = Nokogiri::HTML(x)
-    keys = doc.at('img').keys
-    values = doc.at('img').values
-    hash_array = {}
-    keys.each_with_index do |key, index|
-      hash_array[key.to_sym] = values[index]
-    end
-    image_tag((hash_array.extract!(:src).values[0]),hash_array)
-
-  end
 end

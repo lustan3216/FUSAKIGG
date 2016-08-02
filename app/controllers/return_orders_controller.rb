@@ -4,9 +4,16 @@ class ReturnOrdersController < ApplicationController
     @return_orders = current_user.return_orders.dealing.page(params[:page]).per(10)
   end
 
+  def show
+    @return_order = current_user.orders.find(params[:id])
+    @order = current_user.orders.orderdone.find(params[:id])
+    @return_order_check = @order.return_order
+  end
+
   def new
     @return_order = ReturnOrder.new
     @order = current_user.orders.orderdone.find(params[:id])
+    @return_order_check = @order.return_order
   end
 
   def create

@@ -51,7 +51,7 @@
                   <td><%= return_order.updated_at.strftime('%x') %></td>
                   <td><%= return_order.order.payment.payment_method %></td>
                   <td><%= "已完成" if return_order.status == "ok" %></td>
-                  <td><a href="<%= new_user_return_order_path(current_user,id: return_order.order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+                  <td><a href="<%= user_return_order_path(current_user,id: return_order.order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
                 </tr>
             <% end %>
             </tbody>

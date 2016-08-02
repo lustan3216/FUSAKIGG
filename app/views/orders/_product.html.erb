@@ -7,10 +7,12 @@
     <div class="">
       <%= item.product.name %>
       <span class="ml10"><%= item.show_voltage %></span>
-      <%= link_to line_items_path(id:item.id),method:"delete",class:"pull-right pr20",remote:true do%><i class="fa fa-times" aria-hidden="fales"></i><% end %>
+      <%= link_to line_items_path(id:item.id),method:"delete",class:"pull-right pr20 item_cancel",remote:true do%>
+          <i class="fa fa-times" aria-hidden="fales"></i>
+      <% end %>
     </div>
-    <div>數量 : <%= render 'orders/spinner', qty: item.qty  %> </div>
-    <div>單價 : $<%= item.price %></div>
-    <div>加總 : $<%= item.amount %></div>
+    <div>數量 : <%= render 'orders/spinner', item: item %></div>
+    <div>單價 : $<span class="oneprice"><%= item.price %></span></div>
+    <div>加總 : $<span class="allprice"><%= item.amount %></span></div>
   </div>
 </div>

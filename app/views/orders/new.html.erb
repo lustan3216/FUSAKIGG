@@ -85,7 +85,7 @@
                   <% else %>
                       <%= f.submit "付款",class:"ui button red fluid"  %>
                   <% end %>
-              <% end %>
+
             </div>
           </div>
         </div> <!-- end col-md-3 -->
@@ -97,7 +97,7 @@
               <h4 class="ui">Cart Info</h4>
               <div class="row">
                 <div class="col-md-2 col-xs-6">
-                  <p>數量 : <%= current_cart.total %></p>
+                  <p>數量 : <span id="total"><%= current_cart.total %></span></p>
                 </div>
                 <div class="col-md-4 col-xs-6">
                   <p>金額 : $<span id="amount"><%= current_cart.amount %></span>
@@ -107,33 +107,26 @@
                 <div class="col-md-6 col-xs-12">
                   <p class="final_amount">總金額 : $<span id="final_amount"><%= current_cart.final_price %></span>
                 <span class="ui label left pointing red">
-                <i class="fa fa-truck " aria-hidden="true">運費 <%= current_cart.amount >= 2000 ? "免費" : Order.ship_fee %></i>
+                <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= current_cart.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
                 </span>
                   </p>
                 </div>
-
               </div>
-
               <% current_cart.line_items.each  do |item| %>
-                  <div id="product_item_<%= item.id %>">
+                  <div id="product_item_<%= item.id %>" class="product_item">
                     <%= render 'product',item:item %>
                   </div>
               <% end %>
-
           <% end %>
+              <% end %>
         </div> <!-- end col-md-9 -->
-
-
-
-
       </div> <!-- end row -->
     </div> <!-- end container -->
   </section> <!-- end content-section -->
 
 </div> <!-- end main -->
 
-<%= javascript_include_tag 'spinner', 'form_alert' ,'order_select' %>
+<%= javascript_include_tag 'spinner_order'%>
 <script>
   $('form').tw_citySelector('#county', '#district', '#postcode');
 </script>
-

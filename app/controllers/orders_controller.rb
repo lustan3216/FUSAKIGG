@@ -16,9 +16,11 @@ class OrdersController < ApplicationController
   end
 
   def create
+
     # @order = current_user.orders.find_by(address: order_params[:address],paid:false)
     # if @order.nil?
-      @order = Order.new( order_params )
+      current_cart.update_item_qty(order_params)
+      @order = Order.new( order_params.reject{|h| /\d/.match(h) } )
       @order.assign_attributes(user:current_user,
                                after_ship_amount:current_cart.final_price(order_params[:whoset]))
       @order.copy_info_to(current_user)
@@ -69,8 +71,12 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:name, :email,:address ,:phone ,:address,:postcode,
-                                  :ps,:ship_time,:whoset,:status ,:county ,:district)
+    params_lists = [:name, :email,:address ,:phone ,:address,:postcode,
+                    :ps,:ship_time,:whoset,:status ,:county ,:district]
+    params[:order].each do |key|
+      params_lists <<  key[0].to_s.to_sym  if /\d/.match(key[0])
+    end
+    params.require(:order).permit(params_lists)
   end
 
 end

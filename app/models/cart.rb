@@ -2,6 +2,13 @@ class Cart < ActiveRecord::Base
   has_many :line_items
   has_many :products, :through => :line_items
 
+  def update_item_qty(order_params)
+    items = order_params.select{|h| /\d/.match(h) }.map{|h,v|[h.to_i,v.to_i]}
+    items.each do |k,v|
+      self.line_items.find(k).update(qty: v)
+    end
+  end
+
   def add_product(product, qty , voltage)
     line_item = self.line_items.find_by(product_id: product.id ,voltage: voltage)
     if line_item

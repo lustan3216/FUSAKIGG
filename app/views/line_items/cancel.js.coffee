@@ -1,0 +1,1 @@
+$('#product_item_<%= @item_id %>').remove()

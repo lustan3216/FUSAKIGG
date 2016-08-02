@@ -141,12 +141,10 @@
 
 </div> <!-- end main -->
 
-<script src="<%= asset_path("form_alert") %>"></script>
-
 <script>
 
   $("#county").siblings(".text").html("<%= @order.county %>")
   $("#district").siblings(".text").html("<%= @order.district %>")
   $('form').tw_citySelector('#county', '#district', '#postcode');
 </script>
-<script src="<%= asset_path("order_select") %>"></script>
+<%= javascript_include_tag 'spinner_order' %>

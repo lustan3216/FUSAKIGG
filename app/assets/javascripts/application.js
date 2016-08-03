@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require main/modernizr
 //= require main/vendor
 //= require main/plugins
 //= require main/main
 //= require semantic_ui/semantic_ui
 //= require tw-city-selector
-//= require form_alert

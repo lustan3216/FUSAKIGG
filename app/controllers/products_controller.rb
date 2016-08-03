@@ -30,7 +30,11 @@ class ProductsController < ApplicationController
 
   def buy
     current_cart.add_product( @product, params[:qty].to_i ,params[:voltage])
-    redirect_to :back
+    @current_qty = current_cart.total
+    respond_to do |format|
+      format.html
+      format.js {render 'products/buy' }
+    end
   end
 
   private

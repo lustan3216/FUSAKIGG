@@ -9,9 +9,10 @@ $(document).ready ->
 
   $('.item_cancel').on "click", ->
     product_item = $(this).closest('.product_item')
+    console.log('product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)
     qty = parseInt(product_item.find('#txtNum').attr("value"),10)
-    price_sum(one_price)
+    price_sum(one_price,qty)
     qty_sum(qty)
     after_ship_fee()
 
@@ -27,11 +28,11 @@ $(document).ready ->
     qty = parseInt(product_item.find('#txtNum').attr("value"),10)
     product_item.find('.allprice').html(one_price * qty)
 
-  price_sum=(delete_price = 0) ->
+  price_sum=(delete_price = 0,qty = 0) ->
     sum = 0
     $('.allprice').map ->
        sum += parseInt($(this).html(),10)
-    sum -= delete_price
+    sum -= (delete_price*qty)
     $('#order').attr('data-cartamount',sum)
     $('#amount').html(sum)
 

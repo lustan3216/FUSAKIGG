@@ -6,8 +6,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js {render 'cancel'
-      }
+      format.js {render 'cancel' }
     end
     # if params[:page]=="new"
     # elsif params[:page]=="show"

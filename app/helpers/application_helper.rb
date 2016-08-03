@@ -28,4 +28,19 @@ module ApplicationHelper
     pay2go_params
   end
 
+  def shopping_cart
+    current_qty = content_tag(:span,current_cart.total)
+    qty = content_tag(:span,current_qty ,id:"current_qty")
+    icon = content_tag(:i,nil,class:[" menu-icon","fa","fa-shopping-cart"])+"購物車"
+    if current_user
+      link_to new_order_path do
+        params[:controller]=="orders"&& params[:action] == "new" ? icon : qty+icon
+      end
+    else
+      link new_session_path(:user) do
+        qty+icon
+      end
+    end
+  end
+
 end

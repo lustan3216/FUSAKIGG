@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.url)
   end
 
+  def current_qty
+    current_cart.total
+  end
+
   def after_sign_out_path_for(resource)
     request.referrer || root_path
   end

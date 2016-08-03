@@ -23,48 +23,33 @@
       <!-- ========== MAIN MENU ========== -->
       <ul class="main-menu">
         <li class="menu-item">
-          <%= link_to_if current_user,cart_icon, new_order_path do
-           link_to cart_icon,new_session_path(:user) end %>
+          <%= shopping_cart %>
         </li>
         <li class="menu-item">
-          <%= link_to products_path do%>
-              <i class="fa fa-magnet"></i>購物
-          <% end %>
+          <%= link_to content_tag(:i,nil,class:'fa fa-magnet')+'購物', products_path %>
         </li>
 
         <li class="menu-item">
-          <%= link_to qa_path do%>
-              <i class="fa fa-question-circle-o"></i>問與答
-          <% end %>
+          <%= link_to content_tag(:i,nil,class:'fa fa-question-circle-o')+'問與答', qa_path %>
         </li>
 
         <li class="menu-item">
-          <%= link_to contact_path do%>
-              <i class="fa fa-phone"></i>聯絡我們
-          <% end %>
+          <%= link_to content_tag(:i,nil,class:'fa fa-phone')+'聯絡我們', contact_path %>
         </li>
         <% if current_user  %>
             <li class="menu-item">
-              <%= link_to nonpay_user_path(current_user) do  %>
-                  <i class="fa fa-bars"></i>設定
-              <% end %>
+              <%= link_to content_tag(:i,nil,class:'fa fa-bars')+'設定', nonpay_user_path(current_user) %>
         <% end %>
         <!-- Sub Menu -->
         </li> <!-- end menu-item -->
 
         <li class="menu-item">
           <% if current_user %>
-              <%= link_to destroy_user_session_path, :method => :delete do%>
-                  <i class="fa fa-diamond"></i>登出</a>
-              <% end %>
+              <%= link_to content_tag(:i,nil,class:'fa fa-diamond')+'登出', destroy_user_session_path, :method => :delete %>
           <% else %>
-              <%= link_to new_session_path(:user) do%>
-                  <i class="fa fa-diamond"></i>登入</a>
-              <% end  %>
+              <%= link_to content_tag(:i,nil,class:'fa fa-diamond')+'登入', new_session_path(:user) %>
           <% end %>
         </li>
-
-
       </ul> <!-- end main-menu -->
     </nav> <!-- end menu -->
   </div> <!-- end container-fluid -->

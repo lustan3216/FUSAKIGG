@@ -46,7 +46,7 @@
           </div> <!-- end col-md-6 -->
 
           <div class="col-md-6">
-            <%= form_tag buy_product_path(@product) do %>
+            <%= form_tag buy_product_path(@product), remote: true do %>
                 <h4><%= @product.name %></h4>
                 <div class="inline fields">
                   <div class="field">
@@ -62,7 +62,9 @@
                     </div>
                   </div>
                 </div>
-                <%= render "spinner" ,qty:1 %>
+                <div class="product_item">
+                  <%= render "spinner" ,qty:1 %>
+                </div>
                 <%= submit_tag "Buy", :class => "ui button fluid my_margin red" %>
             <% end %>
             <div class="row">

@@ -33,7 +33,7 @@
           <%= link_to content_tag(:i,nil,class:'fa fa-question-circle-o')+'問與答', qa_path %>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item visible-xs">
           <%= link_to content_tag(:i,nil,class:'fa fa-phone')+'聯絡我們', contact_path %>
         </li>
         <% if current_user  %>
@@ -57,8 +57,8 @@
 
 <%= yield %>
 
-<%= render "layouts/footer" %>
-
+<%= render 'layouts/footer' %>
+<%= render 'layouts/contact_us' %>
 <script type="text/javascript" charset="utf-8">
   $('.message .close').on('click', function() {
         $(this).closest('.message')

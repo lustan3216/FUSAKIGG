@@ -26,12 +26,14 @@
   font-url('ionicons.ttf') format('truetype'),
   font-url('ionicons.svg#open_sansregular') format('svg');
 }
-@font-face{
+@font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'),
   font-url('lato.woff2') format('woff2');
 }
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

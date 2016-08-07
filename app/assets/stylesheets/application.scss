@@ -12,23 +12,13 @@
  *
  *= require_self
  *= require font-awesome
- *= require jquery-ui
  *= require main/vendor
- *= require semantic_ui/semantic_ui
  *= require main/main
- * require main/nephritis
-
+ *= require semantic_ui/semantic_ui
  */
 
 
 @font-face {
-  font-family: 'glyphicons-halflings-regular';
-  src: font-url('glyphicons-halflings-regular.eot');
-  src: font-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-  font-url('glyphicons-halflings-regular.woff') format('woff'),
-  font-url('glyphicons-halflings-regular.woff2') format('woff2'),
-  font-url('glyphicons-halflings-regular.ttf') format('truetype'),
-  font-url('glyphicons-halflings-regular.svg#open_sansregular') format('svg');
   font-family: 'ionicons';
   src: font-url('ionicons.eot');
   src: font-url('ionicons.eot?#iefix') format('embedded-opentype'),
@@ -36,18 +26,18 @@
   font-url('ionicons.ttf') format('truetype'),
   font-url('ionicons.svg#open_sansregular') format('svg');
 }
-@font-face{
-  font-family:'revicons';
-  src: font-url('revicons/revicons90c6.eot');
-  src: font-url('revicons/revicons90c6.eot#iefix') format('embedded-opentype'),
-  font-url('revicons/revicons90c6.woff') format('woff'),
-  font-url('revicons/revicons90c6.ttf') format('truetype'),
-  font-url('revicons/revicons90c6.svg#revicons') format('svg');
-  font-weight:400;
-  font-style:normal;
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'),
+  font-url('lato.woff2') format('woff2');
 }
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "mystyle";
 @import "login";
 @import "spinner";
 @import "contact_us";
-

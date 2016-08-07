@@ -43,7 +43,11 @@ gem 'sidekiq'
 gem 'sinatra',  :require => nil
 gem 'nokogiri'
 gem 'font-awesome-rails'
-gem "mysql2"
+gem 'mysql2'
+gem 'ionicons-rails'
+# template
+gem 'bootstrap-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 gem 'capistrano-rails', :group => :development

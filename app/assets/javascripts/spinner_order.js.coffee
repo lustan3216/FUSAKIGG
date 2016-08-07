@@ -9,7 +9,6 @@ $(document).ready ->
 
   $('.item_cancel').on "click", ->
     product_item = $(this).closest('.product_item')
-    console.log('product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)
     qty = parseInt(product_item.find('#txtNum').attr("value"),10)
     price_sum(one_price,qty)

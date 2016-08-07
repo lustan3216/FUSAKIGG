@@ -43,9 +43,11 @@ gem 'sidekiq'
 gem 'sinatra',  :require => nil
 gem 'nokogiri'
 gem 'font-awesome-rails'
+gem "mysql2"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
-
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

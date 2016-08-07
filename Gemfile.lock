@@ -122,6 +122,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.3.21)
     nested_form (0.3.2)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -273,6 +274,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   less-rails-semantic_ui
+  mysql2
   nokogiri
   omniauth-facebook
   paperclip

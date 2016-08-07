@@ -43,7 +43,7 @@ gem 'sidekiq'
 gem 'sinatra',  :require => nil
 gem 'nokogiri'
 gem 'font-awesome-rails'
-
+gem 'ionicons-rails'
 # template
 gem 'bootstrap-sass'
 

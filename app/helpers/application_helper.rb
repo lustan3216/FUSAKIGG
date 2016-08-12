@@ -37,7 +37,7 @@ module ApplicationHelper
         params[:controller]=="orders"&& params[:action] == "new" ? icon : qty+icon
       end
     else
-      link new_session_path(:user) do
+      link_to new_session_path(:user) do
         qty+icon
       end
     end

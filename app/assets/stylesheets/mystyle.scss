@@ -124,6 +124,12 @@ td a:hover {
 .line_through{
   text-decoration: line-through;
 }
+.parallax-section_my{
+  background-image: image-url('images/demo-img-2-reverse.jpg');
+  background-attachment: fixed;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
 @media (max-width: 767px) {
   .row.reorder-xs {
     -webkit-transform: rotate(180deg);

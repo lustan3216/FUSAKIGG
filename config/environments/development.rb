@@ -39,7 +39,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'http://52.196.25.37/' }
   config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
 
   # be sure to have the adapter gem in your Gemfile and follow the adapter specific

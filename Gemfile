@@ -39,6 +39,7 @@ gem 'autoprefixer-rails'
 gem 'therubyracer'
 gem 'rails_admin'
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'sidekiq'
 gem 'sinatra',  :require => nil
 gem 'nokogiri'

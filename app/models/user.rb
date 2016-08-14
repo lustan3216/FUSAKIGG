@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
       existing_user.fb_uid = auth.uid
       existing_user.fb_token = auth.credentials.token
       existing_user.fb_raw_data = auth
-      user.skip_confirmation!
+      existing_user.skip_confirmation!
       existing_user.save!
       return existing_user
       # reauth.credentialscredentials.tokenturn existing_user

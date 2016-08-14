@@ -21,3 +21,4 @@
 /config/pay2go.yml
 .byebug_history
 /config/secrets.yml
+/config/aws.yml

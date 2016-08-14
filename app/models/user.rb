@@ -32,15 +32,13 @@ class User < ActiveRecord::Base
     end
 
     # Case 2: Find existing user by email
-    existing_user = User.find_by_email(auth.info.email)
+    existing_user = User.find_by_email( auth.info.email )
     if existing_user
       existing_user.fb_uid = auth.uid
       existing_user.fb_token = auth.credentials.token
       existing_user.fb_raw_data = auth
-      existing_user.skip_confirmation!
       existing_user.save!
       return existing_user
-      # reauth.credentialscredentials.tokenturn existing_user
     end
 
     # Case 3: Create new password

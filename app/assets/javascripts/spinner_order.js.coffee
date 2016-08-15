@@ -1,4 +1,5 @@
-$(document).ready ->
+
+ready = ->
   $('.ui.icon.button').on 'click', ->
     command = $(this).attr('command')
     HandleUpDown.bind(this)(command)
@@ -93,3 +94,6 @@ $(document).ready ->
     else
       $('#ship_status').html("免費")
     $('#final_amount').html(amount)
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

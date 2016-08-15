@@ -1,4 +1,27 @@
 zh-TW:
+  activerecord:
+    models:
+      user:
+        one: 使用者
+        other: 使用者
+      cart:
+        one: 購物車
+        other: 購物車
+      message:
+        one: 訊息
+        other: 訊息
+      order:
+        one: 購買清單
+        other: 購買清單
+      payment:
+        one: 訂單
+        other: 訂單
+      product:
+        one: 產品
+        other: 產品
+      return_order:
+        one: 退貨訂單
+        other: 退貨訂單
   admin:
     home:
       name: "網站首頁"

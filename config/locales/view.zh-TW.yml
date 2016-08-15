@@ -1,0 +1,25 @@
+zh-TW:
+  share:
+    phone: '電話'
+    email: '信箱'
+    address: '地址'
+    services: '服務'
+    thankyou: '謝謝您'
+    vision: '我們的願景'
+    contact_us: '聯絡我們'
+    contact_way: '聯絡方式'
+    contact_notice: '有關安裝技術、價格、批發、退款、網站BUG，任何問題都煩請您留下訊息，24小時內會有專人為您聯繫'
+    phone_number:
+      "(02) 2947-1688\n(02) 2947-1682"
+    real_address: '新北市中和區大智街55巷20號1F'
+    email_address: 'fusakihome@gmail.com'
+    company_feature:
+      "為您提供更方便快速地方案\n
+      讓您不再煩惱施工上的困擾和技術問題\n同時給予在大的品質保證不再擔心買到瑕疵品."
+    save: '送出'
+  orders:
+    thankyou:
+      thankyou_title: '感謝您的購買!'
+      thankyou_content: "您的訂單將會儘速為您處理\n如選擇《自行安裝》兩天內將會幫你出貨\n
+      如選擇《本公司派專業師傅安裝》24小時內會有專人為您安排安裝時間\n
+      如有任何疑問或技術上問題，請聯絡我們，將會有人專人為您服務．"

@@ -28,25 +28,21 @@
       <div class="row">
 
         <div class="col-md-4">
-
           <!-- ========== SECTION HEADER ========== -->
           <div class="section-header">
-            <h3 class="section-title underline">We are here!</h3>
-            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+            <h3 class="section-title underline"><%= t("share.vision") %></h3>
+            <p class="section-subtitle"><%= simple_format t("share.company_feature") %></p>
           </div> <!-- end section-header -->
 
           <div class="mb50 col-sm-6 col-md-12">
-            <h6 class="underline">Address</h6>
-            <p>A203, Ishwarya Residency, <br>
-              Kaspate Wasti, Wakad Road, <br>
-              Pune, India - 411 057</p>
+            <h6 class="underline"><%= t("share.address") %></h6>
+            <p><%= t("share.real_address") %></p>
           </div>
 
           <div class="mb50 col-sm-6 col-md-12">
-            <h6 class="underline">Contact Us</h6>
-            <p>+1 (123) 456-7890 <br>
-              +1 (456) 567-1234 <br>
-              support@themesease.com</p>
+            <h6 class="underline"><%=  t("share.contact_way") %></h6>
+            <p><%= simple_format t("share.phone_number") %>
+              <%= t("share.email_address") %></p>
           </div>
         </div> <!-- end col-md-4 -->
 
@@ -54,8 +50,8 @@
 
           <!-- ========== SECTION HEADER ========== -->
           <div class="section-header">
-            <h3 class="section-title underline">Drop us a line!</h3>
-            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+            <h3 class="section-title underline"><%=  t("share.contact_us") %></h3>
+            <p class="section-subtitle"><%=  t("share.contact_notice") %></p>
           </div> <!-- end section-header -->
 
           <%= form_for Message.new , url: messages_path , method: :post  do |f| %>
@@ -81,9 +77,9 @@
 
               <div class="field">
                 <%= f.label :message ,"訊息"%>
-                <%= f.text_area :message,rows:"2" %>
+                <%= f.text_area :message,rows:"5" %>
               </div>
-                  <%= f.submit "送出",class:"ui button red"  %>
+                  <%= f.submit t('share.save'),class:"ui button red"  %>
           <% end %>
         </div> <!-- end col-md-8 -->
 
@@ -96,3 +92,4 @@
 <script type="text/javascript" charset="utf-8">
   $('.ui.dropdown').dropdown();
 </script>
+

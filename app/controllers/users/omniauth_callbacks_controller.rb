@@ -10,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       else
         set_flash_message(:notice, :failure, :kind => "Facebook", :reason => 'already exist') if is_navigational_format?
       end
-      redirect_to profile_user_path(current_user)
+      redirect_to :back
     else
       @user = User.from_facebook_omniauth(request.env["omniauth.auth"],cookies['browser.timezone'])
       if @user.persisted?

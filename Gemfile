@@ -38,8 +38,8 @@ gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
 gem 'therubyracer'
 gem 'rails_admin'
-gem 'paperclip'
-gem 'aws-sdk'
+gem 'paperclip', '~> 4.3.6'
+gem 'aws-sdk', '< 2.0'
 gem 'sidekiq'
 gem 'sinatra',  :require => nil
 gem 'nokogiri'
@@ -48,7 +48,7 @@ gem 'mysql2'
 gem 'ionicons-rails'
 # template
 gem 'bootstrap-sass'
-
+gem 'letter_opener', :group => :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 gem 'capistrano-rails', :group => :development

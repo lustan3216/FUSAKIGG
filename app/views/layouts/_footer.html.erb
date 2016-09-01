@@ -12,52 +12,54 @@ sticky-footer - Reveal footer on scroll
       <!-- ========== left part ========== -->
       <div class="col-md-8 col-sm-8">
         <div class="vcenter mb20">
-          <img src="<%= image_path('images/logo-light.png') %>" alt="Salt - HTML5 theme" class="img-responsive mb20" width="100">
+          <h2 class="mb10"><%= t("share.fusaki") %></h2>
           <div class=" clearfix">
             <p class="footer-desc">
-              Multi-purpose HTML5 site template - We do innovative things to create awesome designs. Creating out of the box websites since 1999.
+              <%= t("share.footer_desc") %>
             </p>
           </div>
         </div> <!-- end vcenter -->
         <div class="col-md-3 col-sm-6">
-          <h5 class="footer-title underline">公司特色</h5>
+          <h5 class="footer-title underline"><%= t(".company_feature") %></h5>
           <ul class="ul">
-            <li><a href="#" class="trans">About Company</a></li>
-            <li><a href="#" class="trans">Our Team</a></li>
+            <li><%= link_to "公司介紹",introduce_path %></li>
           </ul>
         </div> <!-- end col-md-3 -->
         <div class="col-md-3 col-sm-6">
-          <h5 class="footer-title underline">Services</h5>
+          <h5 class="footer-title underline"><%= t(".qa") %></h5>
           <ul class="ul">
             <li><a href="#" class="trans">Website Design</a></li>
             <li><a href="#" class="trans">Web Development</a></li>
           </ul>
         </div> <!-- end col-md-3 -->
         <div class="col-md-3 col-sm-6">
-          <h5 class="footer-title underline">Shortcodes</h5>
+          <h5 class="footer-title underline"><%= t(".download") %></h5>
           <ul class="ul">
-            <li><a href="#" class="trans">Accordions</a></li>
-            <li><a href="#" class="trans">Feature Boxes</a></li>
+            <li><%= link_to "牌價表下載區",download_path(anchor: "price_list"),class:"item" %></li>
+            <li><%= link_to "目錄下載區",download_path(anchor: "categories"),class:"item" %></li>
+            <li><%= link_to "線路圖下載區",download_path(anchor: "line_rules"),class:"item" %></li>
           </ul>
         </div> <!-- end col-md-3 -->
         <div class="col-md-3 col-sm-6">
-          <h5 class="footer-title underline">Features</h5>
+          <h5 class="footer-title underline"><%= t(".buy_product") %></h5>
           <ul class="ul">
-            <li><a href="#" class="trans">Headers</a></li>
-            <li><a href="#" class="trans">Footers</a></li>
+            <li><%= link_to "QT系列",products_path(type: "qt"),class:"item" %></li>
+            <li><%= link_to "1T系列",products_path(type: "t1"),class:"item" %></li>
+            <li><%= link_to "全系列開關",products_path(type: "switch"),class:"item" %></li>
+            <li><%= link_to "全系列插座",products_path(type: "plug"),class:"item" %></li>
+            <li><%= link_to "其他",products_path(type: "rest"),class:"item" %></li>
           </ul>
         </div> <!-- end col-md-3 -->
       </div> <!-- end col-md-8 -->
 
       <!-- ========== right part ========== -->
       <div class="col-md-4 col-sm-4">
-        <h5 class="footer-title underline">聯絡我們</h5>
-        <h2>+886 (02) 2947-1688</h2>
-        <h6 class="lowercase mt10 mb30">fusakihome@gmail.com</h6>
+        <h5 class="footer-title underline"><%= t("share.contact_us") %></h5>
+        <h2><%=simple_format t("share.phone_number") %></h2>
+        <h6 class="lowercase mt10 mb10"><%= t("share.email_address") %></h6>
         <p class="footer-desc address">
           <i class="icon fa fa-map-marker"></i>
-          新 北 市 中 和 區<br>
-          大 智 街 55 巷 20 號 1 F<br>
+          <%= t("share.real_address") %>
         </p> <!-- end footer-desc -->
       </div> <!-- end col-md-4 -->
 

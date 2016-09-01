@@ -1,27 +1,4 @@
-
 ready = ->
-  $('.ui.icon.button').on 'click', ->
-    command = $(this).attr('command')
-    HandleUpDown.bind(this)(command)
-    item_price.bind(this)()
-    price_sum()
-    qty_sum()
-    after_ship_fee()
-
-  $('.item_cancel').on "click", ->
-    product_item = $(this).closest('.product_item')
-    one_price = parseInt(product_item.find('.oneprice').html(),10)
-    qty = parseInt(product_item.find('#txtNum').attr("value"),10)
-    price_sum(one_price,qty)
-    qty_sum(qty)
-    after_ship_fee()
-
-  $('#county').parent().one "click",->
-    disabled_option()
-
-  $('#whoset').on "change", ->
-    after_ship_fee.bind(this)()
-
   item_price=() ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)
@@ -31,7 +8,7 @@ ready = ->
   price_sum=(delete_price = 0,qty = 0) ->
     sum = 0
     $('.allprice').map ->
-       sum += parseInt($(this).html(),10)
+      sum += parseInt($(this).html(),10)
     sum -= (delete_price*qty)
     $('#order').attr('data-cartamount',sum)
     $('#amount').html(sum)
@@ -67,8 +44,8 @@ ready = ->
 
   after_ship_fee=() ->
     whoset = $('#whoset')
-#    amount = $('#amount').html()
-#    final_amount = $('#final_amount').html()
+    #    amount = $('#amount').html()
+    #    final_amount = $('#final_amount').html()
     siblings = $('#county').siblings('.menu')
     items = siblings.find('.item')
     selected = siblings.find('.selected')
@@ -95,5 +72,28 @@ ready = ->
       $('#ship_status').html("免費")
     $('#final_amount').html(amount)
 
+  $('.ui.icon.button').on 'click', ->
+    command = $(this).attr('command')
+    HandleUpDown.bind(this)(command)
+    item_price.bind(this)()
+    price_sum()
+    qty_sum()
+    after_ship_fee()
+
+  $('.item_cancel').on "click", ->
+    product_item = $(this).closest('.product_item')
+    one_price = parseInt(product_item.find('.oneprice').html(),10)
+    qty = parseInt(product_item.find('#txtNum').attr("value"),10)
+    price_sum(one_price,qty)
+    qty_sum(qty)
+    after_ship_fee()
+
+
+  $('#whoset').on "change", ->
+    after_ship_fee.bind(this)()
+
+
+  $('#county').parent().one "click",->
+    disabled_option()
+
 $(document).ready(ready)
-$(document).on('page:load', ready)

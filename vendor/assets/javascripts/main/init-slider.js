@@ -53,7 +53,7 @@ $(function() {
                 gridheight: [868, 768, 960, 720],
                 lazyType: "none",
                 parallax: {
-                    type: "mouse",
+                    // type: "mouse",
                     origo: "slidercenter",
                     speed: 2000,
                     levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],

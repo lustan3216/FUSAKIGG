@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'welcome#index'
   get 'qa' => 'welcome#qa'
+  get 'introduce' => 'welcome#introduce'
+  get 'download' => 'welcome#download'
   get 'contact' => 'welcome#contact'
   resource :messages
   resources :products do

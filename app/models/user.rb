@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
 
   before_create :generate_authentication_token
 
+  def self.admin!
+    self.find_by(admin: true)
+  end
+
   def alternate_email_check
   return self.email if self.alternate_email.blank?
     alternate_email

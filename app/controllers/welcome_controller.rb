@@ -6,6 +6,8 @@ class WelcomeController < ApplicationController
   end
 
   def introduce
+    OrderMailer.return_order(current_user,Order.first).deliver_now!
+    raise
   end
 
   def qa

@@ -1,4 +1,4 @@
-ready = ->
+document.addEventListener "turbolinks:load", ->
   item_price=() ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)
@@ -96,4 +96,3 @@ ready = ->
   $('#county').parent().one "click",->
     disabled_option()
 
-$(document).ready(ready)

@@ -1,2 +1,2 @@
-class ReturnLineItem < ActiveRecord::Base
+class ReturnLineItem < ApplicationRecord
 end

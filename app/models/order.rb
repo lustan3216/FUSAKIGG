@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
   default_scope -> { order('updated_at DESC') }
   scope :nonpay, -> { where( 'paid = ?',false) }
   scope :paid, -> { where( 'paid = ? and status =?',true ,"處理中" ) }

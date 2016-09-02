@@ -1,4 +1,4 @@
-class Payment < ActiveRecord::Base
+class Payment < ApplicationRecord
 
   serialize :params, JSON
   belongs_to :order

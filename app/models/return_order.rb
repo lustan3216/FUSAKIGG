@@ -1,4 +1,4 @@
-class ReturnOrder < ActiveRecord::Base
+class ReturnOrder < ApplicationRecord
   default_scope -> { order('updated_at DESC') }
 
   belongs_to :user

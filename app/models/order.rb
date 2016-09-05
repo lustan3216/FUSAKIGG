@@ -11,8 +11,7 @@ class Order < ApplicationRecord
   has_many :products, :through => :line_items
 
   before_validation :assign_order_number
-  validates :name, :email,:address ,:phone,:postcode, :ship_time,
-            :whoset,:county ,:district, presence: true
+  validates :name, :email,:address ,:phone,:postcode, :ship_time, :whoset,:county ,:district, presence: true
 
   def self.ship_fee
     100
@@ -20,8 +19,8 @@ class Order < ApplicationRecord
 
   def clone_cart_line_items_by(cart)
     cart.line_items.each do |line|
-      self.line_items.build( :product => line.product, :qty => line.qty ,
-                             :voltage=> line.voltage )
+      a = self.line_items.build( :product => line.product, :qty => line.qty , :voltage=> line.voltage )
+      a.voltage = line.voltage if line.voltage == ("110V" || "220V")
     end
   end
 
@@ -46,8 +45,8 @@ class Order < ApplicationRecord
   end
 
   def copy_info_to(user)
-    user.assign_attributes( name:self.name , address:self.address , phone:self.phone,
-                postcode:self.postcode , alternate_email:self.email )
+    user.update_attributes( name:self.name , address:self.address , phone:self.phone,
+                            postcode:self.postcode , alternate_email:self.email )
   end
 
   def remove_product(item_id)
@@ -59,8 +58,8 @@ class Order < ApplicationRecord
   def amount
     amount = 0
     self.line_items.each do |line|
-      amount +=  line.product.v110_price * line.qty if line.voltage == "V110"
-      amount +=  line.product.v220_price * line.qty if line.voltage == "V220"
+      amount +=  line.product.v110_price * line.qty if line.voltage == "110V"
+      amount +=  line.product.v220_price * line.qty if line.voltage == "220V"
     end
     return amount
   end 

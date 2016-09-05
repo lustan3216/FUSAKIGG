@@ -13,7 +13,7 @@ $('.ui.form').form({
         },
         district: {
             identifier: 'district',
-            rules: [{type   : 'empty', prompt : '請選擇區鎮鄉'}]
+            rules: [{type   : 'empty', prompt : '請先選擇縣市'}]
         },
         county: {
             identifier: 'county',
@@ -21,7 +21,7 @@ $('.ui.form').form({
         },
         postcode: {
             identifier: 'postcode',
-            rules: [{type   : 'empty', prompt : '請選擇區鎮鄉'}]
+            rules: [{type   : 'empty', prompt : '此區會自動填入'}]
         },
         order_email: {
             identifier: 'order_email',

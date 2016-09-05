@@ -38,7 +38,6 @@
               <th class="">訂單成立時間</th>
               <th class="">總價格</th>
               <th class="">結帳方式</th>
-              <th class="">狀態</th>
               <th class="">內容</th>
             </tr>
             </thead>
@@ -50,7 +49,6 @@
                   <td><%= order.payment.updated_at.strftime('%x')%></td>
                   <td><%= order.final_price %></td>
                   <td><%= order.payment.payment_method %></td>
-                  <td><%= order.status %></td>
                   <td><a href="<%= details_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
                 </tr>
             <% end %>

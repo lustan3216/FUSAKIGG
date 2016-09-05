@@ -1,4 +1,4 @@
-document.addEventListener "turbolinks:load", ->
+ready = ->
   item_price=() ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)
@@ -37,6 +37,13 @@ document.addEventListener "turbolinks:load", ->
           num -= step
           break
     product_item.find('#txtNum').attr("value",num)
+    id = $(this).siblings('input').attr('name')
+    $.ajax
+      type: 'PUT',
+      url: "/line_items",
+      data:
+        id: id
+        qty: num
 
   disabled_option=() ->
     if $('#whoset').dropdown('get value')[0] == "本公司派專業師傅安裝"
@@ -96,3 +103,4 @@ document.addEventListener "turbolinks:load", ->
   $('#county').parent().one "click",->
     disabled_option()
 
+$(document).ready(ready)

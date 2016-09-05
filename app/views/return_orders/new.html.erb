@@ -28,7 +28,6 @@
         <div class="col-sm-3">
           <%= render "users/sidebar" %>
         </div> <!-- end col-md-3 -->
-
         <div class="col-sm-9 ui form">
           <%= form_for @return_order, url:user_return_orders_path  do |f| %>
               <% @order.line_items.each do |item| %>
@@ -41,31 +40,33 @@
                       <div class="dis_table_cell pl30 w47p">
                         <div>
                           <%= item.product.name %>
-                          <span class="ml10"><%= item.show_voltage %></span>
+                          <span class="ml10"><%= item.voltage %></span>
                         </div>
                         <div>
                           價格 : $ <span value="<%= item.price %>"><%= item.price %></span>
                         </div>
-                        <div>退貨數量 :<%= select_tag item.product_id.to_s+"product" ,options_for_select(1..item.qty,return_item_qty(item)),
+                        <div>退貨數量 :<%= select_tag item.id.to_s+"product" ,options_for_select(0..item.qty,item.qty),
                                                   class:"ui dropdown fluid return_orders_select #{'disabled' if @order.return_order }"  %></div>
                       </div>
                     </div>
                   </div>
               <% end %>
               <div class="field <%= "disabled" if @return_order_check %>">
-                <%= f.fields_for :return_line_list do |ff| %>
-                    <div class="six wide field">
-                      退款金額 : <span id="return_price"></span>
-                      </div>
-                    <div class="six wide field">
-                      <%= f.label :phone ,"PHONE"%>
-                      <%= f.telephone_field :phone,value: current_user.try(:phone), :required => true %>
-                    </div>
-                    <div class="field">
-                      <%= f.label :ps ,"COMMENT"%>
-                      <%= f.text_area :ps,rows:"3" %>
-                    </div>
-                <% end %>
+                <div class="six wide field">
+                  退款金額 : <span id="return_price"></span>
+                </div>
+                <div class="six wide field">
+                  <%= f.label :phone ,"PHONE"%>
+                  <%= f.telephone_field :phone,value: current_user.try(:phone), :required => true %>
+                </div>
+                <div class="six wide field">
+                  <%= f.label :alternate_email ,"EMAIL"%>
+                  <%= f.email_field :alternate_email ,value: current_user.alternate_email_check, :required => true%>
+                </div>
+                <div class="field">
+                  <%= f.label :ps ,"COMMENT"%>
+                  <%= f.text_area :ps,rows:"3" %>
+                </div>
               </div>
               <%= f.hidden_field :order_id,value: @order.id %>
               <% if @return_order_check.try(:status) == ("ok" || "OK") %>

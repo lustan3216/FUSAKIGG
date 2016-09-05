@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902051455) do
+ActiveRecord::Schema.define(version: 20160904061657) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 20160902051455) do
 
   create_table "return_line_items", force: :cascade do |t|
     t.integer  "qty"
-    t.integer  "product_id"
+    t.integer  "line_item_id"
     t.integer  "return_order_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       post :buy
     end
   end
-  resource :line_items ,only: [:destroy]
+  resource :line_items ,only: [:update, :destroy]
 
   resources :users do
     member do

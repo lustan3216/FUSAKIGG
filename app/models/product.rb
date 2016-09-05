@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+class Product < ApplicationRecord
   scope :t1, -> { where( 'item_name LIKE ?','%1T%') }
   scope :qt, -> { where( 'item_name LIKE ?','%QT%') }
   scope :switch, -> { where( 'name LIKE ?','%開%') }

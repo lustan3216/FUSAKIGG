@@ -22,14 +22,15 @@
   </div>
 
   <!-- ========== CONTENT SECTION ========== -->
-  <section class="content-section">
-    <div class="container">
-      <div class="row reorder-xs">
-        <div class="col-sm-5">
-          <div class="ui form">
-            <h4 class="ui dividing">Information</h4>
-            <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
-              <%= form_for @order do |f| %>
+  <%= form_for @order do |f| %>
+      <section class="content-section">
+        <div class="container">
+          <div class="row reorder-xs">
+            <div class="col-sm-5">
+              <div class="ui form">
+                <h4 class="ui dividing">Information</h4>
+                <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
+
                   <div class="two fields">
                     <div class="six wide field">
                       <%= f.label :name ,"NAME"%>
@@ -85,43 +86,44 @@
                   <% else %>
                       <%= f.submit "付款",class:"ui button red fluid"  %>
                   <% end %>
-                  </div>
-                  </div>
-                  </div> <!-- end col-md-3 -->
+                </div>
+              </div>
+            </div> <!-- end col-md-5 -->
 
-                  <div class="col-sm-7">
-                    <% if current_cart.total == 0 %>
-                        <h4 class="ui">您尚未訂購任何商品</h4>
-                    <% else %>
-                        <h4 class="ui">Cart Info</h4>
-                        <div class="row">
-                          <div class="col-md-2 col-xs-6">
-                            <p>數量 : <span id="total"><%= current_cart.total %></span></p>
-                          </div>
-                          <div class="col-md-4 col-xs-6">
-                            <p>金額 : $<span id="amount"><%= current_cart.amount %></span>
-                              <span class="ui label left pointing red" id="discount">6折</span>
-                            </p>
-                          </div>
-                          <div class="col-md-6 col-xs-12">
-                            <p class="final_amount">總金額 : $<span id="final_amount"><%= current_cart.final_price %></span>
-                              <span class="ui label left pointing red">
-                              <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= current_cart.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                        <% current_cart.line_items.each  do |item| %>
-                            <div id="product_item_<%= item.id %>" class="product_item">
-                              <%= render 'product',item:item %>
-                            </div>
-                        <% end %>
-                    <% end %>
+            <div class="col-sm-7">
+              <% if current_cart.total == 0 %>
+                  <h4 class="ui">您尚未訂購任何商品</h4>
+              <% else %>
+                  <h4 class="ui">Cart Info</h4>
+                  <div class="row">
+                    <div class="col-md-2 col-xs-6">
+                      <p>數量 : <span id="total"><%= current_cart.total %></span></p>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                      <p>金額 : $<span id="amount"><%= current_cart.amount %></span>
+                        <span class="ui label left pointing red" id="discount">6折</span>
+                      </p>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                      <p class="final_amount">總金額 : $<span id="final_amount"><%= current_cart.calc_price_with_shipfee %></span>
+                        <span class="ui label left pointing red">
+                          <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= current_cart.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <% current_cart.line_items.each  do |item| %>
+                      <div id="product_item_<%= item.id %>" class="product_item">
+                        <%= render 'product',item:item %>
+                      </div>
+                  <% end %>
               <% end %>
-              </div> <!-- end col-md-9 -->
-              </div> <!-- end row -->
-    </div> <!-- end container -->
-  </section> <!-- end content-section -->
+
+            </div> <!-- end col-md-9 -->
+          </div> <!-- end row -->
+        </div> <!-- end container -->
+      </section> <!-- end content-section -->
+  <% end %>
 
 </div> <!-- end main -->
 

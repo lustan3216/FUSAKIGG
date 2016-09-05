@@ -2,18 +2,19 @@ class ProductsController < ApplicationController
   before_action :find_product , only: [:show , :buy ]
 
   def index
-    if params[:type] == "qt"
-      @products = Product.qt
-    elsif params[:type] == "t1"
-      @products = Product.t1
-    elsif params[:type] == "switch"
-      @products = Product.switch
-    elsif params[:type] == "plug"
-      @products = Product.plug
-    elsif params[:type] == "rest"
-      @products = Product.rest
-    else
-      @products = Product.all
+    case params[:type]
+      when "qt"
+        @products = Product.qt
+      when "t1"
+        @products = Product.t1
+      when "switch"
+        @products = Product.switch
+      when "plug"
+        @products = Product.plug
+      when "rest"
+        @products = Product.rest
+      else
+        @products = Product.all
     end
   end
 

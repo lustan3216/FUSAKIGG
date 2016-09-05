@@ -37,6 +37,13 @@ ready = ->
           num -= step
           break
     product_item.find('#txtNum').attr("value",num)
+    id = $(this).siblings('input').attr('name')
+    $.ajax
+      type: 'PUT',
+      url: "/line_items",
+      data:
+        id: id
+        qty: num
 
   disabled_option=() ->
     if $('#whoset').dropdown('get value')[0] == "本公司派專業師傅安裝"

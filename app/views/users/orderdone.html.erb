@@ -38,7 +38,6 @@
               <th class="">訂單成立時間</th>
               <th class="">總價格</th>
               <th class="">結帳方式</th>
-              <th class="">狀態</th>
               <th class="">退貨</th>
               <th class="">內容</th>
             </tr>
@@ -51,14 +50,13 @@
                   <td><%= order.payment.updated_at.strftime('%x')%></td>
                   <td><%= order.final_price %></td>
                   <td><%= order.payment.payment_method %></td>
-                  <td><%= "已完成" if order.status == ("ok" || "OK") %></td>
                   <td>
                     <% if order.return_order.try(:status) == ("ok" || "OK") %>
-                        <%= link_to user_return_order_path(current_user,id: order) do  %>
+                        <%= link_to user_return_order_path(current_user,id: order.return_order) do  %>
                             已完成
                         <% end %>
                     <% elsif order.return_order %>
-                        <%= link_to user_return_order_path(current_user,id: order) do  %>
+                        <%= link_to user_return_order_path(current_user,id: order.return_order) do  %>
                             處理中
                         <% end %>
                     <% else %>

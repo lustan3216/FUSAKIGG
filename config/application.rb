@@ -12,6 +12,7 @@ module FUSAKI
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = 'zh-TW'
+    config.time_zone = 'Taipei'
 
     config.generators.test_framework false
     # Do not swallow errors in after_commit/after_rollback callbacks.

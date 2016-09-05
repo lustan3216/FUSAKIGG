@@ -10,19 +10,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,:confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
-
+  serialize :fb_raw_data
   before_create :generate_authentication_token
 
-  def self.admin!
-    self.find_by(admin: true)
+  def self.admins
+    self.where(admin: 1)
   end
 
   def alternate_email_check
   return self.email if self.alternate_email.blank?
     alternate_email
   end
-
-  serialize :fb_raw_data
 
   def self.from_facebook_omniauth(auth, browser_time_zone)
     # Case 1: Find existing user by facebook uid

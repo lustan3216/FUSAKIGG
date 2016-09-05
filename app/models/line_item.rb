@@ -18,4 +18,12 @@ class LineItem < ApplicationRecord
       self.product.v220_price
     end
   end
+
+  def multiply_qty_price
+    if voltage == "110V"
+      product.v110_price * qty
+    elsif voltage == "220V"
+      product.v220_price * qty
+    end
+  end
 end

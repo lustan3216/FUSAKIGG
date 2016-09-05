@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :find_order , only: [:show, :details, :edit]
 
   def show
+
   end
 
   def details

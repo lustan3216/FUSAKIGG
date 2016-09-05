@@ -28,6 +28,14 @@ class ReturnOrder < ApplicationRecord
     total_price
   end
 
+  def return_qty
+    qty = 0
+    self.return_line_items.each do |item|
+      qty += item.qty
+    end
+    qty
+  end
+
   def items_without_qty_zero
     return_line_items.where('qty > ?',0)
   end

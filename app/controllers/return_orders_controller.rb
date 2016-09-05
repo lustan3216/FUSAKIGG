@@ -18,11 +18,10 @@ class ReturnOrdersController < ApplicationController
   def create
     @return_order = current_user.return_orders.find_or_initialize_by(return_order_params)
     @return_order.clone_return_line_item_by(params)
-    OrderMailer.return_order(current_user,@return_order).deliver_now!
-    # if @return_order.save
-    #   OrderMailer.return_order(current_user,@return_order).deliver_now!
-    #   redirect_to user_return_order_path(id: @return_order.id)
-    # end
+    if @return_order.save
+      OrderMailer.return_order_notify(current_user,@return_order).deliver_later!
+      redirect_to user_return_order_path(id: @return_order.id)
+    end
   end
 
   private

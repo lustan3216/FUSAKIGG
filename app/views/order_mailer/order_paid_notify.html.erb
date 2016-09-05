@@ -1,0 +1,86 @@
+<table class="body-wrap">
+  <tr>
+    <td></td>
+    <td class="container" width="600">
+      <div class="content">
+        <table class="main" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="alert alert-warning">FUSAKI【訂單成立明細】感謝您的購買！</td>
+          </tr>
+          <tr>
+            <td class="content-wrap">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block">訂單成立時間: <%= @order_time %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">訂單編號 :<%= @order.order_number %></td></tr>
+                <tr>
+                  <td class="content-block">姓名: <%= @order.name %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">電話: <%= @order.phone %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">信箱: <%= @order.email %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">地址: <%= @address %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">施作方式: <%= @order.whoset %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">送達時間: <%= @order.ship_time %></td>
+                </tr>
+                <tr>
+                  <td class="content-block">備註: <%= @order.ps %></td>
+                </tr>
+                <tr>
+                  <td class="content-block aligncenter">
+                    <table class="invoice">
+                      <tr>
+                        <td>
+                          <table class="invoice-items" cellpadding="0" cellspacing="0">
+                            <% @items.each do |item| %>
+                                <tr>
+                                  <td><%= item.product.name + item.voltage %></td>
+                                  <td class="aligncenter"><%= item.qty %>個</td>
+                                  <td class="alignright">$<%= item.multiply_qty_price %></td>
+                                </tr>
+                            <% end %>
+                            <tr>
+                              <td>運費</td>
+                              <td></td>
+                              <td class="alignright">$<%= @order.ship_fee? %></td>
+                            </tr>
+                            <tr class="total">
+                              <td>總額</td>
+                              <td class="aligncenter"><%= @qty %>個</td>
+                              <td class="alignright">$<%= @price %></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a class="btn-primary" herf="<%= contact_url %>">聯絡客服</a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <div class="footer">
+          <table width="100%">
+            <tr>
+              <td class="aligncenter content-block"><a href="http://www.fusaki.com.tw">FUSAKI成為點亮家庭的第一步</a></td>
+            </tr>
+          </table>
+        </div></div>
+    </td>
+    <td></td>
+  </tr>
+</table>

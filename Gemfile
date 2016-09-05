@@ -55,7 +55,7 @@ gem 'font-awesome-rails'
 gem 'mysql2'
 gem 'ionicons-rails'
 gem 'bootstrap-sass'
-
+gem 'premailer-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 

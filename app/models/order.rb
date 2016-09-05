@@ -17,6 +17,10 @@ class Order < ApplicationRecord
     100
   end
 
+  def ship_fee?
+    Order.ship_fee if final_price < 2000
+  end
+
   def clone_cart_line_items_by(cart)
     cart.line_items.each do |line|
       a = self.line_items.build( :product => line.product, :qty => line.qty , :voltage=> line.voltage )
@@ -68,7 +72,6 @@ class Order < ApplicationRecord
     price = self.amount
     price *=0.6 if self.whoset == "自行安裝（打６折）"
     price >= 2000 ? price.to_i : (price + Order.ship_fee).to_i
-
   end
 
   def full_address

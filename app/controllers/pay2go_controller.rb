@@ -17,6 +17,7 @@ class Pay2goController < ApplicationController
           @order.paid = true
           @order.status = "處理中"
           @order.save!
+          OrderMailer.order_paid_notify(current_user,@order).deliver_later!
         end
       end
       redirect_to thankyou_path(:order => @order)

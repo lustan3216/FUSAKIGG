@@ -1,9 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_order , only: [:show, :details, :edit]
+  before_action :find_order , only: [:show, :details, :edit, :update]
 
   def show
-
   end
 
   def details
@@ -31,11 +30,11 @@ class OrdersController < ApplicationController
     end
   end
 
-  # def update
-  #   @order.update_item_qty(order_params)
-  #   @order.update(order_params.reject{|h| /\d/.match(h) })
-  #   redirect_to order_path(@order)
-  # end
+  def update
+    @order.update_item_qty(order_params)
+    @order.update(order_params.reject{|h| /\d/.match(h) })
+    redirect_to order_path(@order)
+  end
 
   def checkout_pay2go
     @order = current_user.orders.find(params[:id])

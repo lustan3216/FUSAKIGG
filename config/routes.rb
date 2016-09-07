@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'qa' => 'welcome#qa'
   get 'introduce' => 'welcome#introduce'
   get 'download' => 'welcome#download'
-  get 'contact' => 'welcome#contact'
-  resource :messages
+
+  resources :service_messages
+
   resources :products do
     collection do
       get :upload
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
       post :buy
     end
   end
+
   resource :line_items ,only: [:update, :destroy]
 
   resources :users do
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
     end
     resources :return_orders
   end
+
   post 'pay2go/return'
   post 'pay2go/notify'
   get 'thankyou' => "orders#thankyou"
@@ -37,8 +40,6 @@ Rails.application.routes.draw do
       post :checkout_pay2go
     end
   end
-
-
 
   require 'sidekiq/web'
   authenticate :user, lambda { |u| u.admin? } do

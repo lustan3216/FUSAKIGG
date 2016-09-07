@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904061657) do
+ActiveRecord::Schema.define(version: 20160907084409) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,18 +27,6 @@ ActiveRecord::Schema.define(version: 20160904061657) do
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["order_id"], name: "index_line_items_on_order_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.text     "message"
-    t.string   "problem"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -107,6 +95,18 @@ ActiveRecord::Schema.define(version: 20160904061657) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "alternate_email"
+  end
+
+  create_table "service_messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.text     "message"
+    t.string   "problem"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

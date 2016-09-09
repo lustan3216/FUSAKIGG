@@ -1,59 +1,58 @@
-<div class="ui form order_form">
-  <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
+<div class="field mt30" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
 
-    <div class="three fields">
-      <div class="four wide field">
-        <%= f.label :name ,t('form.name') %>
-        <%= f.text_field :name,value: current_user.try(:name) %>
-      </div>
-      <div class="six wide field">
-        <%= f.label :phone ,t('form.phone') %>
-        <%= f.telephone_field :phone,value: current_user.try(:phone) %>
-      </div>
-      <div class="six wide field">
-        <%= f.label :email ,t('form.email') %>
-        <%= f.email_field :email ,value: current_user.alternate_email_check%>
-      </div>
+  <div class="three fields">
+    <div class="four wide field">
+      <%= f.label :name ,t('form.name') %>
+      <%= f.text_field :name,value: current_user.try(:name) %>
     </div>
-    <div class="three fields">
-      <div class=" field">
-        <%= f.label :county ,t('form.county') %>
-        <%= f.select :county, {},{ include_blank: "選擇縣市"},{class:"ui dropdown fluid" ,id:"county"  }%>
-      </div>
-      <div class=" field">
-        <%= f.label :district ,t('form.district') %>
-        <%= f.select :district, {}, { include_blank: "請先選擇縣市"},{class:"ui dropdown fluid" ,id:"district" }%>
-      </div>
-      <div class=" field">
-        <%= f.label :postcode ,t('form.postcode') %>
-        <%= f.text_field :postcode , value:"", id:"postcode" ,placeholder:"郵遞區號" ,:readonly => true%>
-      </div>
+    <div class="six wide field">
+      <%= f.label :phone ,t('form.phone') %>
+      <%= f.telephone_field :phone,value: current_user.try(:phone) %>
     </div>
-    <div class="field">
-      <%= f.label :address ,t('form.address') %>
-      <%= f.text_field :address ,value: current_user.try(:address)%>
+    <div class="six wide field">
+      <%= f.label :email ,t('form.email') %>
+      <%= f.email_field :email ,value: current_user.alternate_email_check%>
     </div>
-    <div class="two fields">
-      <div class="six wide field">
-        <%= f.label :ship_time ,t('form.ship_time') %>
-        <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], "都可以"),{},class:"ui dropdown fluid" %>
-      </div>
-
-      <div class="ten wide field">
-        <%= f.label :whoset ,t('form.who_set') %>
-        <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], "本公司派專業師傅安裝"),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-      </div>
-    </div>
-
-    <div class="field">
-      <%= f.label :ps ,t('form.ps') %>
-      <%= f.text_area :ps,rows:"3" %>
-    </div>
-    <% if action_name == "new" && current_cart.total == 0 %>
-        <%= f.submit t('button.buy_yet') ,class:"ui button red disabled fluid" %>
-        <% else %>
-        <%= f.submit t('button.confirm'), class:"ui button red fluid" %>
-    <% end %>
-
   </div>
+  <div class="three fields">
+    <div class=" field">
+      <%= f.label :county ,t('form.county') %>
+      <%= f.select :county, {},{ include_blank: "選擇縣市"},{class:"ui dropdown fluid" ,id:"county"  }%>
+    </div>
+    <div class=" field">
+      <%= f.label :district ,t('form.district') %>
+      <%= f.select :district, {}, { include_blank: "請先選擇縣市"},{class:"ui dropdown fluid" ,id:"district"}%>
+    </div>
+    <div class=" field">
+      <%= f.label :postcode ,t('form.postcode') %>
+      <%= f.text_field :postcode , value:"", id:"postcode" ,placeholder:"郵遞區號" ,:readonly => true%>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :address ,t('form.address') %>
+    <%= f.text_field :address ,value: current_user.try(:address)%>
+  </div>
+  <div class="two fields">
+    <div class="six wide field">
+      <%= f.label :ship_time ,t('form.ship_time') %>
+      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], "都可以"),{},class:"ui dropdown fluid" %>
+    </div>
+
+    <div class="ten wide field">
+      <%= f.label :whoset ,t('form.who_set') %>
+      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], "本公司派專業師傅安裝"),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :ps ,t('form.ps') %>
+    <%= f.text_area :ps,rows:"3" %>
+  </div>
+  <% if action_name == "new" && current_cart.total == 0 %>
+      <%= f.submit t('button.buy_yet') ,class:"ui button red disabled fluid" %>
+  <% else %>
+      <%= f.submit t('button.confirm'), class:"ui button red fluid" %>
+  <% end %>
+
 </div>
+

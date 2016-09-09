@@ -151,9 +151,6 @@
                         // 選擇有值的選項
                         $selectSecond.prepend('<option value="">請先選擇縣市</option>');
                         $selectSecond.find('option:gt(0)').remove();
-                        // console.log($selectSecond.find('option'))
-                        $selectSecond.dropdown('restore placeholder text')
-                        
                         // 產生第二選單的選項內容
                         for (var i = 0, j = district[order][0].length - 1; i <= j; i++) {
                             // <option value="中正區" data-zip="100">中正區</option>

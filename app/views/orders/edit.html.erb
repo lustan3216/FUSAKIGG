@@ -8,7 +8,7 @@
           <%= render 'order_notice' %>
         </div>
         <div class="col-sm-9">
-          <div class="ui segment order_product_form">
+          <div class="ui segment form order_product_form" data-district="<%= @order.district %>">
             <%= form_for @order do |f| %>
                 <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
                 <div class="order_info">
@@ -31,7 +31,8 @@
 <script>
   $('form').tw_citySelector('#county', '#district', '#postcode');
   $("#county").dropdown('set selected', "<%= @order.county %>");
-  document.addEventListener("turbolinks:load", function() {
-    $("#district").dropdown('set selected', "<%= @order.district %>");
+  $("#district").dropdown('set selected',$(".ui.form").data('district'));
+  document.addEventListener("turbolinks:visit", function() {
+    $("#district").dropdown('set selected',$(".ui.form").data('district'));
   })
 </script>

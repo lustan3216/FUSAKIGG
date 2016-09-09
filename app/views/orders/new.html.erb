@@ -9,7 +9,7 @@
           <%= render 'order_notice' %>
         </div>
         <div class="col-sm-9">
-          <div class="ui segment order_product_form">
+          <div class="ui segment form order_product_form">
             <%= form_for @order  do |f| %>
                 <% if current_cart.total == 0 %>
                     <h4 class="ui bold">您尚未訂購任何商品</h4>

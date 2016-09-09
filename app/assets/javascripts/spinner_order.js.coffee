@@ -95,10 +95,8 @@ ready = ->
     qty_sum(qty)
     after_ship_fee()
 
-
   $('#whoset').on "change", ->
     after_ship_fee.bind(this)()
-
 
   $('#county').parent().one "click",->
     disabled_option()

@@ -34,10 +34,11 @@
   font-url('lato.woff2') format('woff2');
 }
 
-
+@import "varible";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "mystyle";
 @import "login";
 @import "spinner";
 @import "contact_us";
+@import "order";

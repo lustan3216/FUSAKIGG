@@ -90,7 +90,7 @@
                   </p>
                 </div>
                 <div class="col-md-7 col-xs-12">
-                  <p class="final_amount">總金額 : $<span id="final_amount"><%= @order.final_price %></span>
+                  <p class="final_amount">總金額 : $<span id="final_amount"><%= @order.calc_price_with_shipfee %></span>
                 <span class="ui label left pointing red">
                 <i class="fa fa-truck " aria-hidden="true">運費 <%= @order.amount >= 2000 ? "免費" : Order.ship_fee %></i>
                 </span>

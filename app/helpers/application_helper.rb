@@ -11,7 +11,7 @@ module ApplicationHelper
         Version: "1.2",
         LangType: "zn-TW",
         MerchantOrderNo: payment.external_id,
-        Amt: payment.order.final_price,
+        Amt: payment.order.calc_price_with_shipfee,
         ItemDesc: payment.name,
         ReturnURL: pay2go_return_url,
         NotifyURL: Pay2go.notify_url,

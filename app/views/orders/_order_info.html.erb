@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-2 col-xs-6">
+    <p>數量 : <span id="total"><%= cart_or_order.total %></span></p>
+  </div>
+  <div class="col-md-4 col-xs-6">
+    <p>金額 : $<span id="amount"><%= cart_or_order.amount %></span>
+      <span class="ui label left pointing red" id="discount">6折</span>
+    </p>
+  </div>
+  <div class="col-md-6 col-xs-12">
+    <p class="final_amount">總金額 : $<span id="final_amount"><%= cart_or_order.calc_price_with_shipfee %></span>
+      <span class="ui label left pointing red">
+        <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= cart_or_order.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
+      </span>
+    </p>
+  </div>
+</div>

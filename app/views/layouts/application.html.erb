@@ -30,6 +30,7 @@
         </li>
 
         <li class="menu-item">
+
           <%= link_to '公司介紹', introduce_path %>
         </li>
 
@@ -47,28 +48,26 @@
         <% if current_user  %>
             <li class="menu-item">
               <%= link_to '訂單/設定', nonpay_user_path(current_user) %>
-        <% end %>
+      <% end %>
         <!-- Sub Menu -->
         </li> <!-- end menu-item -->
 
         <li class="menu-item">
           <% if current_user %>
               <%= link_to '登出', destroy_user_session_path, :method => :delete %>
-          <% else %>
+        <% else %>
               <%= link_to '登入', new_session_path(:user) %>
-          <% end %>
+        <% end %>
         </li>
       </ul> <!-- end main-menu -->
     </nav> <!-- end menu -->
   </div> <!-- end container-fluid -->
 </div> <!-- end header -->
-
 <%= yield %>
 
 <%= render 'layouts/footer' %>
 <%= render 'layouts/contact_us' %>
 
-<%= javascript_include_tag 'form_alert'  %>
 <style>
   .secondNav .header .cart_count #current_qty{
     color: #fff;

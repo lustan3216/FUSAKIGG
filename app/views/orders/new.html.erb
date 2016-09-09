@@ -1,129 +1,35 @@
-<!-- ========== MAIN ========== -->
+
 <div class="main">
+  <%= render 'order_header' %>
 
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg" >
+  <section class="content-section my_bgc">
     <div class="container">
-      <div class="row page-title-row">
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">Shop Details</h1>
-          <p>One stop solution for a stunning website.</p>
-        </div> <!-- end col-md-6 -->
-
-        <div class="col-md-6 col-sm-6 hidden-xs">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Shop</a></li>
-            <li><a href="#" class="active trans">Details</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
-      </div> <!-- end page-title-row -->
+      <div class="row">
+        <div class="col-sm-3">
+          <%= render 'order_notice' %>
+        </div>
+        <div class="col-sm-9">
+          <div class="ui segment order_product_form">
+            <%= form_for @order  do |f| %>
+                <% if current_cart.total == 0 %>
+                    <h4 class="ui bold">您尚未訂購任何商品</h4>
+                <% else %>
+                    <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
+                    <div class="order_info">
+                      <%= render 'order_info'%>
+                      <% current_cart.line_items.each  do |item| %>
+                          <%= render 'product',item:item %>
+                      <% end %>
+                    </div>
+                <% end %>
+                <%= render 'order_form',f:f %>
+            <% end %>
+          </div>
+        </div>
+      </div> <!-- end row -->
     </div> <!-- end container -->
-  </div>
+  </section> <!-- end content-section -->
 
-  <!-- ========== CONTENT SECTION ========== -->
-  <%= form_for @order do |f| %>
-      <section class="content-section">
-        <div class="container">
-          <div class="row reorder-xs">
-            <div class="col-sm-5">
-              <div class="ui form">
-                <h4 class="ui dividing">Information</h4>
-                <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= current_cart.amount %>">
-
-                  <div class="two fields">
-                    <div class="six wide field">
-                      <%= f.label :name ,"NAME"%>
-                      <%= f.text_field :name,value: current_user.try(:name), :required => true %>
-                    </div>
-                    <div class="ten wide field">
-                      <%= f.label :phone ,"PHONE"%>
-                      <%= f.telephone_field :phone,value: current_user.try(:phone), :required => true %>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <%= f.label :email ,"EMAIL"%>
-                    <%= f.email_field :email ,value: current_user.alternate_email_check, :required => true%>
-                  </div>
-                  <div class="three fields">
-                    <div class=" field">
-                      <%= f.label :county ,"COUNTY"%>
-                      <%= f.select :county, {},{ include_blank: "選擇縣市"},{class:"ui dropdown fluid" ,id:"county" , :required => true }%>
-                    </div>
-                    <div class=" field">
-                      <%= f.label :district ,"district"%>
-                      <%= f.select :district, {}, { include_blank: "請先選擇縣市"},{class:"ui dropdown fluid" ,id:"district" , :required => true}%>
-                    </div>
-                    <div class=" field">
-                      <%= f.label :postcode ,"postcode"%>
-                      <%= f.text_field :postcode , value:"", id:"postcode" ,placeholder:"郵遞區號" ,:readonly => true%>
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <%= f.label :address ,"ADDRESS"%>
-                    <%= f.text_field :address ,value: current_user.try(:address), :required => true%>
-                  </div>
-                  <div class="two fields">
-                    <div class="six wide field">
-                      <%= f.label :ship_time ,"TIME"%>
-                      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], "都可以"),{},class:"ui dropdown fluid" %>
-                    </div>
-
-
-                    <div class="ten wide field">
-                      <%= f.label :whoset ,"WHOSET"%>
-                      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], "本公司派專業師傅安裝"),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <%= f.label :ps ,"COMMENT"%>
-                    <%= f.text_area :ps,rows:"3" %>
-                  </div>
-                  <% if current_cart.total == 0 %>
-                      <%= f.submit "尚未選購",class:"ui button red disabled fluid" %>
-                  <% else %>
-                      <%= f.submit "付款",class:"ui button red fluid"  %>
-                  <% end %>
-                </div>
-              </div>
-            </div> <!-- end col-md-5 -->
-
-            <div class="col-sm-7">
-              <% if current_cart.total == 0 %>
-                  <h4 class="ui">您尚未訂購任何商品</h4>
-              <% else %>
-                  <h4 class="ui">Cart Info</h4>
-                  <div class="row">
-                    <div class="col-md-2 col-xs-6">
-                      <p>數量 : <span id="total"><%= current_cart.total %></span></p>
-                    </div>
-                    <div class="col-md-4 col-xs-6">
-                      <p>金額 : $<span id="amount"><%= current_cart.amount %></span>
-                        <span class="ui label left pointing red" id="discount">6折</span>
-                      </p>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                      <p class="final_amount">總金額 : $<span id="final_amount"><%= current_cart.calc_price_with_shipfee %></span>
-                        <span class="ui label left pointing red">
-                          <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= current_cart.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                  <% current_cart.line_items.each  do |item| %>
-                      <div id="product_item_<%= item.id %>" class="product_item">
-                        <%= render 'product',item:item %>
-                      </div>
-                  <% end %>
-              <% end %>
-
-            </div> <!-- end col-md-9 -->
-          </div> <!-- end row -->
-        </div> <!-- end container -->
-      </section> <!-- end content-section -->
-  <% end %>
 
 </div> <!-- end main -->
 

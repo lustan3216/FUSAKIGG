@@ -1,7 +1,7 @@
 zh-TW:
   activerecord:
     models:
-      ServiceMessage:
+      service_message:
         one: 客服訊息
         other: 客服訊息
       user:

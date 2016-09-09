@@ -47,7 +47,7 @@
                   <td><%= order.order_number %></td>
                   <td><%= order.full_address %></td>
                   <td><%= order.updated_at.strftime('%x')%></td>
-                  <td><%= order.final_price %></td>
+                  <td><%= order.calc_price_with_shipfee %></td>
                   <td class="">
                     <%= link_to edit_order_path(order) do%><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>
                   </td>

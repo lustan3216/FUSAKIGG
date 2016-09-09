@@ -1,149 +1,75 @@
-<!-- ========== MAIN ========== -->
 <div class="main">
-
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg" >
-    <div class="container">
-      <div class="row page-title-row">
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">Shop Details</h1>
-          <p>One stop solution for a stunning website.</p>
-        </div> <!-- end col-md-6 -->
-
-        <div class="col-md-6 col-sm-6 hidden-xs">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Shop</a></li>
-            <li><a href="#" class="active trans">Details</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
-      </div> <!-- end page-title-row -->
-    </div> <!-- end container -->
-  </div>
-
-  <!-- ========== CONTENT SECTION ========== -->
+  <%= render 'order_header' %>
   <section class="content-section">
     <div class="container">
-      <div class="row reorder-xs">
-        <div class="col-sm-5">
-          <div class="ui form">
+      <div class="row">
+
+        <div class="col-sm-3">
+          <%= render 'order_notice' %>
+        </div>
+
+        <div class="col-sm-9">
+          <div class="ui segment order_product_form">
             <%= link_to edit_order_path(@order) do %>
-              <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
+                <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
             <% end %>
-            <h4 class="ui dividing">Information</h4>
-            <div class="field">
-              <%= form_for @order do |f| %>
-                  <div class="two fields ">
-                    <div class="six wide field disabled">
-                      <%= f.label :name ,"NAME"%>
-                      <%= f.text_field :name,value: @order.name, :required => true %>
-                    </div>
-                    <div class="ten wide field disabled">
-                      <%= f.label :phone ,"PHONE"%>
-                      <%= f.telephone_field :phone,value: @order.phone, :required => true %>
-                    </div>
-                  </div>
-                  <div class="field disabled">
-                    <%= f.label :email ,"EMAIL"%>
-                    <%= f.email_field :email ,value: @order.email, :required => true%>
-                  </div>
-                  <div class="three fields disabled">
-                    <div class=" field">
-                      <%= f.label :county ,"COUNTY"%>
-                      <%= f.select :county,  options_for_select([ f.object.county], f.object.county),{},class:"ui dropdown fluid"  %>
-                    </div>
-                    <div class=" field">
-                      <%= f.label :district ,"DISTRICT"%>
-                      <%= f.select :district ,options_for_select([ f.object.county], f.object.county),{},class:"ui dropdown fluid" %>
-                    </div>
-                    <div class=" field">
-                      <%= f.label :postcode ,"POSTCODE"%>
-                      <%= f.text_field :postcode , { include_blank:f.object.postcode}%>
-                    </div>
-                  </div>
-                  <div class="field disabled">
-                    <%= f.label :address ,"ADDRESS"%>
-                    <%= f.text_field :address ,value: @order.address, :required => true%>
-                  </div>
-                  <div class="two fields ">
-
-                    <div class="six wide field disabled">
-                      <%= f.label :ship_time ,"TIME"%>
-                      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], f.object.ship_time),{},class:"ui dropdown fluid" %>
-                    </div>
-                    <div class="ten wide field disabled">
-                      <%= f.label :whoset ,"WHOSET"%>
-                      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], f.object.whoset),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-                    </div>
-                  </div>
-
-
-                  <div class="field disabled">
-                    <%= f.label :ps ,"COMMENT"%>
-                    <%= f.text_area :ps,rows:"3" %>
-                  </div>
-              <% end %>
-            </div>
-          </div>
-
-        </div> <!-- end col-md-3 -->
-
-        <div class="col-sm-7">
-          <div class="row mb30">
-            <div class="col-xs-12">
-              <h4 class="ui">請選擇智付寶結帳方式</h4>
+            <div class="row">
+            <div class="mb30 col-xs-12 mt10">
+              <h4 class="ui mb10">請選擇智付寶結帳方式</h4>
               <div class="col-sm-4 col-xs-6"><%= link_to "刷卡", checkout_pay2go_order_path(@order, :payment_method => "Credit"), :class => "ui button fluid", :method => :post %></div>
               <div class="col-sm-4 col-xs-6"><%= link_to "WebATM", checkout_pay2go_order_path(@order, :payment_method => "WebATM"), :class => "ui button fluid", :method => :post %></div>
               <div class="col-sm-4 col-xs-6"><%= link_to "ATM", checkout_pay2go_order_path(@order, :payment_method => "ATM"), :class => "ui button fluid", :method => :post %></div>
             </div>
-          </div>
-          <% if @order.total == 0 %>
-              <h4 class="ui">您尚未訂購任何商品</h4>
-          <% else %>
-              <h4 class="ui">Cart Info</h4>
-              <div class="row">
-                <div class="col-md-2 col-xs-6">
-                  <p>數量 : <%= @order.total %></p>
-                </div>
-                <div class="col-md-3 col-xs-6">
-                  <p>金額 : $<span id="amount" class="<%= discount_line_through %>"><%= @order.amount %></span>
-                    <span id="discount" class="ui label left pointing red <%= discount_label %>" >6折</span>
-                  </p>
-                </div>
-                <div class="col-md-7 col-xs-12">
-                  <p class="final_amount">總金額 : $<span id="final_amount"><%= @order.final_price %></span>
-                <span class="ui label left pointing red">
-                <i class="fa fa-truck " aria-hidden="true">運費 <%= @order.amount >= 2000 ? "免費" : Order.ship_fee %></i>
-                </span>
-                  </p>
-                </div>
-
-              </div>
+            </div>
+            <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
+            <div class="order_info">
+              <%= render 'order_info'%>
               <% @order.line_items.each  do |item| %>
-                  <hr>
-                  <div class="row dis_table">
-                    <div class="dis_table_cell ml10 pull-left">
-                      <%= image_tag item.product.asset.url ,class:"w100p" %>
-                    </div>
-                    <div class="dis_table_cell pl30 w67p">
-                      <div class="">
-                        <%= item.product.name %>
-                        <span class="ml10"><%= item.voltage %></span>
-                      </div>
-                      <div>數量 : <%= item.qty %></div>
-                      <div>單價 : $<%= item.price %></div>
-                      <div>加總 : $<%= item.amount %></div>
-                    </div>
-                  </div>
+                  <%= render 'product',item:item %>
               <% end %>
-          <% end %>
-        </div> <!-- end col-md-9 -->
+            </div>
+            <table class="ui definition table mt30">
+              <tbody>
+              <%= link_to edit_order_path(@order) do %>
+                  <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
+              <% end %>
+              <tr>
+                <td class="four wide column"><%= t('form.name') %></td>
+                <td><%= @order.name %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.email') %></td>
+                <td><%= @order.email %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.address') %></td>
+                <td><%= @order.full_address %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.phone') %></td>
+                <td><%= @order.phone %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.ship_time') %></td>
+                <td><%= @order.ship_time %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.who_set') %></td>
+                <td><%= @order.whoset %></td>
+              </tr>
+              <% if @order.ps.present? %>
+                  <tr>
+                    <td><%= t('form.ps') %></td>
+                    <td><%= @order.ps %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 
-
-
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </section> <!-- end content-section -->
-
-</div> <!-- end main -->

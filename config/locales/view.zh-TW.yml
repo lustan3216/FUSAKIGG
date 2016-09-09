@@ -1,4 +1,21 @@
 zh-TW:
+  form:
+    name: "姓名"
+    phone: "電話"
+    email: "信箱"
+    ps: "備註"
+    district: "區鎮鄉"
+    county: "縣市"
+    postcode: "郵遞區號"
+    address: "地址"
+    info: "訂單資訊"
+    ship_time: "送貨時間"
+    who_set: "自行安裝/專業師傅安裝"
+    almost_20: "請輸入至少20字"
+  button:
+    buy_yet: "尚未選購"
+    send: "送出"
+    confirm: "確認"
   share:
     fusaki: 'FUSAKI'
     footer_desc: "成立20於年以來，在業界秉著良率和品質而存活，一直堅持著Made In Taiwan品質控管看得到，
@@ -27,6 +44,18 @@ zh-TW:
       qa: "問與答"
       buy_product: "購物專區"
   orders:
+    order_notice:
+      deliver_fee: "滿1500即免運費150元"
+      deliver_fee_content: "滿1500以上不管數量、重量、體積大小多重，通通一律 0 元"
+      3500_gift: "滿3500就送防水蓋"
+      discount: "享有六折優惠"
+      discount_content: "技術施工上有經驗或十成把握者，推薦選擇自行安裝，即可享有六折優惠\n沒有經驗者強烈建議自行安裝，拆裝過程有一定危險性"
+      pro_work: "專業師傅代為施工"
+      pro_work_content: "深知施工上的困難與經驗上的技巧是百分之百重要，且在不熟系拆裝/安裝的過程，和熟知電的特性，
+      強烈推薦專業師傅代為施工，可為您節省大量時間、人力和危險"
+    new:
+      cart: "SHOPING CART"
+      cart_subtitle: ""
     thankyou:
       thankyou_title: '感謝您的購買!'
       thankyou_content: "您的訂單將會儘速為您處理\n如選擇《自行安裝》兩天內將會幫你出貨\n

@@ -14,11 +14,11 @@ class Order < ApplicationRecord
   validates :name, :email,:address ,:phone,:postcode, :ship_time, :whoset,:county ,:district, presence: true
 
   def self.ship_fee
-    100
+    150
   end
 
   def ship_fee?
-    Order.ship_fee if final_price < 2000
+    Order.ship_fee if calc_price_with_shipfee < 2000
   end
 
   def clone_cart_line_items_by(cart)
@@ -68,7 +68,7 @@ class Order < ApplicationRecord
     return amount
   end 
 
-  def final_price
+  def calc_price_with_shipfee
     price = self.amount
     price *=0.6 if self.whoset == "自行安裝（打６折）"
     price >= 2000 ? price.to_i : (price + Order.ship_fee).to_i

@@ -25,8 +25,8 @@ class OrdersController < ApplicationController
     if @order.save!
       cookies[:cart_id] = nil
       redirect_to order_path(@order)
-    else
-      render :new
+    # else
+    #   render :new
     end
   end
 

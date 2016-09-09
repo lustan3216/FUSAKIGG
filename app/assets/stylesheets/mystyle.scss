@@ -2,11 +2,11 @@ hr{
   margin-top: 5px !important;
   margin-bottom:5px !important;
 }
+h1{
+  font-weight:bold;
+}
 .header-shadow ul.main-menu{
   margin-bottom: 0 ;
-}
-.my_margin{
-  margin:15px 0!important;
 }
 .list-group{
   .list-group-item:first-child {
@@ -26,22 +26,6 @@ hr{
 }
 .ui.bottom.attached.button{
   margin-top: 0 !important;
-}
-.w100p{
-  width: 100%;
-
-}
-.dis_table
-{
-  display: table;
-}
-.dis_table_cell
-{
-  display: table-cell;
-  vertical-align:middle;
-  img{
-    max-width: 280px;
-  }
 }
 .ui.fluid.dropdown.return_orders_select{
   width: 80%;
@@ -73,7 +57,6 @@ hr{
   font-size: 15px;
   color: red;
 }
-
 .ui.form .disabled.fields .field, .ui.form .disabled.field, .ui.form .field :disabled{
   opacity:0.8 !important;
 }
@@ -114,6 +97,7 @@ td a:hover {
   margin-right: 5px;
 }
 .count_spinner{
+  display: inline-block;
   input[type=text]{
     width:50px;
     padding: 0;
@@ -177,6 +161,8 @@ a.anchor{
 .flash_row{
   margin:-10px 100px 30px
 }
+
+
 @media (max-width: 767px) {
   .row.reorder-xs {
     -webkit-transform: rotate(180deg);

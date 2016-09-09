@@ -1,133 +1,37 @@
- <!-- ========== MAIN ========== -->
 <div class="main">
+  <%= render 'order_header' %>
 
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg" >
-    <div class="container">
-      <div class="row page-title-row">
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">Shop Details</h1>
-          <p>One stop solution for a stunning website.</p>
-        </div> <!-- end col-md-6 -->
-
-        <div class="col-md-6 col-sm-6 hidden-xs">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Shop</a></li>
-            <li><a href="#" class="active trans">Details</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
-      </div> <!-- end page-title-row -->
-    </div> <!-- end container -->
-  </div>
-
-  <!-- ========== CONTENT SECTION ========== -->
   <section class="content-section">
     <div class="container">
-      <div class="row reorder-xs">
-        <div class="col-sm-5">
-          <div class="ui form">
-            <h4 class="ui dividing">Information</h4>
-            <div class="field" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= @order.amount %>">
-              <%= form_for @order do |f| %>
-                  <div class="two fields ">
-                    <div class="six wide field">
-                      <%= f.label :name ,"NAME"%>
-                      <%= f.text_field :name,value: @order.name ,require:true%>
-                    </div>
-                    <div class="ten wide field">
-                      <%= f.label :phone ,"PHONE"%>
-                      <%= f.telephone_field :phone,value: @order.phone %>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <%= f.label :email ,"EMAIL"%>
-                    <%= f.email_field :email ,value: @order.email%>
-                  </div>
-                  <div class="three fields">
-                    <div class=" field">
-                      <%= f.label :county ,"COUNTY"%>
-                      <%= f.select :county, {},{},class:"ui dropdown fluid" ,id:"county" ,data:{selected: f.object.county }%>
-                    </div>
-                    <div class=" field">
-                      <%= f.label :district ,"district"%>
-                      <%= f.select :district, {}, {},class:"ui dropdown fluid" ,id:"district" ,data:{selected: f.object.district }%>
-                    </div>
-                    <div class=" field">
-                      <%= f.label :postcode ,"postcode"%>
-                      <%= f.text_field :postcode , value:f.object.postcode, id:"postcode" ,placeholder:"郵遞區號" ,:readonly => true%>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <%= f.label :address ,"ADDRESS"%>
-                    <%= f.text_field :address ,value: @order.address%>
-                  </div>
-                  <div class="two fields">
-                    <div class="six wide field">
-                      <%= f.label :ship_time ,"TIME"%>
-                      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], f.object.ship_time),{},class:"ui dropdown fluid" %>
-                    </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= render 'order_notice' %>
+        </div>
+        <div class="col-sm-9">
+          <div class="ui segment order_product_form">
+            <%= form_for @order do |f| %>
+                <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
+                <div class="order_info">
+                  <%= render 'order_info', order:@order %>
+                  <% @order.line_items.each  do |item| %>
+                      <%= render 'product',item:item %>
+                  <% end %>
+                </div>
+                <%= render 'order_form',f:f %>
+            <% end %>
 
-
-                    <div class="ten wide field">
-                      <%= f.label :whoset ,"WHOSET"%>
-                      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], f.object.whoset),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <%= f.label :ps ,"COMMENT"%>
-                    <%= f.text_area :ps,rows:"3" %>
-                  </div>
-                  <div class="ui error message">
-                    <ul class="list"></ul>
-                  </div>
-                  <%= f.submit "修改",class:"ui button red fluid submit" %>
-
-            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        </div> <!-- end col-md-3 -->
-
-        <div class="col-sm-7">
-          <% if @order.total == 0 %>
-              <h4 class="ui">您尚未訂購任何商品</h4>
-          <% else %>
-              <h4 class="ui">order Info</h4>
-              <div class="row">
-                <div class="col-md-2 col-xs-6">
-                  <p>數量 : <span id="total"><%= @order.total %></span></p>
-                </div>
-                <div class="col-md-4 col-xs-6">
-                  <p>金額 : $<span id="amount"><%= @order.amount %></span>
-                    <span class="ui label left pointing red" id="discount">6折</span>
-                  </p>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                  <p class="final_amount">總金額 : $<span id="final_amount"><%= @order.final_price %></span>
-                    <span class="ui label left pointing red">
-                      <i class="fa fa-truck " aria-hidden="true">運費 <span id="ship_status"><%= @order.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <% @order.line_items.each  do |item| %>
-                  <div id="product_item_<%= item.id %>" class="product_item">
-                    <%= render 'product',item:item %>
-                  </div>
-              <% end %>
-          <% end %>
-              <% end %>
-        </div> <!-- end col-md-9 -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </section> <!-- end content-section -->
-
-</div> <!-- end main -->
-
+</div>
+<%= javascript_include_tag 'spinner_order' %>
 <script>
   $('form').tw_citySelector('#county', '#district', '#postcode');
-  $("#county").siblings(".text").html("<%= @order.county %>")
-  $("#district").siblings(".text").html("<%= @order.district %>")
+  $("#county").dropdown('set selected', "<%= @order.county %>");
+  document.addEventListener("turbolinks:load", function() {
+    $("#district").dropdown('set selected', "<%= @order.district %>");
+  })
 </script>
-<%= javascript_include_tag 'spinner_order' %>

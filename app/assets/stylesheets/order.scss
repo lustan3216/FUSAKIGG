@@ -1,0 +1,35 @@
+.order_notice{
+  background-color: #fff;
+  border-radius: $radius;
+  margin-bottom: 15px;
+}
+.order_form{
+  margin-top: 2em;
+}
+.order_product_form{
+  padding:20px 30px 30px 30px !important;
+  .ui[class*="top right attached"].label{
+    color: white;
+    background-color: red;
+    font-size: 14px;
+  }
+}
+.product_item{
+  img{
+    width: 100%;
+    max-width:150px;
+  }
+  .product_info_header {
+    margin-top: 10px;
+    .bold{
+      font-size: 15px;
+    }
+  }
+  .product_info_content{
+    margin-top: 10px;
+    .allprice{
+      font-weight: 15;
+    }
+  }
+}
+

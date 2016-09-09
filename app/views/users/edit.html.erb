@@ -36,25 +36,25 @@
                   <div class="two fields">
                     <div class="six wide field">
                       <%= f.label :name ,"NAME"%>
-                      <%= f.text_field :name,value: current_user.try(:name), :required => true %>
+                      <%= f.text_field :name,value: current_user.try(:name)%>
                     </div>
                     <div class="ten wide field">
                       <%= f.label :phone ,"PHONE"%>
-                      <%= f.telephone_field :phone,value: current_user.try(:phone), :required => true %>
+                      <%= f.telephone_field :phone,value: current_user.try(:phone)%>
                     </div>
                   </div>
                   <div class="field">
                     <%= f.label :email ,"EMAIL"%>
-                    <%= f.email_field :email ,value: current_user.alternate_email_check, :required => true%>
+                    <%= f.email_field :email ,value: current_user.alternate_email_check%>
                   </div>
                   <div class="two fields">
                     <div class="four wide field">
                       <%= f.label :postcode ,"POSTCODE"%>
-                      <%= f.text_field :postcode,value: current_user.try(:postcode), :required => true %>
+                      <%= f.text_field :postcode,value: current_user.try(:postcode)%>
                     </div>
                     <div class="twelve wide field">
                       <%= f.label :address ,"ADDRESS"%>
-                      <%= f.text_field :address ,value: current_user.try(:address), :required => true%>
+                      <%= f.text_field :address ,value: current_user.try(:address)%>
                     </div>
                   </div>
                   <%= f.submit "更新",class:"ui button red"  %>

@@ -13,7 +13,7 @@
  *= require semantic_ui/definitions/modules/checkbox.less
  * require semantic_ui/definitions/views/comment.less
  * require semantic_ui/definitions/elements/container.less
- * require semantic_ui/definitions/modules/dimmer.less
+ *= require semantic_ui/definitions/modules/dimmer.less
  * require semantic_ui/definitions/elements/divider.less
  *= require semantic_ui/definitions/modules/dropdown.less
  * require semantic_ui/definitions/modules/embed.less

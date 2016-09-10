@@ -31,33 +31,48 @@
         </div> <!-- end col-md-3 -->
 
         <div class="col-md-9">
-        <% @products.each do |product| %>
-          <div class="col-md-4 col-sm-6 ">
-            <%= link_to product_path(product),class:"shop-box text-center mb40" do%>
-                <div class="ui fluid card link">
-                  <div class="image">
-                    <%= image_tag product.asset.url %>
-                  </div>
-                  <div class="content">
-                    <div class="description">
-                      <%= product.name %>
-                    </div>
-                    <div class="meta">
-                      <span class="pull-left">110V: <%= product.v110_price %></span>
-                      <span class="pull-right">220V: <%= product.v220_price %></span>
-                    </div>
-                  </div>
-                  <div class="ui bottom attached button">
-                    <i class="add icon"></i>
-                    Add Friend
-                  </div>
-                </div>
+          <div class="ui special cards">
+            <% @products.each do |product| %>
+                <div class="col-md-4 col-sm-6 ">
+                  <%#= link_to product_path(product),class:"shop-box text-center mb40" do %>
+                      <div class="ui card fluid">
+                        <div class="blurring dimmable image">
+                          <div class="ui dimmer">
+                            <div class="content">
+                              <div class="center">
+                                <div class="ui inverted button">Add Friend</div>
+                              </div>
+                            </div>
+                          </div>
+                          <%= image_tag product.asset.url %>
+                        </div>
+                        <div class="content">
+                          <a class="header">      <%= product.name %></a>
+                          <div class="meta">
+                            <span class="date">Create in Sep 2014</span>
+                          </div>
+                        </div>
+                        <div class="extra content">
+                          <a>
+                            <span class="pull-left">110V: <%= product.v110_price %></span>
+                            <span class="pull-right">220V: <%= product.v220_price %></span>
+                          </a>
+                        </div>
+                      </div>
+
+                  <%# end %>
+                </div> <!-- end col-md-4 -->
             <% end %>
-          </div> <!-- end col-md-4 -->
-              <% end %>
+          </div>
         </div> <!-- end col-md-9 -->
       </div> <!-- end row -->
     </div> <!-- end container -->
   </section> <!-- end content-section -->
 
 </div> <!-- end main -->
+
+<script type="text/javascript" charset="utf-8">
+  $('.special.cards .image').dimmer({
+    on: 'hover'
+  });
+</script>

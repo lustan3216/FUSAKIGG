@@ -2,8 +2,14 @@
   <div class="container">
     <div class="row page-title-row">
       <div class="col-sm-12 text-center">
-        <h1 class="page-title mt30 bold"><%= t('.cart') %></h1>
-        <p><%= t('.cart_subtitle') %></p>
+        <h1 class="page-title mt30 bold">
+          <% if action_name == "new" %>
+          <%= t('cart.title') %>
+          <% else %>
+          <%= t('order') %>
+          <% end %>
+        </h1>
+        <p><%= t('cart.subtitle') %></p>
       </div> <!-- end col-md-6 -->
     </div> <!-- end page-title-row -->
   </div> <!-- end container -->

@@ -6,7 +6,7 @@
 // require semantic_ui/definitions/behaviors/api.js
 //= require semantic_ui/definitions/modules/checkbox.js
 // require semantic_ui/definitions/behaviors/colorize.js
-// require semantic_ui/definitions/modules/dimmer.js
+//= require semantic_ui/definitions/modules/dimmer.js
 //= require semantic_ui/definitions/modules/dropdown.js
 // require semantic_ui/definitions/modules/embed.js
 //= require semantic_ui/definitions/behaviors/form.js

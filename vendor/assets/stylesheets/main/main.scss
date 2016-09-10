@@ -9,7 +9,7 @@ big, code, small, sub, sup { line-height: 0 }
 body, dt, html, legend, th { color: #2b2c2d }
 .trans, a { transition: all .4s ease-in-out }
 .clearfix, h1, h2, h3, h4, h5, h6 { clear: both }
-.header .menu-item .mega-submenu, th { text-align: left }
+.nav_header .menu-item .mega-submenu, th { text-align: left }
 .ol-style-2, .ol-style-3, .ol-style-4, .ul-style-2, .ul-style-3, .ul-style-4 { list-style-type: none }
 body, html { font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; line-height: 1.75em }
 .headline, h1, h2, h3, h4, h5, h6 { font-family: Lato, sans-serif }
@@ -181,7 +181,7 @@ p a { color: #47b475 }
 .st-label { position: relative }
 .st-label:before { right: 100%; top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(255, 255, 255, 0); border-width: 5px; margin-top: -6px; border-right-color: #47b475 !important }
 .main-menu > li > ul, .menu > ul > li.active { border-top: 3px solid #47b475 }
-.header-border .mega-submenu, .secondNav.header-border .header { border-bottom: 1px solid #d9d9d9 }
+.header-border .mega-submenu, .secondNav.header-border .nav_header { border-bottom: 1px solid #d9d9d9 }
 .panel, .panel-heading { border-radius: 0 }
 .badge { width: 22px; height: 22px; line-height: 22px; border-radius: 50%; font-weight: 400; padding: 0 }
 .black-color { color: #2b2c2d !important }
@@ -197,20 +197,20 @@ h1, h2, h3, h4, h5, h6 { text-transform: uppercase; margin: 0; padding: 0; color
 dl, ol, ul { list-style-position: outside }
 .lighter-text { color: #787878 !important }
 .label { font-size: 60%; border-radius: 0; font-weight: inherit }
-.header { position: fixed; width: 100%; z-index: 101; min-height: 80px; transition: all .4s ease-in-out }
-.header .logo, .open-nav-button { position: relative; transition: all .4s ease-in-out }
-.header .logo { padding: 20px 10px; float: left; z-index: 1 }
-.header .logo-img { max-height: 40px; transition: all .4s ease-in-out }
-.secondNav .header .logo-img, .small-header .header .logo-img { max-height: 30px }
-.header .menu-item { float: none; display: inline-block; background: 0 0 }
-.header .menu-item a { color: #fff; text-transform: uppercase; letter-spacing: 1px; padding: 0 20px; line-height: 80px; transition: all .4s ease-in-out }
-.header .menu-item .mega-submenu a { color: #787878; line-height: 22px; text-transform: capitalize; padding: 8px 10px; letter-spacing: .5; transition: all .4s ease-in-out }
-.header .menu-item .mega-submenu a:hover { border-left: 3px solid #d9d9d9 }
-.header .main-menu { text-align: right }
-.secondNav .header { min-height: 50px; background: #fff }
-.secondNav .header .main-menu > li a { line-height: 50px; color: #787878 }
+.nav_header { position: fixed; width: 100%; z-index: 101; min-height: 80px; transition: all .4s ease-in-out }
+.nav_header .logo, .open-nav-button { position: relative; transition: all .4s ease-in-out }
+.nav_header .logo { padding: 20px 10px; float: left; z-index: 1 }
+.nav_header .logo-img { max-height: 40px; transition: all .4s ease-in-out }
+.secondNav .nav_header .logo-img, .small-header .nav_header .logo-img { max-height: 30px }
+.nav_header .menu-item { float: none; display: inline-block; background: 0 0 }
+.nav_header .menu-item a { color: #fff; text-transform: uppercase; letter-spacing: 1px; padding: 0 20px; line-height: 80px; transition: all .4s ease-in-out }
+.nav_header .menu-item .mega-submenu a { color: #787878; line-height: 22px; text-transform: capitalize; padding: 8px 10px; letter-spacing: .5; transition: all .4s ease-in-out }
+.nav_header .menu-item .mega-submenu a:hover { border-left: 3px solid #d9d9d9 }
+.nav_header .main-menu { text-align: right }
+.secondNav .nav_header { min-height: 50px; background: #fff }
+.secondNav .nav_header .main-menu > li a { line-height: 50px; color: #787878 }
 .menu ul li.active a, .menu > ul > li:hover a { color: #47b475 }
-.secondNav .header .logo { padding: 10px }
+.secondNav .nav_header .logo { padding: 10px }
 .main-menu > li > ul.normal-sub { width: 230px }
 .main-menu > li > ul.normal-sub > li a { padding: 5px }
 .mega-submenu a { line-height: 22px !important }
@@ -218,39 +218,39 @@ dl, ol, ul { list-style-position: outside }
 .mega-submenu.no-image { background: 0 0 }
 .header-shadow .mega-submenu { box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .07) }
 .header-border .mega-submenu { border-right: 1px solid #d9d9d9; border-left: 1px solid #d9d9d9 }
-.secondNav.header-shadow .header { box-shadow: 0 0px 10px 5px rgba(0, 0, 0, 0.09) }
+.secondNav.header-shadow .nav_header { box-shadow: 0 0px 10px 5px rgba(0, 0, 0, 0.09) }
 .submenu-column ul li a i { width: 22px; display: inline-block; text-align: center; font-size: 13px }
-.secondNav.dark-menu .header { background: #2b2c2d; color: #fff }
+.secondNav.dark-menu .nav_header { background: #2b2c2d; color: #fff }
 .nav > li > a:focus, .nav > li > a:hover { background-color: transparent }
 .dark-menu .mega-submenu { background-color: #2b2c2d !important; background-image: url(../images/nav-bg-dark-2.jpg); background-repeat: no-repeat; background-position: bottom right }
-.dark-menu .header .main-menu > li a, .dark-menu .submenu-bottom { color: #fff }
+.dark-menu .nav_header .main-menu > li a, .dark-menu .submenu-bottom { color: #fff }
 .dark-menu .submenu-column h6 { color: #fff !important }
-.light-header .header { background: #fff }
-.light-header .header .menu-item a { color: #787878 }
-.dark-header .header .main-menu > li a, .dark-header .header .menu-item a, .dark-header .submenu-bottom { color: #fff }
+.light-header .nav_header { background: #fff }
+.light-header .nav_header .menu-item a { color: #787878 }
+.dark-header .nav_header .main-menu > li a, .dark-header .nav_header .menu-item a, .dark-header .submenu-bottom { color: #fff }
 .light-header .main { padding-top: 80px }
 .light-header.semi-trans-header .main { padding-top: 0 }
 .light-header.small-header .main { padding-top: 50px }
-.dark-header .header { background: #2b2c2d }
+.dark-header .nav_header { background: #2b2c2d }
 .dark-header .mega-submenu { background-color: #222 !important; background-image: url(../images/nav-bg-dark-2.jpg); background-repeat: no-repeat; background-position: bottom right }
 .dark-header .main { padding-top: 80px }
 .dark-header.semi-trans-header .main { padding-top: 0 }
 .dark-header.small-header .main { padding-top: 50px }
 .dark-header .submenu-column h6 { color: #fff !important }
 .bold-menu a { font-weight: 600 }
-.semi-trans-header.dark-header .header { background: rgba(34, 34, 34, .4) }
-.semi-trans-header.light-header .header { background: rgba(255, 255, 255, .8) }
+.semi-trans-header.dark-header .nav_header { background: rgba(34, 34, 34, .4) }
+.semi-trans-header.light-header .nav_header { background: rgba(255, 255, 255, .8) }
 .center-logo .logo { float: none; text-align: center }
-.center-logo .header .main-menu { text-align: left; border-top: 1px solid #f2f2f2 }
+.center-logo .nav_header .main-menu { text-align: left; border-top: 1px solid #f2f2f2 }
 .center-logo .main-menu > li.active { border-top: 0 }
 .center-logo .main-menu > li.active > a { color: #47b475 !important }
 .center-logo .left-separator { float: right; border-left: 0 !important }
 .light-header .left-separator { border-left: 1px solid #f2f2f2 }
 .dark-header .left-separator { border-left: 1px solid #d9d9d9 }
-.dark-header.center-logo .header .main-menu { border-top: 1px solid #d9d9d9 }
-.small-header .header { min-height: 50px }
-.small-header .header .main-menu > li a { line-height: 50px }
-.small-header .header .logo { padding: 10px }
+.dark-header.center-logo .nav_header .main-menu { border-top: 1px solid #d9d9d9 }
+.small-header .nav_header { min-height: 50px }
+.small-header .nav_header .main-menu > li a { line-height: 50px }
+.small-header .nav_header .logo { padding: 10px }
 .open-nav-button { visibility: hidden; color: #2b2c2d; line-height: 83px; font-size: 18px; z-index: 100; cursor: pointer }
 .secondNav .open-nav-button, .small-header .open-nav-button { line-height: 50px }
 .nav-hidden .main-menu { display: none; transition: all .4s ease-in-out }
@@ -277,7 +277,7 @@ dl, ol, ul { list-style-position: outside }
 .top-menu a { font-size: 12px; color: #787878; padding: 5px 10px }
 .dark-header .mega-submenu.normal-sub .sub-submenu { background: #2b2c2d }
 .dark-header .mega-submenu.normal-sub a:hover { background: #37393a }
-.static-header .header { position: static }
+.static-header .nav_header { position: static }
 .menu-style-5 .menu-item { padding: 20px 5px; transition: all .4s ease-in-out }
 .menu-style-5 .menu-item > a { padding: 0 10px; line-height: 40px }
 .menu-style-5 .menu > ul > li.active > a { background: #47b475; border-radius: 4px; color: #fff }
@@ -333,8 +333,8 @@ dl, ol, ul { list-style-position: outside }
 .search-icon .search-bar { position: absolute; right: 0; display: none; box-shadow: 0 8px 30px 8px rgba(0, 0, 0, .05); background: #f2f2f2; border: 1px solid #d9d9d9 }
 .search-icon:hover .search-bar { display: block }
 @media only screen and (max-width: 991px) {
-  .header .menu-item.cart-icon, .header .menu-item.search-icon, .open-nav-button, .top-menu { display: none }
-  .header .logo { padding-bottom: 0 }
+  .nav_header .menu-item.cart-icon, .nav_header .menu-item.search-icon, .open-nav-button, .top-menu { display: none }
+  .nav_header .logo { padding-bottom: 0 }
   .menu-mobile { color: #fff; padding-top: 40px }
   .center-logo .menu-mobile { text-align: center }
   .center-logo .menu-mobile:after { float: none }
@@ -345,11 +345,11 @@ dl, ol, ul { list-style-position: outside }
   .main-menu.show-on-mobile { background: #fff; text-align: left; color: #787878; max-height: 600px; overflow: scroll }
   .footer .col-md-6, .footer .text-right { text-align: center }
   .dark-header .main-menu.show-on-mobile, .dark-menu .main-menu.show-on-mobile { background: #2b2c2d }
-  .header .menu-item .mega-submenu { margin-left: 30px }
+  .nav_header .menu-item .mega-submenu { margin-left: 30px }
   .header-shadow .mega-submenu, .mega-submenu.normal-sub .sub-submenu { box-shadow: none; border-top: 0 }
   .mega-submenu.normal-sub .sub-submenu { position: static; margin-left: 40px }
   .main-menu > li > ul, .menu > ul > li.active { border-top: 0 }
-  .header .menu-item a { color: #787878; line-height: 50px }
+  .nav_header .menu-item a { color: #787878; line-height: 50px }
   .feature { margin-bottom: 30px }
   .footer .footer-top .pull-right { float: none !important; margin: auto }
   .menu-style-6 .menu > ul > li.active > a { background: #fff; color: #47b475 }

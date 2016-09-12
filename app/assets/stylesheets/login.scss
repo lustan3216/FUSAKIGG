@@ -1,12 +1,21 @@
-.facebook_signup{
-  margin-top: 15px !important;
+.login_tab_link_fix{
+ a{
+   padding: 15px;
+   display: block;
+   width: 100%;
+ }
+  .ui.segment{padding: 0;}
+}
+.transparent_button{
+  background-color: transparent !important;
+  color: black !important;
 }
 .main .login-box{
-  background-color: rgba(255,255,255,0.9);
+  background-color: white;
   border-radius: 3px;
-
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding: 0;
+  width:100%;
+  max-width: 500px !important;
   h4{
     text-align: center;
     font-weight: 900;
@@ -28,5 +37,8 @@
   }
 }
 .checkbox label{
-  padding-left: 20px !important;
+  padding-left: 25px !important;
+}
+.h100vh{
+  height: 100vh;
 }

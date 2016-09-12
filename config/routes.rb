@@ -22,10 +22,6 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :confirm_email
-      get :nonpay
-      get :paid
-      get :orderdone
-      get :goodsbackdone
     end
     resources :return_orders
   end

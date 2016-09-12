@@ -18,16 +18,15 @@ $(function (e) {
         e(".page-loader").fadeOut("slow")
     }), e(window).on("scroll resize", function () {
         e(window).scrollTop() >= 75 && (e("body").addClass("secondNav"), e(".scroll-to-top").css("bottom", "0px")), e(window).scrollTop() < 75 && (e("body").removeClass("secondNav"), e(".scroll-to-top").css("bottom", "-50px"))
-    }), e(".scroll-to-top", "footer").on("click", function () {
-        return e("html, body").animate({scrollTop: 0})
-    }), e(".client-carousel").owlCarousel({
-        loop: !0,
-        items: 6,
-        autoplay: !0,
-        dots: !1
     }), e(".open-nav-button").on("click", function () {
         var o;
         o = e(this).data("clicks"), o ? (e(".main-menu").removeClass("animated fadeIn"), e(".main-menu").css("display", "none")) : (e(".main-menu").css("display", "block"), e(".main-menu").addClass("animated fadeIn")), e(this).data("clicks", !o)
     })
 });
 
+// e(".client-carousel").owlCarousel({
+//     loop: !0,
+//     items: 6,
+//     autoplay: !0,
+//     dots: !1
+// })

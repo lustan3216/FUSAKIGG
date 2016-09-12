@@ -2,6 +2,19 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_order , only: [:show, :details, :edit, :update]
 
+  def index
+    case params[:status]
+      when 'outstanding'
+        @orders = current_user.orders.outstanding.page(params[:page]).per(10)
+      when 'paid'
+        @orders = current_user.orders.paid.page(params[:page]).per(10)
+      when 'done'
+        @orders = current_user.orders.orderdone.page(params[:page]).per(10)
+      else
+        redirect_to raise ActionController::RoutingError.new('Not Found')
+    end
+  end
+
   def show
   end
 
@@ -25,8 +38,8 @@ class OrdersController < ApplicationController
     if @order.save!
       cookies[:cart_id] = nil
       redirect_to order_path(@order)
-    # else
-    #   render :new
+      # else
+      #   render :new
     end
   end
 

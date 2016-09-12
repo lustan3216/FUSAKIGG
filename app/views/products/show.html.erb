@@ -1,27 +1,7 @@
-<!-- ========== MAIN ========== -->
 <div class="main">
 
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg" >
-    <div class="container">
-      <div class="row page-title-row">
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">Shop Details</h1>
-          <p>One stop solution for a stunning website.</p>
-        </div> <!-- end col-md-6 -->
+  <%= render 'product_header' %>
 
-        <div class="col-md-6 col-sm-6 hidden-xs">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Shop</a></li>
-            <li><a href="#" class="active trans">Details</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
-      </div> <!-- end page-title-row -->
-    </div> <!-- end container -->
-  </div>
-
-  <!-- ========== CONTENT SECTION ========== -->
   <section class="content-section">
     <div class="container">
       <div class="row">
@@ -29,53 +9,55 @@
           <%= render "sidebar" %>
         </div> <!-- end col-md-3 -->
 
-        <div class="col-md-9">
+        <div class="col-md-9 product_show_info">
+          <div class="ui segment">
+            <div class="col-md-5">
+              <!--<div class="owl-carousel owl-carousel-item ">-->
+              <div class="text-center">
+                <%= image_tag @product.asset.url ,class:"img-responsive"%>
+              </div>
+              <!--</div> -->
+            </div> <!-- end col-md-6 -->
 
-          <div class="col-md-6">
-            <div class="owl-carousel owl-carousel-item ">
-              <div class="text-center">
-                <%= image_tag @product.asset.url %>
-              </div>
-              <div class="text-center">
-                <%= image_tag @product.asset.url %>
-              </div>
-              <div class="text-center">
-                <%= image_tag @product.asset.url %>
-              </div>
-            </div> <!-- end owl-carousel -->
-          </div> <!-- end col-md-6 -->
+            <div class="col-md-5 ml30">
+              <%= form_tag buy_product_path(@product), remote: true do %>
+                  <h4><%= @product.name %></h4>
+                  <% if @product.v110? %>
+                      <div class="inline fields">
+                        <div class="field">
 
-          <div class="col-md-6">
-            <%= form_tag buy_product_path(@product), remote: true do %>
-                <h4><%= @product.name %></h4>
-                <div class="inline fields">
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
-                    </div>
+                          <div class="ui radio checkbox">
+                            <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
+                          </div>
+                        </div>
+                      </div>
+                  <% end %>
+                  <% if @product.v220? %>
+                      <div class="inline fields">
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
+                          </div>
+                        </div>
+                      </div>
+                  <% end %>
+                  <div class="product_item clearfix">
+                    <%= render "spinner" ,qty:1 %>
                   </div>
-                </div>
-                <div class="inline fields">
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
-                    </div>
-                  </div>
-                </div>
-                <div class="product_item">
-                  <%= render "spinner" ,qty:1 %>
-                </div>
-                <%= submit_tag "Buy", :class => "ui button fluid mt red" %>
-            <% end %>
+                  <button type="submit" class="ui compact labeled icon button red mt15">
+                    <i class="add To cart icon"></i><%= t('button.add_to_cart') %>
+                  </button>
+              <% end %>
 
-          </div> <!-- end col-md-6 -->
-          <div class="row">
-            <div class="col-md-12 mt30">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div> <!-- end col-md-6 -->
+            <div class="row">
+              <div class="col-md-12 product_describle ">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
             </div>
           </div>
-        </div> <!-- end col-md-9 -->
+        </div>
       </div> <!-- end row -->
     </div> <!-- end container -->
   </section> <!-- end content-section -->
@@ -83,19 +65,9 @@
 </div> <!-- end main -->
 
 <%= javascript_include_tag 'spinner_order' %>
+<script type="text/javascript" charset="utf-8">
 
-<script type="text/javascript">
-  $(function($) {
-    $('.owl-carousel-item').owlCarousel({
-      loop:false,
-      navRewind: false,
-      margin:10,
-      dots: true,
-      nav:false,
-      autoplay:true,
-      navText: [],
-      items: 1
-    });
-    $('.ui.radio.checkbox').checkbox();
-  });
+  $('.ui.radio.checkbox')
+      .checkbox()
+  ;
 </script>

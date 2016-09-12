@@ -1,7 +1,14 @@
 class ReturnOrdersController < ApplicationController
 
   def index
-    @return_orders = current_user.return_orders.dealing.page(params[:page]).per(10)
+    case params[:status]
+      when 'dealing'
+        @return_orders = current_user.return_orders.dealing.page(params[:page]).per(10)
+      when 'done'
+        @return_orders = current_user.return_orders.done.page(params[:page]).per(10)
+      else
+        redirect_to raise ActionController::RoutingError.new('Not Found')
+    end
   end
 
   def show

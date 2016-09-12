@@ -1,8 +1,8 @@
 class Order < ApplicationRecord
   default_scope -> { order('updated_at DESC') }
-  scope :nonpay, -> { where( 'paid = ?',false) }
-  scope :paid, -> { where( 'paid = ? and status =?',true ,"處理中" ) }
-  scope :orderdone, -> { where( 'paid = ? and (status =? or status =?)',true ,"OK" ,"ok"  ) }
+  scope :outstanding, -> { where( 'paid = ?',false) }
+  scope :paid, -> { where( 'paid = ? and status =?',true ,'處理中' ) }
+  scope :orderdone, -> { where( 'paid = ? and status =?',true ,'完成') }
 
   has_one :return_order
   belongs_to :user
@@ -24,7 +24,7 @@ class Order < ApplicationRecord
   def clone_cart_line_items_by(cart)
     cart.line_items.each do |line|
       a = self.line_items.build( :product => line.product, :qty => line.qty , :voltage=> line.voltage )
-      a.voltage = line.voltage if line.voltage == ("110V" || "220V")
+      a.voltage = line.voltage if line.voltage == ('110V' || '220V')
     end
   end
 
@@ -62,20 +62,20 @@ class Order < ApplicationRecord
   def amount
     amount = 0
     self.line_items.each do |line|
-      amount +=  line.product.v110_price * line.qty if line.voltage == "110V"
-      amount +=  line.product.v220_price * line.qty if line.voltage == "220V"
+      amount +=  line.product.v110_price * line.qty if line.voltage == '110V'
+      amount +=  line.product.v220_price * line.qty if line.voltage == '220V'
     end
     return amount
   end 
 
   def calc_price_with_shipfee
     price = self.amount
-    price *=0.6 if self.whoset == "自行安裝（打６折）"
+    price *=0.6 if self.whoset == '自行安裝（打６折）'
     price >= 2000 ? price.to_i : (price + Order.ship_fee).to_i
   end
 
   def full_address
-    [self.postcode.to_s , self.county , self.district , self.address].join("")
+    [self.postcode.to_s , self.county , self.district , self.address].join('')
   end
 
   private

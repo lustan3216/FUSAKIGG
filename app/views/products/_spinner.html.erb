@@ -1,11 +1,13 @@
-<div class="count_spinner">
-  <div class="ui mini buttons">
-    <%= button_tag type:"button", class:"ui icon button", command:"Up" do  %>
-        <i class="up chevron icon"></i>
-    <% end %>
-    <%= text_field_tag :qty ,qty, id:"txtNum" %>
-    <%= button_tag type:"button", class:"ui icon button", command:"Down" do  %>
-        <i class="down chevron icon"></i>
-    <% end %>
+<div class="ui form">
+  <div class="count_spinner">
+    <div class="ui mini buttons">
+      <%= button_tag type:"button", class:"ui icon button", command:"Up" do  %>
+          <i class="up chevron icon"></i>
+      <% end %>
+      <%= text_field_tag :qty ,qty, id:"txtNum" %>
+      <%= button_tag type:"button", class:"ui icon button", command:"Down" do  %>
+          <i class="down chevron icon"></i>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -11,4 +11,14 @@ module OrdersHelper
      controller_name == "orders" && action_name == "new" ? current_cart : @order
   end
 
+  def render_table
+    case params[:status]
+      when 'outstanding'
+        render 'users/outstanding' , order:@order
+      when 'paid'
+        render 'users/paid' , order:@order
+      when 'done'
+        render 'users/done' , order:@order
+    end
+  end
 end

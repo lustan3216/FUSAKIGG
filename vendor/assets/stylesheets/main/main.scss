@@ -494,14 +494,14 @@ button { outline: 0 !important }
 .footer ul li a { font-size: 11px; color: #787878 }
 .footer .icon { margin-right: 10px }
 .footer .address { font-size: 12px }
-.footer .footer-top { padding-bottom: 30px; border-bottom: 1px solid #d9d9d9 }
+.footer .footer-top { padding-bottom: 30px; }
 .footer .footer-middle { padding-top: 30px; padding-bottom: 30px; line-height: 30px }
 .footer .footer-middle .footer-title { line-height: 30px; color: #787878 }
 .footer .footer-middle a { color: #787878 }
 .footer .footer-middle .fa { font-size: 16px }
 .footer .footer-last { padding: 20px 0; background: #2b2c2d; color: #d9d9d9; font-size: 11px }
 .footer .footer-last a { color: #787878 }
-.footer.dark-footer { background: image-url('images/footer_lodyas.png') fixed #37393a; background-size: contain; border-top: 1px solid #787878 }
+.footer.dark-footer { background:linear-gradient(rgba(40, 40, 40, 0.25), rgba(40, 40, 40, 0.05)),image-url('banner-bg.jpg'); border-top: 1px solid #787878; }
 .footer.dark-footer .footer-desc { color: #d9d9d9 }
 .footer.dark-footer .footer-title { color: #fff }
 .footer.dark-footer ul li a { font-size: 11px; text-transform: uppercase; color: #d9d9d9 }

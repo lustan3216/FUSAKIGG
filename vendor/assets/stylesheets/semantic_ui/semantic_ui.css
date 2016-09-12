@@ -29,7 +29,7 @@
  *= require semantic_ui/definitions/elements/label.less
  * require semantic_ui/definitions/elements/list.less
  * require semantic_ui/definitions/elements/loader.less
- * require semantic_ui/definitions/collections/menu.less
+ *= require semantic_ui/definitions/collections/menu.less
  *= require semantic_ui/definitions/collections/message.less
  * require semantic_ui/definitions/modules/modal.less
  * require semantic_ui/definitions/modules/nag.less
@@ -45,7 +45,7 @@
  * require semantic_ui/definitions/modules/sidebar.less
  * require semantic_ui/definitions/globals/site.less
  * require semantic_ui/definitions/views/statistic.less
- * require semantic_ui/definitions/elements/step.less
+ *= require semantic_ui/definitions/elements/step.less
  * require semantic_ui/definitions/modules/sticky.less
  * require semantic_ui/definitions/modules/tab.less
  *= require semantic_ui/definitions/collections/table.less

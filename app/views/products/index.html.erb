@@ -1,27 +1,5 @@
-
-<!-- ========== MAIN ========== -->
 <div class="main">
-
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg" >
-    <div class="container">
-      <div class="row page-title-row">
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">Shop</h1>
-          <p>One stop solution for a stunning website.</p>
-        </div> <!-- end col-md-6 -->
-
-        <div class="col-md-6 col-sm-6 hidden-xs">
-          <ol class="breadcrumb pull-right border-0">
-            <li><%= link_to "Home",root_path %></li>
-            <li><a href="#" class="active trans">Shop</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
-      </div> <!-- end page-title-row -->
-    </div> <!-- end container -->
-  </div>
-
-  <!-- ========== BLOG SECTION ========== -->
+<%= render 'product_header' %>
   <section class="content-section">
     <div class="container">
       <div class="row">
@@ -32,37 +10,35 @@
 
         <div class="col-md-9">
           <div class="ui special cards">
-            <% @products.each do |product| %>
-                <div class="col-md-4 col-sm-6 ">
-                  <%#= link_to product_path(product),class:"shop-box text-center mb40" do %>
-                      <div class="ui card fluid">
-                        <div class="blurring dimmable image">
-                          <div class="ui dimmer">
-                            <div class="content">
-                              <div class="center">
-                                <div class="ui inverted button">Add Friend</div>
-                              </div>
+            <div class="row">
+              <% @products.each do |product| %>
+                  <div class="col-md-4 col-sm-6  col-xs-12">
+                    <%= link_to product_path(product),class:"shop-box" do %>
+                    <div class="ui card fluid mb30 product_index_info">
+                      <div class="content">
+                        <div class="right floated meta"><p><%= product.v110? %> / <%= product.v220? %></p></div>
+                        <%= show_icon(product) %><%= product.name %>
+                      </div>
+                      <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                          <div class="content">
+                            <div class="center">
+                              <div class="ui inverted button">查看</div>
                             </div>
                           </div>
-                          <%= image_tag product.asset.url %>
                         </div>
-                        <div class="content">
-                          <a class="header">      <%= product.name %></a>
-                          <div class="meta">
-                            <span class="date">Create in Sep 2014</span>
-                          </div>
-                        </div>
-                        <div class="extra content">
-                          <a>
-                            <span class="pull-left">110V: <%= product.v110_price %></span>
-                            <span class="pull-right">220V: <%= product.v220_price %></span>
-                          </a>
+                        <%= image_tag product.asset.url %>
+                      </div>
+                      <div class="content">
+                        <div class="meta text-center">
+                         價格 <%= product.show_110v_price %>  /  <%= product.show_220v_price %>
                         </div>
                       </div>
-
-                  <%# end %>
-                </div> <!-- end col-md-4 -->
-            <% end %>
+                    </div>
+                    <% end %>
+                  </div> <!-- end col-md-4 -->
+              <% end %>
+            </div>
           </div>
         </div> <!-- end col-md-9 -->
       </div> <!-- end row -->
@@ -71,6 +47,11 @@
 
 </div> <!-- end main -->
 
+<style>
+  .ui.cards{
+    margin: 0 !important;
+  }
+</style>
 <script type="text/javascript" charset="utf-8">
   $('.special.cards .image').dimmer({
     on: 'hover'

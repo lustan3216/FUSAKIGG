@@ -1,4 +1,10 @@
 zh-TW:
+  devise:
+    password: "密碼"
+    password_confirm: "密碼確認"
+    sing_up: "註冊"
+    log_in: "登入"
+    email: "信箱"
   form:
     name: "姓名"
     phone: "電話"
@@ -16,9 +22,12 @@ zh-TW:
     buy_yet: "尚未選購"
     send: "送出"
     confirm: "確認"
+    add_to_cart: "加入購物車"
   cart:
     title: "CART"
     subtitle: "選擇專業師傅到府安裝即享有3年保固讓您更安心"
+  product:
+    subtitle: "滿1500即免運費、滿3500就送防水蓋"
   share:
     fusaki: 'FUSAKI'
     footer_desc: "成立20於年以來，在業界秉著良率和品質而存活，一直堅持著Made In Taiwan品質控管看得到，

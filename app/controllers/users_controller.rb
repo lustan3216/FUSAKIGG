@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def edit
-  end
+  # def edit
+  #   render_404
+  # end
 
   def update
     current_user.update(user_params)
@@ -14,23 +15,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
-  def nonpay
-    @orders = current_user.orders.nonpay.page(params[:page]).per(10)
-  end
-
-  def paid
-    @orders = current_user.orders.paid.page(params[:page]).per(10)
-  end
-
-  def orderdone
-    @orders = current_user.orders.orderdone.page(params[:page]).per(10)
-  end
-
-  def goodsbackdone
-    @return_orders = current_user.return_orders.return_done.page(params[:page]).per(10)
-  end
-
 
   private
 

@@ -1,26 +1,31 @@
 <div class="main">
+  <section class="content-section text-center h100vh flex_cneter">
+    <div class="login-box ui form segment">
+      <h5 class="mb10">忘記密碼</h5>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
-  <div class="grad-bg text-center" data-parallax="scroll" data-image-src="<%= image_path("images/bg-img-12.jpg") %>" data-speed="0.6">
-    <div class="container">
-      <div class="row pt60 pb60">
-        <div class="col-sm-6 col-sm-offset-3 login-box ui form">
-          <h4 >忘記密碼</h4>
-          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
 
-              <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true ,placeholder:t('devise.email') %>
+          </div>
 
-              <div class="field">
-                <%= f.label :email %>
-                <%= f.email_field :email, autofocus: true %>
-              </div>
+          <div class="actions">
+            <%= f.submit "發送重設密碼信",class:"ui primary button" %>
+          </div>
+      <% end %>
+    </div>
 
-              <div class="actions">
-                <%= f.submit "發送重設密碼信",class:"ui primary button" %>
-              </div>
-          <% end %>
-        </div> <!-- end login-box -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </div>
+  </section>
+</div>
 
-</div> <!-- end main -->
+<style>
+  .content-section{
+    background-color: transparent !important;
+    background:linear-gradient(
+        rgba(107, 103, 101, 0.45),
+        rgba(52, 73, 45, 0.45)
+    ), url('<%= image_path('images/bg-img-1.jpg') %>');
+    -webkit-background-size: cover; background-size: cover;
+  }
+</style>

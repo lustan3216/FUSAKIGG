@@ -6,14 +6,13 @@ class ReturnOrder < ApplicationRecord
   has_many :return_line_items, :dependent => :destroy
   accepts_nested_attributes_for :return_line_items
 
-  scope :dealing , -> {where('status = ?',"處理中") }
-  scope :return_done, -> { where('(status =? or status =?)',"OK" ,"ok"  ) }
-
+  scope :dealing , -> {where('status = ?','處理中') }
+  scope :done, -> { where('status =?','完成' )}
   validates :ps,:phone,:alternate_email, presence: true
   before_create :set_status_dealing
 
   def clone_return_line_item_by(params)
-    items = params.select{|k,v| k.include?( "product")}.to_a
+    items = params.select{|k,v| k.include?('product')}.to_a
     items.each do |item|
       a = self.return_line_items.find_or_initialize_by(line_item_id: item[0].to_i)
       a.qty = item[1]
@@ -43,6 +42,6 @@ class ReturnOrder < ApplicationRecord
   private
 
   def set_status_dealing
-    self.status = "處理中"
+    self.status = '處理中'
   end
 end

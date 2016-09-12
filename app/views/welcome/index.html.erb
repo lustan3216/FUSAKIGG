@@ -6,7 +6,7 @@
 
     <div id="rev_slider_46_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
       <ul>	<!-- SLIDE  -->
-        <li data-index="rs-148" data-transition="fade" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="images/demo-img-5.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Welcome" data-description="">
+        <li data-index="rs-148" data-transition="fade" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="<%= image_path("images/demo-img-5.jpg") %>"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Welcome" data-description="">
           <!-- MAIN IMAGE -->
           <img src="<%= image_path("images/demo-img-5.jpg") %>"  alt=""   data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="125" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
           <!-- LAYERS -->
@@ -513,16 +513,4 @@
 
 
 </div> <!-- end main -->
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-75815870-6', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<script src="<%= asset_path("init.js") %>"></script>
+<script src="<%= asset_path("welcome_index.js") %>"></script>

@@ -1,54 +1,64 @@
-<!-- ========== MAIN ========== -->
 <div class="main">
-  <div class="grad-bg text-center" data-parallax="scroll" data-image-src="<%= image_path("images/bg-img-1.jpg") %>" data-speed="0.6">
-    <div class="container">
-      <div class="row pt60 pb60">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 login-box ui form">
-          <h4 >登入</h4>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <% if flash[:alert] %>
-                  <ul>
-                    <li class="alert login_alert"><%= flash[:alert] %></li>
-                  </ul>
-              <% end %>
-              <div class="field">
-                <%= f.label :email %>
-                <%= f.email_field :email, autofocus: true %>
-              </div>
+  <section class="content-section text-center h100vh flex_cneter">
+    <div class="ui segments login-box">
+      <div class="ui horizontal segments login_tab_link_fix">
+        <div class="ui segment"> <%= link_to new_registration_path(resource_name) do %>
+              <i class="fa fa-sign-in mr10" aria-hidden="true"></i>註冊
+          <% end %></div>
+        <div class="ui segment">
+          <%= link_to omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first) do %>
+              <i class="fa fa-facebook-square mr10" aria-hidden="true"></i>Facebook 登入
 
-              <div class="field">
-                <%= f.label :password %>
-                <%= f.password_field :password, autocomplete: "off" %>
-              </div>
-
-              <% if devise_mapping.rememberable? -%>
-                  <div class="field">
-                    <div class="ui checkbox">
-                      <%= f.check_box :remember_me %>
-                      <%= f.label :remember_me %>
-                    </div>
-                  </div>
-              <% end -%>
-              <div class="item">
-                <ul>
-                <li><%= link_to "註冊", new_registration_path(resource_name) ,class:"item "%></li>
-                <li><%= link_to "忘記密碼", new_password_path(resource_name) ,class:"item " %></li>
-                </ul>
-              </div>
-              <div class="actions">
-                <%= f.submit "登入" ,class:"ui button fluid red"%>
-              </div>
-              <%- if devise_mapping.omniauthable? %>
-              <%= link_to "Facebook 登入", omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first), :class => 'primary ui button fluid facebook_signup' %>
-                  <% end %>
           <% end %>
-        </div> <!-- end login-box -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </div>
-</div> <!-- end main -->
-<script type="text/javascript" charset="utf-8">
-  $(document).on('page:change', function() {
-    $('.grad-bg').parallax({imageSrc: '<%= image_path("images/bg-img-1.jpg") %>',speed:'0.6'});
-  });
-</script>
+        </div>
+      </div>
+      <div class="ui form segment">
+        <h5 class="bold mb10">登入</h5>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <% if flash[:alert] %>
+                <ul>
+                  <li class="alert login_alert"><%= flash[:alert] %></li>
+                </ul>
+            <% end %>
+            <div class="field">
+              <%= f.email_field :email, autofocus: true,placeholder: t('devise.email')%>
+            </div>
+
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "off",placeholder: t('devise.password') %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+                <div class="field pull-left">
+                  <div class="ui checkbox ml10">
+                    <%= f.check_box :remember_me ,class:"ml10"%>
+                    <%= f.label :remember_me, "記住我" %>
+                  </div>
+                </div>
+            <% end -%>
+            <div class="item pull-right">
+              <div class="ui buttons">
+                <%= link_to  new_password_path(resource_name) ,class:"item " do %>
+                    <button class="ui positive button transparent_button">忘記密碼?</button>
+                <% end %>
+              </div>
+            </div>
+            <div class="actions">
+              <button type="submit" name="commit" class="ui button fluid red"><i class="fa fa-sign-in mr10" aria-hidden="true"></i>登入</button>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .content-section{
+    background-color: transparent !important;
+    background:linear-gradient(
+        rgba(107, 103, 101, 0.45),
+        rgba(52, 73, 45, 0.45)
+    ), url('<%= image_path('images/bg-img-1.jpg') %>');
+    -webkit-background-size: cover; background-size: cover;
+  }
+</style>

@@ -1,39 +1,11 @@
-
-<!-- ========== MAIN ========== -->
 <div class="main">
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg">
-    <div class="container">
-      <div class="row page-title-row">
 
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">FAQs</h1>
-          <p>We are here to help you.</p>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Pages</a></li>
-            <li><a href="#" class="active trans">FAQs</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
+  <%= render 'welcome_header' %>
 
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </div> <!-- end page-title-div -->
-
-  <!-- ========== FAQs STYLE 1 ========== -->
   <section class="content-section">
     <div class="container">
       <div class="row">
 
-        <!-- ========== SECTION HEADER ========== -->
-        <div class="col-md-12 section-header text-center">
-          <h3 class="section-title underline"><%= t(".q_as") %></h3>
-          <p class="section-subtitle">You can filter them easily. </p>
-        </div> <!-- end section-header -->
-
-        <!-- ========== FAQ filters ========== -->
         <div class="col-md-8 col-md-offset-2 text-center">
           <div id="js-filters-faq" class="cbp-l-filters-underline">
             <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">

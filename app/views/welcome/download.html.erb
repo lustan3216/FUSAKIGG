@@ -1,33 +1,14 @@
 
 <!-- ========== MAIN ========== -->
 <div class="main">
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg">
-    <div class="container">
-      <div class="row page-title-row">
 
-        <div class="col-md-6 col-sm-6">
-          <h1 class="page-title">FAQs</h1>
-          <p>We are here to help you.</p>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Pages</a></li>
-            <li><a href="#" class="active trans">FAQs</a></li>
-          </ol>
-        </div> <!-- end col-md-6 -->
-
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </div> <!-- end page-title-div -->
+  <%= render 'welcome_header' %>
 
   <section class="content-section">
     <div class="container">
       <div class="row">
 
-        <div class="col-md-3">
-          <h5 class="underline">下載專區</h5>
+        <div class="col-md-3 mt15">
           <ul class="list-group mb60 product_sidebar">
             <li class="list-group-item">
               <%= link_to download_path(anchor: "price_list"),class:"item" do%>

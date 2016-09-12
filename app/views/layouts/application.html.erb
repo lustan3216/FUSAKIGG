@@ -42,22 +42,22 @@
           <%= link_to '問與答', qa_path %>
         </li>
 
-        <li class="menu-item visible-xs">
+        <li class="menu-item">
           <%= link_to '聯絡我們', new_service_message_path %>
         </li>
         <% if current_user  %>
             <li class="menu-item">
-              <%= link_to '訂單/設定', nonpay_user_path(current_user) %>
-      <% end %>
+              <%= link_to '訂單/設定', orders_path(status:"outstanding") %>
+        <% end %>
         <!-- Sub Menu -->
         </li> <!-- end menu-item -->
 
         <li class="menu-item">
           <% if current_user %>
               <%= link_to '登出', destroy_user_session_path, :method => :delete %>
-        <% else %>
+          <% else %>
               <%= link_to '登入', new_session_path(:user) %>
-        <% end %>
+          <% end %>
         </li>
       </ul> <!-- end main-menu -->
     </nav> <!-- end menu -->
@@ -69,7 +69,7 @@
 <%= render 'layouts/contact_us' %>
 
 <style>
-  .secondNav .header .cart_count #current_qty{
+  .secondNav .nav_header .cart_count #current_qty{
     color: #fff;
     top: 5px;
   }

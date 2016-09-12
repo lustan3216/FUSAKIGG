@@ -1,46 +1,31 @@
-<div class="user_sidebar">
-  <h5 class="underline">settings</h5>
-  <div class="list-group">
-    <div class="list-group-item">
-      <div class="">帳單紀錄</div>
-      <div class="menu">
-        <div class = "item <%= "active" if current_page?(nonpay_user_path(current_user)) %>">
-          <%= link_to "未付款",nonpay_user_path(current_user) %>
-          <div class="ui horizontal label pull-right"><%= current_user.orders.nonpay.size %></div>
-        </div>
-        <div class = "item <%= "active" if current_page?(paid_user_path(current_user)) %>">
-          <%= link_to "已付款",paid_user_path(current_user) %>
-          <div class="ui horizontal label pull-right"><%= current_user.orders.paid.size %></div>
-        </div>
-        <div class = "item <%= "active" if current_page?(orderdone_user_path(current_user)) %>">
-          <%= link_to "已完成",orderdone_user_path(current_user) %>
-          <div class="ui horizontal label pull-right"><%= current_user.orders.orderdone.size %></div>
-        </div>
-      </div>
-    </div>
-    <div class="list-group-item">
-      <div class="">退貨</div>
-      <div class="menu">
-        <div class = "item <%= "active" if current_page?(user_return_orders_path(current_user)) %>">
-          <%= link_to "退貨中",user_return_orders_path(current_user) %>
-          <div class="ui horizontal label pull-right"><%= current_user.return_orders.dealing.size %></div>
-        </div>
-        <div class = "item <%= "active" if current_page?(goodsbackdone_user_path(current_user)) %>">
-          <%= link_to "已完成",goodsbackdone_user_path(current_user) %>
-          <div class="ui horizontal label pull-right"><%= current_user.return_orders.return_done.size %></div>
-        </div>
-      </div>
-    </div>
-    <div class="list-group-item">
-      <div class="">基本設定</div>
-      <div class="menu">
-        <div class = "item <%= "active" if current_page?(edit_user_path(current_user)) %>">
-          <%= link_to "基本資料",edit_user_path(current_user) %>
-        </div>
-        <div class = "item <%= "active" if current_page?(edit_user_registration_path) %>">
-          <%= link_to "修改密碼",edit_user_registration_path %>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="ui vertical menu">
+  <div class="header item">帳單紀錄</div>
+  <a href="<%= orders_path(status:"outstanding") %>" class="<%= "active" if current_page?(orders_path(status:"outstanding")) %> teal item">
+    未付款
+    <div class="ui label"><%= current_user.orders.outstanding.size %></div>
+  </a>
+  <a href="<%= orders_path(status:"paid") %>" class="<%= "active" if current_page?(orders_path(status:"paid")) %> teal item">
+    已付款
+    <div class="ui label"><%= current_user.orders.paid.size %></div>
+  </a>
+  <a href="<%= orders_path(status:"done") %>" class="<%= "active" if current_page?(orders_path(status:"done")) %> teal item">
+    已完成
+    <div class="ui label"><%= current_user.orders.orderdone.size %></div>
+  </a>
+
+
+  <div class="header item">退貨</div>
+  <a href="<%= user_return_orders_path(current_user,status:"dealing") %>" class="<%= "active" if current_page?(user_return_orders_path(current_user,status:"dealing")) %> teal item">
+    退貨中
+    <div class="ui label"><%= current_user.return_orders.dealing.size  %></div>
+  </a>
+  <a href="<%= user_return_orders_path(current_user,status:"done") %>" class="<%= "active" if current_page?(user_return_orders_path(current_user,status:"done")) %> teal item">
+    已完成
+    <div class="ui label"><%= current_user.return_orders.done.size  %></div>
+  </a>
+
+  <div class="header item">基本設定</div>
+  <a href="<%= edit_user_registration_path %>" class="<%= "active" if current_page?(edit_user_registration_path) %> teal item">
+    修改密碼
+  </a>
 </div>

@@ -1,9 +1,3 @@
-<!-- ==================================================
-Footer: Classes
-footer - Default footer
-dark-footer - Dark footer [Use with .footer]
- - Reveal footer on scroll
-================================================== -->
 <footer class="footer footer-style-3 dark-footer " id="footer">
 
   <div class="container footer-top">
@@ -19,8 +13,8 @@ dark-footer - Dark footer [Use with .footer]
             </p>
           </div>
         </div> <!-- end vcenter -->
-        <div class="col-md-3 col-sm-6">
-          <h5 class="footer-title underline"><%= t(".company_feature") %></h5>
+        <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
+          <h5 class="footer-title underline "><%= t(".company_feature") %></h5>
           <ul class="ul">
             <li><%= link_to "公司介紹",introduce_path %></li>
           </ul>
@@ -32,7 +26,7 @@ dark-footer - Dark footer [Use with .footer]
             <li><a href="#" class="trans">Web Development</a></li>
           </ul>
         </div> <!-- end col-md-3 -->
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
           <h5 class="footer-title underline"><%= t(".download") %></h5>
           <ul class="ul">
             <li><%= link_to "牌價表下載區",download_path(anchor: "price_list"),class:"item" %></li>
@@ -54,13 +48,13 @@ dark-footer - Dark footer [Use with .footer]
 
       <!-- ========== right part ========== -->
       <div class="col-md-4 col-sm-4">
-        <h5 class="footer-title underline"><%= t("share.contact_us") %></h5>
-        <h2><%=simple_format t("share.phone_number") %></h2>
-        <h6 class="lowercase mt10 mb10"><%= t("share.email_address") %></h6>
-        <p class="footer-desc address">
-          <i class="icon fa fa-map-marker"></i>
+        <h5 class="footer-title underline ml10"><%= t("share.contact_us") %></h5>
+        <h2 class="ml10"><%=simple_format t("share.phone_number") %></h2>
+        <h5 class="lowercase ml10 mt10 mb10">
+          <%= t("share.email_address") %></h5>
+        <h5 class="footer-desc address ml10">
           <%= t("share.real_address") %>
-        </p> <!-- end footer-desc -->
+        </h5> <!-- end footer-desc -->
       </div> <!-- end col-md-4 -->
 
     </div> <!-- end row -->

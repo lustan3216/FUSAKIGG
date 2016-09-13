@@ -171,6 +171,11 @@ a.anchor{
     padding: 30px 50px;
   }
 }
+.flex_cneter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width: 767px) {
   .row.reorder-xs {
     -webkit-transform: rotate(180deg);

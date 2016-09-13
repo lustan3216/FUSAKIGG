@@ -1,5 +1,5 @@
 <div class="main">
-<%= render 'product_header' %>
+  <%= render 'product_header' %>
   <section class="content-section">
     <div class="container">
       <div class="row">
@@ -9,32 +9,32 @@
         </div> <!-- end col-md-3 -->
 
         <div class="col-md-9">
-          <div class="ui special cards">
-            <div class="row">
+          <div class="row">
+            <div class="ui special cards">
               <% @products.each do |product| %>
                   <div class="col-md-4 col-sm-6  col-xs-12">
                     <%= link_to product_path(product),class:"shop-box" do %>
-                    <div class="ui card fluid mb30 product_index_info">
-                      <div class="content">
-                        <div class="right floated meta"><p><%= product.v110? %> / <%= product.v220? %></p></div>
-                        <%= show_icon(product) %><%= product.name %>
-                      </div>
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
+                        <div class="ui card fluid mb30 product_index_info">
                           <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">查看</div>
+                            <div class="right floated meta"><p><%= product.v110? %> / <%= product.v220? %></p></div>
+                            <%= show_icon(product) %><%= product.name %>
+                          </div>
+                          <div class="blurring dimmable image">
+                            <div class="ui dimmer">
+                              <div class="content">
+                                <div class="center">
+                                  <div class="ui inverted button">查看</div>
+                                </div>
+                              </div>
+                            </div>
+                            <%= image_tag product.asset.url %>
+                          </div>
+                          <div class="content">
+                            <div class="meta text-center">
+                              價格 <%= product.show_110v_price %>  /  <%= product.show_220v_price %>
                             </div>
                           </div>
                         </div>
-                        <%= image_tag product.asset.url %>
-                      </div>
-                      <div class="content">
-                        <div class="meta text-center">
-                         價格 <%= product.show_110v_price %>  /  <%= product.show_220v_price %>
-                        </div>
-                      </div>
-                    </div>
                     <% end %>
                   </div> <!-- end col-md-4 -->
               <% end %>

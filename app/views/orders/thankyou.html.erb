@@ -1,81 +1,51 @@
 <div class="main">
-
-  <!-- ========== PAGE TITLE ========== -->
-  <div class="page-title-div gradient-bg">
+  <div class="page-title-div gradient-bg" >
     <div class="container">
       <div class="row page-title-row">
-
-        <div class="col-md-6">
-          <h1 class="page-title">Contact Us</h1>
-          <p>Something more about this page.</p>
-        </div>
-        <div class="col-md-6">
-          <ol class="breadcrumb pull-right border-0">
-            <li><a href="#" class="trans">Home</a></li>
-            <li><a href="#" class="trans">Pages</a></li>
-            <li><a href="#" class="active trans">Contact Us</a></li>
-          </ol>
-        </div>
-
+        <div class="col-sm-12 text-center">
+          <h1 class="page-title mt30 bold">
+            THANK YOU
+          </h1>
+          <p><%= t('.thankyou_subtitle') %></p>
+        </div> <!-- end col-md-6 -->
       </div> <!-- end page-title-row -->
     </div> <!-- end container -->
-  </div> <!-- end page-title-div -->
-
-  <section class="content-section">
+  </div>
+  <section class="content-section thank_you_page">
     <div class="container">
-      <div class="row">
+        <div class="text-center">
+          <i class="ion-happy-outline" aria-hidden="true"></i>
+          <h3 class="section-title underline mt20"><%= t('.thankyou_title') %></h3>
+          <p class="section-subtitle"><%= simple_format t('.thankyou_content') %></p>
+          <h5><i class="fa fa-envelope-o mr10" aria-hidden="true"></i>訂單明細已寄至您的信箱</h5>
+        </div>
 
-        <div class="col-md-4">
-          <!-- ========== SECTION HEADER ========== -->
 
-          <div class="mb50 col-sm-6 col-md-12">
-            <h6 class="underline"><%= t("share.address") %></h6>
-            <p><%= t("share.real_address") %></p>
-          </div>
+        <% if @order.payment.paid? || @order.payment.payment_method == '貨到付款' %>
+            <!--<meta HTTP-EQUIV="REFRESH" content="1.5; url=<#%= nonpay_user_path(current_user)%>">-->
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              dataLayer.push({
+                event: 'payment_success',
+                'transactionId': '<%= @order.id %>',
+                'transactionTotal': <%= @order.after_ship_amount %>,
+                'transactionProducts': [{
+                  'name': '<%= @order.order_number %>',
+                  'price': <%= @order.after_ship_amount %>,
+                  'freight': <%= @order.freight %>
+                }]
+              });
+            </script>
 
-          <div class="mb50 col-sm-6 col-md-12">
-            <h6 class="underline"><%=  t("share.contact_way") %></h6>
-            <p><%= simple_format t("share.phone_number") %>
-              <%= t("share.email_address") %></p>
-          </div>
-        </div> <!-- end col-md-4 -->
+        <% else %>
+            <div class="payment_message">
+              <h2>付款失敗</h2>
+              <h3>因不明原因付款失敗請聯絡客服</h3>
+              <h3>請立即聯絡客服人員會有專人為您服務</h3>
+            </div>
+        <% end %>
 
-        <div class="col-md-8 ui form">
-
-          <!-- ========== SECTION HEADER ========== -->
-          <div class="section-header">
-            <h3 class="section-title underline"><%= t('.thankyou_title') %></h3>
-            <p class="section-subtitle"><%= simple_format t('.thankyou_content') %></p>
-          </div> <!-- end section-header -->
-          <% if @order.payment.paid? %>
-              <!--<meta HTTP-EQUIV="REFRESH" content="1.5; url=<#%= nonpay_user_path(current_user)%>">-->
-
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                  event: 'payment_success',
-                  'transactionId': '<%= @order.id %>',
-                  'transactionTotal': <%= @order.after_ship_amount %>,
-                  'transactionProducts': [{
-                    'name': '<%= @order.order_number %>',
-                    'price': <%= @order.after_ship_amount %>,
-                    'freight': <%= @order.freight %>
-                  }]
-                });
-              </script>
-
-          <% else %>
-              <div class="payment_message">
-                <h2>Payment Failure</h2>
-                <h3>Please do the operation again.</h3>
-                <h3>automatically redirect to page...</h3>
-              </div>
-          <% end %>
-
-        </div> <!-- end col-md-8 -->
-
-      </div> <!-- end row -->
-    </div> <!-- end container -->
+      </div>
   </section>
 </div> <!-- end main -->
 

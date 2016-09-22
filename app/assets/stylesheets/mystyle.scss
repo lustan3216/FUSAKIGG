@@ -27,10 +27,6 @@ h1{
 .ui.bottom.attached.button{
   margin-top: 0 !important;
 }
-.ui.fluid.dropdown.return_orders_select{
-  width: 80%;
-  margin-top:5px;
-}
 .w50p{
   width: 50%;
 }
@@ -149,8 +145,12 @@ a.anchor{
     color: #fff;
   }
 }
-.ui.button{
+.order_product_form a.ui.button:hover{
   color: #fff !important;
+  background-color: red;
+}
+.ui.vertical.menu{
+  box-shadow: none;
 }
 .flash_row{
   margin:-10px 100px 30px

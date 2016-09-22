@@ -1,24 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_order , only: [:show, :details, :edit, :update]
-
-  def index
-    case params[:status]
-      when 'outstanding'
-        @orders = current_user.orders.outstanding.page(params[:page]).per(10)
-      when 'paid'
-        @orders = current_user.orders.paid.page(params[:page]).per(10)
-      when 'done'
-        @orders = current_user.orders.orderdone.page(params[:page]).per(10)
-      else
-        redirect_to raise ActionController::RoutingError.new('Not Found')
-    end
-  end
+  before_action :find_order , only: [:show, :finish, :edit, :update]
 
   def show
   end
 
-  def details
+  def finish
   end
 
   def new
@@ -73,11 +60,12 @@ class OrdersController < ApplicationController
   def face_payment
     @order = current_user.orders.find(params[:id])
     if @order.paid?
-      redirect_to :back, alert: '已付款'
+      redirect_to :back, alert: '此訂單已經付過款 請至後台查看'
     else
       @order.update( paid: 1,status:'處理中')
-      @payment = Payment.create!( :order => @order, :payment_method => '貨到付款' )
-      redirect_to orders_path(status:"paid")
+      @payment = Payment.find_or_create_by!( :order => @order, :payment_method => '貨到付款' )
+      OrderMailer.order_paid_notify(current_user,@order).deliver_now
+      redirect_to thankyou_path(order:@order.id)
     end
   end
 

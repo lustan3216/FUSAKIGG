@@ -1,0 +1,53 @@
+<div class="nav_header">
+  <div class="container-fluid">
+
+    <!-- ========== MENU ========== -->
+    <nav class="menu">
+      <div class="logo">
+        <%= link_to root_path do  %>
+            <h1>FUSAKI</h1>
+        <% end %>
+      </div> <!-- end logo -->
+      <!-- ========== MAIN MENU ========== -->
+      <ul class="main-menu">
+        <li class="menu-item">
+          <%= shopping_cart %>
+        </li>
+        <li class="menu-item">
+          <%= link_to '購物', products_path %>
+        </li>
+
+        <li class="menu-item">
+
+          <%= link_to '公司介紹', introduce_path %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to '下載專區', download_path %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to '問與答', qa_path %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to '聯絡我們', new_service_message_path %>
+        </li>
+        <% if current_user  %>
+            <li class="menu-item">
+              <%= link_to '訂單/設定', user_path(current_user,status:"outstanding") %>
+        <% end %>
+        <!-- Sub Menu -->
+        </li> <!-- end menu-item -->
+
+        <li class="menu-item">
+          <% if current_user %>
+              <%= link_to '登出', destroy_user_session_path, :method => :delete %>
+          <% else %>
+              <%= link_to '登入', new_session_path(:user) %>
+          <% end %>
+        </li>
+      </ul> <!-- end main-menu -->
+    </nav> <!-- end menu -->
+  </div> <!-- end container-fluid -->
+</div>

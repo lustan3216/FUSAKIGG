@@ -11,6 +11,9 @@ class ReturnOrdersController < ApplicationController
     end
   end
 
+  def finish
+  end
+
   def show
     @return_order = current_user.return_orders.find(params[:id])
     @return_line_items = @return_order.items_without_qty_zero

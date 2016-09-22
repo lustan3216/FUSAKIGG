@@ -1,14 +1,14 @@
 <div class="ui vertical menu">
   <div class="header item">帳單紀錄</div>
-  <a href="<%= orders_path(status:"outstanding") %>" class="<%= "active" if current_page?(orders_path(status:"outstanding")) %> teal item">
+  <a href="<%= user_path(current_user,status:"outstanding") %>" class="<%= "active" if current_page?(user_path(current_user,status:"outstanding")) %> teal item">
     未付款
     <div class="ui label"><%= current_user.orders.outstanding.size %></div>
   </a>
-  <a href="<%= orders_path(status:"paid") %>" class="<%= "active" if current_page?(orders_path(status:"paid")) %> teal item">
+  <a href="<%= user_path(current_user,status:"paid") %>" class="<%= "active" if current_page?(user_path(current_user,status:"paid")) %> teal item">
     已付款
     <div class="ui label"><%= current_user.orders.paid.size %></div>
   </a>
-  <a href="<%= orders_path(status:"done") %>" class="<%= "active" if current_page?(orders_path(status:"done")) %> teal item">
+  <a href="<%= user_path(current_user,status:"done") %>" class="<%= "active" if current_page?(user_path(current_user,status:"done")) %> teal item">
     已完成
     <div class="ui label"><%= current_user.orders.orderdone.size %></div>
   </a>

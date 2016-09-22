@@ -1,58 +1,46 @@
 <div class="main">
   <%= render 'return_order_header' %>
   <section class="content-section">
-    <%= render 'flash/successful' %>
     <div class="container">
       <div class="row ">
         <div class="col-sm-3">
-          <%= render "users/sidebar" %>
+          <%= render 'users/sidebar' %>
         </div> <!-- end col-md-3 -->
-
         <div class="col-sm-9 ui form">
-          <% @return_line_items.each do |item| %>
-              <div class="col-sm-6">
-                <hr>
-                <div class="row dis_table">
-                  <div class="dis_table_cell ml10 pull-left">
-                    <%= image_tag item.product.asset.url ,class:"w100p" %>
-                  </div>
-                  <div class="dis_table_cell pl30 w47p">
-                    <div>
-                      <%= item.product.name %>
-                      <span class="ml10"><%= item.line_item.voltage %></span>
-                    </div>
-                    <div>
-                      價格 : $ <span value="<%= item.line_item.price %>"><%= item.line_item.price %></span>
-                    </div>
-                    <div>退貨數量 : <%= item.qty %></div>
-                  </div>
-                </div>
-              </div>
-          <% end %>
-          <div class="six wide field">
-            退款金額 : <span id="return_price"><%= @return_order.return_price %></span>
+
+          <div class="ui segment form order_product_form" >
+            <h4 class="ui dividing bold mb10"><%= t('return_orders.return_orders') %></h4>
+            <div class="order_info">
+              <%#= render 'order_info', order:@return_order %>
+              <% @return_line_items.each do |return_item| %>
+                  <%= render 'product' ,item: return_item %>
+              <% end %>
+              <table class="ui definition table mt30">
+                <tbody>
+                <tr>
+                  <td><%= t('form.status') %></td>
+                  <td><%= @return_order.status %></td>
+                </tr>
+                <tr>
+                  <td class="four wide column"><%= t('form.email') %></td>
+                  <td><%= @return_order.alternate_email %></td>
+                </tr>
+                <tr>
+                  <td><%= t('form.phone') %></td>
+                  <td><%= @return_order.phone %></td>
+                </tr>
+                <tr>
+                  <td><%= t('form.who_set') %></td>
+                  <td><%= @return_order.order.whoset %></td>
+                </tr>
+                <tr>
+                  <td><%= t('form.ps') %></td>
+                  <td style="word-break: break-all"><%= @return_order.ps %></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="six wide field">
-            <span>狀態 : </span>
-            <p><%= @return_order.status %></p>
-          </div>
-          <div class="six wide field">
-            <span>聯絡電話 : </span>
-            <p><%= @return_order.phone %></p>
-          </div>
-          <div class="field">
-            <span>信箱 : </span>
-            <p><%= @return_order.alternate_email %></p>
-          </div>
-          <div class="field">
-            <span>備註 : </span>
-            <p><%= @return_order.ps %></p>
-          </div>
-          <% if @return_order_check.try(:status) == ("ok" || "OK") %>
-              <button class="ui button red disabled">已完成</button>
-          <% elsif @return_order_check %>
-              <button class="ui button red disabled">處理中...</button>
-          <% end %>
         </div>
 
       </div> <!-- end row -->

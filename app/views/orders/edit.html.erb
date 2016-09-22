@@ -5,7 +5,11 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
-          <%= render 'order_notice' %>
+          <% if  request.referrer.include?('users') %>
+              <%= render 'users/sidebar' %>
+          <% else %>
+              <%= render 'order_notice' %>
+          <% end  %>
         </div>
         <div class="col-sm-9">
           <div class="ui segment form order_product_form" data-district="<%= @order.district %>">

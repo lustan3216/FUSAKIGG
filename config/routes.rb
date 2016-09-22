@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   resources :orders do
     member do
-      get  :details
+      get  :finish
       post :checkout_pay2go
       post :face_payment
     end

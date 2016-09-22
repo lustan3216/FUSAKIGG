@@ -17,7 +17,7 @@
         <td><%= order.payment.updated_at.strftime('%x')%></td>
         <td><%= order.calc_price_with_shipfee %></td>
         <td><%= order.payment.payment_method %></td>
-        <td><a href="<%= details_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+        <td><a href="<%= finish_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
       </tr>
   <% end %>
   </tbody>

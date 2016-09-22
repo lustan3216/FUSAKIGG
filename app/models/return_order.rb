@@ -27,6 +27,15 @@ class ReturnOrder < ApplicationRecord
     total_price
   end
 
+  def amount
+    amount = 0
+    self.line_items.each do |line|
+      amount +=  line.product.v110_price * line.qty if line.voltage == '110V'
+      amount +=  line.product.v220_price * line.qty if line.voltage == '220V'
+    end
+    return amount
+  end
+
   def return_qty
     qty = 0
     self.return_line_items.each do |item|

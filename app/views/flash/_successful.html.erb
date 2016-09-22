@@ -1,14 +1,14 @@
-<div class="row flash_row">
-  <div class="col-xs-12">
-    <% if flash[:successful] %>
+<% if flash[:successful] %>
+    <div class="row flash_row">
+      <div class="col-xs-12">
+
         <div class="ui success message">
           <i class="close icon"></i>
           <div class="text-center">您的<%= flash[:successful] %>訊息已成功送出,我們會儘速為您處理</div>
         </div>
-    <% end %>
-  </div>
-</div>
-
+      </div>
+    </div>
+<% end %>
 <script type="text/javascript" charset="utf-8">
   $('.message .close').on('click', function() {
     $(this).closest('.message').transition('fade');}

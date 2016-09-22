@@ -19,7 +19,7 @@
         <td><%= order.calc_price_with_shipfee %></td>
         <td><%= order.payment.payment_method %></td>
         <td>
-          <% if order.return_order.try(:status) == ("ok" || "OK") %>
+          <% if order.return_order.try(:status) == '完成' %>
               <%= link_to user_return_order_path(current_user,id: order.return_order) do  %>
                   已完成
               <% end %>
@@ -33,7 +33,7 @@
               <% end %>
           <% end %>
         </td>
-        <td><a href="<%= details_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+        <td><a href="<%= finish_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
       </tr>
   <% end %>
   </tbody>

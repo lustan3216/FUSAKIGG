@@ -11,12 +11,12 @@
           <table class="ui single line table">
             <thead>
             <tr>
-              <th class="">訂單編號</th>
-              <th class="">地址</th>
-              <th class="">電話</th>
-              <th class="">退貨申請時間</th>
-              <th class="">結帳方式</th>
-              <th class="">內容</th>
+              <th>訂單編號</th>
+              <th>地址</th>
+              <th>電話</th>
+              <th>退貨申請時間</th>
+              <th>數量</th>
+              <th>內容</th>
             </tr>
             </thead>
             <tbody>
@@ -26,7 +26,7 @@
                   <td><%= return_order.order.full_address %></td>
                   <td><%= return_order.phone %></td>
                   <td><%= return_order.updated_at.strftime('%x') %></td>
-                  <td><%= return_order.order.payment.payment_method %></td>
+                  <td><%= return_order.return_qty %></td>
                   <td><a href="<%= user_return_order_path(current_user,id: return_order.order.return_order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
                 </tr>
             <% end %>

@@ -6,6 +6,7 @@ zh-TW:
     log_in: "登入"
     email: "信箱"
   form:
+    status: "狀態"
     name: "姓名"
     phone: "電話"
     email: "信箱"
@@ -18,6 +19,10 @@ zh-TW:
     ship_time: "送貨時間"
     who_set: "自行安裝/專業師傅安裝"
     almost_20: "請輸入至少20字"
+    pay_way: "結帳方式"
+  return_orders:
+    return_orders: '退貨訂單'
+    at_least_20: "請輸入至少20字說明退貨原因"
   button:
     buy_yet: "尚未選購"
     send: "送出"
@@ -67,7 +72,8 @@ zh-TW:
       cart: "SHOPING CART"
       cart_subtitle: ""
     thankyou:
-      thankyou_title: '感謝您的購買!'
+      thankyou_subtitle: '感謝您的支持與購買'
+      thankyou_title: '感謝您的購買'
       thankyou_content: "您的訂單將會儘速為您處理\n如選擇《自行安裝》兩天內將會幫你出貨\n
       如選擇《本公司派專業師傅安裝》24小時內會有專人為您安排安裝時間\n
       如有任何疑問或技術上問題，請聯絡我們，將會有人專人為您服務．"

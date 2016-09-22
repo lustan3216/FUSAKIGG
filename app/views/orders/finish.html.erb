@@ -2,35 +2,14 @@
   <%= render 'order_header' %>
   <section class="content-section">
     <div class="container">
-          <%= render 'flash/alert' %>
       <div class="row">
 
         <div class="col-sm-3">
-          <% if  request.referrer.include?('users') %>
-              <%= render 'users/sidebar' %>
-          <% else %>
-              <%= render 'order_notice' %>
-          <% end  %>
+          <%= render 'users/sidebar' %>
         </div>
 
         <div class="col-sm-9">
           <div class="ui segment order_product_form">
-            <%= link_to edit_order_path(@order) do %>
-                <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
-            <% end %>
-            <div class="row">
-              <div class="mb30 col-xs-12 mt10">
-                <h4 class="ui mb10">請選擇智付寶結帳方式</h4>
-                <div class="col-sm-4 col-xs-6"><%= link_to "信用卡結帳", checkout_pay2go_order_path(@order, :payment_method => "Credit"), :class => "ui button fluid red", :method => :post %></div>
-                <!--<div class="col-sm-4 col-xs-6 "><%#= link_to "WebATM", checkout_pay2go_order_path(@order, :payment_method => "WebATM"), :class => "ui button fluid red", :method => :post %></div>-->
-                <div class="col-sm-4 col-xs-6"><%= link_to "ATM", checkout_pay2go_order_path(@order, :payment_method => "ATM"), :class => "ui button fluid red", :method => :post %></div>
-                <% if @order.whoset == '本公司派專業師傅安裝' %>
-                    <div class="col-sm-4 col-xs-6">
-                      <%= link_to "貨到付款", face_payment_order_path(@order), :class => "ui button fluid red", :method => :post %>
-                    </div>
-                <% end %>
-              </div>
-            </div>
             <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
             <div class="order_info">
               <%= render 'order_info'%>
@@ -40,9 +19,10 @@
             </div>
             <table class="ui definition table mt30">
               <tbody>
-              <%= link_to edit_order_path(@order) do %>
-                  <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
-              <% end %>
+              <tr>
+                <td class="four wide column"><%= t('form.status') %></td>
+                <td><%= @order.status %></td>
+              </tr>
               <tr>
                 <td class="four wide column"><%= t('form.name') %></td>
                 <td><%= @order.name %></td>
@@ -66,6 +46,10 @@
               <tr>
                 <td><%= t('form.who_set') %></td>
                 <td><%= @order.whoset %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.pay_way') %></td>
+                <td><%= @order.payment.payment_method %></td>
               </tr>
               <% if @order.ps.present? %>
                   <tr>

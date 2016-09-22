@@ -1,0 +1,19 @@
+<div class="main">
+  <%= render 'user_header' %>
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <%= render "sidebar" %>
+        </div> <!-- end col-md-3 -->
+        <div class="col-sm-9">
+          <%= render_table %>
+        </div>
+      </div> <!-- end row -->
+      <div class="paginator">
+        <%= paginate @orders %>
+      </div>
+    </div> <!-- end container -->
+
+  </section> <!-- end content-section -->
+</div> <!-- end main -->

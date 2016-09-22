@@ -6,6 +6,8 @@ module ReturnOrdersHelper
         'DEALING'
       when 'done'
         'DONE'
+      else
+        'RETURN ORDER'
     end
   end
 
@@ -15,6 +17,8 @@ module ReturnOrdersHelper
         '退貨中'
       when 'done'
         '已完成'
+      else
+        '退貨訂單'
     end
   end
 end

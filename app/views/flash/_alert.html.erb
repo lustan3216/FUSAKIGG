@@ -1,14 +1,13 @@
-<% if flash[:error] %>
+<% if flash[:alert] %>
     <div class="row flash_row">
       <div class="col-xs-12">
         <div class="ui negative message">
           <i class="close icon"></i>
-          <div class="text-center"><%= flash[:error] %></div>
+          <div class="text-center"><%= flash[:alert] %></div>
         </div>
       </div>
     </div>
 <% end %>
-
 <script type="text/javascript" charset="utf-8">
   $('.message .close').on('click', function() {
     $(this).closest('.message').transition('fade');}

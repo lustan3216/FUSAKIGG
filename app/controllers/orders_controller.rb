@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
   def checkout_pay2go
     @order = current_user.orders.find(params[:id])
     if @order.paid?
-      redirect_to :back, alert: 'already paid!'
+      redirect_to :back, alert: '已付款'
     else
       @payment = Payment.create!( :order => @order, :payment_method => params[:payment_method] )
       render :layout => false
@@ -67,6 +67,17 @@ class OrdersController < ApplicationController
       end
     else
       redirect_to root_path
+    end
+  end
+
+  def face_payment
+    @order = current_user.orders.find(params[:id])
+    if @order.paid?
+      redirect_to :back, alert: '已付款'
+    else
+      @order.update( paid: 1,status:'處理中')
+      @payment = Payment.create!( :order => @order, :payment_method => '貨到付款' )
+      redirect_to orders_path(status:"paid")
     end
   end
 

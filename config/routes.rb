@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     member do
       get  :details
       post :checkout_pay2go
+      post :face_payment
     end
   end
 

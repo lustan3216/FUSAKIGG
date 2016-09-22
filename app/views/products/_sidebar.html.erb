@@ -1,4 +1,4 @@
-<ul class="list-group mb60 product_sidebar">
+<ul class="list-group mb30 product_sidebar">
   <li class="list-group-item">
     <%= link_to products_path(type: "qt"),class:"item" do%>
         <div>
@@ -35,3 +35,15 @@
     <% end %>
   </li>
 </ul>
+<div class="ui segment">
+  <div class="order_notice">
+    <h5><%= t('buy_notice.deliver_fee') %></h5>
+    <p><%= t('buy_notice.deliver_fee_content') %></p>
+  </div>
+</div>
+<div class="ui segment">
+  <div class="order_notice">
+    <h5><%= t('buy_notice.3500_gift') %></h5>
+    <p>您有想過離水源最近的廚房和浴室的插座，是最有可能發生意外的地方嗎？滿額就送<%= link_to '【防水蓋乙個】' %></p>
+  </div>
+</div>

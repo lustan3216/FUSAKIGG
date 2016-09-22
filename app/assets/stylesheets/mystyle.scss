@@ -145,6 +145,12 @@ a.anchor{
     top: 20px;
     left: 33px;
   }
+  &:hover,#current_qty:hover{
+    color: #fff;
+  }
+}
+.ui.button{
+  color: #fff !important;
 }
 .flash_row{
   margin:-10px 100px 30px
@@ -186,6 +192,9 @@ a.anchor{
 }
 .fwl{
   font-weight: lighter;
+}
+.ui.segment{
+  box-shadow: none !important;
 }
 @media (max-width: 767px) {
   .row.reorder-xs {

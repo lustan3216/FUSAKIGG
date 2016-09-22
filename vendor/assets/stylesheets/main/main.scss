@@ -3,7 +3,7 @@
 # Uncompressed css file is provided along with Sass files in download.
 --------------------------------------------------------------*/
 
-@charset "UTF-8"; @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600|Lato:700);
+@charset "UTF-8";
 big, code, small, sub, sup { line-height: 0 }
 .sidr ul, ul { list-style: none }
 body, dt, html, legend, th { color: #2b2c2d }
@@ -351,7 +351,6 @@ dl, ol, ul { list-style-position: outside }
   .mega-submenu.normal-sub .sub-submenu { position: static; margin-left: 40px }
   .main-menu > li > ul, .menu > ul > li.active { border-top: 0 }
   .nav_header .menu-item a { color: #787878; line-height: 50px }
-  .feature { margin-bottom: 30px }
   .footer .footer-top .pull-right { float: none !important; margin: auto }
   .menu-style-6 .menu > ul > li.active > a { background: #fff; color: #47b475 }
   .menu-style-6 .menu > ul > li > a:hover { background: #fff; color: #47b475 !important }

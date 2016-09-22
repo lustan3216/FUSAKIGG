@@ -7,8 +7,8 @@
   <section class="content-section pbn ptn ">
     <div class="row mrn">
       <!-- ========== SECTION HEADER ========== -->
-      <div class="col-md-7 section-header text-right mt60 mb50">
-        <div class="mr20">
+      <div class="col-sm-7 section-header text-right mt60 save_money">
+        <div class="mr20 ml20">
           <p class="section-subtitle mb20"><%= t(".feature_subtitle") %></p>
           <h1 class="section-title"><%= t(".feature") %></h1>
           <p class="section-subtitle mt10"><%= t(".feature_subtitle2") %></p>
@@ -17,14 +17,14 @@
           <p class="section-subtitle mt10"><%= t(".feature_subtitle1") %></p>
         </div> <!-- end section-header -->
       </div>
-      <div class="col-md-5 building_bg">
+      <div class="col-sm-5 building_bg">
       </div>
     </div> <!-- end row -->
   </section>
 
   <section class="content-section pbn ptn three_feature">
     <div class="row mrn">
-      <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center pb60 pt60">
+      <div class="col-sm-4  feature text-center pb60 pt60">
         <div class="icon underline longer-underline">
           <i class="fa fa-shield" aria-hidden="true"></i>
         </div> <!-- end icon -->
@@ -32,7 +32,7 @@
         <p class="feature-desc"><%=simple_format t(".feature_1_content") %></p>
       </div> <!-- end feature -->
 
-      <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center pb60 pt60">
+      <div class="col-sm-4  feature text-center pb60 pt60">
         <div class="icon underline longer-underline">
           <i class="fa fa-home" aria-hidden="true"></i>
         </div> <!-- end icon -->
@@ -40,7 +40,7 @@
         <p class="feature-desc"><%=simple_format t(".feature_2_content") %></p>
       </div> <!-- end feature -->
 
-      <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center pb60 pt60">
+      <div class="col-sm-4  feature text-center pb60 pt60">
         <div class="icon underline longer-underline">
           <i class="fa fa-phone" aria-hidden="true"></i>
         </div> <!-- end icon -->
@@ -156,6 +156,6 @@
 
 <script src="<%= asset_path("welcome_index.js") %>"></script>
 <script>
-  //  window.onbeforeunload = function(){ window.scrollTo(0,0); }
+    window.onbeforeunload = function(){ window.scrollTo(0,0); }
 </script>
 

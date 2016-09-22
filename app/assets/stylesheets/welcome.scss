@@ -3,13 +3,13 @@
     color: #fff;
   }
   .row{
-    .col-md-4:nth-child(1){
+    .feature:nth-child(1){
       background-color: RGBA(76, 187, 152, 0.80);
     }
-    .col-md-4:nth-child(2){
+    .feature:nth-child(2){
       background-color: RGBA(76, 187, 152, 0.90);
     }
-    .col-md-4:nth-child(3){
+    .feature:nth-child(3){
       background-color: RGBA(76, 187, 152, 1.00);
     }
   }

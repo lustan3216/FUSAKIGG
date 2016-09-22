@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(function(){
     $('.ui.dropdown').dropdown();
     $('.ui.form').form({
         on: 'blur',
@@ -96,4 +96,4 @@ document.addEventListener("turbolinks:load", function() {
             }
         }
     });
-});
+})

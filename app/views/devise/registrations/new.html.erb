@@ -30,12 +30,8 @@
             <div class="field">
               <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:t('devise.password_confirm') %>
             </div>
-            <div class="item pull-right mb10">
-              <div class="ui buttons">
-                <%= link_to  new_password_path(resource_name) ,class:"item " do %>
-                    <button class="ui positive button transparent_button">忘記密碼?</button>
-                <% end %>
-              </div>
+            <div class="item pull-right mb20 mt20">
+                <%= link_to '忘記密碼?', new_password_path(resource_name) ,class:"item black" %>
             </div>
             <div class="actions">
               <button type="submit" name="commit" class="ui button fluid red"><i class="fa fa-sign-in mr10" aria-hidden="true"></i>註冊</button>
@@ -47,12 +43,16 @@
 </div>
 
 <style>
-  .content-section{
-    background-color: transparent !important;
-    background:linear-gradient(
-        rgba(107, 103, 101, 0.45),
-        rgba(52, 73, 45, 0.45)
-    ), url('<%= image_path('images/bg-img-1.jpg') %>');
-    -webkit-background-size: cover; background-size: cover;
+  .ui.segments{
+    box-shadow:none;
+  }
+  .logo h1{
+    color: #bc4c4c;
+  }
+  .nav_header .menu-item i,.nav_header .menu-item a{
+    color: #787878;
+  }
+  .menu-item .cart_count,.footer{
+    display: none !important;
   }
 </style>

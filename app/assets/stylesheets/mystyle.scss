@@ -158,9 +158,17 @@ a.anchor{
   }
   .image{
     overflow: hidden;
-    img{
-      margin: -10px 0;
-    }
+  }
+  .content{
+    padding:5px 15px !important;
+  }
+  .descriptison{
+    line-height: 21px;
+    font-size: 15px;
+  }
+  .ui.dimmer{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 }
 .product_show_info{
@@ -175,6 +183,9 @@ a.anchor{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.fwl{
+  font-weight: lighter;
 }
 @media (max-width: 767px) {
   .row.reorder-xs {

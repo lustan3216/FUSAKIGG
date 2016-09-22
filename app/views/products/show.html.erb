@@ -12,12 +12,10 @@
         <div class="col-md-9 product_show_info">
           <div class="ui segment">
             <div class="col-md-5">
-              <!--<div class="owl-carousel owl-carousel-item ">-->
               <div class="text-center">
                 <%= image_tag @product.asset.url ,class:"img-responsive"%>
               </div>
-              <!--</div> -->
-            </div> <!-- end col-md-6 -->
+            </div>
 
             <div class="col-md-5 ml30">
               <%= form_tag buy_product_path(@product), remote: true do %>
@@ -25,7 +23,6 @@
                   <% if @product.v110? %>
                       <div class="inline fields">
                         <div class="field">
-
                           <div class="ui radio checkbox">
                             <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
                           </div>

@@ -1,12 +1,12 @@
-<div id="product_item_<%= item.id %>" class="product_item ">
+<div id="product_item_<%= item.id %>" class="product_item">
   <hr>
   <div class="row mt10 mb10">
-    <div class="col-xs-3">
+    <div class="col-md-4 col-xs-5">
       <div class="ml20 pull-left">
         <%= image_tag item.product.asset.url %>
       </div>
     </div>
-    <div class="col-xs-9">
+    <div class="col-md-8 col-xs-7">
       <div class="product_info">
         <div class="product_info_header">
           <sapn class="bold"><%= item.product.name %></sapn>

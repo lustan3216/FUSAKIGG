@@ -2,336 +2,91 @@
 <!-- ========== MAIN ========== -->
 <div class="main">
   <!-- ========== REVOLUTION SLIDER ========== -->
- <%= render 'animation_header' %>
+  <%= render 'animation_header' %>
   <!-- ========== CONTENT SECTION ========== -->
-  <section class="content-section">
-    <div class="container">
-      <div class="row">
+  <section class="content-section pbn ptn ">
+    <div class="row mrn">
+      <!-- ========== SECTION HEADER ========== -->
+      <div class="col-md-7 section-header text-right mt60 mb50">
+        <div class="mr20">
+          <p class="section-subtitle mb20"><%= t(".feature_subtitle") %></p>
+          <h1 class="section-title"><%= t(".feature") %></h1>
+          <p class="section-subtitle mt10"><%= t(".feature_subtitle2") %></p>
 
-        <!-- ========== SECTION HEADER ========== -->
-        <div class="col-md-12 section-header text-center">
-          <h3 class="section-title underline"><%= t(".feature") %></h3>
-          <p class="section-subtitle"><%= t(".feature_subtitle") %></p>
+          <h3 class="mt60">從購買到指派安裝只需要<span>三天</span>的時間<br>迅速讓您的家煥然一新</h3>
+          <p class="section-subtitle mt10"><%= t(".feature_subtitle1") %></p>
         </div> <!-- end section-header -->
-
-        <!-- ========== FEATURE BOXES ========== -->
-        <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center">
-          <div class="icon underline longer-underline">
-            <i class="fa fa-shield" aria-hidden="true"></i>
-          </div> <!-- end icon -->
-          <h5 class="feature-title"><%= t(".feature_1") %></h5>
-          <p class="feature-desc"><%=simple_format t(".feature_1_content") %></p>
-        </div> <!-- end feature -->
-
-        <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center">
-          <div class="icon underline longer-underline">
-            <i class="fa fa-home" aria-hidden="true"></i>
-          </div> <!-- end icon -->
-          <h5 class="feature-title"><%= t(".feature_2") %></h5>
-          <p class="feature-desc"><%=simple_format t(".feature_2_content") %></p>
-        </div> <!-- end feature -->
-
-        <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center">
-          <div class="icon underline longer-underline">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-          </div> <!-- end icon -->
-          <h5 class="feature-title"><%= t(".feature_3") %></h5>
-          <p class="feature-desc"><%=simple_format t(".feature_3_content") %></p></p>
-        </div> <!-- end feature -->
-
-      </div> <!-- end row -->
-    </div> <!-- end container -->
+      </div>
+      <div class="col-md-5 building_bg">
+      </div>
+    </div> <!-- end row -->
   </section>
 
+  <section class="content-section pbn ptn three_feature">
+    <div class="row mrn">
+      <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center pb60 pt60">
+        <div class="icon underline longer-underline">
+          <i class="fa fa-shield" aria-hidden="true"></i>
+        </div> <!-- end icon -->
+        <h5 class="feature-title"><%= t(".feature_1") %></h5>
+        <p class="feature-desc"><%=simple_format t(".feature_1_content") %></p>
+      </div> <!-- end feature -->
 
-  <!-- ========== ABOUT & HISTORY SECTION ========== -->
-  <section class="content-section">
-    <div class="container">
-      <div class="row">
-        <!-- ========== LEFT PART ========== -->
-        <div class="col-md-6 text-left">
-          <h5 class="section-title mb10"><%= t(".diy_cons") %></h5>
-          <p class="section-subtitle mb30"><%= t(".diy_cons_subtitle") %></p>
-          <p class="section-desc mb30"><%= t(".diy_content_html") %></p>
-        </div> <!-- end col-md-6 -->
+      <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center pb60 pt60">
+        <div class="icon underline longer-underline">
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </div> <!-- end icon -->
+        <h5 class="feature-title"><%= t(".feature_2") %></h5>
+        <p class="feature-desc"><%=simple_format t(".feature_2_content") %></p>
+      </div> <!-- end feature -->
 
-        <!-- ========== RIGHT PART ========== -->
-        <div class="col-md-6">
-          <h5 class="section-title mb10"><%= t(".purchase_flow") %></h5>
-          <p class="section-subtitle mb30"><%= t(".purchase_subtitle") %></p>
-          <div class="timeline">
-            <div class="timeline-row">
-              <div class="tm-icon">
-                <span class="ion-ios-paper-outline"></span>
-              </div>
-              <div class="tm-detail">
-                <h5 class="mb10"><%= t(".step")[0] %></h5>
-                <p class="red_span"><%= t(".step_content_1_html") %></p>
-              </div>
-            </div> <!-- end timeline-row -->
-            <div class="timeline-row">
-              <div class="tm-icon">
-                <span class="ion-ios-book-outline"></span>
-              </div>
-              <div class="tm-detail">
-                <h5 class="mb10"><%= t(".step")[1] %></h5>
-                <p class="red_span"><%= t(".step_content_2_html") %></p>
-              </div>
-            </div> <!-- end timeline-row -->
-            <div class="timeline-row">
-              <div class="tm-icon">
-                <span class="ion-ios-pricetags-outline"></span>
-              </div>
-              <div class="tm-detail">
-                <h5 class="mb10"><%= t(".step")[2] %></h5>
-                <p class="red_span"><%= t(".step_content_3_html") %></p>
-              </div>
-            </div> <!-- end timeline-row -->
-            <div class="timeline-row">
-              <div class="tm-icon">
-                <span class="ion-ios-cog-outline"></span>
-              </div>
-              <div class="tm-detail">
-                <h5 class="mb10"><%= t(".step")[3] %></h5>
-                <p class="red_span"><%= t(".step_content_4_html") %></p>
-              </div>
-            </div> <!-- end timeline-row -->
-          </div> <!-- end timeline -->
-        </div> <!-- end col-md-6 -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
+      <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 feature text-center pb60 pt60">
+        <div class="icon underline longer-underline">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div> <!-- end icon -->
+        <h5 class="feature-title"><%= t(".feature_3") %></h5>
+        <p class="feature-desc"><%=simple_format t(".feature_3_content") %></p></p>
+      </div> <!-- end feature -->
+
+    </div> <!-- end row -->
   </section>
-  <!-- ========== PORTFOLIO SECTION ========== -->
-  <section class="content-section pbn">
 
-    <div class="container">
+  <section class="content-section zero-padding parallax-section" data-parallax="scroll" data-image-src="<%= image_path('construction.jpg') %>" data-speed="0.4">
+    <div class="container-fluid">
       <div class="row">
+        <div class="col-md-6 col-md-offset-6 white-bg">
+          <div class="pt40 pl30 pr30 pb30 plxs30 prxs30">
+            <div class="row">
+              <div class="col-md-12 text-left pr30">
+                <h5 class="section-title"><%= t(".diy_cons") %></h5>
+                <p class="section-subtitle mb10"><%= t(".diy_cons_subtitle") %></p>
+                <p class="section-desc mb20">
+                <h5 class="mt15 fwl">關掉總電源</h5>
+                <span class="red ">．忘記關發生意外</span>
+                <h5 class="mt15 fwl">插座與牆壁分離拆解電線</h5>
+                <span class="red "> ．需要技巧性的拔除,如暴力施作會發生母體爆裂造成割傷</span><br>
+                <span class="red ">．不正確施作導致銅線受損，導致長期氧化銅線過熱而帶來的過熱危險</span>
+                <h5 class="mt15 fwl">研究文字天書的電路圖</h5><span class="red ">．不知哪條是電源線、火線、接地線 接錯導致故障</span>
+                <h5 class="mt15 fwl">將銅線插入母體裝回牆體</h5><span class="red ">．沒有插到底造成銅線鬆脫導致接觸不良發生高溫</span>
+                <p class="mt30">以上步驟為最簡單的插座施作方式非專業人士第一次施作二小時以上且還有出錯可能和危險！</p>
+                </p>
+              </div> <!-- end col-md-6 -->
+            </div>
 
-        <!-- ========== SECTION HEADER ========== -->
-        <div class="col-md-12 section-header text-center">
-          <h3 class="section-title underline"><%= t(".pop_products") %></h3>
-          <p class="section-subtitle"><%= t(".pop_products_subtitle") %></p>
-        </div> <!-- end section-header -->
+            <div class="clearfix"></div>
+          </div>
+        </div> <!-- end gray-bg -->
       </div> <!-- end row -->
-    </div> <!-- end container -->
-    <div class="">
-      <!-- ========== MASONRY PORTFOLIO ========== -->
-      <div id="js-grid-masonry" class="cbp">
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item identity">
-          <a href="<%= image_path "images/portfolio/380-570/01.jpg" %>" class="cbp-caption cbp-lightbox" data-title="Easy Note<br>by Cosmin Capitanu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-570/01.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Easy Note</div>
-                  <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item web-design">
-          <a href="<%= image_path "images/portfolio/380-360/01.jpg" %>" class="cbp-caption cbp-lightbox" data-title="The Gang Blue<br>by Cosmin Capitanu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/01.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">The Gang Blue</div>
-                  <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item graphic identity">
-          <a href="http://www.youtube.com/watch?v=3wbvpOIIBQA" class="cbp-caption cbp-lightbox" data-title="Tiger<br>by Cosmin Capitanu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/02.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Tiger</div>
-                  <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item graphic">
-          <a href="<%= image_path "images/portfolio/380-570/02.jpg"%>" class="cbp-caption cbp-lightbox" data-title="Flat Roman Typeface Ui<br>by Cosmin Capitanu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-570/02.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Flat Roman Typeface Ui</div>
-                  <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item identity">
-          <a href="<%= image_path "images/portfolio/380-570/03.jpg"%>" class="cbp-caption cbp-lightbox" data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-570/03.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Seemple* Music for iPad</div>
-                  <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item graphic">
-          <a href="<%= image_path "images/portfolio/380-360/03.jpg"%>" class="cbp-caption cbp-lightbox" data-title="Remind~Me More<br>by Tiberiu Neamu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/03.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Remind~Me More</div>
-                  <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item web-design">
-          <a href="<%= image_path "images/portfolio/380-360/04.jpg"%>" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/04.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Workout Buddy</div>
-                  <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item identity">
-          <a href="http://vimeo.com/156783#" class="cbp-caption cbp-lightbox" data-title="Volume Knob<br>by Paul Flavius Nechita">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/05.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Volume Knob</div>
-                  <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item identity">
-          <a href="<%= image_path "images/portfolio/380-570/04.jpg"%>" class="cbp-caption cbp-lightbox" data-title="Ski * Buddy<br>by Tiberiu Neamu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-570/04.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Ski * Buddy</div>
-                  <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item web-design graphic">
-          <a href="http//www.youtube.com/watch?v=dChhzNGHgnA" class="cbp-caption cbp-lightbox" data-title="Virtualization Icon<br>by Paul Flavius Nechita">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/06.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Virtualization Icon</div>
-                  <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item web-design graphic">
-          <a href="<%= image_path "images/portfolio/380-360/07.jpg"%>" class="cbp-caption cbp-lightbox" data-title="World Clock Widget<br>by Paul Flavius Nechita">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/07.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">World Clock Widget</div>
-                  <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-        <!-- ========== PORTFOLIO ITEM ========== -->
-        <div class="cbp-item web-design graphic">
-          <a href="<%= image_path "images/portfolio/380-360/08.jpg"%>" class="cbp-caption cbp-lightbox" data-title="Sickpuppy<br>by Cosmin Capitanu">
-            <div class="cbp-caption-defaultWrap">
-              <img src="<%= image_path("images/portfolio/380-360/08.jpg") %>" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-              <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                  <div class="cbp-l-caption-title">Sickpuppy</div>
-                  <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                </div> <!-- end cbp-l-caption-body -->
-              </div> <!-- end cbp-l-caption-alignCenter -->
-            </div> <!-- end cbp-caption-activeWrap -->
-          </a>
-        </div> <!-- end cbp-item -->
-
-      </div> <!-- end js-grid-masonry -->
-    </div>
+    </div> <!-- end container-fluid -->
   </section>
 
   <!-- ========== CONTENT SECTION WITH FEATURES ========== -->
   <section class="content-section">
     <div class="container">
-      <div class="row">
+      <div class="row text-center">
 
         <!-- ========== SECTION HEADER ========== -->
-        <div class="col-md-12 section-header text-center">
+        <div class="col-md-12 section-header mt40">
           <h3 class="section-title underline"><%= t(".why_change_old") %></h3>
           <p class="section-subtitle"></p>
         </div> <!-- end section-header -->
@@ -399,15 +154,8 @@
 
 </div> <!-- end main -->
 
-
-<script>
-//  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-//        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-//      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-//  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-//
-//  ga('create', 'UA-75815870-6', 'auto');
-//  ga('send', 'pageview');
-
-</script>
 <script src="<%= asset_path("welcome_index.js") %>"></script>
+<script>
+  //  window.onbeforeunload = function(){ window.scrollTo(0,0); }
+</script>
+

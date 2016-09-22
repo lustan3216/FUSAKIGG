@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require main/modernizr
 //= require main/my_vendor
 //= require main/main

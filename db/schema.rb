@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907084409) do
+ActiveRecord::Schema.define(version: 20160926122214) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20160907084409) do
     t.string   "provider"
     t.string   "uid"
     t.string   "fb_uid"
-    t.string   "fb_token"
+    t.text     "fb_token"
     t.text     "fb_raw_data"
     t.string   "authentication_token"
     t.string   "fb_pic"

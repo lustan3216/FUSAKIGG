@@ -55,6 +55,7 @@ gem 'mysql2'
 gem 'ionicons-rails'
 gem 'bootstrap-sass'
 gem 'premailer-rails'
+gem 'rollbar'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 

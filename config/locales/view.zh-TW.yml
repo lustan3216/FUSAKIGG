@@ -1,4 +1,8 @@
 zh-TW:
+  meta:
+    site_name: "FUSAKI久欣順有限公司"
+    title: "輕觸型大面板到府施工開關插座"
+    description: "FUSAKI輕觸型大版面開關插座經營20餘年，服務百大建設無數建案、政府BOT、捷運，提供到府安裝服務，堅持台灣設廠、製造，最高保固達三年品質有保障"
   devise:
     password: "密碼"
     password_confirm: "密碼確認"

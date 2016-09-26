@@ -31,7 +31,9 @@ class ApplicationController < ActionController::Base
       return @cart
     end
   end
+
   def vaild_admin
     redirect_to raise ActionController::RoutingError.new('Not Found') unless current_user.admin?
   end
+
 end

@@ -22,4 +22,12 @@ module WelcomeHelper
     end
   end
 
+  def itemprop
+    # case controller_name
+    #   when 'welcome'
+    #   "itemscope itemtype='http://schema.org/WebPage'"
+    # end
+    'itemscope itemtype="http://schema.org/WebPage"'.html_safe if controller_name == 'welcome' && action_name == 'index'
+  end
+
 end

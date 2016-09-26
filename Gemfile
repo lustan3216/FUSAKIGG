@@ -42,7 +42,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 gem 'sinatra', github: 'sinatra'
 gem 'rack-protection'
 # rail5
-
+gem 'meta-tags'
 gem 'sprockets', '3.6.3'
 
 gem 'paperclip', '~> 4.3.6'

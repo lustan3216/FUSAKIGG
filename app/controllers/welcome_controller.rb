@@ -16,9 +16,6 @@ class WelcomeController < ApplicationController
   def contact
   end
 
-  def google_verify
-  end
-
   private
 
   def prepare_meta_tags(options={})

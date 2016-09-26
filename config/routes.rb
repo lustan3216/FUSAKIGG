@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'qa' => 'welcome#qa'
   get 'introduce' => 'welcome#introduce'
   get 'download' => 'welcome#download'
-  get 'google6d9f5e965d6d8f70' => 'welcome#google_verify'
   resources :service_messages
 
   resources :products do

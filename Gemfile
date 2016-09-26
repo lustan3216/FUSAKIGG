@@ -56,6 +56,7 @@ gem 'ionicons-rails'
 gem 'bootstrap-sass'
 gem 'premailer-rails'
 gem 'rollbar'
+gem 'sitemap_generator'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 

@@ -289,6 +289,8 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
       sinatra (>= 1.4.7)
+    sitemap_generator (5.2.0)
+      builder (~> 3.0)
     slop (3.6.0)
     spring (1.7.2)
     sprockets (3.6.3)
@@ -360,6 +362,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sidekiq
   sinatra!
+  sitemap_generator
   spring
   sprockets (= 3.6.3)
   sqlite3

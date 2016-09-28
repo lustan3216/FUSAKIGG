@@ -1,11 +1,7 @@
 RailsAdmin.config do |config|
 
   config.authorize_with do
-    begin
-      current_user.admin?
-    rescue
-      redirect_to raise ActionController::RoutingError.new('Not Found')
-    end
+    redirect_to raise ActionController::RoutingError.new('Not Found') unless current_user.admin?
   end
   ### Popular gems integration
 

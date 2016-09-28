@@ -24,3 +24,4 @@
 /config/aws.yml
 /config/database.yml
 
+/config/rollbar.yml

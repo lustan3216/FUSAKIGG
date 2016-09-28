@@ -20,9 +20,6 @@ Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'1t-88s', v110_pri
 Product.create( name:'強押固定式緊急壓扣' ,item_name:'1t-99s', v110_price:250 )
 Product.create( name:'輕觸式電捲門開關' ,item_name:'1t-7669', v110_price:230 )
 
-
-
-
 # Product.create( name:'輕觸型一開關一插座' ,item_name:'1t-1s1r', v110_price:435 ,v220_price:485 )
 # Product.create( name:'輕觸型一開關一接地插座' ,item_name:'1t-1s3r', v110_price:460 ,v220_price:510 )
 # Product.create( name:'輕觸型二開關一插座' ,item_name:'1t-2s2r', v110_price:795 ,v220_price:895 )

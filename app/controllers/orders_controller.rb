@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
     else
       @order.update( paid: 1,status:'處理中')
       @payment = Payment.find_or_create_by!( :order => @order, :payment_method => '貨到付款' )
-      OrderMailer.order_paid_notify(current_user,@order).deliver_now
+      OrderMailer.order_paid_notify(current_user,@order).deliver_later!
       redirect_to thankyou_path(order:@order.id)
     end
   end

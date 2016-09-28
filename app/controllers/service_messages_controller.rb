@@ -8,7 +8,7 @@ class ServiceMessagesController < ApplicationController
     current_user ? @message = current_user.service_messages.build(service_message_params) : @message = ServiceMessage.new(service_message_params)
     if @message.save
       flash[:successful] = @message.problem
-      CustomerServiceMailer.service_message_notify(current_user,@message).deliver_now!
+      CustomerServiceMailer.service_message_notify(current_user,@message).deliver_later!
       redirect_to :back
     end
   end

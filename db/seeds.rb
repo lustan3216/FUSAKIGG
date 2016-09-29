@@ -9,92 +9,57 @@
 Product.delete_all
 
 
-# 1T系列 9
+# 1T系列 7
 Product.create( name:'輕觸型單開關' ,item_name:'1t-7s', v110_price:350 ,v220_price:400 )
 Product.create( name:'輕觸型雙開關' ,item_name:'1t-2s', v110_price:680 ,v220_price:780 )
 Product.create( name:'輕觸型三開關' ,item_name:'1t-3s', v110_price:1010 ,v220_price:1160 )
-Product.create( name:'輕觸型四開關' ,item_name:'1t-4s', v110_price:1360 ,v220_price:1560 )
-Product.create( name:'輕觸型五開關' ,item_name:'1t-5s', v110_price:1690 ,v220_price:1940 )
-Product.create( name:'輕觸型六開關' ,item_name:'1t-6s', v110_price:2020 ,v220_price:2320 )
-Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'1t-88s', v110_price:250 )
-Product.create( name:'強押固定式緊急壓扣' ,item_name:'1t-99s', v110_price:250 )
-Product.create( name:'輕觸式電捲門開關' ,item_name:'1t-7669', v110_price:230 )
+Product.create( name:'輕觸式電捲門開關' ,item_name:'1t-7669', v110_price:230 )  dddd
+Product.create( name:'輕觸型一開關一插座' ,item_name:'1t-1s1r', v110_price:435 ,v220_price:485 ) dddd
+Product.create( name:'輕觸型一開關一接地插座' ,item_name:'1t-1s3r', v110_price:460 ,v220_price:510 )
+Product.create( name:'輕觸型一開關一調光' ,item_name:'1t-1s1l', v110_price:460 ,v220_price:510 )
 
-# Product.create( name:'輕觸型一開關一插座' ,item_name:'1t-1s1r', v110_price:435 ,v220_price:485 )
-# Product.create( name:'輕觸型一開關一接地插座' ,item_name:'1t-1s3r', v110_price:460 ,v220_price:510 )
-# Product.create( name:'輕觸型二開關一插座' ,item_name:'1t-2s2r', v110_price:795 ,v220_price:895 )
-# Product.create( name:'輕觸型二開關一接地插座' ,item_name:'1t-2s6r', v110_price:845 ,v220_price:945 )
-# Product.create( name:'輕觸型二開關二插座' ,item_name:'1t-2s2r', v110_price:795 ,v220_price:895 )
-# Product.create( name:'輕觸型二開關二接地插座' ,item_name:'1t-2s6r', v110_price:845 ,v220_price:945 )
-# Product.create( name:'輕觸型三開關一插座' ,item_name:'1t-3s1r', v110_price:1115 ,v220_price:1265 )
-# Product.create( name:'輕觸型三開關一接地插座' ,item_name:'1t-3s3r', v110_price:1140 ,v220_price:1290 )
-# Product.create( name:'輕觸型三開關二插座' ,item_name:'1t-3s2r', v110_price:1125 ,v220_price:1275 )
-# Product.create( name:'輕觸型三開關二接地插座' ,item_name:'1t-3s6r', v110_price:1175 ,v220_price:1325 )
-
-# 1T插座系列 28
-Product.create( name:'單插座' ,item_name:'1t-1r', v110_price:85 )
-Product.create( name:'雙插座' ,item_name:'1t-2r', v110_price:115 )
+# 1T插座系列 21
 Product.create( name:'三插座' ,item_name:'1t-1503', v110_price:190 )
-Product.create( name:'四插座' ,item_name:'1t-2r2r', v110_price:230 )
-Product.create( name:'接地四插座' ,item_name:'1t-6r6r', v110_price:330 )
 Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'1t-5rt', v110_price:150 )
-Product.create( name:'左L型專插座5.5絞線' ,item_name:'1t-5rl', v110_price:150 )
 Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'1t-5rh', v110_price:150 )
 Product.create( name:'接地單插座2.0線' ,item_name:'1t-3r', v110_price:110 )
 Product.create( name:'接地雙插座2.0線' ,item_name:'1t-6r', v110_price:165 )
 Product.create( name:'接地雙插座5.5絞線' ,item_name:'1t-8r', v110_price:185 )
-Product.create( name:'輕觸電捲門開關' ,item_name:'1t-7669', v110_price:230 )
+Product.create( name:'輕觸電捲門開關' ,item_name:'1t-7669', v110_price:230 )  dddd
 Product.create( name:'電話單插座' ,item_name:'1t-41', v110_price:105 )
 Product.create( name:'電話雙插座' ,item_name:'1t-42', v110_price:170 )
 Product.create( name:'電話三插座' ,item_name:'1t-43', v110_price:275 )
 Product.create( name:'網路單插座Cat.5e' ,item_name:'1t-815', v110_price:360 )
-Product.create( name:'網路雙插座Cat.5e' ,item_name:'1t-825', v110_price:690)
 Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'1t-81415', v110_price:465 )
 Product.create( name:'單網路/雙電話組合插座Cat.5e' ,item_name:'1t-81425', v110_price:530 )
 Product.create( name:'網路單插座Cat.6' ,item_name:'1t-816', v110_price:360 )
-Product.create( name:'網路雙插座Cat.6' ,item_name:'1t-826', v110_price:690)
 Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'1t-81641', v110_price:465 )
-Product.create( name:'單網路Cat.6/雙電話組合插座' ,item_name:'1t-81642', v110_price:530 )
-Product.create( name:'電視單插座' ,item_name:'1t-tv1', v110_price:170 )
+Product.create( name:'電視單插座' ,item_name:'1t-tv1', v110_price:170 )dddd
 Product.create( name:'電視雙插座' ,item_name:'1t-tv2', v110_price:310 )
-
-# 緊急插座
+Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'1t-88s', v110_price:250 )
+Product.create( name:'強押固定式緊急壓扣' ,item_name:'1t-99s', v110_price:250 )
 Product.create( name:'紅色緊急接地單插座2.0線' ,item_name:'1t-3rr', v110_price:150 )
 Product.create( name:'紅色緊急接地雙插座2.0絞線' ,item_name:'1t-6rr', v110_price:215 )
-Product.create( name:'紅色緊急接地雙插座5.5絞線' ,item_name:'1t-8rr', v110_price:235 )
 
-# QT開關系列 10
+# QT開關系列 13
 Product.create( name:'流線型單開關' ,item_name:'qt-7s', v110_price:200 ,v220_price:223 )
 Product.create( name:'流線型四路單開關' ,item_name:'qt-7s04', v110_price:450 ,v220_price:475 )
 Product.create( name:'流線型雙開關' ,item_name:'qt-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'流線型三開關' ,item_name:'qt-3s', v110_price:495 ,v220_price:570 )
-Product.create( name:'流線型四開關' ,item_name:'qt-4s', v110_price:680 ,v220_price:780 )
-Product.create( name:'流線型五開關' ,item_name:'qt-5s', v110_price:835 ,v220_price:960 )
-Product.create( name:'流線型六開關' ,item_name:'qt-6s', v110_price:990 ,v220_price:1140 )
 Product.create( name:'流線型夜光電鈴壓扣' ,item_name:'qt-00', v110_price:200 ,v220_price:225 )
 Product.create( name:'流線型一開關一電鈴' ,item_name:'qt-1s1b', v110_price:400 ,v220_price:450 )
 Product.create( name:'輕觸電捲門開關' ,item_name:'qt-7669', v110_price:230 )
-
-# Product.create( name:'流線型一開關一插座' ,item_name:'qt-1s1r', v110_price:270 ,v220_price:295 )
-# Product.create( name:'流線型一開關一接地插座' ,item_name:'qt-1s3r', v110_price:300 ,v220_price:325 )
-# Product.create( name:'流線型一開關二插座' ,item_name:'qt-1s2ra', v110_price:315 ,v220_price:340 )
-# Product.create( name:'流線型一開關二接地插座' ,item_name:'qt-1s6ra', v110_price:365 ,v220_price:390 )
-# Product.create( name:'流線型二開關一插座' ,item_name:'qt-2s1ra', v110_price:425 ,v220_price:475 )
-# Product.create( name:'流線型二開關一接地插座' ,item_name:'qt-2s3ra', v110_price:450 ,v220_price:500 )
-# Product.create( name:'流線型二開關二插座' ,item_name:'qt-2s2r', v110_price:455 ,v220_price:505 )
-# Product.create( name:'流線型二開關二接地插座' ,item_name:'qt-2s6r', v110_price:505 ,v220_price:555 )
-# Product.create( name:'流線型三開關一插座' ,item_name:'qt-3s1r', v110_price:610 ,v220_price:685 )
-# Product.create( name:'流線型三開關一接地插座' ,item_name:'qt-3s3r', v110_price:640 ,v220_price:715 )
-# Product.create( name:'流線型三開關二插座' ,item_name:'qt-3s2r', v110_price:610 ,v220_price:685 )
-# Product.create( name:'流線型三開關二插座插座' ,item_name:'qt-3s6r', v110_price:660 ,v220_price:735 )
+Product.create( name:'輕觸型一開關一調光' ,item_name:'qt-1s1l', v110_price:460 ,v220_price:510 )
+Product.create( name:'流線型一開關一插座' ,item_name:'qt-1s1r', v110_price:270 ,v220_price:295 )
+Product.create( name:'流線型一開關一接地插座' ,item_name:'qt-1s3r', v110_price:300 ,v220_price:325 )
+Product.create( name:'流線型一開關二插座' ,item_name:'qt-1s2ra', v110_price:315 ,v220_price:340 )
+Product.create( name:'流線型二開關一插座' ,item_name:'qt-2s1ra', v110_price:425 ,v220_price:475 )
+Product.create( name:'流線型二開關一接地插座' ,item_name:'qt-2s3ra', v110_price:450 ,v220_price:500 )
 
 
-# QT插座系列  28
-Product.create( name:'單插座' ,item_name:'qt-1r', v110_price:85 )
-Product.create( name:'雙插座' ,item_name:'qt-2r', v110_price:115 )
+# QT插座系列  19
 Product.create( name:'三插座' ,item_name:'qt-1503', v110_price:190 )
 Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'qt-5rt', v110_price:150 )
-Product.create( name:'左L型專插座5.5絞線' ,item_name:'qt-5rl', v110_price:150 )
 Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'qt-5rh', v110_price:150 )
 Product.create( name:'接地單插座2.0線' ,item_name:'qt-3r', v110_price:110 )
 Product.create( name:'接地雙插座2.0線' ,item_name:'qt-6r', v110_price:165 )
@@ -103,39 +68,69 @@ Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'qt-88s', v110_pri
 Product.create( name:'強押固定式緊急壓扣' ,item_name:'qt-99s', v110_price:250 )
 Product.create( name:'電話單插座' ,item_name:'qt-41', v110_price:105 )
 Product.create( name:'電話雙插座' ,item_name:'qt-42', v110_price:170 )
+Product.create( name:'電話三插座' ,item_name:'qt-43', v110_price:170 )
 Product.create( name:'網路單插座Cat.5e' ,item_name:'qt-815', v110_price:360 )
-Product.create( name:'網路雙插座Cat.5e' ,item_name:'qt-825', v110_price:690)
 Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'qt-81415', v110_price:465 )
-Product.create( name:'單網路/雙電話組合插座Cat.5e' ,item_name:'qt-81425', v110_price:530 )
 Product.create( name:'網路單插座Cat.6' ,item_name:'qt-816', v110_price:360 )
-Product.create( name:'網路雙插座Cat.6' ,item_name:'qt-826', v110_price:690)
 Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'qt-81641', v110_price:465 )
-Product.create( name:'單網路Cat.6/雙電話組合插座' ,item_name:'qt-81642', v110_price:530 )
-Product.create( name:'電話三插座' ,item_name:'qt-43', v110_price:275 )
 Product.create( name:'電視單插座' ,item_name:'qt-tv1', v110_price:170 )
 Product.create( name:'電視雙插座' ,item_name:'qt-tv2', v110_price:310 )
-
-# 緊急插座
 Product.create( name:'紅色緊急接地單插座2.0線' ,item_name:'qt-3rr', v110_price:150 )
 Product.create( name:'紅色緊急接地雙插座2.0絞線' ,item_name:'qt-6rr', v110_price:215 )
-Product.create( name:'紅色緊急接地雙插座5.5絞線' ,item_name:'qt-8rr', v110_price:235 )
+
+# FK開關系列 13
+Product.create( name:'典雅型單開關' ,item_name:'fk-7s', v110_price:200 ,v220_price:223 )
+Product.create( name:'典雅型四路單開關' ,item_name:'fk-7s04', v110_price:450 ,v220_price:475 )
+Product.create( name:'典雅型雙開關' ,item_name:'fk-2s', v110_price:340 ,v220_price:390 )
+Product.create( name:'典雅型三開關' ,item_name:'fk-3s', v110_price:495 ,v220_price:570 )
+Product.create( name:'典雅型夜光電鈴壓扣' ,item_name:'fk-00', v110_price:200 ,v220_price:225 )
+Product.create( name:'典雅型一開關一電鈴' ,item_name:'fk-1s1b', v110_price:400 ,v220_price:450 )
+Product.create( name:'輕觸電捲門開關' ,item_name:'fk-7669', v110_price:230 )
+Product.create( name:'輕觸型一開關一調光' ,item_name:'fk-1s1l', v110_price:460 ,v220_price:510 )
+Product.create( name:'典雅型一開關一插座' ,item_name:'fk-1s1r', v110_price:270 ,v220_price:295 )
+Product.create( name:'典雅型一開關一接地插座' ,item_name:'fk-1s3r', v110_price:300 ,v220_price:325 )
+Product.create( name:'典雅型一開關二插座' ,item_name:'fk-1s2ra', v110_price:315 ,v220_price:340 )
+Product.create( name:'典雅型二開關一插座' ,item_name:'fk-2s1ra', v110_price:425 ,v220_price:475 )
+Product.create( name:'典雅型二開關一接地插座' ,item_name:'fk-2s3ra', v110_price:450 ,v220_price:500 )
+
+# FK插座系列  19
+Product.create( name:'三插座' ,item_name:'fk-1503', v110_price:190 )
+Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'fk-5rt', v110_price:150 )
+Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'fk-5rh', v110_price:150 )
+Product.create( name:'接地單插座2.0線' ,item_name:'fk-3r', v110_price:110 )
+Product.create( name:'接地雙插座2.0線' ,item_name:'fk-6r', v110_price:165 )
+Product.create( name:'接地雙插座5.5絞線' ,item_name:'fk-8r', v110_price:185 )
+Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'fk-88s', v110_price:250 )
+Product.create( name:'強押固定式緊急壓扣' ,item_name:'fk-99s', v110_price:250 )
+Product.create( name:'電話單插座' ,item_name:'fk-41', v110_price:105 )
+Product.create( name:'電話雙插座' ,item_name:'fk-42', v110_price:170 )
+Product.create( name:'電話三插座' ,item_name:'fk-43', v110_price:170 )
+Product.create( name:'網路單插座Cat.5e' ,item_name:'fk-815', v110_price:360 ) dddd
+Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'fk-81415', v110_price:465 )
+Product.create( name:'網路單插座Cat.6' ,item_name:'fk-816', v110_price:360 ) dddd
+Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'fk-81641', v110_price:465 )
+Product.create( name:'電視單插座' ,item_name:'fk-tv1', v110_price:170 )
+Product.create( name:'電視雙插座' ,item_name:'fk-tv2', v110_price:310 )
+Product.create( name:'紅色緊急接地單插座2.0線' ,item_name:'fk-3rr', v110_price:150 )
+Product.create( name:'紅色緊急接地雙插座2.0絞線' ,item_name:'fk-6rr', v110_price:215 )
+
+# FK蓋片 3
+Product.create( name:'單連盲蓋片' ,item_name:'fk-4d', v110_price:30 )
+Product.create( name:'雙連盲蓋片' ,item_name:'fk-5d', v110_price:60 )
+Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'fk-6d', v110_price:40 )
 
 # 1T蓋片 3
-Product.create( name:'單連盲蓋片' ,item_name:'1t-4d', v110_price:30 )
-Product.create( name:'雙連盲蓋片' ,item_name:'1t-5d', v110_price:60 )
+Product.create( name:'單連盲蓋片' ,item_name:'1t-4d', v110_price:30 )dddd
+Product.create( name:'雙連盲蓋片' ,item_name:'1t-5d', v110_price:60 )dddd
 Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'1t-6d', v110_price:40 )
 
 # QT蓋片 3
 Product.create( name:'單連盲蓋片' ,item_name:'qt-4d', v110_price:30 )
 Product.create( name:'雙連盲蓋片' ,item_name:'qt-5d', v110_price:60 )
-Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:40 )
+Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:40 )dddd
 
 # 其他 7
-Product.create( name:'彈跳地板雙插座' ,item_name:'okman-1402', v110_price:300 )
 Product.create( name:'彈跳地板接地雙插座' ,item_name:'okman-15123', v110_price:130 )
-Product.create( name:'彈跳地板單接地插座單電話' ,item_name:'okman-3r41', v110_price:300 )
-Product.create( name:'彈跳地板網路電話單接地插座' ,item_name:'okman-3r8141', v110_price:130 )
-Product.create( name:'彈跳地板電視電話單接地插座' ,item_name:'okman-tv3r41', v110_price:300 )
 Product.create( name:'防水蓋版' ,item_name:'6808', v110_price:410 )
 Product.create( name:'防水蓋版(咖啡色)' ,item_name:'6808b', v110_price:410 )
 Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v220_price:410 ,description:'

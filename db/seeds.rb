@@ -106,7 +106,7 @@ Product.create( name:'電話單插座' ,item_name:'fk-41', v110_price:105 )
 Product.create( name:'電話雙插座' ,item_name:'fk-42', v110_price:170 )
 Product.create( name:'電話三插座' ,item_name:'fk-43', v110_price:170 )
 Product.create( name:'網路單插座Cat.5e' ,item_name:'fk-815', v110_price:360 )
-Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'fk-81415', v110_price:465 )
+Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'fk-81541', v110_price:465 )
 Product.create( name:'網路單插座Cat.6' ,item_name:'fk-816', v110_price:360 )
 Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'fk-81641', v110_price:465 )
 Product.create( name:'電視單插座' ,item_name:'fk-tv1', v110_price:170 )
@@ -117,15 +117,15 @@ Product.create( name:'紅色緊急接地雙插座2.0絞線' ,item_name:'fk-6rr',
 # FK蓋片 3
 Product.create( name:'單連盲蓋片' ,item_name:'fk-4d', v110_price:30 )
 Product.create( name:'雙連盲蓋片' ,item_name:'fk-5d', v110_price:60 )
-Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'fk-6d', v110_price:60 )
+# Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'fk-6d', v110_price:60 )
 
 # 1T蓋片 3
-Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'1t-6d', v110_price:60 )
+# Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'1t-6d', v110_price:60 )
 
 # QT蓋片 3
 Product.create( name:'單連盲蓋片' ,item_name:'qt-4d', v110_price:30 )
 Product.create( name:'雙連盲蓋片' ,item_name:'qt-5d', v110_price:60 )
-Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:60 )
+# Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:60 )
 
 # 其他 7
 Product.create( name:'彈跳地板接地雙插座' ,item_name:'okman-15123', v110_price:130 )

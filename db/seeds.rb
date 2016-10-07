@@ -133,19 +133,19 @@ Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:40 )
 Product.create( name:'彈跳地板接地雙插座' ,item_name:'okman-15123', v110_price:130 )
 Product.create( name:'防水蓋版' ,item_name:'6808', v110_price:410 )
 Product.create( name:'防水蓋版(咖啡色)' ,item_name:'6808b', v110_price:410 )
-Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v220_price:410 ,description:'')
-# <h5>產品適用於：</h5>
-# <ul>
-# <li>．走廊、樓梯間、電梯口、室內停車場、玄關.......等</li>
-# <li>．超薄外型，亦可崁入式裝法或非崁入式裝法</li>
-# <li>．快速的安裝結構設計，節省施工時間</li>
-# <li>．使用先進SMT表面黏著設計生產</li>
-# <li>．超強抗RFI / EMI 干擾設計，使產品更加穩定</li>
-# <li>．可避免忘記隨手關燈習慣，亦有人到即亮的自動點燈功能，不並用手開/關燈，充分發揮省電優點</li>
-# <li>．感知範圍高2.4公尺為直徑距離6公尺</li>
-# <li>．感知範圍高3公尺為直徑距離8公尺</li>
-# <li>．感知範圍高3.6公尺為直徑距離10公尺</li>
-# </ul>'
+Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v220_price:410 ,description:'
+<h5>產品適用於：</h5>
+<ul>
+<li>．走廊、樓梯間、電梯口、室內停車場、玄關.......等</li>
+<li>．超薄外型，亦可崁入式裝法或非崁入式裝法</li>
+<li>．快速的安裝結構設計，節省施工時間</li>
+<li>．使用先進SMT表面黏著設計生產</li>
+<li>．超強抗RFI / EMI 干擾設計，使產品更加穩定</li>
+<li>．可避免忘記隨手關燈習慣，亦有人到即亮的自動點燈功能，不並用手開/關燈，充分發揮省電優點</li>
+<li>．感知範圍高2.4公尺為直徑距離6公尺</li>
+<li>．感知範圍高3公尺為直徑距離8公尺</li>
+<li>．感知範圍高3.6公尺為直徑距離10公尺</li>
+</ul>')
 
 # 說明
 Product.where( 'name LIKE ?','%緊急壓扣%').update(description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')

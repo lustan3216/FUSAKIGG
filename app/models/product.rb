@@ -19,7 +19,7 @@ class Product < ApplicationRecord
   end
 
   def v220?
-    "220V" if self.v220_price
+    "/ 220V" if self.v220_price
   end
 
   def show_110v_price

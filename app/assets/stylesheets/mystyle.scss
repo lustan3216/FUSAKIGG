@@ -156,6 +156,11 @@ a.anchor{
   margin:-10px 100px 30px
 }
 .product_index_info{
+  .image > img{
+    width: 120% ;
+    height: 100%;
+    margin-right: -3.5%;
+  }
   .content{
     .fa{
       margin-right: 5px;
@@ -186,7 +191,7 @@ a.anchor{
   }
 }
 .flex_cneter{
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }

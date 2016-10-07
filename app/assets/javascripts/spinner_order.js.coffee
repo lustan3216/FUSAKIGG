@@ -25,7 +25,7 @@ ready = ->
     max = 500
     step = 1
     product_item = $(this).closest('.product_item')
-    val = product_item.find('#txtNum').val().trim()
+    val = product_item.find('#txtNum').val().trim();
     num = if val isnt '' then parseInt(val) else 0
     switch command
       when 'Up'
@@ -36,8 +36,8 @@ ready = ->
         if (num > min)
           num -= step
           break
-    product_item.find('#txtNum').attr("value",num)
-    id = $(this).siblings('input').attr('name')
+    product_item.find('#txtNum').attr("value", num)
+    id = window.location.href.replace( /http.*products\//, '')
     $.ajax
       type: 'PUT',
       url: "/line_items",

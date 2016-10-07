@@ -11,13 +11,13 @@
 
         <div class="col-md-9 product_show_info">
           <div class="ui segment">
-            <div class="col-md-5">
+            <div class="col-md-7">
               <div class="text-center">
-                <%= image_tag @product.asset.url ,class:"img-responsive"%>
+                <%= image_tag "product/#{@product.item_name}" ,class:"img-responsive"%>
               </div>
             </div>
 
-            <div class="col-md-5 ml30">
+            <div class="col-md-5 pl30 pt60">
               <%= form_tag buy_product_path(@product), remote: true do %>
                   <h4><%= @product.name %></h4>
                   <% if @product.v110? %>
@@ -50,8 +50,7 @@
             </div> <!-- end col-md-6 -->
             <div class="row">
               <div class="col-md-12 product_describle ">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p><%= @product.description %></p>
               </div>
             </div>
           </div>
@@ -64,7 +63,6 @@
 
 <%= javascript_include_tag 'spinner_order' %>
 <script type="text/javascript" charset="utf-8">
-
   $('.ui.radio.checkbox')
       .checkbox()
   ;

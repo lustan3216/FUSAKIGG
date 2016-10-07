@@ -14,7 +14,7 @@
                   <div class="col-md-4 col-sm-6  col-xs-12">
                     <%= link_to product_path(product),class:"shop-box" do %>
                         <div class="ui card fluid mb30 product_index_info">
-                          <div class="blurring dimmable image">
+                          <div class="blurring dimmable image flex_cneter">
                             <div class="ui dimmer">
                               <div class="content">
                                 <div class="center">
@@ -22,11 +22,11 @@
                                 </div>
                               </div>
                             </div>
-                            <%= image_tag product.asset.url %>
+                            <%= image_tag "product/#{product.item_name}" %>
                           </div>
                           <div class="content">
                             <div class="meta pull-right">
-                              <p><%= product.v110? %> / <%= product.v220? %></p>
+                              <p><%= product.v110? %> <%= product.v220? %></p>
                             </div>
                             <div class="descriptison pull-left red">
                               <%= product.show_110v_price %>

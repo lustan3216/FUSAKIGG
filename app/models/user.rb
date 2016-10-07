@@ -7,9 +7,10 @@ class User < ApplicationRecord
   has_many :friends, through: :service_messages
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  devise :database_authenticatable, :registerable,:confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
+
   serialize :fb_raw_data
   before_create :generate_authentication_token
 

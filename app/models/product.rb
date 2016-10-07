@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   scope :t1, -> { where( 'item_name LIKE ?','%1T%') }
+  scope :fk, -> { where( 'item_name LIKE ?','%fk%') }
   scope :qt, -> { where( 'item_name LIKE ?','%QT%') }
   scope :switch, -> { where( 'name LIKE ?','%開%') }
   scope :plug, -> { where( 'name LIKE ?','%插%') }

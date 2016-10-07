@@ -20,12 +20,12 @@ Product.create( name:'輕觸型一開關一調光' ,item_name:'1t-1s1l', v110_pr
 
 # 1T插座系列 21
 Product.create( name:'三插座' ,item_name:'1t-1503', v110_price:190 )
-Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'1t-5rt', v110_price:150 )
+Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'1t-5rt', v220_price:150 )
 Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'1t-5rh', v110_price:150 )
 Product.create( name:'接地單插座2.0線' ,item_name:'1t-3r', v110_price:110 )
 Product.create( name:'接地雙插座2.0線' ,item_name:'1t-6r', v110_price:165 )
 Product.create( name:'接地雙插座5.5絞線' ,item_name:'1t-8r', v110_price:185 )
-Product.create( name:'輕觸電捲門開關' ,item_name:'1t-7669', v110_price:230 )
+Product.create( name:'輕觸型電捲門開關' ,item_name:'1t-7669', v110_price:230 )
 Product.create( name:'電話單插座' ,item_name:'1t-41', v110_price:105 )
 Product.create( name:'電話雙插座' ,item_name:'1t-42', v110_price:170 )
 Product.create( name:'電話三插座' ,item_name:'1t-43', v110_price:275 )
@@ -36,8 +36,8 @@ Product.create( name:'網路單插座Cat.6' ,item_name:'1t-816', v110_price:360 
 Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'1t-81641', v110_price:465 )
 Product.create( name:'電視單插座' ,item_name:'1t-tv1', v110_price:170 )
 Product.create( name:'電視雙插座' ,item_name:'1t-tv2', v110_price:310 )
-Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'1t-88s', v110_price:250 )
-Product.create( name:'強押固定式緊急壓扣' ,item_name:'1t-99s', v110_price:250 )
+Product.create( name:'復歸回彈式緊急押扣' ,item_name:'1t-88s', v110_price:250 )
+Product.create( name:'強押固定式緊急押扣' ,item_name:'1t-99s', v110_price:250 )
 Product.create( name:'紅色緊急接地單插座2.0線' ,item_name:'1t-3rr', v110_price:150 )
 Product.create( name:'紅色緊急接地雙插座2.0絞線' ,item_name:'1t-6rr', v110_price:215 )
 
@@ -46,10 +46,10 @@ Product.create( name:'流線型單開關' ,item_name:'qt-7s', v110_price:200 ,v2
 Product.create( name:'流線型四路單開關' ,item_name:'qt-7s04', v110_price:450 ,v220_price:475 )
 Product.create( name:'流線型雙開關' ,item_name:'qt-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'流線型三開關' ,item_name:'qt-3s', v110_price:495 ,v220_price:570 )
-Product.create( name:'流線型夜光電鈴壓扣' ,item_name:'qt-00', v110_price:200 ,v220_price:225 )
+Product.create( name:'流線型夜光電鈴押扣' ,item_name:'qt-00', v110_price:200 ,v220_price:225 )
 Product.create( name:'流線型一開關一電鈴' ,item_name:'qt-1s1b', v110_price:400 ,v220_price:450 )
-Product.create( name:'輕觸電捲門開關' ,item_name:'qt-7669', v110_price:230 )
-Product.create( name:'輕觸型一開關一調光' ,item_name:'qt-1s1l', v110_price:460 ,v220_price:510 )
+Product.create( name:'流線型電捲門開關' ,item_name:'qt-7669', v110_price:230 )
+Product.create( name:'流線型一開關一調光' ,item_name:'qt-1s1l', v110_price:460 ,v220_price:510 )
 Product.create( name:'流線型一開關一插座' ,item_name:'qt-1s1r', v110_price:270 ,v220_price:295 )
 Product.create( name:'流線型一開關一接地插座' ,item_name:'qt-1s3r', v110_price:300 ,v220_price:325 )
 Product.create( name:'流線型一開關二插座' ,item_name:'qt-1s2ra', v110_price:315 ,v220_price:340 )
@@ -59,13 +59,13 @@ Product.create( name:'流線型二開關一接地插座' ,item_name:'qt-2s3ra', 
 
 # QT插座系列  19
 Product.create( name:'三插座' ,item_name:'qt-1503', v110_price:190 )
-Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'qt-5rt', v110_price:150 )
+Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'qt-5rt', v220_price:150 )
 Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'qt-5rh', v110_price:150 )
 Product.create( name:'接地單插座2.0線' ,item_name:'qt-3r', v110_price:110 )
 Product.create( name:'接地雙插座2.0線' ,item_name:'qt-6r', v110_price:165 )
 Product.create( name:'接地雙插座5.5絞線' ,item_name:'qt-8r', v110_price:185 )
-Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'qt-88s', v110_price:250 )
-Product.create( name:'強押固定式緊急壓扣' ,item_name:'qt-99s', v110_price:250 )
+Product.create( name:'復歸回彈式緊急押扣' ,item_name:'qt-88s', v110_price:250 )
+Product.create( name:'強押固定式緊急押扣' ,item_name:'qt-99s', v110_price:250 )
 Product.create( name:'電話單插座' ,item_name:'qt-41', v110_price:105 )
 Product.create( name:'電話雙插座' ,item_name:'qt-42', v110_price:170 )
 Product.create( name:'電話三插座' ,item_name:'qt-43', v110_price:170 )
@@ -83,10 +83,10 @@ Product.create( name:'典雅型單開關' ,item_name:'fk-7s', v110_price:200 ,v2
 Product.create( name:'典雅型四路單開關' ,item_name:'fk-7s04', v110_price:450 ,v220_price:475 )
 Product.create( name:'典雅型雙開關' ,item_name:'fk-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'典雅型三開關' ,item_name:'fk-3s', v110_price:495 ,v220_price:570 )
-Product.create( name:'典雅型夜光電鈴壓扣' ,item_name:'fk-00', v110_price:200 ,v220_price:225 )
+Product.create( name:'典雅型夜光電鈴押扣' ,item_name:'fk-00', v110_price:200 ,v220_price:225 )
 Product.create( name:'典雅型一開關一電鈴' ,item_name:'fk-1s1b', v110_price:400 ,v220_price:450 )
-Product.create( name:'輕觸電捲門開關' ,item_name:'fk-7669', v110_price:230 )
-Product.create( name:'輕觸型一開關一調光' ,item_name:'fk-1s1l', v110_price:460 ,v220_price:510 )
+Product.create( name:'典雅型電捲門開關' ,item_name:'fk-7669', v110_price:230 )
+Product.create( name:'典雅型一開關一調光' ,item_name:'fk-1s1l', v110_price:460 ,v220_price:510 )
 Product.create( name:'典雅型一開關一插座' ,item_name:'fk-1s1r', v110_price:270 ,v220_price:295 )
 Product.create( name:'典雅型一開關一接地插座' ,item_name:'fk-1s3r', v110_price:300 ,v220_price:325 )
 Product.create( name:'典雅型一開關二插座' ,item_name:'fk-1s2ra', v110_price:315 ,v220_price:340 )
@@ -95,13 +95,13 @@ Product.create( name:'典雅型二開關一接地插座' ,item_name:'fk-2s3ra', 
 
 # FK插座系列  19
 Product.create( name:'三插座' ,item_name:'fk-1503', v110_price:190 )
-Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'fk-5rt', v110_price:150 )
+Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'fk-5rt', v220_price:150 )
 Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'fk-5rh', v110_price:150 )
 Product.create( name:'接地單插座2.0線' ,item_name:'fk-3r', v110_price:110 )
 Product.create( name:'接地雙插座2.0線' ,item_name:'fk-6r', v110_price:165 )
 Product.create( name:'接地雙插座5.5絞線' ,item_name:'fk-8r', v110_price:185 )
-Product.create( name:'復歸回彈式緊急壓扣' ,item_name:'fk-88s', v110_price:250 )
-Product.create( name:'強押固定式緊急壓扣' ,item_name:'fk-99s', v110_price:250 )
+Product.create( name:'復歸回彈式緊急押扣' ,item_name:'fk-88s', v110_price:250 )
+Product.create( name:'強押固定式緊急押扣' ,item_name:'fk-99s', v110_price:250 )
 Product.create( name:'電話單插座' ,item_name:'fk-41', v110_price:105 )
 Product.create( name:'電話雙插座' ,item_name:'fk-42', v110_price:170 )
 Product.create( name:'電話三插座' ,item_name:'fk-43', v110_price:170 )
@@ -117,23 +117,21 @@ Product.create( name:'紅色緊急接地雙插座2.0絞線' ,item_name:'fk-6rr',
 # FK蓋片 3
 Product.create( name:'單連盲蓋片' ,item_name:'fk-4d', v110_price:30 )
 Product.create( name:'雙連盲蓋片' ,item_name:'fk-5d', v110_price:60 )
-Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'fk-6d', v110_price:40 )
+Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'fk-6d', v110_price:60 )
 
 # 1T蓋片 3
-Product.create( name:'單連盲蓋片' ,item_name:'1t-4d', v110_price:30 )
-Product.create( name:'雙連盲蓋片' ,item_name:'1t-5d', v110_price:60 )
-Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'1t-6d', v110_price:40 )
+Product.create( name:'單連立體冷氣出水口蓋片' ,item_name:'1t-6d', v110_price:60 )
 
 # QT蓋片 3
 Product.create( name:'單連盲蓋片' ,item_name:'qt-4d', v110_price:30 )
 Product.create( name:'雙連盲蓋片' ,item_name:'qt-5d', v110_price:60 )
-Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:40 )
+Product.create( name:'冷氣出水口蓋片' ,item_name:'qt-6d', v110_price:60 )
 
 # 其他 7
 Product.create( name:'彈跳地板接地雙插座' ,item_name:'okman-15123', v110_price:130 )
 Product.create( name:'防水蓋版' ,item_name:'6808', v110_price:410 )
 Product.create( name:'防水蓋版(咖啡色)' ,item_name:'6808b', v110_price:410 )
-Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v220_price:410 ,description:'
+Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_price:2500, v220_price:2600 ,description:'
 <h5>產品適用於：</h5>
 <ul>
 <li>．走廊、樓梯間、電梯口、室內停車場、玄關.......等</li>
@@ -148,7 +146,7 @@ Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v220_pri
 </ul>')
 
 # 說明
-Product.where( 'name LIKE ?','%緊急壓扣%').update(description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
+Product.where( 'name LIKE ?','%緊急押扣%').update(description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
 Product.where( 'name LIKE ?','%紅色緊急%').update(description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
 Product.where( 'name LIKE ?','%網路%').update(description:'寬頻網路專用資訊插座 Cat.5e，非一般電話插座，內建電路板傳輸速率達125bps(UL認證合格)<br>寬頻網路專用資訊插座 Cat.6，非一般電話插座，內建電路板傳輸速率達250ps(UL認證合格)')
 Product.where( 'name LIKE ?','%防水%').update(description:'建議裝設在室外或會被水淋到的地方<br>在水/雨水容易侵入的地方裝設普通的插座是非常危險的，利用防水蓋版可避免觸電的危險，增加美觀及安全性')
@@ -165,6 +163,6 @@ Product.where( 'name LIKE ?','%彈跳%').update(description:'
 Product.where( 'name LIKE ? and item_name LIKE ?','%開關%','%s%').update(description:'<ul>
 	<li>開關皆有螢光單指示燈讓您不再摸黑找開關，一目瞭然</li>
 	<li>本開關皆為螢光單切、3路兩用，銀接點設計</li>
-	<li>請勿超過安全規定使用</li>
+	<li>請勿超過安全負載規定</li>
 	<li>安裝時不需要拆卸開關上面板，節省工時成本</li>
 </ul>')

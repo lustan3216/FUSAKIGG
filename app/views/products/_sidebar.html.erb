@@ -13,6 +13,13 @@
         </div>
     <% end %>
   </li>
+	<li class="list-group-item">
+		<%= link_to products_path(type: "fk"),class:"item" do%>
+				<div>
+					<span>FK系列開關插座</span><div class="ui horizontal label pull-right"><%= Product.fk.size %></div>
+				</div>
+		<% end %>
+	</li>
   <li class="list-group-item">
     <%= link_to products_path(type: "switch"),class:"item" do%>
         <div>

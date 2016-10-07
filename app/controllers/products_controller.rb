@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
         @products = Product.qt
       when "t1"
         @products = Product.t1
+      when "fk"
+        @products = Product.fk
       when "switch"
         @products = Product.switch
       when "plug"

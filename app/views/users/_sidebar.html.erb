@@ -14,18 +14,21 @@
   </a>
 
 
-  <div class="header item">退貨</div>
-  <a href="<%= user_return_orders_path(current_user,status:"dealing") %>" class="<%= "active" if current_page?(user_return_orders_path(current_user,status:"dealing")) %> teal item">
-    退貨中
-    <div class="ui label"><%= current_user.return_orders.dealing.size  %></div>
-  </a>
-  <a href="<%= user_return_orders_path(current_user,status:"done") %>" class="<%= "active" if current_page?(user_return_orders_path(current_user,status:"done")) %> teal item">
-    已完成
-    <div class="ui label"><%= current_user.return_orders.done.size  %></div>
-  </a>
+  <!--<div class="header item">退貨</div>-->
+  <!--<a href="<%#= user_return_orders_path(current_user,status:"dealing") %>" class="<%#= "active" if current_page?(user_return_orders_path(current_user,status:"dealing")) %> teal item">-->
+    <!--退貨中-->
+    <!--<div class="ui label"><%#= current_user.return_orders.dealing.size  %></div>-->
+  <!--</a>-->
+  <!--<a href="<%#= user_return_orders_path(current_user,status:"done") %>" class="<%#= "active" if current_page?(user_return_orders_path(current_user,status:"done")) %> teal item">-->
+    <!--已完成-->
+    <!--<div class="ui label"><%#= current_user.return_orders.done.size  %></div>-->
+  <!--</a>-->
 
   <div class="header item">基本設定</div>
   <a href="<%= edit_user_registration_path %>" class="<%= "active" if current_page?(edit_user_registration_path) %> teal item">
     修改密碼
   </a>
+	<!--<a href="<%#= user_facebook_omniauth_authorize_path %>" class=" teal item">-->
+		<!--Facebook帳號連結-->
+	<!--</a>-->
 </div>

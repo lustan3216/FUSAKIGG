@@ -7,7 +7,7 @@ module WelcomeHelper
       when 'download'
         'DOWNLOAD'
       when 'introduce'
-        'INTRODUCE'
+        'INTRODUCTION'
     end
   end
 

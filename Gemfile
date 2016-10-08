@@ -59,6 +59,7 @@ gem 'sitemap_generator'
 # gem 'capistrano-rails', group: :development end
 
 gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+gem 'whenever', :require => false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

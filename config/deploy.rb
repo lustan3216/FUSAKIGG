@@ -10,9 +10,7 @@ set :keep_releases, 5
 set :linked_files, fetch(:linked_files, []).push('config/rollbar.yml','config/aws.yml','config/pay2go.yml','config/facebook.yml','config/email.yml','config/database.yml', 'config/secrets.yml')  # 如果有 facebook.yml 或 email.yml 想要連結的話，也要加進來
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :passenger_restart_with_touch, true
-set :pty, false
-SSHKit.config.command_map[:sidekiq] = "source ~/.bash_profile && bundle exec sidekiq"
-SSHKit.config.command_map[:sidekiqctl] = "source ~/.bash_profile && bundle exec sidekiqctl"
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

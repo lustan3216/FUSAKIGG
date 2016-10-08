@@ -20,12 +20,12 @@ ready = ->
     qty -= delete_qty
     $('#total').html(qty)
 
-  HandleUpDown=(command) ->
+  update_spinner_input=(command) ->
     min = 1
     max = 500
     step = 1
-    product_item = $(this).closest('.product_item')
-    val = product_item.find('#txtNum').val().trim();
+    product_item_input = $(this).closest('.product_item').find('#txtNum')
+    val = product_item_input.val().trim();
     num = if val isnt '' then parseInt(val) else 0
     switch command
       when 'Up'
@@ -36,8 +36,12 @@ ready = ->
         if (num > min)
           num -= step
           break
-    product_item.find('#txtNum').attr("value", num)
-    id = window.location.href.replace( /http.*products\//, '')
+    product_item_input.attr("value", num)
+
+  update_lineitem_num=() ->
+    val = $(this).closest('.product_item').find('#txtNum').val().trim();
+    id = $(this).siblings('input').attr('name')
+    num = if val isnt '' then parseInt(val) else 0
     $.ajax
       type: 'PUT',
       url: "/line_items",
@@ -79,14 +83,20 @@ ready = ->
       $('#ship_status').html("免費")
     $('#final_amount').html(amount)
 
-  $('.ui.icon.button').on 'click', ->
+  $('.order_spineer_button').on 'click', ->
     command = $(this).attr('command')
-    HandleUpDown.bind(this)(command)
+    update_spinner_input.bind(this)(command)
     item_price.bind(this)()
     price_sum()
     qty_sum()
     after_ship_fee()
+    update_lineitem_num.bind(this)()
 
+  $('.product_spineer_button').on 'click', ->
+    command = $(this).attr('command')
+    update_spinner_input.bind(this)(command)
+
+    
   $('.item_cancel').on "click", ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)

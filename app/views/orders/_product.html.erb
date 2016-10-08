@@ -20,7 +20,7 @@
         </div>
 
         <div class="product_info_content">
-          <% if params[:action] == 'show' || 'details' %>
+          <% if action_name == ('show' || 'details') %>
               <span>數量: <%= item.qty %></span>
           <% else %>
               <%= render 'orders/spinner', item: item %>

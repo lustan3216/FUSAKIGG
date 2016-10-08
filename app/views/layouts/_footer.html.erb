@@ -37,8 +37,9 @@
         <div class="col-md-3 col-sm-6">
           <h5 class="footer-title underline"><%= t(".buy_product") %></h5>
           <ul class="ul">
-            <li><%= link_to "QT系列",products_path(type: "qt"),class:"item" %></li>
-            <li><%= link_to "1T系列",products_path(type: "t1"),class:"item" %></li>
+            <li><%= link_to "QT流線型開關插座",products_path(type: "qt"),class:"item" %></li>
+            <li><%= link_to "1T輕觸型開關插座",products_path(type: "t1"),class:"item" %></li>
+	          <li><%= link_to "FK典雅型開關插座",products_path(type: "fk"),class:"item" %></li>
             <li><%= link_to "全系列開關",products_path(type: "switch"),class:"item" %></li>
             <li><%= link_to "全系列插座",products_path(type: "plug"),class:"item" %></li>
             <li><%= link_to "其他",products_path(type: "rest"),class:"item" %></li>
@@ -48,12 +49,10 @@
 
       <!-- ========== right part ========== -->
       <div class="col-md-4 col-sm-4">
-        <h5 class="footer-title underline ml10"><%= t("share.contact_us") %></h5>
-        <h2 class="ml10"><%=simple_format t("share.phone_number") %></h2>
-	      <h5 class="footer-title underline ml10"><%= t("share.fax") %></h5>
-	      <h2 class="ml10"><%=simple_format t("share.fax_number") %></h2>
-        <h5 class="lowercase ml10 mt10 mb10">
-          <%= t("share.email_address") %></h5>
+        <h4 class="footer-title underline ml10 mt40"><%= t("share.contact_us") %></h4>
+        <h5 class="ml10 mt15"><i class="fa fa-phone" aria-hidden="true"></i>  <%= t("share.phone_number") %></h5>
+	      <h5 class="ml10 mt15"><i class="fa fa-fax" aria-hidden="true"></i>  <%= t("share.fax_number") %></h5>
+	      <h5 class="ml10 lowercase mt15"><i class="fa fa-envelope-o" aria-hidden="true"></i> <%= t("share.email_address") %></h5>
       </div> <!-- end col-md-4 -->
 
     </div> <!-- end row -->

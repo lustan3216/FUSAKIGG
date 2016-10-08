@@ -47,7 +47,6 @@ gem 'sprockets', '3.6.3'
 gem 'paperclip', '~> 4.3.6'
 gem 'aws-sdk', '< 2.0'
 gem 'sidekiq'
-
 gem 'nokogiri'
 gem 'font-awesome-rails'
 gem 'mysql2'

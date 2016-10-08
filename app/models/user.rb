@@ -29,20 +29,19 @@ class User < ApplicationRecord
     if user
       user.fb_token = auth.credentials.token
       user.fb_raw_data = auth
-      user.skip_confirmation!
+      # user.skip_confirmation!
       user.save!
       return user
     end
 
     # Case 2: Find existing user by email
     existing_user = User.find_by_email( auth.info.email )
-    if existing_user
-      existing_user.fb_uid = auth.uid
-      existing_user.fb_token = auth.credentials.token
-      existing_user.fb_raw_data = auth
-      existing_user.save!
-      return existing_user
-    end
+    return existing_user = 'user_conflict' if existing_user
+      # existing_user.fb_uid = auth.uid
+      # existing_user.fb_token = auth.credentials.token
+      # existing_user.fb_raw_data = auth
+      # existing_user.save!
+      # return existing_user
 
     # Case 3: Create new password
     user = User.new
@@ -55,7 +54,7 @@ class User < ApplicationRecord
     user.time_zone = browser_time_zone
     user.fb_pic = auth.info.image
     user.name = auth.info.name
-    user.skip_confirmation!
+    # user.skip_confirmation!
     user.save!
     return user
   end

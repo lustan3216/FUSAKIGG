@@ -13,7 +13,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to :back
     else
       @user = User.from_facebook_omniauth(request.env["omniauth.auth"],cookies['browser.timezone'])
-      if @user.persisted?
+      if @user == 'user_conflict'
+        redirect_to new_user_session_url, alert: I18n.t('devise.failure.facebook_conflict_eamil')
+      elsif @user.persisted?
         sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       else

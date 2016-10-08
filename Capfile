@@ -17,7 +17,7 @@ require "capistrano/deploy"
 require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano/sitemap_generator'
-# require 'capistrano/sidekiq'
+require 'capistrano/sidekiq'
 # require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'

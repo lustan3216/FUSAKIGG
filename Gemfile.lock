@@ -93,6 +93,9 @@ GEM
     capistrano-rails (1.1.7)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-sidekiq (0.5.4)
+      capistrano
+      sidekiq (>= 3.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -336,6 +339,7 @@ DEPENDENCIES
   byebug
   capistrano-passenger
   capistrano-rails
+  capistrano-sidekiq
   coffee-rails (~> 4.1.0)
   devise
   faker

@@ -39,7 +39,9 @@ gem 'therubyracer'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'sinatra', github: 'sinatra'
-gem 'rack-protection'
+github 'sinatra/sinatra' do
+  gem 'rack-protection'
+end
 # rail5
 gem 'meta-tags'
 gem 'sprockets', '3.6.3'
@@ -69,7 +71,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
-  gem 'capistrano-sidekiq'
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
   gem 'letter_opener'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

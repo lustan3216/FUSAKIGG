@@ -29,6 +29,9 @@
     </div>
   </div>
   <div class="field">
+    <p class="red mbn"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 選擇本公司派師傅到府安裝僅限於台北市、新北市、桃園市</p>
+  </div>
+  <div class="field">
     <%= f.label :address ,t('form.address') %>
     <%= f.text_field :address ,value: current_user.try(:address)%>
   </div>

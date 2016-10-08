@@ -2,9 +2,6 @@
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
-set :sidekiq_role, :app
-set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
-set :sidekiq_env, 'production'
 
 server '52.196.25.37', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value

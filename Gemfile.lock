@@ -5,6 +5,14 @@ GIT
     remotipart (1.2.1)
 
 GIT
+  remote: git://github.com/seuros/capistrano-sidekiq.git
+  revision: 951995f08e1aa790fff3a2cf18b0c3a3c8bf918d
+  specs:
+    capistrano-sidekiq (0.5.4)
+      capistrano
+      sidekiq (>= 3.4)
+
+GIT
   remote: git://github.com/sinatra/sinatra.git
   revision: af6dad2a6c31e31617712b15f455b2a3d3eb1c06
   specs:
@@ -339,6 +347,7 @@ DEPENDENCIES
   byebug
   capistrano-passenger
   capistrano-rails
+  capistrano-sidekiq!
   coffee-rails (~> 4.1.0)
   devise
   faker

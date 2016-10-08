@@ -58,8 +58,7 @@ gem 'sitemap_generator'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development end
 
-gem 'capistrano-sidekiq'
-
+gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

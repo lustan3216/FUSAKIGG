@@ -131,6 +131,9 @@ Product.create( name:'雙連盲蓋片' ,item_name:'qt-5d', v110_price:60 )
 Product.create( name:'彈跳地板接地雙插座' ,item_name:'okman-15123', v110_price:130 )
 Product.create( name:'防水蓋版' ,item_name:'6808', v110_price:410 )
 Product.create( name:'防水蓋版(咖啡色)' ,item_name:'6808b', v110_price:410 )
+
+
+
 Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_price:2500, v220_price:2600 ,description:'
 <h5>產品適用於：</h5>
 <ul>
@@ -146,11 +149,11 @@ Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_pri
 </ul>')
 
 # 說明
-Product.where( 'name LIKE ?','%緊急押扣%').update(description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
-Product.where( 'name LIKE ?','%紅色緊急%').update(description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
-Product.where( 'name LIKE ?','%網路%').update(description:'寬頻網路專用資訊插座 Cat.5e，非一般電話插座，內建電路板傳輸速率達125bps(UL認證合格)<br>寬頻網路專用資訊插座 Cat.6，非一般電話插座，內建電路板傳輸速率達250ps(UL認證合格)')
-Product.where( 'name LIKE ?','%防水%').update(description:'建議裝設在室外或會被水淋到的地方<br>在水/雨水容易侵入的地方裝設普通的插座是非常危險的，利用防水蓋版可避免觸電的危險，增加美觀及安全性')
-Product.where( 'name LIKE ?','%彈跳%').update(description:'
+Product.where( 'name LIKE ?','%緊急押扣%').update( description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
+Product.where( 'name LIKE ?','%紅色緊急%').update( description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
+Product.where( 'name LIKE ?','%網路%').update( description:'<ul><li>寬頻網路專用資訊插座 Cat.5e，非一般電話插座，內建電路板傳輸速率達125bps(UL認證合格)</li><li>寬頻網路專用資訊插座 Cat.6，非一般電話插座，內建電路板傳輸速率達250ps(UL認證合格)</li><li>如有選擇疑問可請洽客服</li></ul>')
+Product.where( 'name LIKE ?','%防水%').update( description:'建議裝設在室外或會被水淋到的地方，在水/雨水容易侵入的地方裝設普通的插座是非常危險的，利用防水蓋版可避免觸電的危險，增加美觀及安全性')
+Product.where( 'name LIKE ?','%彈跳%').update( description:'
 <h5>施工前專用預埋盒</h5>
 <ul>
 <li>混凝土灌漿前，將接線盒安裝於測定應埋入深度，從地面到接線盒之適當深度為18mm，寬度為98mm</li>
@@ -160,9 +163,19 @@ Product.where( 'name LIKE ?','%彈跳%').update(description:'
 <li>請勿安裝於妨礙通行的地方，否則容易引起傷害或事故</li>
 <li>地板插座組合預留三只插座，方便依不同區域設計所需之配電器材：完成適合的配置組裝</li>
 </ul>')
-Product.where( 'name LIKE ? and item_name LIKE ?','%開關%','%s%').update(description:'<ul>
-	<li>開關皆有螢光單指示燈讓您不再摸黑找開關，一目瞭然</li>
-	<li>本開關皆為螢光單切、3路兩用，銀接點設計</li>
-	<li>請勿超過安全負載規定</li>
-	<li>安裝時不需要拆卸開關上面板，節省工時成本</li>
+Product.where( 'name LIKE ? and item_name LIKE ?','%開關%','%s%').update( description:'<ul>
+<li>開關皆有螢光單指示燈讓您不再摸黑找開關，一目瞭然</li>
+<li>本開關皆為螢光單切、3路兩用，銀接點設計</li>
+<li>請勿超過安全負載規定</li>
+<li>安裝時不需要拆卸開關上面板，節省工時成本</li>
 </ul>')
+Product.where( 'name LIKE ?','%T型%').update( description:'')
+Product.where( 'name LIKE ?','%H型%').update( description:'')
+Product.where( 'name LIKE ?','%電鈴%').update( description:'')
+Product.where( 'name LIKE ?','%電捲門%').update( description:'')
+Product.where( 'name LIKE ?','%調光%').update( description:'')
+Product.where( 'name LIKE ?','%電話%').update( description:'')
+Product.where( 'name LIKE ?','%盲蓋%').update( description:'')
+Product.where( 'name LIKE ? and name LIKE ?','%電話%','%網路%' ).update( description:'')
+Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( description:'')
+Product.where( 'name LIKE ? and name LIKE ?','%開關%','%電鈴%' ).update( description:'')

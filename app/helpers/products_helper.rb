@@ -10,4 +10,5 @@ module ProductsHelper
       content_tag(:i,nil,class:"fa fa-building")
     end
   end
+
 end

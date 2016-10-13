@@ -1,10 +1,14 @@
 <div class="main">
   <%= render 'welcome_header' %>
-  <section class="content-section">
+  <section class="content-section introduction_fix">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5 class="underline"><%= t(".start") %></h5>
+      <div class="section-header text-right">
+        <h3 class="section-title mt10"><%= t("share.vision") %></h3>
+        <p class="section-subtitle mt10"><%= simple_format t("share.company_feature") %></p>
+      </div>
+      <div class="row mt60 mb60">
+        <div class="col-md-12 text-left">
+          <h5 class="mb40"><%= t(".start") %></h5>
           <p class="section"><%= t(".certificate") %></p>
           <p class="section"><%= t(".economic") %></p>
           <p class="section"><%= t(".descible")[2] %></p>
@@ -13,18 +17,17 @@
           <p class="section"><%= t(".descible")[3] %></p>
         </div> <!-- end col-md-7 -->
 
-        <!-- ========== right part ========== -->
-        <div class="col-md-6">
-          <h5 class="underline">五大特色</h5>
-          <ul class="ul-style-3">
-            <li><%= t(".descible")[5] %></li>
-            <li class="mt10"><i class="fa fa-thumbs-up list-icon"></i><%= t(".descible")[6] %></li>
-            <li class="mt10"><i class="fa fa-hand-o-right list-icon"></i><%= t(".descible")[7] %></li>
-            <li class="mt10"><i class="fa fa-send list-icon"></i><%= t(".descible")[8] %></li>
-            <li class="mt10"><i class="fa fa-gear list-icon"></i><%= t(".descible")[9] %></li>
-            <li class="mt10"><i class="fa fa-check list-icon"></i><%= t(".descible")[10] %></li>
-          </ul>
-        </div>
+        <!--<div class="col-md-6">-->
+          <!--<h5>五大特色</h5>-->
+          <!--<ul class="ul-style-3">-->
+            <!--<li><%#= t(".descible")[5] %></li>-->
+            <!--<li><%#= t(".descible")[6] %></li>-->
+            <!--<li><%#= t(".descible")[7] %></li>-->
+            <!--<li><%#= t(".descible")[8] %></li>-->
+            <!--<li><%#= t(".descible")[9] %></li>-->
+            <!--<li><%#= t(".descible")[10] %></li>-->
+          <!--</ul>-->
+        <!--</div>-->
 
       </div> <!-- end row -->
     </div> <!-- end container -->

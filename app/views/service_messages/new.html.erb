@@ -7,9 +7,7 @@
           <h1 class="page-title mt30 bold">
             CONTACT US
           </h1>
-          <p>
-
-          <p>
+          <p class="mt10">任何問題我們將會在24小時儘速內與您聯繫</p>
         </div> <!-- end col-md-6 -->
       </div> <!-- end page-title-row -->
     </div> <!-- end container -->
@@ -20,27 +18,23 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-4">
-          <!-- ========== SECTION HEADER ========== -->
-          <div class="section-header">
-            <h3 class="section-title underline"><%= t("share.vision") %></h3>
-            <p class="section-subtitle"><%= simple_format t("share.company_feature") %></p>
-          </div> <!-- end section-header -->
-
-          <div class="mb50 col-sm-6 col-md-12">
-            <h6 class="underline"><%=  t("share.contact_way") %></h6>
-            <p><%= simple_format t("share.phone_number") %>
-              <%= t("share.email_address") %></p>
-          </div>
-        </div> <!-- end col-md-4 -->
-
-        <div class="col-md-8 ui form">
-
-          <!-- ========== SECTION HEADER ========== -->
+        <div class="col-md-8 col-md-offset-2">
           <div class="section-header">
             <h3 class="section-title underline"><%=  t("share.contact_us") %></h3>
-            <p class="section-subtitle"><%=  t("share.contact_notice") %></p>
-          </div> <!-- end section-header -->
+            <p><%=  t("share.contact_notice") %></p>
+            <div class="row">
+              <div class="col-md-3"><span class="ml10 mb10 "><i class="fa fa-phone" aria-hidden="true"></i>  <%= t("share.phone_number") %></span></div>
+              <div class="col-md-3"><span class="ml10 mb10"><i class="fa fa-fax" aria-hidden="true"></i>  <%= t("share.fax_number") %></span></div>
+              <div class="col-md-6"><span class="ml10 mb10 lowercase "><i class="fa fa-envelope-o" aria-hidden="true"></i> <%= t("share.email_address") %></span></div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+        <div class="col-md-8 ui form col-md-offset-2">
 
           <%= form_for @message do |f| %>
               <div class="two fields">
@@ -53,14 +47,17 @@
                   <%= f.telephone_field :phone,value: current_user.try(:phone) %>
                 </div>
               </div>
-              <div class="field">
+              <div class="two fields">
+              <div class="ten wide field">
                 <%= f.label :email ,"信箱"%>
                 <%= f.email_field :email ,value: current_user.try(:alternate_email_check)%>
+                <span class="red ml10"><i class="fa fa-exclamation-triangle mr10" aria-hidden="true"></i>確認後同時會發送備份訊息至此信箱</span>
               </div>
 
-              <div class="field">
+              <div class="six wide field">
                 <%= f.label :problem ,"問題"%>
                 <%= f.select :problem, options_for_select([ ["產品及價格"],["退款"],[ "BUG"],["技術問題"] ], "產品及價格"),{},class:"ui dropdown" %>
+              </div>
               </div>
 
               <div class="field">

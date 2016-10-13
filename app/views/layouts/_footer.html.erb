@@ -22,8 +22,11 @@
         <div class="col-md-3 col-sm-6">
           <h5 class="footer-title underline"><%= t(".qa") %></h5>
           <ul class="ul">
-            <li><a href="#" class="trans">Website Design</a></li>
-            <li><a href="#" class="trans">Web Development</a></li>
+            <li><%= link_to "如何購買/選擇",qa_path(type:"choice"),class:"item" %></li>
+            <li><%= link_to "安裝技術指導",qa_path(type: "tech"),class:"item" %></li>
+            <li><%= link_to "金流付款",qa_path(type: "payment"),class:"item" %></li>
+            <li><%= link_to "退款/退貨",qa_path(type: "return"),class:"item" %></li>
+            <li><%= link_to "大量批發",qa_path(type: "wholesale"),class:"item" %></li>
           </ul>
         </div> <!-- end col-md-3 -->
         <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">

@@ -26,9 +26,8 @@ class OrderMailer < ApplicationMailer
     @address = order.full_address
     @qty = order.total
     @price = order.calc_price_with_shipfee
-    # @payment_method = order.payment.payment_method
     @items = order.line_items
-    geter = User.admins.collect(&:email).push( @email,user.email ).uniq.join(',')
+    geter = User.admins.collect(&:email).push( user.email ).uniq.join(',')
     mail(:to => geter, :subject => "FUSAKI【訂單成立明細】感謝您的購買！")
   end
 end

@@ -342,7 +342,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_rails_console
-  aws-sdk (< 2.0)
+  aws-sdk
   bootstrap-sass
   byebug
   capistrano-passenger
@@ -363,7 +363,7 @@ DEPENDENCIES
   mysql2
   nokogiri
   omniauth-facebook
-  paperclip (~> 4.3.6)
+  paperclip
   premailer-rails
   rack-protection!
   rails (>= 5.0.0.rc2, < 5.1)

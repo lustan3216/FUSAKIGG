@@ -46,8 +46,8 @@ end
 gem 'meta-tags'
 gem 'sprockets', '3.6.3'
 
-gem 'paperclip', '~> 4.3.6'
-gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+gem 'aws-sdk'
 gem 'sidekiq'
 gem 'nokogiri'
 gem 'font-awesome-rails'
@@ -57,8 +57,6 @@ gem 'bootstrap-sass'
 gem 'premailer-rails'
 gem 'rollbar'
 gem 'sitemap_generator'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development end
 
 gem 'whenever', :require => false
 group :development, :test do

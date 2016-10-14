@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
     current_cart.update_item_qty( order_params )
     @order = Order.new( order_params.reject{|h| /\d/.match(h) } )
     @order.copy_info_to(current_user)
-    @order.clone_cart_line_items_by(current_cart)
+    @order.clone_line_items_by(current_cart)
     @order.assign_attributes(user_id: current_user.id,
                              after_ship_amount: current_cart.calc_price_with_shipfee(order_params[:whoset]))
     if @order.save!

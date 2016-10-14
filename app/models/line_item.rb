@@ -15,4 +15,9 @@ class LineItem < ApplicationRecord
     self.product.send("v#{voltage}_price")
   end
 
+  def show_voltage
+    voltage = self.voltage
+    voltage = '無電壓限制' if voltage == '000V'
+    voltage
+  end
 end

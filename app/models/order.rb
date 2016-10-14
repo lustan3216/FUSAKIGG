@@ -25,10 +25,9 @@ class Order < ApplicationRecord
     Order.ship_fee if calc_price_with_shipfee < Order.ship_fee_boundary
   end
 
-  def clone_cart_line_items_by(cart)
+  def clone_line_items_by(cart)
     cart.line_items.each do |line|
-      a = self.line_items.build( :product => line.product, :qty => line.qty , :voltage=> line.voltage )
-      a.voltage = line.voltage if line.voltage == ('110V' || '220V')
+      self.line_items.build( :product => line.product, :qty => line.qty , :voltage=> line.voltage )
     end
   end
 

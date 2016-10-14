@@ -1,10 +1,10 @@
 <div class="main">
   <%= render 'welcome_header' %>
-  <section class="content-section introduction_fix">
+  <section class="content-section introduction_fix parallax-section" data-parallax="scroll" data-image-src="<%= image_path('introduce.jpeg') %>" data-speed="0.4" >
     <div class="container">
       <div class="section-header text-right">
-        <h3 class="section-title mt10"><%= t("share.vision") %></h3>
-        <p class="section-subtitle mt10"><%= simple_format t("share.company_feature") %></p>
+        <h3 class="section-title mt30"><%= t("share.vision") %></h3>
+        <p class="section-subtitle mt30"><%= simple_format t("share.company_feature") %></p>
       </div>
       <div class="row mt60 mb60">
         <div class="col-md-12 text-left">

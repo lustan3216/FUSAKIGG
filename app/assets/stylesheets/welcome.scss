@@ -14,14 +14,6 @@
     }
   }
 }
-.introduction_fix{
-  //color: black;
-  background: image-url('introduce.jpeg');
-  //background: linear-gradient(36deg,
-  //                rgba(0, 0, 0, 0.05),
-  //                rgba(0, 0, 0, 0.15)
-  //),image-url('introduce.jpeg');
-  background-attachment: fixed;
-  -webkit-background-size:cover;
-  background-size:cover;
+.introduction_fix p{
+  color: brown;
 }

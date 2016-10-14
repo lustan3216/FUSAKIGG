@@ -127,6 +127,7 @@ a.anchor{
 }
 .cart_count{
   position: relative;
+  transform: translateY(4%);
   #current_qty{
     position: absolute;
     font-size: 12px;
@@ -134,7 +135,7 @@ a.anchor{
     height: 20px;
     width: 20px;
     padding-left: 1px;
-    line-height: 18px;
+    line-height: 20px;
     border-radius: 50%;
     border: 1px solid;
     text-align: center;

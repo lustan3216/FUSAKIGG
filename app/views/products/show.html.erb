@@ -59,9 +59,10 @@
             </div> <!-- end col-md-6 -->
             <div class="row">
               <div class="col-md-12 product_describle ">
-                <p><%= simple_format @product.description %></p>
+                <p><%= @product.description.html_safe %></p>
               </div>
             </div>
+            <p class="text-center red mt30"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>以上產品如有特殊組合貨需求皆可來電詢問</p>
           </div>
         </div>
       </div> <!-- end row -->

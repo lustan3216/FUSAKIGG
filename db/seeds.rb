@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Product.delete_all
-
+Order.delete_all
+LineItem.delete_all
 
 # 1T系列 7
 Product.create( name:'輕觸型單開關' ,item_name:'1t-7s', v110_price:350 ,v220_price:400 )

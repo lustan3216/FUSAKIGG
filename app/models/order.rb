@@ -17,8 +17,12 @@ class Order < ApplicationRecord
     150
   end
 
+  def self.ship_fee_boundary
+    1500
+  end
+
   def ship_fee?
-    Order.ship_fee if calc_price_with_shipfee < 2000
+    Order.ship_fee if calc_price_with_shipfee < Order.ship_fee_boundary
   end
 
   def clone_cart_line_items_by(cart)
@@ -62,16 +66,16 @@ class Order < ApplicationRecord
   def amount
     amount = 0
     self.line_items.each do |line|
-      amount +=  line.product.v110_price * line.qty if line.voltage == '110V'
-      amount +=  line.product.v220_price * line.qty if line.voltage == '220V'
+      voltage = line.voltage.gsub("V","")
+      amount += line.product.send("v#{voltage}_price") * line.qty
     end
-    return amount
-  end 
+    amount
+  end
 
   def calc_price_with_shipfee
     price = self.amount
     price *=0.6 if self.whoset == '自行安裝（打６折）'
-    price >= 2000 ? price.to_i : (price + Order.ship_fee).to_i
+    price >= Order.ship_fee_boundary ? price.to_i : (price + Order.ship_fee).to_i
   end
 
   def full_address

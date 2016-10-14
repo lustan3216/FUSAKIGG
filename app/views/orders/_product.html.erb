@@ -10,9 +10,9 @@
       <div class="product_info">
         <div class="product_info_header">
           <sapn class="bold"><%= item.product.name %></sapn>
-          <span class="ml10"><%= item.voltage %></span>
-          <span class="ml10">$<span name="price" class="oneprice"><%= item.price %> </span></span>
-          <% unless action_name == 'show' || 'details' %>
+          <span class="ml10"><%= item.product.show_voltage %></span>
+          <span class="ml10">$<span name="price" class="oneprice"><%= item.show_price %> </span></span>
+          <% unless ['show' ,'details','finish' ].include? action_name %>
               <%= link_to line_items_path(id:item.id),method:"delete",class:"pull-right pr20 item_cancel",remote:true do%>
                   <i class="fa fa-times" aria-hidden="fales"></i>
               <% end %>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="product_info_content">
-          <% if action_name == ('show' || 'details') %>
+          <% if ['show', 'details','finish' ].include? action_name %>
               <span>數量: <%= item.qty %></span>
           <% else %>
               <%= render 'orders/spinner', item: item %>

@@ -15,9 +15,22 @@ class Product < ApplicationRecord
   attr_accessor :delete_asset
   before_validation { self.asset.clear if self.delete_asset == '1' }
 
+  def v000?
+    self.v000_price?
+  end
+
+  def v110?
+    self.v110_price?
+  end
+
+  def v220?
+    self.v220_price?
+  end
 
   def show_price
-    if self.v110_price
+    if self.v000_price
+      price = self.v000_price
+    elsif self.v110_price
       price = self.v110_price
     elsif self.v220_price
       price = self.v220_price
@@ -26,7 +39,9 @@ class Product < ApplicationRecord
   end
 
   def show_voltage
-    if self.v110_price && self.v220_price
+    if self.v000_price
+      "無電壓限制"
+    elsif self.v110_price && self.v220_price
       "110V / 220V"
     elsif self.v110_price
       "110V"

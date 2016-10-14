@@ -15,7 +15,7 @@ class Cart < ApplicationRecord
       line_item.qty += qty
       line_item.save!
     else
-      self.line_items.create!( :product => product, :qty => qty, :voltage => voltage )
+      self.line_items.create!( :product => product, :qty => qty, :voltage => voltage,:price => product.send("v#{voltage.gsub("V","")}_price") )
     end
   end
 
@@ -35,15 +35,15 @@ class Cart < ApplicationRecord
   def amount
     amount = 0
     self.line_items.each do |line|
-      amount +=  line.product.v110_price * line.qty if line.voltage == "110V"
-      amount +=  line.product.v220_price * line.qty if line.voltage == "220V"
+      voltage = line.voltage.gsub("V","")
+      amount += line.product.send("v#{voltage}_price") * line.qty
     end
-    return amount
+    amount
   end
 
   def calc_price_with_shipfee(whoset = "本公司派專業師傅安裝")
     price = self.amount
     price *=0.6 if whoset == "自行安裝（打６折）"
-    price >= 2000 ? price : price + Order.ship_fee
+    price >= Order.ship_fee_boundary ? price : price + Order.ship_fee
   end
 end

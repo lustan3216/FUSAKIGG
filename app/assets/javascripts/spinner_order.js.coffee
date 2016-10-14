@@ -76,7 +76,7 @@ ready = ->
       if $.inArray(selected.data('value'), ["台北市" , "桃園市" , "新北市"]) == -1
         $('#county').dropdown('clear')
         $('#district').dropdown('clear')
-    if amount < 2000
+    if amount < 1500
       amount += ship_fee
       $('#ship_status').html(ship_fee)
     else

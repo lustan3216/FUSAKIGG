@@ -20,6 +20,15 @@
             <div class="col-md-5 pl30 pt60">
               <%= form_tag buy_product_path(@product), remote: true do %>
                   <h4><%= @product.name %></h4>
+                  <% if @product.v000? %>
+                      <div class="inline fields">
+                        <div class="field">
+                          <div class="ui radio checkbox">
+                            <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
+                          </div>
+                        </div>
+                      </div>
+                  <% end %>
                   <% if @product.v110? %>
                       <div class="inline fields">
                         <div class="field">

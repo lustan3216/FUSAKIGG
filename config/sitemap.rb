@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://fusaki.com.tw"
+SitemapGenerator::Sitemap.default_host = "https://fusaki.com.tw"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.

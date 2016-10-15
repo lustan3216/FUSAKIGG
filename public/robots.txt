@@ -3,4 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
-Sitemap: https://fusaki.com.tw/sitemap.xml
+Sitemap: https://fusaki.com.tw/sitemap.xml.gz

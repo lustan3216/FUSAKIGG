@@ -1,31 +1,14 @@
 <div class="main">
-  <!-- ========== REVOLUTION SLIDER ========== -->
-  <%= render 'animation_header' %>
-  <!-- ========== CONTENT SECTION ========== -->
-  <section class="content-section pbn ptn ">
-    <div class="row mrn">
-      <!-- ========== SECTION HEADER ========== -->
-      <div class="col-sm-7 section-header text-right mt60 save_money">
-        <div class="mr20 ml20">
-          <p class="section-subtitle mb20"><%= t(".feature_subtitle") %></p>
-          <h1 class="section-title"><%= t(".feature") %></h1>
-          <p class="section-subtitle mt10"><%= t(".feature_subtitle2") %></p>
 
-          <h3 class="mt60">從購買到指派安裝只需要<span>三天</span>的時間<br>迅速讓您的家煥然一新</h3>
-          <p class="section-subtitle mt10"><%= t(".feature_subtitle1") %></p>
-        </div> <!-- end section-header -->
-      </div>
-      <div class="col-sm-5 building_bg">
-      </div>
-    </div> <!-- end row -->
-  </section>
+  <%= render 'animation_header' %>
+  <%= render 'explodes' %>
 
   <section class="content-section pbn ptn three_feature">
     <div class="row mrn">
       <div class="col-sm-4  feature text-center pb60 pt60">
         <div class="icon underline longer-underline">
           <i class="fa fa-shield" aria-hidden="true"></i>
-        </div> <!-- end icon -->
+        </div>
         <h5 class="feature-title"><%= t(".feature_1") %></h5>
         <p class="feature-desc"><%=simple_format t(".feature_1_content") %></p>
       </div> <!-- end feature -->
@@ -154,6 +137,6 @@
 
 <script src="<%= asset_path("welcome_index.js") %>"></script>
 <script>
-    window.onbeforeunload = function(){ window.scrollTo(0,0); }
+  window.onbeforeunload = function(){ window.scrollTo(0,0); }
 </script>
 

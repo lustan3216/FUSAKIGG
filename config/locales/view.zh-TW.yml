@@ -2,7 +2,7 @@ zh-TW:
   meta:
     site_name: "FUSAKI久欣順有限公司"
     title: "輕觸流線型大面板到府施工開關插座"
-    description: "FUSAKI輕觸、流線型大面板開關插座經營20餘年，服務各大建設無數建案、政府BOT、捷運，提供到府安裝服務，堅持台灣設廠、製造，最高產品保固達兩年品質有保障"
+    description: "FUSAKI輕觸、流線型大版面開關插座經營20餘年，服務百大建設無數建案、政府BOT、捷運，提供到府安裝服務，堅持台灣設廠、製造，最高產品保固達兩年品質有保障"
   devise:
     password: "密碼"
     password_confirm: "密碼確認"
@@ -34,7 +34,7 @@ zh-TW:
     add_to_cart: "加入購物車"
   cart:
     title: "CART"
-    subtitle: "選擇專業師傅到府安裝即享有兩年產品保固讓您更安心"
+    subtitle: "選擇專業師傅到府安裝即享有年保固讓您更安心"
   share:
     fusaki: 'FUSAKI'
     footer_desc: "成立20餘年以來，在業界秉持著良率和品質而存活，一直堅持著Made In Taiwan品質控管看得到，
@@ -106,11 +106,12 @@ zh-TW:
       category: "目錄下載區"
     qa:
       q_as: "問與答"
-    index:
+    explodes:
       feature: "台灣第一家提供到府安裝服務 讓您省時省力更省錢"
       feature_subtitle: "創立於1994年，已經營超過20餘年，持續服務於百大企業建設、政府BOT案及捷運共構等大型案場"
       feature_subtitle2: "自己請師傅安裝就要先花2500大洋的工錢這樣真的划算嗎？"
       feature_subtitle1: "購買、保固、客服、技術提供、安裝一條龍讓你更省事"
+    index:
       feature_1: "提供兩年產品保固服務"
       feature_1_content: "凡購買產品並經由本公司師傅安裝施工\n即提供兩年產品保固\n讓您品質有保證"
       feature_2: "提供到府安裝服務"

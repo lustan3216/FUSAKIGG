@@ -53,7 +53,7 @@ Rails.application.configure do
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { :host => 'http://52.196.25.37/' }
+  config.action_mailer.default_url_options = { :host => 'https://fusaki.com.tw' }
   config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
   config.active_job.queue_adapter = :sidekiq
 end

@@ -7,12 +7,12 @@ class Payment < ApplicationRecord
   after_update :update_order_status
   validate :check_mac, on: :update
 
-  def name
+  def order_number
     "#{self.order.order_number}"
   end
 
   def external_id
-    "#{self.id}ATC#{Rails.env.upcase[0]}"
+    "#{self.id}FKI#{Rails.env.upcase[0]}"
   end
 
   def email

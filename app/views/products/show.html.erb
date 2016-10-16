@@ -20,33 +20,30 @@
             <div class="col-md-5 pl30 pt60">
               <%= form_tag buy_product_path(@product), remote: true do %>
                   <h4><%= @product.name %></h4>
-                  <% if @product.v000? %>
-                      <div class="inline fields">
-                        <div class="field">
-                          <div class="ui radio checkbox">
-                            <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
-                          </div>
-                        </div>
-                      </div>
-                  <% end %>
-                  <% if @product.v110? %>
-                      <div class="inline fields">
-                        <div class="field">
+
+                  <div class="inline fields">
+                    <div class="field">
+                      <% if @product.v110? && @product.v220? %>
                           <div class="ui radio checkbox">
                             <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
-                          </div>
-                        </div>
-                      </div>
-                  <% end %>
-                  <% if @product.v220? %>
-                      <div class="inline fields">
-                        <div class="field">
+                          </div><br>
                           <div class="ui radio checkbox">
                             <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
                           </div>
-                        </div>
-                      </div>
-                  <% end %>
+                      <% else %>
+                          <div class="ui radio checkbox">
+
+                            <% if @product.v000? %>
+                                <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
+                            <% elsif @product.v110? %>
+                                <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
+                            <% elsif @product.v220? %>
+                                <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V',true%>
+                            <% end %>
+                          </div>
+                      <% end %>
+                    </div>
+                  </div>
                   <div class="product_item clearfix">
                     <%= render "spinner" ,qty:1 %>
                   </div>

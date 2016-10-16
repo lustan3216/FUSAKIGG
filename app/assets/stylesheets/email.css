@@ -141,7 +141,7 @@ a {
 	 text-decoration: none;
 	 background-color: #348eda;
 	 border: solid #348eda;
-	 border-width: 5px 20px;
+	 /*border-width: 5px 20px;*/
 	 line-height: 2em;
 	 /* 2em * 14px = 28px, use px to get airier line-height also in Thunderbird, and Yahoo!, Outlook.com, AOL webmail clients */
 	 /*line-height: 28px;*/
@@ -154,8 +154,10 @@ a {
 	 margin:0 auto;
 }
 .btn-primary a{
+	 padding: 3px;
 	 color: white;
 	 text-decoration: none;
+	 display: block;
 }
 
 /* -------------------------------------

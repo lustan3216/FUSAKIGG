@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'qa' => 'welcome#qa'
   get 'introduce' => 'welcome#introduce'
   get 'download' => 'welcome#download'
-  resources :service_messages, only: [:new]
+  resources :service_messages
 
   resources :products do
     collection do

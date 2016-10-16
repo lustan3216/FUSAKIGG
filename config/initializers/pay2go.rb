@@ -7,5 +7,5 @@ Pay2go.setup do |config|
   config.hash_key = pay2go_config["hash_key"]
   config.hash_iv = pay2go_config["hash_iv"]
   config.url = pay2go_config["url"]
-  config.notify_url = pay2go_config["notify_url"]
+  # config.notify_url = pay2go_config["notify_url"]
 end

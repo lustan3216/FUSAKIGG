@@ -29,7 +29,6 @@ class Pay2goController < ApplicationController
         @payment = Payment.find_and_process( json_data )
         result = @payment.save
       end
-
       if result
         render :text => "1|OK"
       else

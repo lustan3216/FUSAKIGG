@@ -129,45 +129,18 @@ Product.create( name:'流線型雙連盲蓋片' ,item_name:'qt-5d', v000_price:6
 
 # 其他 7
 Product.create( name:'彈跳地板接地雙插座' ,item_name:'okman-15123', v110_price:130 )
-Product.create( name:'防水蓋版' ,item_name:'6808', v000_price:410 )
-Product.create( name:'防水蓋版(咖啡色)' ,item_name:'6808b', v000_price:410 )
+Product.create( name:'防水蓋板' ,item_name:'6808', v000_price:410 )
+Product.create( name:'防水蓋板(咖啡色)' ,item_name:'6808b', v000_price:410 )
 
 
-
-Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_price:2500, v220_price:2600 ,description:'
-<h5>產品適用於：</h5>
-<ul>
-<li>．走廊、樓梯間、電梯口、室內停車場、玄關.......等</li>
-<li>．超薄外型，亦可崁入式裝法或非崁入式裝法</li>
-<li>．快速的安裝結構設計，節省施工時間</li>
-<li>．使用先進SMT表面黏著設計生產</li>
-<li>．超強抗RFI / EMI 干擾設計，使產品更加穩定</li>
-<li>．可避免忘記隨手關燈習慣，亦有人到即亮的自動點燈功能，不並用手開/關燈，充分發揮省電優點</li>
-<li>．感知範圍高2.4公尺為直徑距離6公尺</li>
-<li>．感知範圍高3公尺為直徑距離8公尺</li>
-<li>．感知範圍高3.6公尺為直徑距離10公尺</li>
-</ul>')
 
 # 說明
-Product.where( 'name LIKE ?','%緊急押扣%').update( description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
-Product.where( 'name LIKE ?','%紅色緊急%').update( description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
 Product.where( 'name LIKE ?','%網路%').update( description:'
 <ul>
 <li>寬頻網路專用資訊插座 Cat.5e，非一般電話插座，內建電路板傳輸速率達125bps(UL認證合格)</li>
 <li>寬頻網路專用資訊插座 Cat.6，非一般電話插座，內建電路板傳輸速率達250ps(UL認證合格)</li>
 </ul>
 ')
-Product.where( 'name LIKE ?','%防水%').update( description:'建議裝設在室外或會被水淋到的地方，在水/雨水容易侵入的地方裝設普通的插座是非常危險的，利用防水蓋版可避免觸電的危險，增加美觀及安全性')
-Product.where( 'name LIKE ?','%彈跳%').update( description:'
-<h5>施工前專用預埋盒</h5>
-<ul>
-<li>混凝土灌漿前，將接線盒安裝於測定應埋入深度，從地面到接線盒之適當深度為18mm，寬度為98mm</li>
-<li>彈跳式地面插座方向調整，依接線盒的方向固定</li>
-<li>配線施工時請使用OKMAN專用接線盒埋入</li>
-<li>電源線插入線孔時務必檢查是否牢固，若有插入不足時會產生發熱現象導致危險</li>
-<li>請勿安裝於妨礙通行的地方，否則容易引起傷害或事故</li>
-<li>地板插座組合預留三只插座，方便依不同區域設計所需之配電器材：完成適合的配置組裝</li>
-</ul>')
 Product.where( 'name LIKE ? and item_name LIKE ?','%開關%','%s%').update( description:'<ul>
 <li>開關皆有螢光單指示燈讓您不再摸黑找開關，一目瞭然</li>
 <li>本開關皆為螢光單切、3路兩用，銀接點設計</li>
@@ -208,7 +181,6 @@ Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( des
 <li>請勿超過安全負載規定</li>
 <li>安裝時不需要拆卸開關上面板，節省工時成本</li>
 </ul>')
-Product.where( 'name LIKE ?','%電捲門%').update( description:'')
 Product.where( 'name LIKE ? and item_name LIKE ?','%電鈴%','%00%').update( description:'
 <ul>
 <li>只適用於交流電的蜂鳴器，如已無法辨識或無從得知請購買本公司無夜光指示電鈴押釦</li>
@@ -230,5 +202,31 @@ Product.where( 'name LIKE ? and name LIKE ? and item_name LIKE ?','%開關%','%�
 <li>選擇110V電壓則電鈴押扣與開關皆為110V</li>
 <li>選擇220V電壓則電鈴押扣與開關皆為220V</li>
 </ul>')
-
+Product.where( 'name LIKE ?','%緊急押扣%').update( description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
+Product.where( 'name LIKE ?','%紅色緊急%').update( description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
+Product.where( 'name LIKE ?','%電捲門%').update( description:'')
+Product.where( 'name LIKE ?','%防水%').update( description:'建議裝設在室外或會被水淋到的地方，在水/雨水容易侵入的地方裝設普通的插座是非常危險的，利用防水蓋板可避免觸電的危險，增加美觀及安全性')
+Product.where( 'name LIKE ?','%彈跳%').update( description:'
+<h5>施工前專用預埋盒</h5>
+<ul>
+<li>混凝土灌漿前，將接線盒安裝於測定應埋入深度，從地面到接線盒之適當深度為18mm，寬度為98mm</li>
+<li>彈跳式地面插座方向調整，依接線盒的方向固定</li>
+<li>配線施工時請使用OKMAN專用接線盒埋入</li>
+<li>電源線插入線孔時務必檢查是否牢固，若有插入不足時會產生發熱現象導致危險</li>
+<li>請勿安裝於妨礙通行的地方，否則容易引起傷害或事故</li>
+<li>地板插座組合預留三只插座，方便依不同區域設計所需之配電器材：完成適合的配置組裝</li>
+</ul>')
+Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_price:2500, v220_price:2600 ,description:'
+<h5>產品適用於：</h5>
+<ul>
+<li>．走廊、樓梯間、電梯口、室內停車場、玄關.......等</li>
+<li>．超薄外型，亦可崁入式裝法或非崁入式裝法</li>
+<li>．快速的安裝結構設計，節省施工時間</li>
+<li>．使用先進SMT表面黏著設計生產</li>
+<li>．超強抗RFI / EMI 干擾設計，使產品更加穩定</li>
+<li>．可避免忘記隨手關燈習慣，亦有人到即亮的自動點燈功能，不並用手開/關燈，充分發揮省電優點</li>
+<li>．感知範圍高2.4公尺為直徑距離6公尺</li>
+<li>．感知範圍高3公尺為直徑距離8公尺</li>
+<li>．感知範圍高3.6公尺為直徑距離10公尺</li>
+</ul>')
 p "done"

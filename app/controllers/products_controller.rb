@@ -3,20 +3,28 @@ class ProductsController < ApplicationController
 
   def index
     case params[:type]
-      when "qt"
-        @products = Product.qt
-      when "t1"
-        @products = Product.t1
-      when "fk"
-        @products = Product.fk
-      when "switch"
-        @products = Product.switch
-      when "plug"
-        @products = Product.plug
-      when "rest"
-        @products = Product.rest
-      else
-        @products = Product.all
+    when "qt"
+      @products = Product.qt
+    when "t1"
+      @products = Product.t1
+    when "fk"
+      @products = Product.fk
+    when "switch"
+      @products = Product.switch
+    when "plug"
+      @products = Product.plug
+    when "rest"
+      @products = Product.rest
+    when "emergency"
+      @products = Product.emergency
+    when "weak_power"
+      @products = Product.weak_power
+    when "arg"
+      @products = Product.arg
+    when "air_con"
+      @products = Product.air_con
+    else
+      @products = Product.all
     end
   end
 

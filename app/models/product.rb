@@ -3,8 +3,12 @@ class Product < ApplicationRecord
   scope :fk, -> { where( 'item_name LIKE ?','%fk%') }
   scope :qt, -> { where( 'item_name LIKE ?','%QT%') }
   scope :switch, -> { where( 'name LIKE ?','%開%') }
-  scope :plug, -> { where( 'name LIKE ?','%插%') }
-  scope :rest, -> { where( 'name NOT LIKE ? and name NOT LIKE ?','%開%','%插%') }
+  scope :plug, -> { where( 'name LIKE ? and item_name LIKE ?','%插%','%r%') }
+  scope :air_con, -> { where( 'name LIKE ? ','%冷氣%') }
+  scope :rest, -> { where( 'name  LIKE ? or name LIKE ? or name LIKE ?','%盲蓋%','%電鈴%','%防水蓋板%') }
+  scope :emergency, -> { where( 'name  LIKE ? or name LIKE ?','%緊急接地%','%緊急押扣%') }
+  scope :weak_power, -> { where( 'name  LIKE ? or name  LIKE ? or name  LIKE ?','%電視%','%網路%','%電話%') }
+  scope :arg, -> { where( 'name  LIKE ? or name  LIKE ? or name  LIKE ?','%電捲門%','%地板接地%','%感應%') }
 
   has_attached_file :asset,
                     :styles => {

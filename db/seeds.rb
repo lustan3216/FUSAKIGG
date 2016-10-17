@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 Product.delete_all
 Order.delete_all
 LineItem.delete_all
@@ -40,7 +41,7 @@ Product.create( name:'紅色緊急接地單插座' ,item_name:'1t-3rr', v110_pri
 Product.create( name:'紅色緊急接地雙插座' ,item_name:'1t-6rr', v110_price:215 )
 
 # QT開關系列 13
-Product.create( name:'流線型單開關' ,item_name:'qt-7s', v110_price:200 ,v220_price:223 )
+Product.create( name:'流線型單開關' ,item_name:'qt-7s', v110_price:200 ,v220_price:225 )
 Product.create( name:'流線型四路單開關' ,item_name:'qt-7s04', v110_price:450 ,v220_price:475 )
 Product.create( name:'流線型雙開關' ,item_name:'qt-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'流線型三開關' ,item_name:'qt-3s', v110_price:495 ,v220_price:570 )
@@ -78,7 +79,7 @@ Product.create( name:'流線型紅色緊急接地單插座' ,item_name:'qt-3rr',
 Product.create( name:'流線型紅色緊急接地雙插座' ,item_name:'qt-6rr', v110_price:215 )
 
 # FK開關系列 13
-Product.create( name:'典雅型單開關' ,item_name:'fk-7s', v110_price:200 ,v220_price:223 )
+Product.create( name:'典雅型單開關' ,item_name:'fk-7s', v110_price:200 ,v220_price:225 )
 Product.create( name:'典雅型四路單開關' ,item_name:'fk-7s04', v110_price:450 ,v220_price:475 )
 Product.create( name:'典雅型雙開關' ,item_name:'fk-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'典雅型三開關' ,item_name:'fk-3s', v110_price:495 ,v220_price:570 )
@@ -229,4 +230,34 @@ Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_pri
 <li>．感知範圍高3公尺為直徑距離8公尺</li>
 <li>．感知範圍高3.6公尺為直徑距離10公尺</li>
 </ul>')
+
+# Product.all.each do |x|
+#   if x.v000_price.present?
+#     price = (x.v000_price*0.6).to_i.to_s
+#     if price.last.to_i.between?(1,4)
+#       price = ((price.to_i/10).to_i)*10+5
+#     elsif price.last.to_i.between?(6,9)
+#       price = ((price.to_i/10).to_i)*10+10
+#     end
+#     x.update(v000_price: price.to_i )
+#   end
+#   if x.v110_price.present?
+#     price = (x.v110_price*0.6).to_i.to_s
+#     if price.last.to_i.between?(1,4)
+#       price = ((price.to_i/10).to_i)*10+5
+#     elsif price.last.to_i.between?(6,9)
+#       price = ((price.to_i/10).to_i)*10+10
+#     end
+#     x.update(v110_price: price.to_i )
+#   end
+#   if x.v220_price.present?
+#     price = (x.v220_price*0.6).to_i.to_s
+#     if price.last.to_i.between?(1,4)
+#       price = ((price.to_i/10).to_i)*10+5
+#     elsif price.last.to_i.between?(6,9)
+#       price = ((price.to_i/10).to_i)*10+10
+#     end
+#     x.update(v220_price: price.to_i )
+#   end
+# end
 p "done"

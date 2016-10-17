@@ -195,6 +195,8 @@ Product.where( 'name LIKE ? and name LIKE ?','%電話%','%網路%' ).update( des
 <li>二線: 指兩隻電話號碼可同時用同個電話機接聽的機台</li>
 </ul>
 ')
+Product.where( 'name LIKE ? and item_name LIKE ?','%插座%','%r%').update( description:'
+')
 # Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( description:'')
 # Product.where( 'name LIKE ? and name LIKE ?','%開關%','%電鈴%' ).update( description:'')
 

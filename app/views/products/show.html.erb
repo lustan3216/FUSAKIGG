@@ -50,16 +50,14 @@
                   <button type="submit" class="ui compact labeled icon button red mt15" id="add_to_cart">
                     <i class="add To cart icon"></i><%= t('button.add_to_cart') %>
                   </button>
-
               <% end %>
-
             </div> <!-- end col-md-6 -->
             <div class="row">
               <div class="col-md-12 product_describle ">
-                <p><%= @product.description.html_safe %></p>
+                <p><%= @product.description.try(:html_safe) %></p>
               </div>
             </div>
-            <p class="text-center red mt30"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>以上產品如有特殊組合貨需求皆可來電詢問</p>
+            <p class="text-center red mt30"><i class="fa fa-dot-circle-o mr10" aria-hidden="true"></i>以上產品如有特殊組合貨需求皆可來電詢問<br>包含正方形方式組合(兩個長方形合併)</p>
           </div>
         </div>
       </div> <!-- end row -->

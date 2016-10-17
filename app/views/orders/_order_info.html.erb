@@ -10,7 +10,7 @@
   <div class="col-md-6 col-xs-12">
     <p class="final_amount">總金額 : $<span id="final_amount"><%= cart_or_order.calc_price_with_shipfee %></span>
       <span class="ui label left pointing red">
-        <i class="fa fa-truck " aria-hidden="true">含運費 <span id="ship_status"><%= cart_or_order.amount >= 2000 ? "免費" : Order.ship_fee %></span></i>
+        <i class="fa fa-truck " aria-hidden="true">含運費 <span id="ship_status"><%= cart_or_order.amount >= Order.ship_fee_boundary ? "免費" : Order.ship_fee %></span></i>
       </span>
     </p>
   </div>

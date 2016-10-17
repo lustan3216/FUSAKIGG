@@ -206,6 +206,7 @@ Product.where( 'name LIKE ? and name LIKE ? and item_name LIKE ?','%開關%','%�
 Product.where( 'name LIKE ?','%緊急押扣%').update( description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
 Product.where( 'name LIKE ?','%紅色緊急%').update( description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
 Product.where( 'name LIKE ?','%電捲門%').update( description:'')
+Product.where( 'name LIKE ?','%電視%').update( description:'')
 Product.where( 'name LIKE ?','%防水%').update( description:'建議裝設在室外或會被水淋到的地方，在水/雨水容易侵入的地方裝設普通的插座是非常危險的，利用防水蓋板可避免觸電的危險，增加美觀及安全性')
 Product.where( 'name LIKE ?','%彈跳%').update( description:'
 <h5>施工前專用預埋盒</h5>

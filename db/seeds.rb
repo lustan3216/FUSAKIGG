@@ -177,8 +177,6 @@ Product.where( 'name LIKE ?','%冷氣專插%').update( description:'
 <li>如不知道您的冷氣電壓，可用冷氣插頭辨別，110V電壓則選擇H型，220V電壓則選擇T型</li>
 </ul>
 ')
-# Product.where( 'name LIKE ?','%電鈴%').update( description:'')
-# Product.where( 'name LIKE ?','%電捲門%').update( description:'')
 Product.where( 'name LIKE ?','%電話%').update( description:'
 <ul>
 <li>適用於所有一線電話和兩線電話</li>
@@ -196,8 +194,18 @@ Product.where( 'name LIKE ? and name LIKE ?','%電話%','%網路%' ).update( des
 </ul>
 ')
 Product.where( 'name LIKE ? and item_name LIKE ?','%插座%','%r%').update( description:'
+插座皆有無接地和有接地之分，建議選擇有接地插座較安全，也較符合大部分市面有接地插座，無需再煩惱插座上多出的接地極
 ')
-# Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( description:'')
-# Product.where( 'name LIKE ? and name LIKE ?','%開關%','%電鈴%' ).update( description:'')
+Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( description:'
+<ul>
+<li>插座皆有無接地和有接地之分，建議選擇有接地插座較安全，也較符合大部分市面有接地插座，無需再煩惱插座上多出的接地極</li>
+<li>開關皆有螢光單指示燈讓您不再摸黑找開關，一目瞭然</li>
+<li>本開關皆為螢光單切、3路兩用，銀接點設計</li>
+<li>請勿超過安全負載規定</li>
+<li>安裝時不需要拆卸開關上面板，節省工時成本</li>
+</ul>')
+Product.where( 'name LIKE ?','%電鈴%').update( description:'')
+Product.where( 'name LIKE ?','%電捲門%').update( description:'')
+Product.where( 'name LIKE ? and name LIKE ?','%開關%','%電鈴%' ).update( description:'')
 
 p "done"

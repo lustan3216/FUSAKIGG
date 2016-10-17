@@ -111,4 +111,10 @@ ready = ->
   $('#county').parent().one "click",->
     disabled_option()
 
+  $('#txtNum').on 'keyup keypress',(e) ->
+    keyCode = e.keyCode || e.which;
+    if keyCode is 13
+      e.preventDefault()
+      return false
+
 $(document).ready(ready)

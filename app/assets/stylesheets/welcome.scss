@@ -22,3 +22,28 @@
     width: 100%;
   }
 }
+#add_to_cart_animate{
+  margin-left: -40px;
+}
+#check_wrapper {
+  width: 20px;
+  margin-top: -15px;
+}
+
+.checkmark {
+  stroke: white;
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 1.5s ease-out forwards;
+  //-webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
+  //animation-play-state: paused;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

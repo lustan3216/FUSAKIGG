@@ -45,7 +45,9 @@ Product.create( name:'流線型四路單開關' ,item_name:'qt-7s04', v110_price
 Product.create( name:'流線型雙開關' ,item_name:'qt-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'流線型三開關' ,item_name:'qt-3s', v110_price:495 ,v220_price:570 )
 Product.create( name:'流線型夜光電鈴押扣' ,item_name:'qt-00', v110_price:200 ,v220_price:225 )
-Product.create( name:'流線型一開關一電鈴' ,item_name:'qt-1s1b', v110_price:400 ,v220_price:450 )
+Product.create( name:'流線型電鈴押扣' ,item_name:'qt-01', v110_price:200 , v220_price:200 )
+Product.create( name:'流線型一開關一夜光電鈴' ,item_name:'qt-1s1b00', v110_price:400 ,v220_price:450 )
+Product.create( name:'流線型一開關一電鈴' ,item_name:'qt-1s1b01', v110_price:400 ,v220_price:425)
 Product.create( name:'流線型電捲門開關' ,item_name:'qt-7669', v110_price:230, v220_price:230 )
 Product.create( name:'流線型一開關一插座' ,item_name:'qt-1s1r', v110_price:270 ,v220_price:295 )
 Product.create( name:'流線型一開關一接地插座' ,item_name:'qt-1s3r', v110_price:300 ,v220_price:325 )
@@ -81,7 +83,9 @@ Product.create( name:'典雅型四路單開關' ,item_name:'fk-7s04', v110_price
 Product.create( name:'典雅型雙開關' ,item_name:'fk-2s', v110_price:340 ,v220_price:390 )
 Product.create( name:'典雅型三開關' ,item_name:'fk-3s', v110_price:495 ,v220_price:570 )
 Product.create( name:'典雅型夜光電鈴押扣' ,item_name:'fk-00', v110_price:200 ,v220_price:225 )
-Product.create( name:'典雅型一開關一電鈴' ,item_name:'fk-1s1b', v110_price:400 ,v220_price:450 )
+Product.create( name:'典雅型電鈴押扣' ,item_name:'fk-01', v110_price:200 , v220_price:200 )
+Product.create( name:'典雅型一開關一夜光電鈴' ,item_name:'fk-1s1b00', v110_price:400 ,v220_price:450 )
+Product.create( name:'典雅型一開關一電鈴' ,item_name:'fk-1s1b01', v110_price:400 ,v220_price:425 )
 Product.create( name:'典雅型電捲門開關' ,item_name:'fk-7669', v110_price:230, v220_price:230 )
 Product.create( name:'典雅型一開關一插座' ,item_name:'fk-1s1r', v110_price:270 ,v220_price:295 )
 Product.create( name:'典雅型一開關一接地插座' ,item_name:'fk-1s3r', v110_price:300 ,v220_price:325 )
@@ -194,7 +198,7 @@ Product.where( 'name LIKE ? and name LIKE ?','%電話%','%網路%' ).update( des
 </ul>
 ')
 Product.where( 'name LIKE ? and item_name LIKE ?','%插座%','%r%').update( description:'
-插座皆有無接地和有接地之分，建議選擇有接地插座較安全，也較符合大部分市面有接地插座，無需再煩惱插座上多出的接地極
+插座皆有無接地和有接地之分，請依您家裡原有要更換的情況做選擇，如該插座是無接地就選擇無接地插座，有接地則選擇有接地<br>原因是原配線和中
 ')
 Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( description:'
 <ul>
@@ -204,8 +208,27 @@ Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( des
 <li>請勿超過安全負載規定</li>
 <li>安裝時不需要拆卸開關上面板，節省工時成本</li>
 </ul>')
-Product.where( 'name LIKE ?','%電鈴%').update( description:'')
 Product.where( 'name LIKE ?','%電捲門%').update( description:'')
-Product.where( 'name LIKE ? and name LIKE ?','%開關%','%電鈴%' ).update( description:'')
+Product.where( 'name LIKE ? and item_name LIKE ?','%電鈴%','%00%').update( description:'
+<ul>
+<li>只適用於交流電的蜂鳴器，如已無法辨識或無從得知請購買本公司無夜光指示電鈴押釦</li>
+<li>因有夜光指示燈電阻問題故無法使用直流電或乾電池式的蜂鳴器，會造成蜂鳴器一直鳴叫的狀況</li>
+</ul>
+')
+Product.where( 'name LIKE ? and item_name LIKE ?','%電鈴%','%01%').update( description:'
+此電鈴押扣可適用於直流電或交流電的蜂鳴器')
+Product.where( 'name LIKE ? and name LIKE ? and item_name LIKE ?','%開關%','%電鈴%','%00%' ).update( description:'
+<ul>
+<li>只適用於交流電的蜂鳴器，如已無法辨識或無從得知請購買本公司無夜光指示電鈴押釦</li>
+<li>因有夜光指示燈電阻問題故無法使用直流電或乾電池式的蜂鳴器，會造成蜂鳴器一直鳴叫的狀況</li>
+<li>選擇110V電壓則電鈴押扣與開關皆為110V</li>
+<li>選擇220V電壓則電鈴押扣與開關皆為220V</li>
+</ul>')
+Product.where( 'name LIKE ? and name LIKE ? and item_name LIKE ?','%開關%','%電鈴%','%01%' ).update( description:'
+<ul>
+<li>此電鈴押扣可適用於直流電或交流電的蜂鳴器</li>
+<li>選擇110V電壓則電鈴押扣與開關皆為110V</li>
+<li>選擇220V電壓則電鈴押扣與開關皆為220V</li>
+</ul>')
 
 p "done"

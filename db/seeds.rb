@@ -172,7 +172,8 @@ Product.where( 'name LIKE ? and name LIKE ?','%電話%','%網路%' ).update( des
 </ul>
 ')
 Product.where( 'name LIKE ? and item_name LIKE ?','%插座%','%r%').update( description:'
-插座皆有無接地和有接地之分，請依您家裡原有要更換的情況做選擇，如該插座是無接地就選擇無接地插座，有接地則選擇有接地<br>原因是原配線和中
+插座皆有無接地和有接地之分，請依您家裡原有要更換的情況做選擇，如該插座是無接地就選擇無接地插座，有接地則選擇有接地<br>
+請先確認是否已配有接地線，再選擇插座，否則會造成有接地線沒孔插，沒接地線但有孔的情況發生
 ')
 Product.where( 'name LIKE ? and name LIKE ?','%開關%','%插座%' ).update( description:'
 <ul>

@@ -206,7 +206,7 @@ Product.where( 'name LIKE ? and name LIKE ? and item_name LIKE ?','%開關%','%�
 Product.where( 'name LIKE ?','%緊急押扣%').update( description:'供您在緊急或特殊情況下之連續呼叫使用，建議使用於浴室、廁所、孝親房')
 Product.where( 'name LIKE ?','%紅色緊急%').update( description:'建議您安裝在緊急電源處而和一般插座區分，以備緊急或特殊狀況使用')
 Product.where( 'name LIKE ?','%電捲門%').update( description:'
-只有操控 上、停止、下 等動作，如有特殊需求貨額外操作動作請勿購買．
+只有操控 上、停止、下 等動作適用於一般電捲門及車道電捲門，如有特殊需求或額外操作動作請勿購買．
 ')
 Product.where( 'name LIKE ?','%電視%').update( description:'
 此電視插座為"中繼、末端共用"，簡單來說就是適用所有電視線，可直接插上即可使用．

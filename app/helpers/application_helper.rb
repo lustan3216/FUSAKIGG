@@ -31,15 +31,12 @@ module ApplicationHelper
   def shopping_cart
     current_qty = content_tag(:span,current_cart.total)
     qty = content_tag(:span,current_qty ,id:"current_qty")
-    icon = content_tag(:i,nil,class:[" menu-icon","fa","fa-shopping-cart"])
+    icon = content_tag(:i,nil,class:["ion-bag"])
     if current_user
-      link_to new_order_path, class:"cart_count" do
         params[:controller]=="orders"&& params[:action] == "new" ? icon : qty+icon
-      end
     else
-      link_to new_session_path(:user), class:"cart_count" do
+
         qty+icon
-      end
     end
   end
 

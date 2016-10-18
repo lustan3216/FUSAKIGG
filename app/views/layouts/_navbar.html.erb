@@ -11,9 +11,6 @@
       <!-- ========== MAIN MENU ========== -->
       <ul class="main-menu">
         <li class="menu-item">
-          <%= shopping_cart %>
-        </li>
-        <li class="menu-item">
           <%= link_to '購物', products_path %>
         </li>
 
@@ -52,10 +49,3 @@
   </div> <!-- end container-fluid -->
 </div>
 
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function() {
-    $("#add_to_cart").click(function(){
-      $('#current_qty').transition('jiggle').transition('tada');
-    })
-  })
-</script>

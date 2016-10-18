@@ -130,19 +130,16 @@ a.anchor{
   transform: translateY(4%);
   #current_qty{
     position: absolute;
-    font-size: 12px;
-    background-color: red;
-    height: 20px;
-    width: 20px;
+    font-size: 15px;
+    background-color: RGBA(250, 112, 112, 0.9);
+    height: 25px;
+    width: 25px;
     padding-left: 1px;
-    line-height: 20px;
+    line-height: 27px;
     border-radius: 50%;
-    border: 1px solid;
     text-align: center;
-    top: 20px;
-    left: 33px;
-  }
-  &:hover,#current_qty:hover{
+    top: -10px;
+    left: 34px;
     color: #fff;
   }
 }

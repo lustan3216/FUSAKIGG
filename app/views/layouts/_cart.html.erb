@@ -1,0 +1,20 @@
+<% if current_user %>
+    <%= link_to new_order_path, class:"cart_count" do %>
+        <div class="cart_block" id="cart_block">
+          <%= shopping_cart %>
+        </div>
+    <% end %>
+<% else %>
+    <%= link_to new_session_path(:user), class:"cart_count" do %>
+        <div class="cart_block" id="cart_block">
+          <%= shopping_cart %>
+        </div>
+    <% end %>
+<% end %>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $("#add_to_cart").click(function(){
+      $('#cart_block').transition('tada');
+    })
+  })
+</script>

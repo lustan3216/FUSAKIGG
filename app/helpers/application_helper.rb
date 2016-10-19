@@ -5,23 +5,23 @@ module ApplicationHelper
     payment[:payment_method] == "WebATM" ? webatm = 1 : webatm = 0
     payment[:payment_method] == "ATM" ? vacc = 1 : vacc = 0
     pay2go_params = {
-      MerchantID: Pay2go.merchant_id,
-      RespondType: "JSON",
-      TimeStamp: payment.created_at.to_i,
-      Version: "1.2",
-      LangType: "zh-TW",
-      MerchantOrderNo: payment.external_id,
-      Amt: payment.order.final_price,
-      ItemDesc: payment.order_number,
-      ReturnURL: pay2go_return_url,
-      NotifyURL: Pay2go.notify_url,
-      Email: payment.email,
-      LoginType: 0,
-      CREDIT: credit,
-      WEBATM: webatm,
-      VACC: vacc,
-      CVS: 0,
-      BARCODE: 0
+        MerchantID: Pay2go.merchant_id,
+        RespondType: "JSON",
+        TimeStamp: payment.created_at.to_i,
+        Version: "1.2",
+        LangType: "zh-TW",
+        MerchantOrderNo: payment.external_id,
+        Amt: payment.order.fake_final_price,
+        ItemDesc: payment.order_number,
+        ReturnURL: pay2go_return_url,
+        NotifyURL: Pay2go.notify_url,
+        Email: payment.email,
+        LoginType: 0,
+        CREDIT: credit,
+        WEBATM: webatm,
+        VACC: vacc,
+        CVS: 0,
+        BARCODE: 0
     }
     pay2go = Pay2go.new(pay2go_params)
     pay2go_params[:CheckValue] = pay2go.make_check_value
@@ -33,10 +33,9 @@ module ApplicationHelper
     qty = content_tag(:span,current_qty ,id:"current_qty")
     icon = content_tag(:i,nil,class:["ion-bag"])
     if current_user
-        params[:controller]=="orders"&& params[:action] == "new" ? icon : qty+icon
+      params[:controller]=="orders"&& params[:action] == "new" ? icon : qty+icon
     else
-
-        qty+icon
+      qty+icon
     end
   end
 

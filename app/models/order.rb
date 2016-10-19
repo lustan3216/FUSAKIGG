@@ -93,6 +93,10 @@ class Order < ApplicationRecord
     calc_shipfee + amount(whoset) + calc_traffic_allowanc
   end
 
+  def fake_final_price
+     final_price == (200*20) ? 1 : final_price
+  end
+
   def calc_traffic_allowanc
     fee = 0
     if whoset == "本公司派專業師傅安裝"

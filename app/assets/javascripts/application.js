@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-
 //= require main/modernizr
 //= require main/my_vendor
 //= require main/main

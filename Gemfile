@@ -38,7 +38,7 @@ gem 'therubyracer'
 # rail5
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
-gem 'sinatra', github: 'sinatra'
+gem 'sinatra', :github => 'sinatra/sinatra'
 github 'sinatra/sinatra' do
   gem 'rack-protection'
 end

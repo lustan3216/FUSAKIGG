@@ -1,4 +1,4 @@
-<div class="field mt30" id="order" data-shipfee="<%= Order.ship_fee  %>" data-cartamount="<%= cart_or_order.amount %>">
+<div class="field mt30" id="order" data-shipfee="<%= Order.ship_fee %>" data-ship_fee_boundary="<%= Order.ship_fee_boundary %>" data-discount_percent="<%= Order.discount_percent %>" data-traffic_allowanc="<%= Order.traffic_allowanc %>" data-traffic_allowanc_boundary="<%= Order.traffic_allowanc_boundary %>" data-cartamount="<%= cart_or_order.amount %>">
 
   <div class="three fields">
     <div class="four wide field">
@@ -43,7 +43,7 @@
 
     <div class="ten wide field">
       <%= f.label :whoset ,t('form.who_set') %>
-      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打６折）"] ], select_default(@order)),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打6折）"] ], select_default(@order)),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
     </div>
   </div>
 

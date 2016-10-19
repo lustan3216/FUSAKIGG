@@ -37,7 +37,7 @@ class Payment < ApplicationRecord
   end
 
   def setup_amount
-    self.amount = self.order.after_ship_amount
+    self.amount = self.order.final_price
   end
 
   def update_order_status

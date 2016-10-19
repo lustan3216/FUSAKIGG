@@ -21,8 +21,20 @@ class Order < ApplicationRecord
     1500
   end
 
+  def self.traffic_allowanc_boundary
+    3000
+  end
+
+  def self.traffic_allowanc
+    500
+  end
+
+  def self.discount_percent
+    0.6
+  end
+
   def ship_fee?
-    Order.ship_fee if calc_price_with_shipfee < Order.ship_fee_boundary
+    Order.ship_fee if calc_shipfee < Order.ship_fee_boundary
   end
 
   def clone_line_items_by(cart)
@@ -52,7 +64,7 @@ class Order < ApplicationRecord
   end
 
   def copy_info_to(user)
-    user.update_attributes( name:self.name , address:self.address , phone:self.phone,
+    user.assign_attributes( name:self.name , address:self.address , phone:self.phone,
                             postcode:self.postcode , alternate_email:self.email )
   end
 
@@ -62,23 +74,44 @@ class Order < ApplicationRecord
     self.destroy if self.line_items.blank?
   end
 
-  def amount
+  def full_address
+    [self.postcode.to_s , self.county , self.district , self.address].join('')
+  end
+
+  def amount(whoset = "本公司派專業師傅安裝")
     amount = 0
     self.line_items.each do |line|
       voltage = line.voltage.gsub("V","")
       amount += line.product.send("v#{voltage}_price") * line.qty
     end
-    amount
+    amount *= Order.discount_percent if whoset == "自行安裝（打6折）"
+    amount.to_i
   end
 
-  def calc_price_with_shipfee
-    price = self.amount
-    price *=0.6 if self.whoset == '自行安裝（打６折）'
-    price >= Order.ship_fee_boundary ? price.to_i : (price + Order.ship_fee).to_i
+  def calc_final_price
+    # amount(whoset) + calc_traffic_allowanc(whoset) + calc_shipfee(whoset)
+    calc_shipfee + amount(whoset) + calc_traffic_allowanc
   end
 
-  def full_address
-    [self.postcode.to_s , self.county , self.district , self.address].join('')
+  def calc_traffic_allowanc
+    fee = 0
+    if whoset == "本公司派專業師傅安裝"
+      fee = Order.traffic_allowanc if amount < Order.traffic_allowanc_boundary
+      return fee
+    end
+    fee
+    # traffic_allowanc
+  end
+
+  def calc_shipfee
+    fee = 0
+    if whoset == "自行安裝（打6折）"
+      price = amount * 0.6
+      fee = Order.ship_fee if price < Order.ship_fee_boundary
+      return fee
+    end
+    fee
+    # ship_fee
   end
 
   private

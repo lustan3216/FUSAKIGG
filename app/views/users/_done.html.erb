@@ -16,7 +16,7 @@
         <td><%= order.order_number %></td>
         <td><%= order.full_address %></td>
         <td><%= order.payment.updated_at.strftime('%x')%></td>
-        <td><%= order.calc_price_with_shipfee %></td>
+        <td><%= order.final_price %></td>
         <td><%= order.payment.payment_method %></td>
         <!--<td>-->
           <!--<#% if order.return_order.try(:status) == '完成' %>-->

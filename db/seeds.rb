@@ -11,35 +11,6 @@ Product.delete_all
 Order.delete_all
 LineItem.delete_all
 
-# 1T系列 7
-Product.create( name:'輕觸型單開關' ,item_name:'1t-7s', v110_price:350 ,v220_price:400 )
-Product.create( name:'輕觸型雙開關' ,item_name:'1t-2s', v110_price:680 ,v220_price:780 )
-Product.create( name:'輕觸型三開關' ,item_name:'1t-3s', v110_price:1010 ,v220_price:1160 )
-Product.create( name:'輕觸型一開關一插座' ,item_name:'1t-1s1r', v110_price:435 ,v220_price:485 )
-Product.create( name:'輕觸型一開關一接地插座' ,item_name:'1t-1s3r', v110_price:460 ,v220_price:510 )
-
-# 1T插座系列 21
-Product.create( name:'三插座' ,item_name:'1t-1503', v110_price:190 )
-Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'1t-5rt', v220_price:150 )
-Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'1t-5rh', v110_price:150 )
-Product.create( name:'接地單插座' ,item_name:'1t-3r', v110_price:110 )
-Product.create( name:'接地雙插座' ,item_name:'1t-6r', v110_price:165 )
-Product.create( name:'接地雙插座5.5絞線' ,item_name:'1t-8r', v110_price:185 )
-Product.create( name:'輕觸型電捲門開關' ,item_name:'1t-7669', v110_price:230, v220_price:230 )
-Product.create( name:'電話單插座' ,item_name:'1t-41', v000_price:105 )
-Product.create( name:'電話雙插座' ,item_name:'1t-42', v000_price:170 )
-Product.create( name:'電話三插座' ,item_name:'1t-43', v000_price:275 )
-Product.create( name:'網路單插座Cat.5e' ,item_name:'1t-815', v000_price:360 )
-Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'1t-81415', v000_price:465 )
-Product.create( name:'網路單插座Cat.6' ,item_name:'1t-816', v000_price:360 )
-Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'1t-81641', v000_price:465 )
-Product.create( name:'電視單插座' ,item_name:'1t-tv1', v000_price:170 )
-Product.create( name:'電視雙插座' ,item_name:'1t-tv2', v000_price:310 )
-Product.create( name:'復歸回彈式緊急押扣' ,item_name:'1t-88s', v110_price:250, v220_price:250 )
-Product.create( name:'強押固定式緊急押扣' ,item_name:'1t-99s', v110_price:250, v220_price:250 )
-Product.create( name:'紅色緊急接地單插座' ,item_name:'1t-3rr', v110_price:150 )
-Product.create( name:'紅色緊急接地雙插座' ,item_name:'1t-6rr', v110_price:215 )
-
 # QT開關系列 13
 Product.create( name:'流線型單開關' ,item_name:'qt-7s', v110_price:200 ,v220_price:225 )
 Product.create( name:'流線型四路單開關' ,item_name:'qt-7s04', v110_price:450 ,v220_price:475 )
@@ -77,6 +48,35 @@ Product.create( name:'流線型電視單插座' ,item_name:'qt-tv1', v000_price:
 Product.create( name:'流線型電視雙插座' ,item_name:'qt-tv2', v000_price:310 )
 Product.create( name:'流線型紅色緊急接地單插座' ,item_name:'qt-3rr', v110_price:150 )
 Product.create( name:'流線型紅色緊急接地雙插座' ,item_name:'qt-6rr', v110_price:215 )
+
+# 1T系列 7
+Product.create( name:'輕觸型單開關' ,item_name:'1t-7s', v110_price:350 ,v220_price:400 )
+Product.create( name:'輕觸型雙開關' ,item_name:'1t-2s', v110_price:680 ,v220_price:780 )
+Product.create( name:'輕觸型三開關' ,item_name:'1t-3s', v110_price:1010 ,v220_price:1160 )
+Product.create( name:'輕觸型一開關一插座' ,item_name:'1t-1s1r', v110_price:435 ,v220_price:485 )
+Product.create( name:'輕觸型一開關一接地插座' ,item_name:'1t-1s3r', v110_price:460 ,v220_price:510 )
+
+# 1T插座系列 21
+Product.create( name:'三插座' ,item_name:'1t-1503', v110_price:190 )
+Product.create( name:'T型冷氣專插座5.5絞線' ,item_name:'1t-5rt', v220_price:150 )
+Product.create( name:'H型冷氣專插座5.5絞線' ,item_name:'1t-5rh', v110_price:150 )
+Product.create( name:'接地單插座' ,item_name:'1t-3r', v110_price:110 )
+Product.create( name:'接地雙插座' ,item_name:'1t-6r', v110_price:165 )
+Product.create( name:'接地雙插座5.5絞線' ,item_name:'1t-8r', v110_price:185 )
+Product.create( name:'輕觸型電捲門開關' ,item_name:'1t-7669', v110_price:230, v220_price:230 )
+Product.create( name:'電話單插座' ,item_name:'1t-41', v000_price:105 )
+Product.create( name:'電話雙插座' ,item_name:'1t-42', v000_price:170 )
+Product.create( name:'電話三插座' ,item_name:'1t-43', v000_price:275 )
+Product.create( name:'網路單插座Cat.5e' ,item_name:'1t-815', v000_price:360 )
+Product.create( name:'網路/電話組合插座Cat.5e' ,item_name:'1t-81415', v000_price:465 )
+Product.create( name:'網路單插座Cat.6' ,item_name:'1t-816', v000_price:360 )
+Product.create( name:'網路Cat.6/電話組合插座' ,item_name:'1t-81641', v000_price:465 )
+Product.create( name:'電視單插座' ,item_name:'1t-tv1', v000_price:170 )
+Product.create( name:'電視雙插座' ,item_name:'1t-tv2', v000_price:310 )
+Product.create( name:'復歸回彈式緊急押扣' ,item_name:'1t-88s', v110_price:250, v220_price:250 )
+Product.create( name:'強押固定式緊急押扣' ,item_name:'1t-99s', v110_price:250, v220_price:250 )
+Product.create( name:'紅色緊急接地單插座' ,item_name:'1t-3rr', v110_price:150 )
+Product.create( name:'紅色緊急接地雙插座' ,item_name:'1t-6rr', v110_price:215 )
 
 # FK開關系列 13
 Product.create( name:'典雅型單開關' ,item_name:'fk-7s', v110_price:200 ,v220_price:225 )
@@ -237,34 +237,35 @@ Product.create( name:'吸頂式自動感應開關' ,item_name:'fk-360', v110_pri
 <li>．感知範圍高3.6公尺為直徑距離10公尺</li>
 </ul>')
 
-Product.all.each do |x|
-  count_present = 0.55
-  if x.v000_price.present?
-    price = (x.v000_price*count_present).to_i.to_s
-    if price.last.to_i.between?(1,4)
-      price = ((price.to_i/10).to_i)*10+5
-    elsif price.last.to_i.between?(6,9)
-      price = ((price.to_i/10).to_i)*10+10
-    end
-    x.update(v000_price: price.to_i )
-  end
-  if x.v110_price.present?
-    price = (x.v110_price*count_present).to_i.to_s
-    if price.last.to_i.between?(1,4)
-      price = ((price.to_i/10).to_i)*10+5
-    elsif price.last.to_i.between?(6,9)
-      price = ((price.to_i/10).to_i)*10+10
-    end
-    x.update(v110_price: price.to_i )
-  end
-  if x.v220_price.present?
-    price = (x.v220_price*count_present).to_i.to_s
-    if price.last.to_i.between?(1,4)
-      price = ((price.to_i/10).to_i)*10+5
-    elsif price.last.to_i.between?(6,9)
-      price = ((price.to_i/10).to_i)*10+10
-    end
-    x.update(v220_price: price.to_i )
-  end
-end
+# Product.all.each do |x|
+#   count_present = 0.55
+#   if x.v000_price.present?
+#     price = (x.v000_price*count_present).to_i.to_s
+#     if price.last.to_i.between?(1,4)
+#       price = ((price.to_i/10).to_i)*10+5
+#     elsif price.last.to_i.between?(6,9)
+#       price = ((price.to_i/10).to_i)*10+10
+#     end
+#     x.update(v000_price: price.to_i )
+#   end
+#   if x.v110_price.present?
+#     price = (x.v110_price*count_present).to_i.to_s
+#     if price.last.to_i.between?(1,4)
+#       price = ((price.to_i/10).to_i)*10+5
+#     elsif price.last.to_i.between?(6,9)
+#       price = ((price.to_i/10).to_i)*10+10
+#     end
+#     x.update(v110_price: price.to_i )
+#   end
+#   if x.v220_price.present?
+#     price = (x.v220_price*count_present).to_i.to_s
+#     if price.last.to_i.between?(1,4)
+#       price = ((price.to_i/10).to_i)*10+5
+#     elsif price.last.to_i.between?(6,9)
+#       price = ((price.to_i/10).to_i)*10+10
+#     end
+#     x.update(v220_price: price.to_i )
+#   end
+# end
+
 p "done"

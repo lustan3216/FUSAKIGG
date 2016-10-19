@@ -1,4 +1,11 @@
 ready = ->
+  data_shipfee = $('#order').data('shipfee')
+  data_ship_fee_boundary = $('#order').data('ship_fee_boundary')
+  data_traffic_allowanc = $('#order').data('traffic_allowanc')
+  data_traffic_allowanc_boundary = $('#order').data('traffic_allowanc_boundary')
+  data_discount_percent = $('#order').data('discount_percent')
+  data_amount = $('#order').data('amount')
+
   item_price=() ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)
@@ -53,31 +60,42 @@ ready = ->
     if $('#whoset').dropdown('get value')[0] == "本公司派專業師傅安裝"
       $('#county').siblings('.menu').children().slice(3).addClass('disabled')
 
-  after_ship_fee=() ->
+  after_ship_fee_and_check_county=() ->
     whoset = $('#whoset')
     #    amount = $('#amount').html()
     #    final_amount = $('#final_amount').html()
     siblings = $('#county').siblings('.menu')
     items = siblings.find('.item')
     selected = siblings.find('.selected')
-    ship_fee = $('#order').data('shipfee')
+    ship_fee = 0
+    traffic_allowanc = 0
+
     amount = parseInt($('#order').attr('data-cartamount'),10)
 
-    if whoset.find("option:selected").val() == "自行安裝（打６折）"
-      amount *= 0.6
+    if whoset.find("option:selected").val() == "自行安裝（打6折）"
+      amount *= $('#order').data('discount_percent')
       $('#amount').css('text-decoration','line-through')
       $('#discount').css('display','inline')
       items.removeClass('disabled')
+      $('#traffic_allowanc_block').hide()
+      if amount < data_ship_fee_boundary
+        ship_fee = $('#order').data('shipfee')
 
     if whoset.find("option:selected").val() == "本公司派專業師傅安裝"
       $('#amount').css('text-decoration','none')
       $('#discount').css('display','none')
       items.slice(3).addClass('disabled')
+      $('#traffic_allowanc_block').show()
       if $.inArray(selected.data('value'), ["台北市" , "桃園市" , "新北市"]) == -1
         $('#county').dropdown('clear')
         $('#district').dropdown('clear')
-    if amount < 1500
-      amount += ship_fee
+      if amount < data_traffic_allowanc_boundary
+        traffic_allowanc = data_traffic_allowanc
+
+    amount = ship_fee + traffic_allowanc + amount
+
+    $('#traffic_allowanc').html(traffic_allowanc)
+    if ship_fee != 0
       $('#ship_status').html(ship_fee)
     else
       $('#ship_status').html("免費")
@@ -89,7 +107,7 @@ ready = ->
     item_price.bind(this)()
     price_sum()
     qty_sum()
-    after_ship_fee()
+    after_ship_fee_and_check_county()
     update_lineitem_num.bind(this)()
 
   $('.product_spineer_button').on 'click', ->
@@ -103,10 +121,15 @@ ready = ->
     qty = parseInt(product_item.find('#txtNum').attr("value"),10)
     price_sum(one_price,qty)
     qty_sum(qty)
-    after_ship_fee()
+    after_ship_fee_and_check_county()
 
   $('#whoset').on "change", ->
-    after_ship_fee.bind(this)()
+    after_ship_fee_and_check_county.bind(this)()
+
+  if $('#order_whoset').html() == "自行安裝（打6折）" || $('#whoset').siblings('.menu').find('.selected').html() == "自行安裝（打6折）"
+    $('#amount').css('text-decoration','line-through')
+    $('#discount').css('display','inline')
+    $('#traffic_allowanc_block').hide()
 
   $('#county').parent().one "click",->
     disabled_option()

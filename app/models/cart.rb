@@ -32,18 +32,37 @@ class Cart < ApplicationRecord
     self.line_items.map{ |l| l.qty }.sum
   end
 
-  def amount
+  def amount(whoset = "本公司派專業師傅安裝")
     amount = 0
     self.line_items.each do |line|
       voltage = line.voltage.gsub("V","")
       amount += line.product.send("v#{voltage}_price") * line.qty
     end
-    amount
+    amount *= Order.discount_percent if whoset == "自行安裝（打6折）"
+    amount.to_i
   end
 
-  def calc_price_with_shipfee(whoset = "本公司派專業師傅安裝")
-    price = self.amount
-    price *=0.6 if whoset == "自行安裝（打６折）"
-    price >= Order.ship_fee_boundary ? price : price + Order.ship_fee
+  def calc_final_price(whoset = "本公司派專業師傅安裝")
+    amount(whoset) + calc_traffic_allowanc(whoset) + calc_shipfee(whoset)
   end
+
+  def calc_traffic_allowanc(whoset = "本公司派專業師傅安裝")
+    fee = 0
+    if whoset == "本公司派專業師傅安裝"
+      fee = Order.traffic_allowanc if amount < Order.traffic_allowanc_boundary
+      return fee
+    end
+    fee
+  end
+
+  def calc_shipfee(whoset = "本公司派專業師傅安裝")
+    fee = 0
+    if whoset == "自行安裝（打6折）"
+      price = amount * 0.6
+      fee = Order.ship_fee if price < Order.ship_fee_boundary
+      return fee
+    end
+    fee
+  end
+
 end

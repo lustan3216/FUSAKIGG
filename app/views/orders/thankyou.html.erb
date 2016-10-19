@@ -15,38 +15,38 @@
     <div class="container">
 
 
-        <% if @order.payment.payment_method == '貨到付款' || @order.payment.paid?   %>
+      <% if @order.payment.payment_method == '貨到付款' || @order.payment.paid?   %>
           <div class="text-center">
             <i class="ion-happy-outline" aria-hidden="true"></i>
             <h3 class="section-title underline mt20"><%= t('.thankyou_title') %></h3>
             <p class="section-subtitle"><%= simple_format t('.thankyou_content') %></p>
             <h5><i class="fa fa-envelope-o mr10" aria-hidden="true"></i>訂單明細已寄至您的信箱</h5>
           </div>
-            <!--<meta HTTP-EQUIV="REFRESH" content="1.5; url=<#%= nonpay_user_path(current_user)%>">-->
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              dataLayer.push({
-                event: 'payment_success',
-                'transactionId': '<%= @order.id %>',
-                'transactionTotal': <%= @order.after_ship_amount %>,
-                'transactionProducts': [{
-                  'name': '<%= @order.order_number %>',
-                  'price': <%= @order.after_ship_amount %>,
-                  'freight': <%= @order.freight %>
-                }]
-              });
-            </script>
+          <!--<meta HTTP-EQUIV="REFRESH" content="1.5; url=<#%= nonpay_user_path(current_user)%>">-->
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+              event: 'payment_success',
+              'transactionId': '<%= @order.id %>',
+              'transactionTotal': <%= @order.final_price %>,
+              'transactionProducts': [{
+                'name': '<%= @order.order_number %>',
+                'price': <%= @order.final_price %>,
+                'freight': <%= @order.freight %>
+              }]
+            });
+          </script>
 
-        <% else %>
-            <div class="payment_message text-center mb60">
-              <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
-              <h3 class="section-title underline mt20">付款失敗</h3>
-              <p class="section-subtitle"></p>
-              <h5>因不明原因付款失敗請聯絡客服<br>請立即聯絡客服人員會有專人為您服務</h5>
-            </div>
-        <% end %>
+      <% else %>
+          <div class="payment_message text-center mb60">
+            <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
+            <h3 class="section-title underline mt20">付款失敗</h3>
+            <p class="section-subtitle"></p>
+            <h5>因不明原因付款失敗請聯絡客服<br>請立即聯絡客服人員會有專人為您服務</h5>
+          </div>
+      <% end %>
 
-      </div>
+    </div>
   </section>
 </div> <!-- end main -->
 

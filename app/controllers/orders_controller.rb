@@ -21,12 +21,12 @@ class OrdersController < ApplicationController
     @order.copy_info_to(current_user)
     @order.clone_line_items_by(current_cart)
     @order.assign_attributes(user_id: current_user.id,
-                             after_ship_amount: current_cart.calc_price_with_shipfee(order_params[:whoset]))
+                             traffic_allowanc:current_cart.calc_traffic_allowanc(order_params[:whoset]),
+                             ship_fee: current_cart.calc_shipfee(order_params[:whoset]),
+                             final_price: current_cart.calc_final_price(order_params[:whoset]))
     if @order.save!
       cookies[:cart_id] = nil
       redirect_to order_path(@order)
-      # else
-      #   render :new
     end
   end
 
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
   def checkout_pay2go
     @order = current_user.orders.find(params[:id])
     if @order.paid?
-      redirect_to :back, alert: '已付款'
+      redirect_to :back, alert: '此訂單已經付過款 請至後台查看'
     else
       @payment = Payment.create!( :order => @order, :payment_method => params[:payment_method] )
       render :layout => false

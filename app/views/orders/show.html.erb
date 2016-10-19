@@ -65,7 +65,7 @@
               </tr>
               <tr>
                 <td><%= t('form.who_set') %></td>
-                <td><%= @order.whoset %></td>
+                <td id="order_whoset"><%= @order.whoset %></td>
               </tr>
               <% if @order.ps.present? %>
                   <tr>
@@ -82,4 +82,4 @@
   </section>
 </div>
 
-
+<%= javascript_include_tag 'spinner_order' %>

@@ -45,7 +45,7 @@
               </tr>
               <tr>
                 <td><%= t('form.who_set') %></td>
-                <td><%= @order.whoset %></td>
+                <td id="order_whoset"><%= @order.whoset %></td>
               </tr>
               <tr>
                 <td><%= t('form.pay_way') %></td>
@@ -66,4 +66,4 @@
   </section>
 </div>
 
-
+<%= javascript_include_tag 'spinner_order' %>

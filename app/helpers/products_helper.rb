@@ -11,4 +11,13 @@ module ProductsHelper
     end
   end
 
+  def show_random_img
+    if params[:type].nil?
+      image_tag "product/#{Product.all.sample.item_name}.png"
+    else
+      image_tag "product/#{Product.send(:"#{params[:type]}").sample.item_name}.png"
+    end
+
+  end
+
 end

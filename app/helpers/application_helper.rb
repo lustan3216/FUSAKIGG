@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def generate_pay2go_params(payment)
     payment[:payment_method] == "Credit" ? credit = 1 : credit = 0
-    payment[:payment_method] == "WebATM" ? webatm = 1 : webatm = 0
+    # payment[:payment_method] == "WebATM" ? webatm = 1 : webatm = 0
     payment[:payment_method] == "ATM" ? vacc = 1 : vacc = 0
     pay2go_params = {
         MerchantID: Pay2go.merchant_id,
@@ -18,7 +18,7 @@ module ApplicationHelper
         Email: payment.email,
         LoginType: 0,
         CREDIT: credit,
-        WEBATM: webatm,
+        WEBATM: 0,
         VACC: vacc,
         CVS: 0,
         BARCODE: 0

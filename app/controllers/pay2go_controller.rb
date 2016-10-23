@@ -16,6 +16,7 @@ class Pay2goController < ApplicationController
       ActiveRecord::Base.transaction do
         @order.paid = true
         @order.status = "處理中"
+        @order.payment_status = "完成"
         @order.save!
         OrderMailer.order_paid_notify(current_user,@order).deliver_later!
       end

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :store_current_location, :unless => :devise_controller?
   helper_method :current_cart
-  after_filter :store_location
+  after_action :store_location
   protected
 
   def store_location

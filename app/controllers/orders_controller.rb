@@ -31,8 +31,10 @@ class OrdersController < ApplicationController
   end
 
   def update
-    @order.update_item_qty(order_params)
-    @order.update(order_params.reject{|h| /\d/.match(h) })
+    if @order.can_update?
+      @order.update_item_qty(order_params)
+      @order.update(order_params.reject{|h| /\d/.match(h) })
+    end
     redirect_to order_path(@order)
   end
 
@@ -42,6 +44,7 @@ class OrdersController < ApplicationController
       redirect_to :back, alert: '此訂單已經付過款 請至後台查看'
     else
       @payment = Payment.create!( :order => @order, :payment_method => params[:payment_method] )
+      @order.update(payment_status: '處理中')
       render :layout => false
     end
   end

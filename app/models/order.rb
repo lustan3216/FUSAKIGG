@@ -33,6 +33,10 @@ class Order < ApplicationRecord
     0.6
   end
 
+  def can_update?
+     payment_status.nil? ? true : false
+  end
+
   def ship_fee?
     Order.ship_fee if calc_shipfee < Order.ship_fee_boundary
   end

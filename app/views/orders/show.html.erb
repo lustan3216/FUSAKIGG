@@ -2,7 +2,7 @@
   <%= render 'order_header' %>
   <section class="content-section">
     <div class="container">
-          <%= render 'flash/alert' %>
+      <%= render 'flash/alert',order:@order %>
       <div class="row">
 
         <div class="col-sm-3">
@@ -15,8 +15,10 @@
 
         <div class="col-sm-9">
           <div class="ui segment order_product_form">
-            <%= link_to edit_order_path(@order) do %>
-                <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
+            <% if @order.can_update? %>
+                <%= link_to edit_order_path(@order) do %>
+                    <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
+                <% end %>
             <% end %>
             <div class="row">
               <div class="mb30 col-xs-12 mt10">
@@ -25,9 +27,9 @@
                 <!--<div class="col-xs-6 mb10 "><%#= link_to "WebATM", checkout_pay2go_order_path(@order, :payment_method => "WebATM"), :class => "ui button fluid red", :method => :post %></div>-->
                 <div class="col-xs-6 mb10"><%= link_to "ATM", checkout_pay2go_order_path(@order, :payment_method => "ATM"), :class => "ui button fluid red", :method => :post %></div>
                 <%# if @order.whoset == '本公司派專業師傅安裝' %>
-                    <!--<div class="<%#= what_col_in(@order) %>">-->
-                      <%#= link_to "貨到付款", face_payment_order_path(@order), :class => "ui button fluid red", :method => :post %>
-                    <!--</div>-->
+                <!--<div class="<%#= what_col_in(@order) %>">-->
+                <%#= link_to "貨到付款", face_payment_order_path(@order), :class => "ui button fluid red", :method => :post %>
+                <!--</div>-->
                 <%# end %>
               </div>
             </div>
@@ -40,9 +42,6 @@
             </div>
             <table class="ui definition table mt30">
               <tbody>
-              <%= link_to edit_order_path(@order) do %>
-                  <div class="ui top right attached label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 修改</div>
-              <% end %>
               <tr>
                 <td class="four wide column"><%= t('form.name') %></td>
                 <td><%= @order.name %></td>

@@ -1,10 +1,21 @@
-<h1>轉址前往信用卡付款頁面，請勿關閉或離開頁面...</h1>
+<div class="payment_change">
+  <h2>轉址前往信用卡付款頁面，請勿關閉或離開頁面...</h2>
 
-<form action="<%= Pay2go.url %>" method="post">
-  <% generate_pay2go_params(@payment).each do |key, value| %>
-      <%= hidden_field_tag key, value %>
-  <% end %>
-  <input type="submit" style="visibility:hidden;">
-</form>
+  <form action="<%= Pay2go.url %>" method="post">
+    <% generate_pay2go_params(@payment).each do |key, value| %>
+        <%= hidden_field_tag key, value %>
+    <% end %>
+    <input type="submit" style="visibility:hidden;">
+  </form>
 
-<script>document.forms[0].submit()</script>
+  <script>document.forms[0].submit()</script>
+</div>
+
+<style>
+  .payment_change{
+    text-align: center;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

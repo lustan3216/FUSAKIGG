@@ -1,12 +1,12 @@
 <table class="ui single line table">
   <thead>
   <tr>
-    <th class="">訂單編號</th>
-    <th class="">地址</th>
-    <th class="">訂單成立時間</th>
-    <th class="">總價格</th>
-    <th class="">修改</th>
-    <th class="">付款</th>
+    <th>訂單編號</th>
+    <th>地址</th>
+    <th>訂單成立時間</th>
+    <th>總價格</th>
+    <th>修改</th>
+    <th>付款</th>
   </tr>
   </thead>
   <tbody>
@@ -17,7 +17,11 @@
         <td><%= order.updated_at.strftime('%x')%></td>
         <td><%= order.final_price %></td>
         <td>
-          <%= link_to edit_order_path(order) do%><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>
+          <% if order.can_update? %>
+              <%= link_to edit_order_path(order) do%><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>
+          <% else %>
+              <i class="fa fa-times" aria-hidden="true" style="color: #787878;"></i>
+          <% end %>
         </td>
         <td>
           <%= link_to order_path(order) do%><i class="fa fa-credit-card" aria-hidden="true"></i><% end %>

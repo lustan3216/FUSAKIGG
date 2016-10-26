@@ -19,7 +19,7 @@
             <li><%= link_to "公司介紹",introduce_path %></li>
           </ul>
         </div> <!-- end col-md-3 -->
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
           <h5 class="footer-title underline"><%= t(".qa") %></h5>
           <ul class="ul">
             <li><%= link_to "如何購買/選擇",qa_path(type:"choice"),class:"item" %></li>
@@ -37,7 +37,7 @@
             <li><%= link_to "線路圖下載區",download_path(anchor: "line_rules"),class:"item" %></li>
           </ul>
         </div> <!-- end col-md-3 -->
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
           <h5 class="footer-title underline"><%= t(".buy_product") %></h5>
           <ul class="ul">
             <li><%= link_to "QT流線型開關插座",products_path(type: "qt"),class:"item" %></li>

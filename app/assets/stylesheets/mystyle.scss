@@ -201,6 +201,12 @@ a.anchor{
 }
 
 @media (max-width: 767px) {
+  .footer{
+    text-align: center;
+    .footer-last{
+      margin-top: 30px;
+    }
+  }
   .save_money{
     position: absolute;
     z-index: 10;

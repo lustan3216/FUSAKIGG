@@ -23,21 +23,43 @@
             <h5><i class="fa fa-envelope-o mr10" aria-hidden="true"></i>訂單明細已寄至您的信箱</h5>
           </div>
           <!--<meta HTTP-EQUIV="REFRESH" content="1.5; url=<#%= nonpay_user_path(current_user)%>">-->
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-              event: 'payment_success',
-              'transactionId': '<%= @order.id %>',
-              'transactionTotal': <%= @order.final_price %>,
-              'transactionProducts': [{
-                'name': '<%= @order.order_number %>',
-                'price': <%= @order.final_price %>,
-                'freight': <%= @order.freight %>
-              }]
-            });
-          </script>
+          <!--<script>-->
+//            window.dataLayer = window.dataLayer || [];
+//            dataLayer.push({
+//              event: 'payment_success',
+//              'transactionId': '<%#= @order.id %>',
+//              'transactionTotal': <%#= @order.final_price %>,
+//              'transactionProducts': [{
+//                'name': '<%#= @order.order_number %>',
+//                'price': <%#= @order.final_price %>,
+                'freight': <%#= @order.freight %>
+//              }]
+//            });
+          <!--</script>-->
 
-      <% else %>
+          <!-- Google Code for &#24863;&#35613;&#38913; Conversion Page -->
+          <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 1000152110;
+            var google_conversion_language = "en";
+            var google_conversion_format = "3";
+            var google_conversion_color = "ffffff";
+            var google_conversion_label = "mTYvCJWKlmsQrrj03AM";
+            var google_conversion_value = <%= @order.final_price %>.00;
+            var google_conversion_currency = "TWD";
+            var google_remarketing_only = false;
+            /* ]]> */
+          </script>
+          <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+          </script>
+          <noscript>
+            <div style="display:inline;">
+              <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1000152110/?value=<%= @order.final_price %>.00&amp;currency_code=TWD&amp;label=mTYvCJWKlmsQrrj03AM&amp;guid=ON&amp;script=0"/>
+            </div>
+          </noscript>
+
+
+    <% else %>
           <div class="payment_message text-center mb60">
             <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
             <h3 class="section-title underline mt20">付款失敗</h3>

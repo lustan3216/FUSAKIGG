@@ -114,7 +114,7 @@ ready = ->
     command = $(this).attr('command')
     update_spinner_input.bind(this)(command)
 
-    
+
   $('.item_cancel').on "click", ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html(),10)

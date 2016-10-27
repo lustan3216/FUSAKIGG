@@ -14,7 +14,7 @@ module ApplicationHelper
         Amt: payment.order.calc_final_price,
         ItemDesc: payment.order_number,
         ReturnURL: pay2go_return_url,
-        NotifyURL: Pay2go.notify_url,
+        NotifyURL: pay2go_notify_url,
         Email: payment.email,
         LoginType: 0,
         CREDIT: credit,

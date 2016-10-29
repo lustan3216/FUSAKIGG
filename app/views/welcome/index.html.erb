@@ -1,6 +1,4 @@
-<%= stylesheet_link_tag    'main/rev'%>
-<%= javascript_include_tag 'main/my_vendor.js'%>
-<%= javascript_include_tag 'welcome_index.js'%>
+
 <div class="main">
 
   <%= render 'animation_header' %>
@@ -137,7 +135,9 @@
 
 
 </div> <!-- end main -->
-
+<%= stylesheet_link_tag    'main/rev'%>
+<%= javascript_include_tag 'main/my_vendor.js'%>
+<%= javascript_include_tag 'welcome_index.js'%>
 <script>
   window.onbeforeunload = function(){ window.scrollTo(0,0); }
 </script>

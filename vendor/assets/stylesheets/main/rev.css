@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+.rev_slider_wrapper { position: relative; z-index: 0 }
+
+.rev_slider { position: relative; overflow: visible }
+
+.tp-overflow-hidden { overflow: hidden }
+
+.rev_slider img, .tp-simpleresponsive img { max-width: none !important; -webkit-transition: none; transition: none; margin: 0; padding: 0; border-width: 0; border: none }
+
+.rev_slider .no-slides-text { font-weight: 700; text-align: center; padding-top: 80px }
+
+.rev_slider > ul, .rev_slider > ul > li, .rev_slider > ul > li:before, .rev_slider_wrapper > ul, .tp-revslider-mainul > li, .tp-revslider-mainul > li:before, .tp-simpleresponsive > ul, .tp-simpleresponsive > ul > li, .tp-simpleresponsive > ul > li:before { list-style: none !important; position: absolute; margin: 0 !important; padding: 0 !important; overflow-x: visible; overflow-y: visible; list-style-type: none !important; background-image: none; background-position: 0 0; text-indent: 0; top: 0; left: 0 }
+
+.rev_slider > ul > li, .rev_slider > ul > li:before, .tp-revslider-mainul > li, .tp-revslider-mainul > li:before, .tp-simpleresponsive > ul > li, .tp-simpleresponsive > ul > li:before { visibility: hidden }
+
+.tp-revslider-mainul, .tp-revslider-slidesli { padding: 0 !important; margin: 0 !important; list-style: none !important }
+
+.rev_slider li.tp-revslider-slidesli { position: absolute !important }
+
+.tp-caption .rs-untoggled-content { display: block }
+
+.tp-caption .rs-toggled-content { display: none }
+
+.rs-toggle-content-active.tp-caption .rs-toggled-content { display: block }
+
+.rs-toggle-content-active.tp-caption .rs-untoggled-content { display: none }
+
+.rev_slider .caption, .rev_slider .tp-caption { position: relative; visibility: hidden; white-space: nowrap; display: block }
+
+.rev_slider .tp-mask-wrap .tp-caption, .rev_slider .tp-mask-wrap :last-child, .wpb_text_column .rev_slider .tp-mask-wrap .tp-caption, .wpb_text_column .rev_slider .tp-mask-wrap :last-child { margin-bottom: 0 }
+
+.tp-carousel-wrapper { cursor: url(openhand.123), move }
+
+.tp-carousel-wrapper.dragged { cursor: url(closedhand.123), move }
+
+.tp-caption { z-index: 1 }
+
+.tp_inner_padding { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; max-height: none !important }
+
+.tp-caption { -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; position: absolute; -webkit-font-smoothing: antialiased !important }
+
+.tp-caption.tp-layer-selectable { -moz-user-select: all; -khtml-user-select: all; -webkit-user-select: all; -o-user-select: all }
+
+.tp-caption.tp-hidden-caption, .tp-forcenotvisible, .tp-hide-revslider { visibility: hidden !important; display: none !important }
+
+.rev_slider embed, .rev_slider iframe, .rev_slider object, .rev_slider video { max-width: none !important }
+
+.rev_slider_wrapper { width: 100% }
+
+.fullscreen-container, .fullwidthbanner-container { position: relative; padding: 0 }
+
+.fullwidthbanner-container { overflow: hidden }
+
+.fullwidthbanner-container .fullwidthabanner { width: 100%; position: relative }
+
+.tp-static-layers { position: absolute; z-index: 505; top: 0; left: 0 }
+
+.tp-caption .frontcorner { width: 0; height: 0; border-left: 40px solid transparent; border-right: 0 solid transparent; border-top: 40px solid #00A8FF; position: absolute; left: -40px; top: 0 }
+
+.tp-caption .backcorner { border-left: 0 solid transparent; border-right: 40px solid transparent; right: 0 }
+
+.tp-caption .backcorner, .tp-caption .frontcornertop { width: 0; height: 0; border-bottom: 40px solid #00A8FF; position: absolute; top: 0 }
+
+.tp-caption .frontcornertop { border-left: 40px solid transparent; border-right: 0 solid transparent; left: -40px }
+
+.tp-caption .backcornertop { width: 0; height: 0; border-left: 0 solid transparent; border-right: 40px solid transparent; border-top: 40px solid #00A8FF; position: absolute; right: 0; top: 0 }
+
+.tp-layer-inner-rotation { position: relative !important }
+
+img.tp-slider-alternative-image { width: 100%; height: auto }
+
+.noFilterClass { filter: none !important }
+
+.rs-background-video-layer { visibility: hidden; z-index: 0 }
+
+.caption.fullscreenvideo, .rs-background-video-layer, .tp-caption.coverscreenvideo, .tp-caption.fullscreenvideo { position: absolute; top: 0; left: 0; width: 100%; height: 100% }
+
+.caption.fullscreenvideo iframe, .caption.fullscreenvideo video, .tp-caption.fullscreenvideo iframe, .tp-caption.fullscreenvideo iframe video { width: 100% !important; height: 100% !important; display: none }
+
+.fullcoveredvideo video, .fullscreenvideo video { background: #000000 }
+
+.fullcoveredvideo .tp-poster { background-position: 50%; background-size: cover; width: 100%; height: 100%; top: 0; left: 0 }
+
+.videoisplaying .html5vid .tp-poster { display: none }
+
+.tp-video-play-button { background: #000000; background: rgba(0, 0, 0, .3); border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; position: absolute; top: 50%; left: 50%; color: #FFFFFF; z-index: 3; margin-top: -25px; margin-left: -25px; line-height: 50px !important; text-align: center; cursor: pointer; width: 50px; height: 50px; box-sizing: border-box; -moz-box-sizing: border-box; display: inline-block; vertical-align: top; z-index: 4; opacity: 0; -webkit-transition: opacity .3s ease-out !important; transition: opacity .3s ease-out !important }
+
+.tp-caption .html5vid { width: 100% !important; height: 100% !important }
+
+.tp-video-play-button i { width: 50px; height: 50px; display: inline-block; text-align: center; vertical-align: top; line-height: 50px !important; font-size: 40px !important }
+
+.tp-caption:hover .tp-video-play-button { opacity: 1 }
+
+.tp-caption .tp-revstop { display: none; border-left: 5px solid #FFFFFF !important; border-right: 5px solid #FFFFFF !important; margin-top: 15px !important; line-height: 20px !important; vertical-align: top; font-size: 25px !important }
+
+.videoisplaying .revicon-right-dir { display: none }
+
+.videoisplaying .tp-revstop { display: inline-block }
+
+.videoisplaying .tp-video-play-button { display: none }
+
+.tp-caption:hover .tp-video-play-button { display: block }
+
+.fullcoveredvideo .tp-video-play-button { display: none !important }
+
+.fullscreenvideo .fullscreenvideo video { object-fit: contain !important }
+
+.fullscreenvideo .fullcoveredvideo video { object-fit: cover !important }
+
+.tp-video-controls { position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; opacity: 0; -webkit-transition: opacity .3s; transition: opacity .3s; background-image: linear-gradient(bottom, #000000 13%, #323232); background-image: -webkit-linear-gradient(bottom, #000000 13%, #323232); background-image: -ms-linear-gradient(bottom, #000000 13%, #323232 100%); background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.13, #000000), color-stop(1, #323232)); display: table; max-width: 100%; overflow: hidden; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box }
+
+.tp-caption:hover .tp-video-controls { opacity: .9 }
+
+.tp-caption img { background: transparent; -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF); zoom: 1 }
+
+.caption.slidelink a div, .tp-caption.slidelink a div { width: 3000px; height: 1500px; background: url(../assets/coloredbg.png) repeat }
+
+.tp-caption.slidelink a span { background: url(../assets/coloredbg.png) repeat }
+
+.tp-shape { width: 100%; height: 100% }
+
+.tp-caption .rs-starring { display: inline-block }
+
+.tp-caption .rs-starring .star-rating { float: none; color: #FFC321 !important; display: inline-block; vertical-align: top }
+
+.tp-caption .rs-starring-page .star-rating, .tp-caption .rs-starring .star-rating { position: relative; height: 1em; width: 5.4em; font-family: star }
+
+.tp-caption .rs-starring-page .star-rating:before, .tp-caption .rs-starring .star-rating:before { content: "\73\73\73\73\73"; color: #E0DADF; float: left; top: 0; left: 0; position: absolute }
+
+.tp-caption .rs-starring .star-rating span { overflow: hidden; float: left; top: 0; left: 0; position: absolute; padding-top: 1.5em; font-size: 1em !important }
+
+.tp-caption .rs-starring .star-rating span:before { content: "\53\53\53\53\53"; top: 0; position: absolute; left: 0 }
+
+.tp-caption .rs-starring .star-rating { color: #FFC321 !important }
+
+.tp-caption .rs-starring-page .star-rating, .tp-caption .rs-starring .star-rating { font-size: 1em !important; font-family: star }
+

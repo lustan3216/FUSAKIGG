@@ -107,7 +107,7 @@
                 if (selectCustom !== undefined) {
                     // 若指定顯示縣市
                     custom = selectCustom.replace(/\s/g, ''); // 去除空白字元
-                    custom = custom.split(','); // 轉陣列              
+                    custom = custom.split(','); // 轉陣列
                 }
 
                 for (var i = 0, j = country.length; i < j; i++) {

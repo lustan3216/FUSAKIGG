@@ -23,10 +23,3 @@ $(function (e) {
         o = e(this).data("clicks"), o ? (e(".main-menu").removeClass("animated fadeIn"), e(".main-menu").css("display", "none")) : (e(".main-menu").css("display", "block"), e(".main-menu").addClass("animated fadeIn")), e(this).data("clicks", !o)
     })
 });
-
-// e(".client-carousel").owlCarousel({
-//     loop: !0,
-//     items: 6,
-//     autoplay: !0,
-//     dots: !1
-// })

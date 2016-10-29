@@ -31,7 +31,7 @@ module ApplicationHelper
   def shopping_cart
     current_qty = content_tag(:span,current_cart.total)
     qty = content_tag(:span,current_qty ,id:"current_qty")
-    icon = content_tag(:i,nil,class:["ion-bag"])
+    icon = content_tag(:i,nil,class:["fa fa-shopping-bag"])
     if current_user
       params[:controller]=="orders"&& params[:action] == "new" ? icon : qty+icon
     else

@@ -13,7 +13,7 @@ module ApplicationHelper
         MerchantOrderNo: payment.external_id,
         Amt: payment.order.fake_final_price,
         ItemDesc: payment.order_number,
-        ReturnURL: pay2go_return_url,
+        # ReturnURL: pay2go_return_url,
         NotifyURL: pay2go_notify_url,
         Email: payment.email,
         LoginType: 0,

@@ -12,7 +12,7 @@ class Payment < ApplicationRecord
   end
 
   def external_id
-    "#{self.id}FKI#{Rails.env.upcase[0]}"
+    "#{self.id}FKI"
   end
 
   def email

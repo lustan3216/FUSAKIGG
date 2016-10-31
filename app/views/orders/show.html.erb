@@ -3,16 +3,6 @@
   <section class="content-section">
     <div class="container">
       <%= render 'flash/alert',order:@order %>
-      <% if !@order.can_update? %>
-          <div class="row flash_row">
-            <div class="col-xs-12">
-              <div class="ui negative message">
-                <i class="close icon"></i>
-                <div class="text-center"></div>
-              </div>
-            </div>
-          </div>
-      <% end %>
       <div class="row">
 
         <div class="col-sm-3">

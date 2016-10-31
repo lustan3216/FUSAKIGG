@@ -1,0 +1,33 @@
+<div class="ui basic modal">
+  <i class="close icon"></i>
+  <div class="header">
+    ATM付款方式即通知
+  </div>
+  <div class="image content">
+    <div class="image">
+      <i class="archive icon"></i>
+    </div>
+    <div class="description">
+      <p>付款成功後請於15分鐘後再查看，系統須核對資料</p>
+      <p>ATM申請後請於7日內完成付款</p>
+      <p>若於例假日及國定假日或非銀行營業時間匯款，請於正常工作日回後台查核</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="two fluid ui inverted buttons atm_modal">
+      <a href="">
+      <div class="ui cancel red basic inverted button">
+        <i class="remove icon"></i>
+        取消
+      </div>
+      </a>
+      <%= link_to checkout_pay2go_order_path(order, :payment_method => "ATM"),:target => '_blank', :method => :post do %>
+          <div class="ui ok green basic inverted button">
+            <i class="checkmark icon"></i>
+            ATM結帳
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

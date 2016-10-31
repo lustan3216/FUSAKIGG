@@ -3,7 +3,7 @@
   <section class="content-section">
     <div class="container">
       <%= render 'flash/alert',order:@order %>
-      <div class="row">
+      <div class="row reorder-xs">
 
         <div class="col-sm-3">
           <% if  request.referrer.include?('users') %>
@@ -25,7 +25,7 @@
                 <h4 class="ui mb10">請選擇智付寶結帳方式</h4>
                 <div class="col-xs-6 mb10"><%= link_to "信用卡結帳", checkout_pay2go_order_path(@order, :payment_method => "Credit"), :class => "ui button fluid red", :method => :post %></div>
                 <!--<div class="col-xs-6 mb10 "><%#= link_to "WebATM", checkout_pay2go_order_path(@order, :payment_method => "WebATM"), :class => "ui button fluid red", :method => :post %></div>-->
-                <div class="col-xs-6 mb10"><%= link_to "ATM", checkout_pay2go_order_path(@order, :payment_method => "ATM"),:target => '_blank', :class => "ui button fluid red", :method => :post %></div>
+                <div class="col-xs-6 mb10"><%= button_tag "ATM", :class => "ui button fluid red",id:'atm_modal' %></div>
                 <%# if @order.whoset == '本公司派專業師傅安裝' %>
                 <!--<div class="<%#= what_col_in(@order) %>">-->
                 <%#= link_to "貨到付款", face_payment_order_path(@order), :class => "ui button fluid red", :method => :post %>
@@ -84,5 +84,11 @@
     </div>
   </section>
 </div>
+<%= render 'atm_modal',order:@order %>
 
 <%= javascript_include_tag 'spinner_order' %>
+<script type="text/javascript" charset="utf-8">
+  $('#atm_modal').click(function(){
+    $('.ui.basic.modal').modal('show');
+  })
+</script>

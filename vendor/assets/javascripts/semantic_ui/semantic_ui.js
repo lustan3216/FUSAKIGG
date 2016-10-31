@@ -10,7 +10,7 @@
 //= require semantic_ui/definitions/modules/dropdown.js
 // require semantic_ui/definitions/modules/embed.js
 //= require semantic_ui/definitions/behaviors/form.js
-// require semantic_ui/definitions/modules/modal.js
+//= require semantic_ui/definitions/modules/modal.js
 // require semantic_ui/definitions/modules/nag.js
 // require semantic_ui/definitions/modules/popup.js
 // require semantic_ui/definitions/modules/progress.js

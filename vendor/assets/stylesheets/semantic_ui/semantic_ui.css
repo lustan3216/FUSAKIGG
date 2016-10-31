@@ -31,7 +31,7 @@
  * require semantic_ui/definitions/elements/loader.less
  *= require semantic_ui/definitions/collections/menu.less
  *= require semantic_ui/definitions/collections/message.less
- * require semantic_ui/definitions/modules/modal.less
+ *= require semantic_ui/definitions/modules/modal.less
  * require semantic_ui/definitions/modules/nag.less
  * require semantic_ui/definitions/modules/popup.less
  * require semantic_ui/definitions/modules/progress.less

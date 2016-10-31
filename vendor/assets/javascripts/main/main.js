@@ -1,6 +1,6 @@
 $(function () {
     "use strict";
-    $(".menu > ul > li:has( > ul)").addClass("menu-dropdown-icon"), $(".menu > ul > li > ul:not(:has(ul))").addClass("normal-sub"), $(".menu > ul").before('<a href="#" class="menu-mobile"></a>'), $(".menu > ul > li").hover(function (t) {
+    $(".menu > ul > li:has( > ul)").addClass("menu-dropdown-icon"), $(".menu > ul > li > ul:not(:has(ul))").addClass("normal-sub"), $(".menu > ul").before('<a href="#" class="fa menu-mobile"></a>'), $(".menu > ul > li").hover(function (t) {
         $(window).width() > 991 && ($(this).children("ul").stop(!0, !1).fadeToggle(150), t.preventDefault())
     }), $(".menu > ul > li > ul > .has-subsubmenu").hover(function (t) {
         $(window).width() > 991 && ($(this).children("ul").stop(!0, !1).fadeToggle(50), t.preventDefault())

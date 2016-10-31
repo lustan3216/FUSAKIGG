@@ -1,6 +1,7 @@
 <div class="main">
 
   <%= render 'animation_header' %>
+  <%= render 'achievement' %>
   <%= render 'explodes' %>
 
   <section class="content-section pbn ptn three_feature">
@@ -26,7 +27,7 @@
           <i class="fa-2x fa fa-phone" aria-hidden="true"></i>
         </div> <!-- end icon -->
         <h4 class="feature-title"><%= t(".feature_3") %></h4>
-        <p class="feature-desc"><%=simple_format t(".feature_3_content") %></p></p>
+        <p class="feature-desc"><%=simple_format t(".feature_3_content") %></p>
       </div> <!-- end feature -->
 
     </div> <!-- end row -->
@@ -61,82 +62,98 @@
     </div> <!-- end container-fluid -->
   </section>
 
-  <!-- ========== CONTENT SECTION WITH FEATURES ========== -->
-  <section class="content-section">
-    <div class="container">
-      <div class="row text-center">
-
-        <!-- ========== SECTION HEADER ========== -->
-        <div class="col-md-12 section-header mt40">
-          <h3 class="section-title underline"><%= t(".why_change_old") %></h3>
-          <p class="section-subtitle"></p>
-        </div> <!-- end section-header -->
-
-        <div class="col-md-4 mb50">
-          <div class="feature-box-4">
-            <div class="icon">
-              <i class="fa fa-eye-slash" aria-hidden="true"></i>
-            </div>
-            <h5 class="feature-title"><%= t(".why_1_title") %></h5>
-            <p class="feature-desc"><%= t(".why_1_subtitle") %></p>
-          </div> <!-- end feature-box-4 -->
-        </div> <!-- end col-md-4 -->
-        <div class="col-md-4 mb50">
-          <div class="feature-box-4">
-            <div class="icon">
-              <i class="fa fa-chain-broken" aria-hidden="true"></i>
-            </div>
-            <h5 class="feature-title"><%= t(".why_2_title") %></h5>
-            <p class="feature-desc"><%= t(".why_2_subtitle") %></p>
-          </div> <!-- end feature-box-4 -->
-        </div> <!-- end col-md-4 -->
-        <div class="col-md-4 mb50">
-          <div class="feature-box-4">
-            <div class="icon">
-              <i class="ion-ios-bolt"></i>
-            </div>
-            <h5 class="feature-title"><%= t(".why_3_title") %></h5>
-            <p class="feature-desc"><%= t(".why_3_subtitle") %></p>
-          </div> <!-- end feature-box-4 -->
-        </div> <!-- end col-md-4 -->
-
-        <div class="col-md-4 mb50">
-          <div class="feature-box-4">
-            <div class="icon">
-              <i class="fa fa-certificate" aria-hidden="true"></i>
-            </div>
-            <h5 class="feature-title"><%= t(".why_4_title") %></h5>
-            <p class="feature-desc"><%= t(".why_4_subtitle") %></p>
-          </div> <!-- end feature-box-4 -->
-        </div> <!-- end col-md-4 -->
-        <div class="col-md-4 mb50">
-          <div class="feature-box-4">
-            <div class="icon">
-              <i class="fa fa-fire" aria-hidden="true"></i>
-            </div>
-            <h5 class="feature-title"><%= t(".why_5_title") %></h5>
-            <p class="feature-desc"><%= t(".why_5_subtitle") %></p>
-          </div> <!-- end feature-box-4 -->
-        </div> <!-- end col-md-4 -->
-        <div class="col-md-4 mb50">
-          <div class="feature-box-4">
-            <div class="icon">
-              <i class="fa fa-compress" aria-hidden="true"></i>
-            </div>
-            <h5 class="feature-title"><%= t(".why_6_title") %></h5>
-            <p class="feature-desc"><%= t(".why_6_subtitle") %></p>
-          </div> <!-- end feature-box-4 -->
-        </div> <!-- end col-md-4 -->
-
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </section>
+  <%#= render 'index_why_buy' %>
 
 
 </div> <!-- end main -->
-
-<script src="<%= asset_path("welcome_index.js") %>"></script>
+<%= javascript_include_tag 'main/my_vendor'%>
 <script>
   window.onbeforeunload = function(){ window.scrollTo(0,0); }
+  $(function($) {
+    "use strict";
+
+    $("#js-grid-masonry").cubeportfolio({
+      filters: "#js-filters-masonry",
+      layoutMode: "grid",
+      defaultFilter: "*",
+      animationType: "slideDelay",
+      gapHorizontal: 0,
+      gapVertical: 0,
+      gridAdjustment: "responsive",
+      mediaQueries: [{
+        width: 1500,
+        cols: 4
+      }, {
+        width: 1100,
+        cols: 4
+      }, {
+        width: 800,
+        cols: 3
+      }, {
+        width: 480,
+        cols: 2
+      }, {
+        width: 320,
+        cols: 1
+      }],
+      caption: "overlayBottomAlong",
+      displayType: "bottomToTop",
+      displayTypeSpeed: 100,
+
+      // lightbox
+      lightboxDelegate: ".cbp-lightbox",
+      lightboxGallery: true,
+      lightboxTitleSrc: "data-title",
+      lightboxCounter: "<div class='cbp-popup-lightbox-counter'>{{current}} of {{total}}</div>"
+    });
+
+  });
+
+
+  $(function() {
+    "use strict";
+
+    // for revolution slider
+    var tpj = jQuery;
+    tpj(document).ready(function() {
+      if(tpj("#rev_slider_46_1").revolution === undefined){
+        revslider_showDoubleJqueryError("#rev_slider_46_1");
+      }else{
+        tpj("#rev_slider_46_1").show().revolution({
+          sliderType: "standard",
+          jsFileLocation: "../../revolution/js/",
+          sliderLayout: "fullscreen",
+          dottedOverlay: "none",
+          delay: 5000,
+          responsiveLevels: [1240, 1024, 778, 480],
+          gridwidth: [1240, 1024, 778, 480],
+          gridheight: [868, 768, 960, 720],
+          lazyType: "none",
+          shadow: 0,
+          spinner: "off",
+          stopLoop: "on",
+          stopAfterLoops: 0,
+          stopAtSlide: 1,
+          shuffle: "off",
+          autoHeight: "off",
+          fullScreenAlignForce: "off",
+          fullScreenOffsetContainer: "",
+          fullScreenOffset: "0px",
+          disableProgressBar: "off",
+          hideThumbsOnMobile: "off",
+          hideSliderAtLimit: 0,
+          hideCaptionAtLimit: 0,
+          hideAllCaptionAtLilmit: 0,
+          debugMode: false,
+          fallbacks: {
+            simplifyAll: "off",
+            nextSlideOnWindowFocus: "off",
+            disableFocusListener: false
+          }
+        });
+      }
+    });
+  });
+
 </script>
 

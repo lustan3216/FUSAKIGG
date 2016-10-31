@@ -41,7 +41,7 @@
                           <table class="invoice-items" cellpadding="0" cellspacing="0">
                             <% @return_items.each do |item| %>
                                 <tr>
-                                  <td><%= item.line_item.product.name + item.line_item.voltage %></td>
+                                  <td><%= item.item_name.upcase %> / <%= item.line_item.product.name + item.line_item.voltage %></td>
                                   <td class="aligncenter"><%= item.qty %>個</td>
                                   <td class="alignright">$<%= item.line_item.price %></td>
                                 </tr>

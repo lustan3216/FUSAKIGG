@@ -1,3 +1,9 @@
+.row_reverse{
+  display: flex;
+  flex-direction:row-reverse;
+  margin: 0;
+  width: 100%;
+}
 .three_feature{
   h4,p,i{
     color: #fff;
@@ -20,9 +26,21 @@
 .introduction_fix p{
   color: brown;
 }
-.explodes{
+.explodes {
+
   img{
     width: 100%;
+  }
+}
+.explodes_xs{
+  padding: 40px !important;
+  img{
+    width: 100%;
+    -webkit-transform:rotate(-90deg) ;
+    -moz-transform:rotate(-90deg) ;
+    -ms-transform:rotate(-90deg) ;
+    -o-transform:rotate(-90deg) ;
+    transform:rotate(-90deg) ;
   }
 }
 #add_to_cart_animate{
@@ -41,7 +59,21 @@
   //-webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
   //animation-play-state: paused;
 }
-
+.achievements{
+  padding: 50px !important;
+  img{
+    width: 100%;
+  }
+  h4,h5{
+    color: #000000;
+  }
+  h5{
+    margin-bottom: 30px;
+  }
+  .ui.label{
+    margin:10px;
+  }
+}
 @keyframes dash {
   0% {
     stroke-dashoffset: 745.74853515625;

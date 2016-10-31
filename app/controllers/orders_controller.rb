@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :find_order , only: [:show, :finish, :edit, :update]
 
   def show
-    redirect_to :user_path(current_user,status:paid), alert: '已付款完成 請至後台查看'if @order.paid?
+    redirect_to :user_path(current_user,status:paid), alert: '已付款完成 請至後台查看' if @order.paid?
   end
 
   def finish

@@ -14,7 +14,6 @@ module ApplicationHelper
         Amt: payment.order.fake_final_price,
         ItemDesc: payment.order_number,
         ReturnURL: pay2go_return_url,
-        NotifyURL: pay2go_notify_url,
         Email: payment.email,
         LoginType: 0,
         CREDIT: credit,
@@ -23,7 +22,7 @@ module ApplicationHelper
         CVS: 0,
         BARCODE: 0
     }
-    pay2go_params[:NotifyURL] = '' if payment[:payment_method] == "Credit"
+    pay2go_params[:NotifyURL] = pay2go_notify_url if payment[:payment_method] == "ATM"
     pay2go = Pay2go.new(pay2go_params)
     pay2go_params[:CheckValue] = pay2go.make_check_value
     pay2go_params

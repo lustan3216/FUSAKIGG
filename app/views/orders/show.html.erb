@@ -43,6 +43,10 @@
             <table class="ui definition table mt30">
               <tbody>
               <tr>
+                <td class="four wide column">交易狀態</td>
+                <td><%= @order.payment_status %></td>
+              </tr>
+              <tr>
                 <td class="four wide column"><%= t('form.name') %></td>
                 <td><%= @order.name %></td>
               </tr>

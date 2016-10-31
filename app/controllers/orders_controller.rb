@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def show
     if @order.paid?
-      redirect_to finish_order_path(@order), alert: '已付款完成 請至後台查看'
+      redirect_to finish_order_path(@order), alert: '已付款完成'
     elsif !@order.can_update?
       flash[:alert] = '已選擇過付款方式，訂單已確立無法修改'
     end

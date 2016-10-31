@@ -23,6 +23,7 @@ module ApplicationHelper
         CVS: 0,
         BARCODE: 0
     }
+    pay2go_params[:NotifyURL] = '' if payment[:payment_method] == "Credit"
     pay2go = Pay2go.new(pay2go_params)
     pay2go_params[:CheckValue] = pay2go.make_check_value
     pay2go_params

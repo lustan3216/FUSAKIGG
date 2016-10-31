@@ -63,6 +63,7 @@ class OrdersController < ApplicationController
       if payment.paid?
         payment.update(is_need_thank:false)
         @payment = payment
+        @final_price = order.final_price
       end
     else
       redirect_to root_path

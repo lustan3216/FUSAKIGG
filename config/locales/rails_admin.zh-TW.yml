@@ -17,11 +17,11 @@ zh-TW:
         one: 訊息
         other: 訊息
       order:
-        one: 購買清單
-        other: 購買清單
-      payment:
         one: 訂單
         other: 訂單
+      payment:
+        one: 付款資訊
+        other: 付款資訊
       product:
         one: 產品
         other: 產品

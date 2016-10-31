@@ -2,6 +2,7 @@
   <%= render 'order_header' %>
   <section class="content-section">
     <div class="container">
+      <%= render 'flash/alert',order:@order %>
       <div class="row">
 
         <div class="col-sm-3">
@@ -20,7 +21,11 @@
             <table class="ui definition table mt30">
               <tbody>
               <tr>
-                <td class="four wide column"><%= t('form.status') %></td>
+                <td class="four wide column">交易狀態</td>
+                <td><%= @order.payment_status %></td>
+              </tr>
+              <tr>
+                <td class="four wide column">出貨狀態</td>
                 <td><%= @order.status %></td>
               </tr>
               <tr>

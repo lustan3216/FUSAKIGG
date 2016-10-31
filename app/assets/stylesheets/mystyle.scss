@@ -201,6 +201,10 @@ a.anchor{
 }
 
 @media (max-width: 767px) {
+  .flash_row{
+    margin-right:0;
+    margin-left: 0;
+  }
   .footer{
     text-align: center;
     .footer-last{

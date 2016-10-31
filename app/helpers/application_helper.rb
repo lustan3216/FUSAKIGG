@@ -11,10 +11,10 @@ module ApplicationHelper
         Version: "1.2",
         LangType: "zh-TW",
         MerchantOrderNo: payment.external_id,
-        Amt: payment.order.calc_final_price,
+        Amt: payment.order.fake_final_price,
         ItemDesc: payment.order_number,
         ReturnURL: pay2go_return_url,
-        NotifyURL: Pay2go.notify_url,
+        NotifyURL: 'http://requestb.in/1bbiv9l1',
         Email: payment.email,
         LoginType: 0,
         CREDIT: credit,
@@ -23,6 +23,7 @@ module ApplicationHelper
         CVS: 0,
         BARCODE: 0
     }
+    pay2go_params[:NotifyURL] = pay2go_notify_url if payment[:payment_method] == "ATM"
     pay2go = Pay2go.new(pay2go_params)
     pay2go_params[:CheckValue] = pay2go.make_check_value
     pay2go_params

@@ -3,6 +3,16 @@
   <section class="content-section">
     <div class="container">
       <%= render 'flash/alert',order:@order %>
+      <% unless order.can_update? %>
+          <div class="row flash_row">
+            <div class="col-xs-12">
+              <div class="ui negative message">
+                <i class="close icon"></i>
+                <div class="text-center">已選擇過付款方式，訂單已確立無法修改</div>
+              </div>
+            </div>
+          </div>
+      <% end %>
       <div class="row">
 
         <div class="col-sm-3">

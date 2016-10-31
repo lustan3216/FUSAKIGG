@@ -12,7 +12,6 @@
  *
  *= require_self
  *= require font-awesome
- *= require main/vendor
  *= require main/main
  *= require semantic_ui/semantic_ui
  */
@@ -34,9 +33,23 @@
   font-url('lato.woff2') format('woff2');
 }
 
-@import "varible";
+
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap/normalize";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/type";
+@import "bootstrap/input-groups";
+@import "bootstrap/print";
+@import "bootstrap/scaffolding";
+@import "bootstrap/list-group";
+@import "bootstrap/grid";
+@import "bootstrap/pagination";
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+
+@import "varible";
 @import "mystyle";
 @import "login";
 @import "spinner";

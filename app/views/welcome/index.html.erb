@@ -1,3 +1,4 @@
+
 <div class="main">
 
   <%= render 'animation_header' %>
@@ -63,10 +64,9 @@
   </section>
 
   <%#= render 'index_why_buy' %>
-
-
-</div> <!-- end main -->
 <%= javascript_include_tag 'main/my_vendor'%>
+<%= stylesheet_link_tag    'main/rev'%>
+
 <script>
   window.onbeforeunload = function(){ window.scrollTo(0,0); }
   $(function($) {

@@ -13,7 +13,7 @@
   </div>
   <section class="content-section thank_you_page">
     <div class="container">
-      <% if @order.payment.paid?   %>
+      <% if @payment.paid?   %>
           <div class="text-center">
             <i class="ion-happy-outline" aria-hidden="true"></i>
             <h3 class="section-title underline mt20"><%= t('.thankyou_title') %></h3>

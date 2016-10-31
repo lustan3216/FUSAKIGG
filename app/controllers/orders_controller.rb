@@ -3,7 +3,9 @@ class OrdersController < ApplicationController
   before_action :find_order , only: [:show, :finish, :edit, :update]
 
   def show
-    if @order.paid?
+    if @order.paid? && @order.payment.is_need_thank?
+      redirect_to thankyou_path(:order => @order)
+    elsif @order.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'
     elsif !@order.can_update?
       flash[:alert] = '已選擇過付款方式，訂單已確立無法修改'
@@ -57,8 +59,10 @@ class OrdersController < ApplicationController
   def thankyou
     order = Order.find(params[:order])
     if current_user.id == order.user_id
-      if order.paid?
-        @order = order
+      payment = order.payment
+      if payment.paid?
+        payment.update(is_need_thank:false)
+        @payment = payment
       end
     else
       redirect_to root_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018173507) do
+ActiveRecord::Schema.define(version: 20161031064354) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20161018173507) do
     t.text     "params"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.boolean  "is_need_thank",  default: true
     t.index ["order_id"], name: "index_payments_on_order_id"
   end
 

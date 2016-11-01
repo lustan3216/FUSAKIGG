@@ -13,6 +13,84 @@
   <%= stylesheet_link_tag    'application_index' %>
   <%= javascript_include_tag 'application_index' %>
   <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body class="header-shadow">
+
+<%= render 'seo/gtm' %>
+<%= render 'layouts/navbar' %>
+
+<div class="main">
+
+  <%= render 'animation_header' %>
+  <%= render 'achievement' %>
+  <%= render 'explodes' %>
+
+  <section class="content-section pbn ptn three_feature">
+    <div class="row mrn">
+      <div class="col-sm-4  feature text-center pb60 pt60">
+        <div class="icon mb30">
+          <i class="fa-2x fa fa-shield" aria-hidden="true"></i>
+        </div>
+        <h4 class="feature-title"><%= t(".feature_1") %></h4>
+        <p class="feature-desc"><%=simple_format t(".feature_1_content") %></p>
+      </div> <!-- end feature -->
+
+      <div class="col-sm-4  feature text-center pb60 pt60">
+        <div class="icon mb30">
+          <i class="fa-2x fa fa-home" aria-hidden="true"></i>
+        </div> <!-- end icon -->
+        <h4 class="feature-title"><%= t(".feature_2") %></h4>
+        <p class="feature-desc"><%=simple_format t(".feature_2_content") %></p>
+      </div> <!-- end feature -->
+
+      <div class="col-sm-4  feature text-center pb60 pt60">
+        <div class="icon mb30">
+          <i class="fa-2x fa fa-phone" aria-hidden="true"></i>
+        </div> <!-- end icon -->
+        <h4 class="feature-title"><%= t(".feature_3") %></h4>
+        <p class="feature-desc"><%=simple_format t(".feature_3_content") %></p>
+      </div> <!-- end feature -->
+
+    </div> <!-- end row -->
+  </section>
+
+  <section class="content-section zero-padding parallax-section" data-parallax="scroll" data-image-src="<%= image_path('construction1.jpg') %>" data-speed="0.4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-6 white-bg">
+          <div class="pt40 pl30 pr30 pb30 plxs30 prxs30">
+            <div class="row">
+              <div class="col-md-12 text-left pr30">
+                <h3><%= t(".diy_cons") %></h3>
+                <p class="section-subtitle mb10"><%= t(".diy_cons_subtitle") %></p>
+                <p class="section-desc mb20">
+                <h5 class="mt15 fwl">關掉總電源</h5>
+                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>忘記關發生意外</span>
+                <h5 class="mt15 fwl">插座與牆壁分離拆解電線</h5>
+                <span class="red "> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>需要技巧性的拔除,如暴力施作會發生母體爆裂造成割傷</span><br>
+                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不正確施作導致銅線受損，導致長期氧化銅線過熱而帶來的過熱危險</span>
+                <h5 class="mt15 fwl">研究文字天書的電路圖</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不知哪條是電源線、燈具線、接地線 接錯導致故障</span>
+                <h5 class="mt15 fwl">將銅線插入母體裝回牆體</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>沒有插到底造成銅線鬆脫導致接觸不良發生高溫</span>
+                <p class="mt30">以上步驟為最簡單的插座施作方式非專業人士第一次施作二小時以上且還有出錯可能和危險！</p>
+                </p>
+              </div> <!-- end col-md-6 -->
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+        </div> <!-- end gray-bg -->
+      </div> <!-- end row -->
+    </div> <!-- end container-fluid -->
+  </section>
+
+  <%#= render 'index_why_buy' %>
+
+  <%= render 'layouts/footer' %>
+  <%= render 'layouts/cart' %>
+
+</body>
+<%= javascript_include_tag 'main/my_vendor'%>
+<script>
   <script type="text/javascript" charset="utf-8">
     window.onbeforeunload = function(){ window.scrollTo(0,0); }
     $(function($) {
@@ -101,84 +179,6 @@
       });
     });
   </script>
-</head>
-<body class="header-shadow">
-
-<%= render 'seo/gtm' %>
-<%= render 'layouts/navbar' %>
-
-<div class="main">
-
-  <%= render 'animation_header' %>
-  <%= render 'achievement' %>
-  <%= render 'explodes' %>
-
-  <section class="content-section pbn ptn three_feature">
-    <div class="row mrn">
-      <div class="col-sm-4  feature text-center pb60 pt60">
-        <div class="icon mb30">
-          <i class="fa-2x fa fa-shield" aria-hidden="true"></i>
-        </div>
-        <h4 class="feature-title"><%= t(".feature_1") %></h4>
-        <p class="feature-desc"><%=simple_format t(".feature_1_content") %></p>
-      </div> <!-- end feature -->
-
-      <div class="col-sm-4  feature text-center pb60 pt60">
-        <div class="icon mb30">
-          <i class="fa-2x fa fa-home" aria-hidden="true"></i>
-        </div> <!-- end icon -->
-        <h4 class="feature-title"><%= t(".feature_2") %></h4>
-        <p class="feature-desc"><%=simple_format t(".feature_2_content") %></p>
-      </div> <!-- end feature -->
-
-      <div class="col-sm-4  feature text-center pb60 pt60">
-        <div class="icon mb30">
-          <i class="fa-2x fa fa-phone" aria-hidden="true"></i>
-        </div> <!-- end icon -->
-        <h4 class="feature-title"><%= t(".feature_3") %></h4>
-        <p class="feature-desc"><%=simple_format t(".feature_3_content") %></p>
-      </div> <!-- end feature -->
-
-    </div> <!-- end row -->
-  </section>
-
-  <section class="content-section zero-padding parallax-section" data-parallax="scroll" data-image-src="<%= image_path('construction1.jpg') %>" data-speed="0.4">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-6 white-bg">
-          <div class="pt40 pl30 pr30 pb30 plxs30 prxs30">
-            <div class="row">
-              <div class="col-md-12 text-left pr30">
-                <h3><%= t(".diy_cons") %></h3>
-                <p class="section-subtitle mb10"><%= t(".diy_cons_subtitle") %></p>
-                <p class="section-desc mb20">
-                <h5 class="mt15 fwl">關掉總電源</h5>
-                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>忘記關發生意外</span>
-                <h5 class="mt15 fwl">插座與牆壁分離拆解電線</h5>
-                <span class="red "> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>需要技巧性的拔除,如暴力施作會發生母體爆裂造成割傷</span><br>
-                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不正確施作導致銅線受損，導致長期氧化銅線過熱而帶來的過熱危險</span>
-                <h5 class="mt15 fwl">研究文字天書的電路圖</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不知哪條是電源線、燈具線、接地線 接錯導致故障</span>
-                <h5 class="mt15 fwl">將銅線插入母體裝回牆體</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>沒有插到底造成銅線鬆脫導致接觸不良發生高溫</span>
-                <p class="mt30">以上步驟為最簡單的插座施作方式非專業人士第一次施作二小時以上且還有出錯可能和危險！</p>
-                </p>
-              </div> <!-- end col-md-6 -->
-            </div>
-
-            <div class="clearfix"></div>
-          </div>
-        </div> <!-- end gray-bg -->
-      </div> <!-- end row -->
-    </div> <!-- end container-fluid -->
-  </section>
-
-  <%#= render 'index_why_buy' %>
-
-  <%= render 'layouts/footer' %>
-  <%= render 'layouts/cart' %>
-
-</body>
-<%= javascript_include_tag 'main/my_vendor'%>
-<script>
   $(function () {
     "use strict";
     $(".menu > ul > li:has( > ul)").addClass("menu-dropdown-icon"), $(".menu > ul > li > ul:not(:has(ul))").addClass("normal-sub"), $(".menu > ul").before('<a href="#" class="fa menu-mobile"></a>'), $(".menu > ul > li").hover(function (t) {

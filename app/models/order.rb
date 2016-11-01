@@ -10,7 +10,7 @@ class Order < ApplicationRecord
   has_many :line_items, :dependent => :destroy
   has_many :products, :through => :line_items
 
-  before_validation :assign_order_number
+  after_create :assign_order_number
   validates :name, :email,:address ,:phone,:postcode, :ship_time, :whoset,:county ,:district, presence: true
 
   def self.ship_fee
@@ -129,6 +129,6 @@ class Order < ApplicationRecord
   private
 
   def assign_order_number
-    self.assign_attributes(order_number: self.id.to_s + Time.current.strftime('%s'))
+    self.update(order_number: self.id.to_s + created_at.strftime('%s'))
   end
 end

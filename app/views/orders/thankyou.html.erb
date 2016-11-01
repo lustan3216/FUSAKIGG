@@ -13,7 +13,14 @@
   </div>
   <section class="content-section thank_you_page">
     <div class="container">
-      <% if @payment.paid?   %>
+      <% if @payment.nil? %>
+          <div class="payment_message text-center mb60">
+            <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
+            <h3 class="section-title underline mt20">付款失敗</h3>
+            <p class="section-subtitle"></p>
+            <h5>因不明原因付款失敗請聯絡客服<br>請立即聯絡客服人員會有專人為您服務</h5>
+          </div>
+      <% elsif @payment.paid?   %>
           <div class="text-center">
             <i class="ion-happy-outline" aria-hidden="true"></i>
             <h3 class="section-title underline mt20"><%= t('.thankyou_title') %></h3>
@@ -41,15 +48,6 @@
               <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1000152110/?value=<%= @final_price %>.00&amp;currency_code=TWD&amp;label=mTYvCJWKlmsQrrj03AM&amp;guid=ON&amp;script=0"/>
             </div>
           </noscript>
-
-
-    <% else %>
-          <div class="payment_message text-center mb60">
-            <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
-            <h3 class="section-title underline mt20">付款失敗</h3>
-            <p class="section-subtitle"></p>
-            <h5>因不明原因付款失敗請聯絡客服<br>請立即聯絡客服人員會有專人為您服務</h5>
-          </div>
       <% end %>
 
     </div>

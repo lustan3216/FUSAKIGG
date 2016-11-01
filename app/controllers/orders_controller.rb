@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def show
     if @order.paid? && @order.payment.is_need_thank?
       redirect_to thankyou_path(:order => @order)
-    elsif @order.payment.paid?
+    elsif @order.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'
     elsif !@order.can_update?
       flash.now[:alert] = I18n.t('flash.cant_update')
@@ -64,8 +64,8 @@ class OrdersController < ApplicationController
       payment.update(is_need_thank:false)
       @payment = payment
       @final_price = order.final_price
-    else payment.paid?
-    redirect_to finish_order_path(order), alert: '已付款完成'
+    # else payment.paid?
+    # redirect_to finish_order_path(order), alert: '已付款完成'
     end
   end
 

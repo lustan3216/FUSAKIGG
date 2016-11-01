@@ -53,9 +53,7 @@ class OrdersController < ApplicationController
     if @order.paid?
       redirect_to :back, alert: I18n.t('flash.paid')
     else
-      @payment = Payment.find_or_create_by!( :order => @order )
-      @payment.payment_method = params[:payment_method]
-      @payment.save(:validate => false)
+      @payment = Payment.create!( :order => @order ,payment_method:params[:payment_method] )
       @order.update(payment_status: '處理中')
       render :layout => false
     end
@@ -63,7 +61,7 @@ class OrdersController < ApplicationController
 
   def thankyou
     order = current_user.orders.find(params[:order])
-    @payment = order.payment
+    @payment = order.payments.last
     if @payment.paid? && @payment.is_need_thank?
       @payment.update(is_need_thank:false)
       @final_price = order.calc_final_price

@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     elsif @order.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'
     elsif !@order.can_update?
-      flash[:alert] = '已選擇過付款方式，訂單已確立無法修改'
+      flash.now[:alert] = I18n.t('flash.cant_update')
     end
   end
 
@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    redirect_to :back, alert: I18n.t('flash.cant_update') if !@order.can_update?
   end
 
   def create
@@ -48,7 +49,7 @@ class OrdersController < ApplicationController
   def checkout_pay2go
     @order = current_user.orders.find(params[:id])
     if @order.paid?
-      redirect_to :back, alert: '此訂單已經付過款 請至後台查看'
+      redirect_to :back, alert: I18n.t('flash.paid')
     else
       @payment = Payment.create!( :order => @order, :payment_method => params[:payment_method] )
       @order.update(payment_status: '處理中')
@@ -71,7 +72,7 @@ class OrdersController < ApplicationController
   def face_payment
     @order = current_user.orders.find(params[:id])
     if @order.paid?
-      redirect_to :back, alert: '此訂單已經付過款 請至後台查看'
+      redirect_to :back, alert: I18n.t('flash.paid')
     else
       @order.update( paid: 1,status:'處理中')
       @payment = Payment.find_or_create_by!( :order => @order, :payment_method => '貨到付款' )

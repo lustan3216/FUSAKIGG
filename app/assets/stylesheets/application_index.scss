@@ -13,7 +13,8 @@
  *= require_self
  *= require font-awesome
  *= require main/main
- *= require semantic_ui/semantic_ui
+ *= require main/rev
+ *= require semantic_ui/definitions/elements/label.less
  */
 
 @font-face {
@@ -21,7 +22,6 @@
   font-style: normal;
   font-weight: 700;
   src: local('Lato Bold'), local('Lato-Bold'),
-  font-url('lato.woff2') format('woff2');
 }
 
 
@@ -30,23 +30,15 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/type";
-@import "bootstrap/input-groups";
-@import "bootstrap/print";
 @import "bootstrap/scaffolding";
-@import "bootstrap/list-group";
 @import "bootstrap/grid";
-@import "bootstrap/pagination";
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
 
 @import "varible";
 @import "mystyle";
-@import "login";
-@import "spinner";
 @import "cart";
-@import "order";
 @import "welcome";
-@import "product";
 
 

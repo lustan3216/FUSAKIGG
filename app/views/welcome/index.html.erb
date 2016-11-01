@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head <%= itemprop %>>
+  <%= render 'seo/itemprop' %>
+  <meta charset="utf-8">
+  <title>FUSAKI</title>
+  <%= display_meta_tags %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application_index' %>
+  <%= javascript_include_tag 'application_index' %>
+  <%= favicon_link_tag 'favicon.ico' %>
+
+</head>
+<body class="header-shadow">
+
+<%= render 'seo/gtm' %>
+<%= render 'layouts/navbar' %>
 
 <div class="main">
 
@@ -64,9 +85,11 @@
   </section>
 
   <%#= render 'index_why_buy' %>
-<%= javascript_include_tag 'main/my_vendor', :async => true%>
-<%= stylesheet_link_tag    'main/rev'%>
 
+  <%= render 'layouts/footer' %>
+  <%= render 'layouts/cart' %>
+
+</body>
 <script>
   window.onbeforeunload = function(){ window.scrollTo(0,0); }
   $(function($) {
@@ -154,6 +177,31 @@
       }
     });
   });
+  $(function () {
+    "use strict";
+    $(".menu > ul > li:has( > ul)").addClass("menu-dropdown-icon"), $(".menu > ul > li > ul:not(:has(ul))").addClass("normal-sub"), $(".menu > ul").before('<a href="#" class="fa menu-mobile"></a>'), $(".menu > ul > li").hover(function (t) {
+      $(window).width() > 991 && ($(this).children("ul").stop(!0, !1).fadeToggle(150), t.preventDefault())
+    }), $(".menu > ul > li > ul > .has-subsubmenu").hover(function (t) {
+      $(window).width() > 991 && ($(this).children("ul").stop(!0, !1).fadeToggle(50), t.preventDefault())
+    }), $(".menu > ul > li").click(function () {
+      $(window).width() <= 991 && ($(".menu > ul > li > ul").fadeOut(50), $(this).children("ul").fadeIn(150))
+    }), $(".menu > ul > li > ul > li").click(function () {
+      $(window).width() <= 991 && ($(".menu > ul > li > ul > li > .sub-submenu").fadeOut(50), $(this).children("ul").fadeIn(150))
+    }), $(".menu-mobile").click(function (t) {
+      $(".menu > ul").toggleClass("show-on-mobile"), t.preventDefault()
+    })
+  });
+  $(function (e) {
+    "use strict";
+    e(window).load(function () {
+      e(".page-loader").fadeOut("slow")
+    }), e(window).on("scroll resize", function () {
+      e(window).scrollTop() >= 75 && (e("body").addClass("secondNav"), e(".scroll-to-top").css("bottom", "0px")), e(window).scrollTop() < 75 && (e("body").removeClass("secondNav"), e(".scroll-to-top").css("bottom", "-50px"))
+    }), e(".open-nav-button").on("click", function () {
+      var o;
+      o = e(this).data("clicks"), o ? (e(".main-menu").removeClass("animated fadeIn"), e(".main-menu").css("display", "none")) : (e(".main-menu").css("display", "block"), e(".main-menu").addClass("animated fadeIn")), e(this).data("clicks", !o)
+    })
+  });
 
 </script>
-
+</html>

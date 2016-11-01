@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require main/modernizr
+//= require main/main
 //= require semantic_ui/semantic_ui
+//= require form_alert
 //= require tw-city-selector

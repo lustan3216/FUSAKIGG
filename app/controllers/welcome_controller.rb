@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   before_action :prepare_meta_tags, if: "request.get?"
   def index
     prepare_meta_tags description: t('meta.description')
+    render layout: false
   end
 
   def download

@@ -35,12 +35,13 @@
 .explodes_xs{
   padding: 40px !important;
   img{
-    width: 100%;
-    -webkit-transform:rotate(-90deg) ;
-    -moz-transform:rotate(-90deg) ;
-    -ms-transform:rotate(-90deg) ;
-    -o-transform:rotate(-90deg) ;
-    transform:rotate(-90deg) ;
+
+    width: 90%;
+    //-webkit-transform:rotate(-90deg) ;
+    //-moz-transform:rotate(-90deg) ;
+    //-ms-transform:rotate(-90deg) ;
+    //-o-transform:rotate(-90deg) ;
+    //transform:rotate(-90deg) ;
   }
 }
 #add_to_cart_animate{

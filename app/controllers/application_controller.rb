@@ -53,6 +53,7 @@ class ApplicationController < ActionController::Base
     rescue
       @cart = Cart.create
       cookies.signed[:cart_id] = @cart.id
+      return @cart
     end
   end
 

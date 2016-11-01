@@ -33,6 +33,7 @@ class OrdersController < ApplicationController
                              ship_fee: current_cart.calc_shipfee(order_params[:whoset]),
                              final_price: current_cart.calc_final_price(order_params[:whoset]))
     if @order.save!
+      @order.assign_order_number
       cookies[:cart_id] = nil
       redirect_to order_path(@order)
     end
@@ -42,6 +43,7 @@ class OrdersController < ApplicationController
     if @order.can_update?
       @order.update_item_qty(order_params)
       @order.update(order_params.reject{|h| /\d/.match(h) })
+      @order.update(final_price: @order.calc_final_price)
     end
     redirect_to order_path(@order)
   end
@@ -51,7 +53,9 @@ class OrdersController < ApplicationController
     if @order.paid?
       redirect_to :back, alert: I18n.t('flash.paid')
     else
-      @payment = Payment.create!( :order => @order, :payment_method => params[:payment_method] )
+      @payment = Payment.find_or_create_by!( :order => @order )
+      @payment.payment_method = params[:payment_method]
+      @payment.save(:validate => false)
       @order.update(payment_status: '處理中')
       render :layout => false
     end
@@ -59,12 +63,11 @@ class OrdersController < ApplicationController
 
   def thankyou
     order = current_user.orders.find(params[:order])
-    payment = order.payment
-    if payment.paid? && payment.is_need_thank?
-      payment.update(is_need_thank:false)
-      @payment = payment
-      @final_price = order.final_price
-    elsif payment.paid?
+    @payment = order.payment
+    if @payment.paid? && @payment.is_need_thank?
+      @payment.update(is_need_thank:false)
+      @final_price = order.calc_final_price
+    elsif @payment.paid?
       redirect_to finish_order_path(order), alert: '已付款完成'
     end
   end

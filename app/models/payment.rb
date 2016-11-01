@@ -19,10 +19,9 @@ class Payment < ApplicationRecord
     order.email
   end
 
-
   def self.find_and_process(params)
     result = JSON.parse( params['Result'] )
-    payment = self.where(id:result['MerchantOrderNo'].to_i).last
+    payment = self.find(result['MerchantOrderNo'].to_i)
     payment.paid = params['Status'] == 'SUCCESS'
     payment.params = params
     payment

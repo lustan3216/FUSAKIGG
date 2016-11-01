@@ -13,7 +13,7 @@
   </div>
   <section class="content-section thank_you_page">
     <div class="container">
-      <% if @payment.nil? %>
+      <% if @payment.nil? || !@payment.paid? %>
           <div class="payment_message text-center mb60">
             <i class="fa fa-frown-o fa-5x" aria-hidden="true"></i>
             <h3 class="section-title underline mt20">付款失敗</h3>

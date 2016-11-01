@@ -38,16 +38,23 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    if @cart
-      return @cart
-    else
-      if cookies.signed[:cart_id]
-        @cart = Cart.find( cookies.signed[:cart_id] )
+    begin
+      if @cart
+        return @cart
       else
-        @cart = Cart.create
-        cookies.signed[:cart_id] = @cart.id
+        if cookies.signed[:cart_id]
+
+          @cart = Cart.find( cookies.signed[:cart_id] )
+
+        else
+          @cart = Cart.create
+          cookies.signed[:cart_id] = @cart.id
+        end
+        return @cart
       end
-      return @cart
+    rescue
+      @cart = Cart.create
+      cookies.signed[:cart_id] = @cart.id
     end
   end
 

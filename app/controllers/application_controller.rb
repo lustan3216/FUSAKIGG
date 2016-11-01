@@ -38,6 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
+    begin
     if @cart
       return @cart
     else
@@ -48,6 +49,10 @@ class ApplicationController < ActionController::Base
         cookies.signed[:cart_id] = @cart.id
       end
       return @cart
+    end
+    rescue
+      @cart = Cart.create
+      cookies.signed[:cart_id] = @cart.id
     end
   end
 

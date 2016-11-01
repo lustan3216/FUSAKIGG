@@ -4,30 +4,31 @@
 
   <section class="content-section">
     <div class="container">
-      <div class="row">
+      <div class="row reorder-xs ">
         <div class="col-md-3">
           <%= render "sidebar" %>
         </div> <!-- end col-md-3 -->
 
         <div class="col-md-9 product_show_info">
           <div class="ui segment">
-            <div class="col-md-7">
+            <div class="row">
+            <div class="col-sm-7">
               <div class="text-center">
                 <%= image_tag "product/#{@product.item_name}.png" ,class:"img-responsive"%>
               </div>
             </div>
 
-            <div class="col-md-5 pl30 pt60">
+            <div class="col-sm-5 product_show_order">
               <%= form_tag buy_product_path(@product), remote: true do %>
                   <h4><%= @product.name %></h4>
 
                   <div class="inline fields">
                     <div class="field">
                       <% if @product.v110? && @product.v220? %>
-                          <div class="ui radio checkbox">
+                          <div class="ui radio checkbox mt15 mb15">
                             <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
                           </div><br>
-                          <div class="ui radio checkbox">
+                          <div class="ui radio checkbox mb15">
                             <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
                           </div>
                       <% else %>
@@ -58,7 +59,8 @@
                     </div>
                   </button>
               <% end %>
-            </div> <!-- end col-md-6 -->
+            </div>
+            </div>
             <div class="row">
               <div class="col-md-12 product_describle ">
                 <p><%= @product.description.try(:html_safe) %></p>

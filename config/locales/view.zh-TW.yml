@@ -1,4 +1,7 @@
 zh-TW:
+  flash:
+    cant_update: '已選擇過付款方式，訂單已確立無法修改'
+    paid: '此訂單已經付過款 請至後台查看'
   pagination:
     last: ">>"
   meta:

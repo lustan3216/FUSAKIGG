@@ -64,8 +64,8 @@ class OrdersController < ApplicationController
       payment.update(is_need_thank:false)
       @payment = payment
       @final_price = order.final_price
-    # else payment.paid?
-    # redirect_to finish_order_path(order), alert: '已付款完成'
+    elsif payment.paid?
+      redirect_to finish_order_path(order), alert: '已付款完成'
     end
   end
 

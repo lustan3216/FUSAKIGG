@@ -11,7 +11,7 @@ module ApplicationHelper
         Version: "1.2",
         LangType: "zh-TW",
         MerchantOrderNo: payment.external_id,
-        Amt: payment.order.calc_final_price,
+        Amt: payment.order.fake_final_price,
         ItemDesc: payment.order_number,
         ReturnURL: pay2go_return_url,
         NotifyURL: 'http://requestb.in/1bbiv9l1',

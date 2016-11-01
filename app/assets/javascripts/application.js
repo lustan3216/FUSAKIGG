@@ -11,4 +11,4 @@
 // about supported directives.
 //
 //= require jquery
-//= require semantic_ui/semantic_ui
+//= require jquery_ujs

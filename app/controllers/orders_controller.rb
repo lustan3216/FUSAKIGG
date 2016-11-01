@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     elsif @order.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'
     elsif !@order.can_update?
-      flash[:alert] = I18n.t('flash.cant_update')
+      flash.now[:alert] = I18n.t('flash.cant_update')
     end
   end
 

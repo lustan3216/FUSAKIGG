@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def show
     if @order.paid? && @order.payment.is_need_thank?
       redirect_to thankyou_path(:order => @order)
-    elsif @order.paid?
+    elsif @order.payment.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'
     elsif !@order.can_update?
       flash.now[:alert] = I18n.t('flash.cant_update')

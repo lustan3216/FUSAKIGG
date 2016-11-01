@@ -90,7 +90,7 @@
 
 </body>
 <%= javascript_include_tag 'main/my_vendor'%>
-<script>
+
   <script type="text/javascript" charset="utf-8">
     window.onbeforeunload = function(){ window.scrollTo(0,0); }
     $(function($) {
@@ -178,7 +178,6 @@
         }
       });
     });
-  </script>
   $(function () {
     "use strict";
     $(".menu > ul > li:has( > ul)").addClass("menu-dropdown-icon"), $(".menu > ul > li > ul:not(:has(ul))").addClass("normal-sub"), $(".menu > ul").before('<a href="#" class="fa menu-mobile"></a>'), $(".menu > ul > li").hover(function (t) {

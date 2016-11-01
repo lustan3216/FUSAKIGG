@@ -43,9 +43,7 @@ class ApplicationController < ActionController::Base
         return @cart
       else
         if cookies.signed[:cart_id]
-
           @cart = Cart.find( cookies.signed[:cart_id] )
-
         else
           @cart = Cart.create
           cookies.signed[:cart_id] = @cart.id
@@ -55,6 +53,7 @@ class ApplicationController < ActionController::Base
     rescue
       @cart = Cart.create
       cookies.signed[:cart_id] = @cart.id
+      return @cart
     end
   end
 

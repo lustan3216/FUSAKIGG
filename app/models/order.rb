@@ -97,7 +97,7 @@ class Order < ApplicationRecord
   end
 
   def fake_final_price
-    if (4000..5000).include?(final_price)
+    if (10000..11000).include?(final_price)
       1
     else
       final_price

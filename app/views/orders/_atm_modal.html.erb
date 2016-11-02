@@ -1,7 +1,7 @@
-<div class="ui basic modal">
+<div class="ui basic modal" id="ui_atm_modal">
   <i class="close icon"></i>
   <div class="header">
-    ATM付款方式即通知
+    ATM付款方式及通知
   </div>
   <div class="image content">
     <div class="image">
@@ -21,7 +21,7 @@
         取消
       </div>
       </a>
-      <%= link_to checkout_pay2go_order_path(order, :payment_method => "ATM"),:target => '_blank', :method => :post do %>
+      <%= link_to checkout_pay2go_order_path(order, :payment_method => "ATM"), :method => :post ,id:'atm_payout' do %>
           <div class="ui ok green basic inverted button">
             <i class="checkmark icon"></i>
             ATM結帳
@@ -31,3 +31,15 @@
   </div>
 </div>
 
+
+<!--<script type="text/javascript" charset="utf-8">-->
+//  $('#atm_payout').click(function(e){
+//    e.preventDefault()
+//    $('#ui_atm_modal').modal({
+//      onHide: function(){
+//        location.reload();
+//      }
+//    })
+//  })
+//
+<!--</script>-->

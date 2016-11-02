@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :find_order , only: [:show, :finish, :edit, :update]
 
   def show
-    if @order.paid? && @order.payment.is_need_thank?
+    if @order.paid? && @order.payments.last.is_need_thank?
       redirect_to thankyou_path(:order => @order)
     elsif @order.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'

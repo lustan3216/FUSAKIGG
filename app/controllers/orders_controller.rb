@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :find_order , only: [:show, :finish, :edit, :update]
 
   def show
-    if @order.paid? && @order.payment.is_need_thank?
+    if @order.paid? && @order.payment_paid.is_need_thank?
       redirect_to thankyou_path(:order => @order)
     elsif @order.paid?
       redirect_to finish_order_path(@order), alert: '已付款完成'
@@ -61,7 +61,9 @@ class OrdersController < ApplicationController
 
   def thankyou
     order = current_user.orders.find(params[:order])
-    @payment = order.payments.last
+    @payment = order.payment_paid
+    return @payment if @payment.nil?
+
     if @payment.paid? && @payment.is_need_thank?
       @payment.update(is_need_thank:false)
       @final_price = order.calc_final_price

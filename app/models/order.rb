@@ -32,8 +32,12 @@ class Order < ApplicationRecord
     0.6
   end
 
+  def payment_paid
+    payments.where(paid:true).last
+  end
+
   def can_update?
-     payment_status.nil? ? true : false
+    payment_status.nil? ? true : false
   end
 
   def ship_fee?

@@ -14,9 +14,9 @@
       <tr>
         <td><%= order.order_number %></td>
         <td><%= order.full_address %></td>
-        <td><%= order.payments.last.updated_at.strftime('%x')%></td>
+        <td><%= order.payment_paid.updated_at.strftime('%x')%></td>
         <td><%= order.final_price %></td>
-        <td><%= order.payments.last.payment_method %></td>
+        <td><%= order.payment_paid.payment_method %></td>
         <td><a href="<%= finish_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
       </tr>
   <% end %>

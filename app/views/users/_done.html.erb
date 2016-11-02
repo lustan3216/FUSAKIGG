@@ -1,13 +1,12 @@
 <table class="ui single line table">
   <thead>
   <tr>
-    <th class="">訂單編號</th>
-    <th class="">地址</th>
-    <th class="">訂單成立時間</th>
-    <th class="">總價格</th>
-    <th class="">結帳方式</th>
-    <!--<th class="">退貨</th>-->
-    <th class="">內容</th>
+    <th>訂單編號</th>
+    <th>地址</th>
+    <th>訂單成立時間</th>
+    <th>總價格</th>
+    <th>結帳方式</th>
+    <th>內容</th>
   </tr>
   </thead>
   <tbody>
@@ -15,24 +14,9 @@
       <tr>
         <td><%= order.order_number %></td>
         <td><%= order.full_address %></td>
-        <td><%= order.payment.updated_at.strftime('%x')%></td>
+        <td><%= order.payment_paid.updated_at.strftime('%x')%></td>
         <td><%= order.final_price %></td>
-        <td><%= order.payment.payment_method %></td>
-        <!--<td>-->
-          <!--<#% if order.return_order.try(:status) == '完成' %>-->
-              <!--<#%= link_to user_return_order_path(current_user,id: order.return_order) do  %>-->
-                  <!--已完成-->
-              <!--<%# end %>-->
-          <!--<#% elsif order.return_order %>-->
-              <!--<#%= link_to user_return_order_path(current_user,id: order.return_order) do  %>-->
-                  <!--處理中-->
-              <!--<%# end %>-->
-          <!--<#% else %>-->
-              <!--<#%= link_to new_user_return_order_path(current_user,id: order) do  %>-->
-                  <!--<i class="fa fa-retweet" aria-hidden="true"></i>-->
-              <!--<%# end %>-->
-          <!--<%# end %>-->
-        <!--</td>-->
+        <td><%= order.payment_paid.payment_method %></td>
         <td><a href="<%= finish_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
       </tr>
   <% end %>

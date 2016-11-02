@@ -54,7 +54,7 @@
               </tr>
               <tr>
                 <td><%= t('form.pay_way') %></td>
-                <td><%= @order.payment.payment_method %></td>
+                <td><%= @order.payment_paid.payment_method %></td>
               </tr>
               <% if @order.ps.present? %>
                   <tr>

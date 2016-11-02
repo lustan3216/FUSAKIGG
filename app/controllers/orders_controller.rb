@@ -62,6 +62,8 @@ class OrdersController < ApplicationController
   def thankyou
     order = current_user.orders.find(params[:order])
     @payment = order.payment_paid
+    return @payment if @payment.nil?
+
     if @payment.paid? && @payment.is_need_thank?
       @payment.update(is_need_thank:false)
       @final_price = order.calc_final_price

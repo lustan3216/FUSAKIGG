@@ -16,12 +16,12 @@
   <div class="actions">
     <div class="two fluid ui inverted buttons atm_modal">
       <a href="">
-      <div class="ui cancel red basic inverted button">
-        <i class="remove icon"></i>
-        取消
-      </div>
+        <div class="ui cancel red basic inverted button">
+          <i class="remove icon"></i>
+          取消
+        </div>
       </a>
-      <%= link_to checkout_pay2go_order_path(order, :payment_method => "ATM"), :method => :post ,id:'atm_payout' do %>
+      <%= link_to checkout_pay2go_order_path(order, :payment_method => "ATM"), :target => "_blank", :method => :post ,id:'atm_payout' do %>
           <div class="ui ok green basic inverted button">
             <i class="checkmark icon"></i>
             ATM結帳
@@ -32,14 +32,6 @@
 </div>
 
 
-<!--<script type="text/javascript" charset="utf-8">-->
-//  $('#atm_payout').click(function(e){
-//    e.preventDefault()
-//    $('#ui_atm_modal').modal({
-//      onHide: function(){
-//        location.reload();
-//      }
-//    })
-//  })
-//
-<!--</script>-->
+<script type="text/javascript" charset="utf-8">
+  $('#ui_atm_modal').modal({onHidden: function(){location.reload();}})
+</script>

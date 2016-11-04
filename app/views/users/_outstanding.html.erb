@@ -1,5 +1,5 @@
-<table class="ui single line table">
-  <thead>
+<table class="ui single line table user_show_table">
+  <thead class="hidden-xs">
   <tr>
     <th>訂單編號</th>
     <th>地址</th>
@@ -10,23 +10,45 @@
   </tr>
   </thead>
   <tbody>
-  <% @orders.each  do |order| %>
+  <% @orders.each do |order| %>
       <tr>
-        <td><%= order.order_number %></td>
-        <td><%= order.full_address %></td>
-        <td><%= order.updated_at.strftime('%x')%></td>
-        <td><%= order.final_price %></td>
-        <td>
-          <% if order.can_update? %>
-              <%= link_to edit_order_path(order) do%><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>
-          <% else %>
-              <i class="fa fa-times" aria-hidden="true" style="color: #787878;"></i>
-          <% end %>
+        <td><span class="visible-xs-inline-block">訂單編號 : </span><%= order.order_number %></td>
+        <td><span class="visible-xs-inline-block">地址 : </span><%= order.full_address %></td>
+        <td><span class="visible-xs-inline-block">訂單成立時間 : </span><%= order.updated_at.strftime('%x')%></td>
+        <td><span class="visible-xs-inline-block">總價格 : </span><%= order.final_price %></td>
+        <td class="visible-xs modify_button">
+          <div class="ui buttons ">
+            <% if order.can_update? %>
+                <button class="ui button positive" data-link="<%= edit_order_path(order) %>">
+                  <i class="fa fa-pencil-square-o mr10" aria-hidden="true"></i>修改
+                </button>
+            <% else %>
+                <button class="disabled ui button">
+                <i class="fa fa-times mr10" aria-hidden="true" style="color: #787878;"></i>修改
+                </button>
+            <% end %>
+            <button class="ui button negative" data-link="<%= order_path(order) %>">
+              <i class="fa fa-credit-card mr10" aria-hidden="true"></i>付款
+            </button>
+          </div>
         </td>
         <td>
-          <%= link_to order_path(order) do%><i class="fa fa-credit-card" aria-hidden="true"></i><% end %>
+          <% if order.can_update? %>
+              <%= link_to edit_order_path(order),class:'hidden-xs' do%><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>
+          <% else %>
+              <i class="fa fa-times hidden-xs" aria-hidden="true" style="color: #787878;"></i>
+          <% end %>
+        </td>
+        <td class="hidden-xs">
+          <%= link_to order_path(order),class:'hidden-xs' do%><i class="fa fa-credit-card" aria-hidden="true"></i><% end %>
         </td>
       </tr>
   <% end %>
   </tbody>
 </table>
+
+<script type="text/javascript" charset="utf-8">
+  $("button[data-link]").click(function() {
+    window.location = $(this).data("link")
+  })
+</script>

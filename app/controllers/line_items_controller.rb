@@ -7,8 +7,8 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    current_cart.remove_product(params[:id])
     @item_id =  params[:id].to_i
+    current_cart.remove_product(@item_id)
     respond_to do |format|
       format.html
       format.js {render 'cancel' }

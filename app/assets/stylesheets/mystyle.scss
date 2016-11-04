@@ -159,6 +159,9 @@ a.anchor{
     height: 100%;
     margin-right: -3.5%;
   }
+  .ui.card.fluid{
+    margin-bottom: 30px;
+  }
   .content{
     .fa{
       margin-right: 5px;
@@ -201,6 +204,17 @@ a.anchor{
 }
 
 @media (max-width: 767px) {
+  .product_index_info{
+    .ui.card.fluid{
+      margin-bottom: 15px;
+    }
+    .col-xs-6:nth-child(2n){
+      padding-left: 8px;
+    }
+    .col-xs-6:nth-child(2n+1){
+      padding-right: 8px;
+    }
+  }
   .flash_row{
     margin-right:0;
     margin-left: 0;

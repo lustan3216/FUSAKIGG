@@ -15,11 +15,11 @@
           </div>
 
           <div class="row">
-            <div class="ui special cards">
+            <div class="ui special cards product_index_info">
               <% @products.each do |product| %>
-                  <div class="col-md-4 col-sm-6  col-xs-12">
+                  <div class="col-md-4 col-xs-6">
                     <%= link_to product_path(product),class:"shop-box" do %>
-                        <div class="ui card fluid mb30 product_index_info">
+                        <div class="ui card fluid">
                           <div class="blurring dimmable image flex_cneter">
                             <div class="ui dimmer">
                               <div class="content">

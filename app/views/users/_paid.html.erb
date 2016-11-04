@@ -1,23 +1,29 @@
-<table class="ui single line table">
-  <thead>
+<table class="ui single line table users_paid_table">
+  <thead class="hidden-xs">
   <tr>
-    <th class="">訂單編號</th>
-    <th class="">地址</th>
-    <th class="">訂單成立時間</th>
-    <th class="">總價格</th>
-    <th class="">結帳方式</th>
-    <th class="">內容</th>
+    <th>訂單編號</th>
+    <th>地址</th>
+    <th>訂單成立時間</th>
+    <th>總價格</th>
+    <th>結帳方式</th>
+    <th>內容</th>
   </tr>
   </thead>
   <tbody>
   <% @orders.each  do |order| %>
       <tr>
-        <td><%= order.order_number %></td>
-        <td><%= order.full_address %></td>
-        <td><%= order.payment_paid.updated_at.strftime('%x')%></td>
-        <td><%= order.final_price %></td>
-        <td><%= order.payment_paid.payment_method %></td>
-        <td><a href="<%= finish_order_path(order) %>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+        <td><span class="visible-xs-inline-block">訂單編號 : </span><%= order.order_number %></td>
+        <td><span class="visible-xs-inline-block">地址 : </span><%= order.full_address %></td>
+        <td><span class="visible-xs-inline-block">訂單成立時間 : </span><%= order.payment_paid.updated_at.strftime('%x')%></td>
+        <td name="final_price"><span class="visible-xs-inline-block">總價格 : </span><%= order.final_price %></td>
+        <td name="payment_method"><span class="visible-xs-inline-block ">結帳方式 : </span><%= order.payment_paid.payment_method %></td>
+        <td name="payment_check">
+          <a href="<%= finish_order_path(order) %>" class="hidden-xs"><i class="fa fa-search" aria-hidden="true"></i></a>
+          <a class="ui labeled icon button visible-xs fluid positive" style="padding-left: 2.5em;" href="<%= finish_order_path(order) %>" >
+            <i class="fa fa-search" aria-hidden="true"></i>
+            查看
+          </a>
+        </td>
       </tr>
   <% end %>
   </tbody>

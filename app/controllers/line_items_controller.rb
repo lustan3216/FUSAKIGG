@@ -3,7 +3,7 @@ class LineItemsController < ApplicationController
   def update
     @id = params[:id].gsub(/order\[/,'').to_i
     @num = params[:qty].to_i
-    current_cart.update_qty(@id,@num)
+    current_cart.update_data(@id,@num)
   end
 
   def destroy

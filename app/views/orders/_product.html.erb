@@ -1,5 +1,4 @@
-<div id="product_item_<%= item.id %>" class="product_item">
-  <hr>
+<div id="product_item_<%= item.id %>" class="product_item" data-construction-fee="<%= item.product.construction_fee %>">
   <div class="row">
     <% unless %w(show details finish).include? action_name %>
         <%= link_to line_items_path(id:item.id) ,method:'delete' ,class:'item_cancel' ,remote:true do %>
@@ -28,4 +27,5 @@
       </div>
     </div>
   </div>
+  <hr>
 </div>

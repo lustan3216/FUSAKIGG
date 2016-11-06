@@ -1,23 +1,21 @@
-<div class="row">
-  <div class="col-md-2 col-xs-6">
-    <p>數量 : <span id="total"><%= cart_or_order.total %></span></p>
+<div class="row mt30">
+  <div class="col-xs-12"  id="traffic_allowanc_block">
+    <%= render 'construction_fee_table' %>
+    <p class="mt30 hidden">安裝車馬費 : $ <span class="mr30" id="traffic_allowanc"><%= cart_or_order.calc_traffic_allowanc %></span><span class="red"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>選擇【師傅到府安裝】且商品價格不足3000元則有500元車馬費產生</span></p>
   </div>
-  <div class="col-md-4 col-xs-6">
-    <p>金額 : $<span id="amount"><%= cart_or_order.amount %></span>
+  <div class="col-xs-12">
+    <p>總數量 : <span id="total"><%= cart_or_order.total %></span></p>
+  </div>
+  <div class="col-xs-12">
+    <p>開關插座金額 : $<span id="amount"><%= cart_or_order.amount %></span>
       <span class="ui label left pointing red" id="discount">6折</span>
     </p>
   </div>
-  <div class="col-md-6 col-xs-12">
+  <div class="col-md-12 col-xs-12">
     <p class="final_amount">總金額 : $<span id="final_amount"><%= cart_or_order.calc_final_price %></span>
       <span class="ui label left pointing red">
         <i class="fa fa-truck " aria-hidden="true">含運費 <span id="ship_status"><%= cart_or_order.calc_shipfee == 0 ? "免費" : Order.ship_fee %></span></i>
       </span>
     </p>
-  </div>
-</div>
-
-<div class="row" id="traffic_allowanc_block">
-  <div class="col-xs-12">
-    <p>安裝車馬費 : $ <span class="mr30" id="traffic_allowanc"><%= cart_or_order.calc_traffic_allowanc %></span><span class="red"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>選擇【師傅到府安裝】且商品價格不足3000元則有500元車馬費產生</span></p>
   </div>
 </div>

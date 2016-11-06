@@ -33,7 +33,6 @@
                           </div>
                       <% else %>
                           <div class="ui radio checkbox">
-
                             <% if @product.v000? %>
                                 <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
                             <% elsif @product.v110? %>
@@ -80,7 +79,6 @@
 
   $('.ui.radio.checkbox').checkbox();
   $('#add_to_cart').click(function(){
-
     $('#add_to_cart_animate').animate({opacity:0},300);
     $('#check_wrapper').removeClass('hidden');
     $('#checkmark').addClass('checkmark')
@@ -91,6 +89,5 @@
     $('#add_to_cart_animate').animate({opacity:1},400);
     }, 900);
   })
-
 
 </script>

@@ -15,7 +15,7 @@
   .item_cancel{
     position: absolute;
     right: 0;
-    top: 0;
+    top: -20px;
     padding: 15px;
     z-index:10;
   }
@@ -23,7 +23,7 @@
   img{
     width: 100%;
     max-width:190px;
-    margin: -20px -20px -20px 0;
+    margin: -15px -20px -20px 0;
   }
   .price_sum_up{
     margin-right: 20px;

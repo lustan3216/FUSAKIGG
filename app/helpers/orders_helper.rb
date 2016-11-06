@@ -1,10 +1,10 @@
 module OrdersHelper
   def discount_line_through
-    'line_through' if @order.whoset == "自行安裝（打6折）"
+    'line_through' if @order.whoset == "自行安裝"
   end
 
   def discount_label
-    'visible'  if @order.whoset == "自行安裝（打6折）"
+    'visible'  if @order.whoset == "自行安裝"
   end
 
   def cart_or_order
@@ -31,8 +31,8 @@ module OrdersHelper
   end
 
   def select_default(order)
-    if order.whoset == "自行安裝（打6折）"
-      "自行安裝（打6折）"
+    if order.whoset == "自行安裝"
+      "自行安裝"
     else
       "本公司派專業師傅安裝"
     end

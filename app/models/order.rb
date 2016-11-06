@@ -45,8 +45,11 @@ class Order < ApplicationRecord
   end
 
   def clone_line_items_by(cart)
-    cart.line_items.each do |line|
-      self.line_items.build( :product => line.product, :qty => line.qty , :voltage=> line.voltage )
+    cart.line_items.each do |item|
+      self.line_items.build( product: item.product,
+                             qty: item.qty,
+                             voltage: item.voltage,
+                             construction_fee: item.construction_fee)
     end
   end
 
@@ -87,17 +90,27 @@ class Order < ApplicationRecord
 
   def amount(whoset = "本公司派專業師傅安裝")
     amount = 0
-    self.line_items.each do |line|
-      voltage = line.voltage.gsub("V","")
-      amount += line.product.send("v#{voltage}_price") * line.qty
+    self.line_items.each do |item|
+      voltage = item.voltage.gsub("V","")
+      amount += item.product.send("v#{voltage}_price") * item.qty
     end
-    amount *= Order.discount_percent if whoset == "自行安裝（打6折）"
-    amount.to_i
+    # amount *= Order.discount_percent if whoset == "自行安裝"
+    amount
   end
 
   def calc_final_price
     # amount(whoset) + calc_traffic_allowanc(whoset) + calc_shipfee(whoset)
-    calc_shipfee + amount(whoset) + calc_traffic_allowanc
+    calc_shipfee + amount(whoset) + calc_traffic_allowanc + calc_construction_fee
+  end
+
+  def calc_construction_fee
+    sum = 0
+    line_items.each {|item| sum += item.construction_fee * item.qty }
+    sum
+  end
+
+  def calc_construction_fee_allowanc
+    calc_construction_fee + calc_traffic_allowanc
   end
 
   def fake_final_price
@@ -120,9 +133,9 @@ class Order < ApplicationRecord
 
   def calc_shipfee
     fee = 0
-    if whoset == "自行安裝（打6折）"
-      price = amount * 0.6
-      fee = Order.ship_fee if price < Order.ship_fee_boundary
+    if whoset == "自行安裝"
+      # price = amount * 0.6
+      fee = Order.ship_fee if amount < Order.ship_fee_boundary
       return fee
     end
     fee

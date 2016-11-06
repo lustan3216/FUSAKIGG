@@ -3,25 +3,25 @@ class ProductsController < ApplicationController
 
   def index
     case params[:type]
-    when "qt"
+    when 'qt'
       @products = Product.qt
-    when "t1"
+    when 't1'
       @products = Product.t1
-    when "fk"
+    when 'fk'
       @products = Product.fk
-    when "switch"
+    when 'switch'
       @products = Product.switch
-    when "plug"
+    when 'plug'
       @products = Product.plug
-    when "rest"
+    when 'rest'
       @products = Product.rest
-    when "emergency"
+    when 'emergency'
       @products = Product.emergency
-    when "weak_power"
+    when 'weak_power'
       @products = Product.weak_power
-    when "arg"
+    when 'arg'
       @products = Product.arg
-    when "air_con"
+    when 'air_con'
       @products = Product.air_con
     else
       @products = Product.all
@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    current_cart.add_product( @product, params[:qty].to_i ,params[:voltage])
+    current_cart.add_product( @product , params)
     @current_qty = current_cart.total
     respond_to do |format|
       format.html

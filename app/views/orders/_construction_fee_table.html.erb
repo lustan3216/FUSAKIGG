@@ -1,0 +1,71 @@
+<table class="ui very basic celled table">
+  <thead>
+  <tr>
+    <th>施工費試算表</th>
+    <th>本公司負責安裝</th>
+    <th>自行找師傅</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>
+      <div class="content">師傅費用
+        <!--<div class="sub header">Human Resources</div>-->
+      </div>
+    </td>
+    <td>
+      免費
+    </td>
+    <td>
+      2000~2500元
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content">
+        車馬費
+        <!--<div class="sub header">Fabric Design</div>-->
+      </div>
+    </td>
+    <td>
+      商品未滿3000元收500元
+    </td>
+    <td>
+      師傅有到場就是收500元
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content">
+        各開關安裝施作費用
+        <!--<div class="sub header">Entertainment</div>-->
+      </div>
+    </td>
+    <td id="construction_fee_by_our"><%= cart_or_order.calc_construction_fee %></td>
+    <td id="construction_fee_themselves"></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content">
+        保固
+        <!--<div class="sub header">Entertainment</div>-->
+      </div>
+    </td>
+    <td>保固兩年(僅由我方師傅安裝才可享有)</td>
+    <td>無</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content">
+        施工費總計
+        <!--<div class="sub header">Entertainment</div>-->
+      </div>
+    </td>
+    <td id="construction_fee_sumup_by_our"><%= cart_or_order.calc_construction_fee_allowanc %></td>
+    <td id="construction_fee_sumup_themselves"></td>
+  </tr>
+
+  </tbody>
+
+</table>

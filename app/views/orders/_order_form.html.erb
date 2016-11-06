@@ -1,5 +1,14 @@
 <div class="field mt30" id="order" data-shipfee="<%= Order.ship_fee %>" data-ship_fee_boundary="<%= Order.ship_fee_boundary %>" data-discount_percent="<%= Order.discount_percent %>" data-traffic_allowanc="<%= Order.traffic_allowanc %>" data-traffic_allowanc_boundary="<%= Order.traffic_allowanc_boundary %>" data-cartamount="<%= cart_or_order.amount %>">
-
+  <div class="two fields">
+    <div class="ten wide field">
+      <%= f.label :whoset ,t('form.who_set') %>
+      <%= f.select :whoset, options_for_select([[ '本公司派專業師傅安裝'],['自行安裝'] ], select_default(@order)),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+    </div>
+    <div class="six wide field">
+      <%= f.label :ship_time ,t('form.ship_time') %>
+      <%= f.select :ship_time, options_for_select([[ '都可以'],['早上'], ['下午'],['晚上'] ], '都可以'),{},class:"ui dropdown fluid" %>
+    </div>
+  </div>
   <div class="three fields">
     <div class="four wide field">
       <%= f.label :name ,t('form.name') %>
@@ -17,11 +26,11 @@
   <div class="three fields">
     <div class=" field">
       <%= f.label :county ,t('form.county') %>
-      <%= f.select :county, {},{ include_blank: "選擇縣市"},{class:"ui dropdown fluid" ,id:"county"  }%>
+      <%= f.select :county, {},{ include_blank: '選擇縣市'},{class:"ui dropdown fluid" ,id:"county"  }%>
     </div>
     <div class=" field">
       <%= f.label :district ,t('form.district') %>
-      <%= f.select :district, {}, { include_blank: "請先選擇縣市"},{class:"ui dropdown fluid" ,id:"district"}%>
+      <%= f.select :district, {}, { include_blank: '請先選擇縣市'},{class:"ui dropdown fluid" ,id:"district"}%>
     </div>
     <div class=" field">
       <%= f.label :postcode ,t('form.postcode') %>
@@ -34,17 +43,6 @@
   <div class="field">
     <%= f.label :address ,t('form.address') %>
     <%= f.text_field :address ,value: current_user.try(:address)%>
-  </div>
-  <div class="two fields">
-    <div class="six wide field">
-      <%= f.label :ship_time ,t('form.ship_time') %>
-      <%= f.select :ship_time, options_for_select([[ "都可以"],["早上"], ["下午"],["晚上"] ], "都可以"),{},class:"ui dropdown fluid" %>
-    </div>
-
-    <div class="ten wide field">
-      <%= f.label :whoset ,t('form.who_set') %>
-      <%= f.select :whoset, options_for_select([[ "本公司派專業師傅安裝"],["自行安裝（打6折）"] ], select_default(@order)),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-    </div>
   </div>
 
   <div class="field">

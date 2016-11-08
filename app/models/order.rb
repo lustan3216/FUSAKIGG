@@ -44,6 +44,14 @@ class Order < ApplicationRecord
     Order.ship_fee if calc_shipfee < Order.ship_fee_boundary
   end
 
+  def themselves_construct?
+    whoset == '自行安裝'
+  end
+
+  def our_construct?
+    whoset == '本公司派專業師傅安裝'
+  end
+
   def clone_line_items_by(cart)
     cart.line_items.each do |item|
       self.line_items.build( product: item.product,
@@ -100,13 +108,18 @@ class Order < ApplicationRecord
 
   def calc_final_price
     # amount(whoset) + calc_traffic_allowanc(whoset) + calc_shipfee(whoset)
+    # byebug
     calc_shipfee + amount(whoset) + calc_traffic_allowanc + calc_construction_fee
   end
 
   def calc_construction_fee
     sum = 0
-    line_items.each {|item| sum += item.construction_fee * item.qty }
-    sum
+    if our_construct?
+      line_items.each {|item| sum += item.construction_fee * item.qty }
+      return sum
+    else
+      sum
+    end
   end
 
   def calc_construction_fee_allowanc
@@ -123,7 +136,7 @@ class Order < ApplicationRecord
 
   def calc_traffic_allowanc
     fee = 0
-    if whoset == "本公司派專業師傅安裝"
+    if our_construct?
       fee = Order.traffic_allowanc if amount < Order.traffic_allowanc_boundary
       return fee
     end
@@ -133,7 +146,7 @@ class Order < ApplicationRecord
 
   def calc_shipfee
     fee = 0
-    if whoset == "自行安裝"
+    if themselves_construct?
       # price = amount * 0.6
       fee = Order.ship_fee if amount < Order.ship_fee_boundary
       return fee
@@ -145,4 +158,6 @@ class Order < ApplicationRecord
   def assign_order_number
     self.update(order_number: self.id.to_s + created_at.strftime('%s'))
   end
+
+
 end

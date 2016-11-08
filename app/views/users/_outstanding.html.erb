@@ -1,9 +1,9 @@
 <table class="ui single line table user_show_table">
   <thead class="hidden-xs">
   <tr>
-    <th>訂單編號</th>
-    <th>地址</th>
     <th>訂單成立時間</th>
+    <th>地址</th>
+    <th>誰施工？</th>
     <th>總價格</th>
     <th>修改</th>
     <th>付款</th>
@@ -12,9 +12,9 @@
   <tbody>
   <% @orders.each do |order| %>
       <tr>
-        <td><span class="visible-xs-inline-block">訂單編號 : </span><%= order.order_number %></td>
-        <td><span class="visible-xs-inline-block">地址 : </span><%= order.full_address %></td>
         <td><span class="visible-xs-inline-block">訂單成立時間 : </span><%= order.updated_at.strftime('%x')%></td>
+        <td><span class="visible-xs-inline-block">地址 : </span><%= order.full_address %></td>
+        <td><span class="visible-xs-inline-block">誰施工？ : </span><%= order.whoset %></td>
         <td><span class="visible-xs-inline-block">總價格 : </span><%= order.final_price %></td>
         <td class="visible-xs modify_button">
           <div class="ui buttons ">

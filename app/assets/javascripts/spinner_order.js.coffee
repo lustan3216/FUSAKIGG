@@ -55,13 +55,12 @@ ready = ->
         id: id
         qty: num
 
-  calc_construction_fee=() ->
+  calc_construction_fee=(delete_fee = 0) ->
     product_items = $('.product_item')
     traffic_allowanc = calc_traffic_allowanc()
     sum_up = 0
-    $.each( product_items , () ->
-      sum_up += $(this).find("#txtNum").val() * $(this).data('construction-fee')
-    )
+    $.each( product_items , () -> sum_up += $(this).find("#txtNum").val() * $(this).data('construction-fee') )
+    sum_up -= delete_fee
     $('#construction_fee_by_our').html(sum_up)
     sumup_by_our = traffic_allowanc + sum_up
     $('#construction_fee_sumup_by_our').html( sumup_by_our )
@@ -132,6 +131,7 @@ ready = ->
     update_lineitem_num.bind(this)()
     calc_construction_fee()
     after_ship_fee_and_check_county()
+    show_construction_fee_themselves()
 
   $('.product_spineer_button').on 'click', ->
     command = $(this).attr('command')
@@ -142,22 +142,27 @@ ready = ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html())
     qty = parseInt(product_item.find('#txtNum').attr("value"))
+    one_construction_fee = product_item.data('construction-fee')
     price_sum(one_price,qty)
     qty_sum(qty)
     calc_traffic_allowanc()
     update_lineitem_num.bind(this)()
-    calc_construction_fee()
+    calc_construction_fee(one_construction_fee*qty)
     after_ship_fee_and_check_county()
+    show_construction_fee_themselves()
 
   show_construction_fee_themselves()
   
   $('#whoset').on "change", ->
+    calc_traffic_allowanc()
+    calc_construction_fee()
     after_ship_fee_and_check_county.bind(this)()
+    show_construction_fee_themselves()
 
-  if $('#order_whoset').html() == "自行安裝" || $('#whoset').siblings('.menu').find('.selected').html() == "自行安裝"
-    $('#amount').css('text-decoration','line-through')
-    $('#discount').css('display','inline')
-    $('#traffic_allowanc_block').hide()
+#  if $('#order_whoset').html() == "自行安裝" || $('#whoset').siblings('.menu').find('.selected').html() == "自行安裝"
+#    $('#amount').css('text-decoration','line-through')
+#    $('#discount').css('display','inline')
+#    $('#traffic_allowanc_block').hide()
 
   $('#county').parent().one "click",->
     disabled_option()

@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    redirect_to :back, alert: I18n.t('flash.cant_update') if !@order.can_update?
+    redirect_to order_path(params[:id]), alert: I18n.t('flash.cant_update') if !@order.can_update?
   end
 
   def create

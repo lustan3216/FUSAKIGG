@@ -21,6 +21,14 @@
             <table class="ui definition table mt30">
               <tbody>
               <tr>
+                <td>訂單編號</td>
+                <td><%= @order.order_number %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.who_set') %></td>
+                <td id="order_whoset"><%= @order.whoset %></td>
+              </tr>
+              <tr>
                 <td class="four wide column">交易狀態</td>
                 <td><%= @order.payment_status %></td>
               </tr>
@@ -49,10 +57,6 @@
                 <td><%= @order.ship_time %></td>
               </tr>
               <tr>
-                <td><%= t('form.who_set') %></td>
-                <td id="order_whoset"><%= @order.whoset %></td>
-              </tr>
-              <tr>
                 <td><%= t('form.pay_way') %></td>
                 <td><%= @order.payment_paid.payment_method %></td>
               </tr>
@@ -71,4 +75,12 @@
   </section>
 </div>
 
-<%#= javascript_include_tag 'spinner_order' %>
+<script type="text/javascript" charset="utf-8">
+  function show_construction_fee_themselves(){
+    var sum_up = parseInt($('#construction_fee_by_our').html())
+    var sumup_themselves = 3000 + (sum_up*1.25)
+    $('#construction_fee_themselves').html(sum_up * 1.25)
+    $('#construction_fee_sumup_themselves').html( sumup_themselves )
+  }
+  show_construction_fee_themselves()
+</script>

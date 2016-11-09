@@ -61,6 +61,7 @@ ready = ->
     sum_up = 0
     $.each( product_items , () -> sum_up += $(this).find("#txtNum").val() * $(this).data('construction-fee') )
     sum_up -= delete_fee
+    sum_up = 0 if $('#whoset').find("option:selected").val() == "自行安裝" || $('#order_whoset').html()== "自行安裝"
     $('#construction_fee_by_our').html(sum_up)
     sumup_by_our = traffic_allowanc + sum_up
     $('#construction_fee_sumup_by_our').html( sumup_by_our )
@@ -80,19 +81,12 @@ ready = ->
     amount = parseInt($('#order').attr('data-cartamount'))
 
     if whoset.find("option:selected").val() == "自行安裝"
-#      $('#amount').css('text-decoration','line-through')
-#      $('#discount').css('display','inline')
-#      items.removeClass('disabled')
-      $('#traffic_allowanc_block').hide()
       if amount < data_ship_fee_boundary
         ship_fee = $('#order').data('shipfee')
 
     if whoset.find("option:selected").val() == "本公司派專業師傅安裝"
       construction_fee_sumup = parseInt($('#construction_fee_sumup_by_our').html())
-#      $('#amount').css('text-decoration','none')
-#      $('#discount').css('display','none')
       items.slice(3).addClass('disabled')
-      $('#traffic_allowanc_block').show()
       if $.inArray(selected.data('value'), ["台北市" , "桃園市" , "新北市"]) == -1
         $('#county').dropdown('clear')
         $('#district').dropdown('clear')
@@ -104,6 +98,12 @@ ready = ->
     else
       $('#ship_status').html("免費")
 
+  construction_table_process=() ->
+    if $('#whoset').find("option:selected").val() == "自行安裝" || $('#order_whoset').html()== "自行安裝"
+      $('#traffic_allowanc_block').hide()
+    else
+      $('#traffic_allowanc_block').show()
+
   calc_traffic_allowanc=() ->
     amount = parseInt($('#amount').html())
     if $('#whoset').find("option:selected").val() == "本公司派專業師傅安裝"
@@ -114,10 +114,13 @@ ready = ->
       else
         $('#traffic_allowanc').html(0)
         return 0
+    else
+      $('#traffic_allowanc').html(0)
+      return 0
 
   show_construction_fee_themselves=()->
-    sum_up = parseInt($('#construction_fee_by_our').html())
-    sumup_themselves = 3000 + (sum_up*1.25)
+    sum_up = $('#construction_fee_by_our').html()
+    sumup_themselves = 3000 + (sum_up * 1.25)
     $('#construction_fee_themselves').html(sum_up * 1.25)
     $('#construction_fee_sumup_themselves').html( sumup_themselves )
 
@@ -147,7 +150,7 @@ ready = ->
     qty_sum(qty)
     calc_traffic_allowanc()
     update_lineitem_num.bind(this)()
-    calc_construction_fee(one_construction_fee*qty)
+    calc_construction_fee(one_construction_fee * qty)
     after_ship_fee_and_check_county()
     show_construction_fee_themselves()
 

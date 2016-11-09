@@ -28,6 +28,7 @@
   .price_sum_up{
     margin-right: 20px;
     padding-top: 5px;
+    float: right;
   }
   .product_info_header {
     margin-top: 10px;
@@ -38,7 +39,7 @@
   .product_info_content{
     margin-top: 10px;
     .allprice{
-      font-weight: 15;
+      font-weight: 100;
     }
   }
   & > .row{
@@ -76,6 +77,28 @@
 }
 
 @media (max-width: 767px) {
+  #new_user input,#order input,.new_service_message input,.ui.dropdown{
+    height: 44px;
+  }
+  .ui.dropdown{
+    .text{
+      margin-top: 5px;
+    }
+  .dropdown.icon{
+    margin-top: -5px !important;
+  }
+  }
+  #traffic_allowanc_block table{
+    tr{
+      margin-top: 0;
+    }
+    tbody >tr>td:nth-child(2)::before{
+      content: '本公司負責安裝 : ';
+    }
+    tbody >tr>td:nth-child(3)::before{
+      content: '自行找師傅 : ';
+    }
+  }
   .users_paid_table{
     td[name="final_price"]{
       float: left;
@@ -104,13 +127,19 @@
     }
     .price_sum_up{
       font-size: 14px;
+      margin:0 auto;
+      display: block;
+      text-align: center;
+      padding-top: 10px;
+      float: none;
     }
     .product_info_content{
       max-width: 300px;
       margin: 10px auto auto auto;
     }
     .count_spinner{
-      margin-left: 20px;
+      margin: 0 auto;
+      float: none;
     }
   }
   .order_product_form{

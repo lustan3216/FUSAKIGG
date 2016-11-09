@@ -101,5 +101,14 @@
     $('#construction_fee_themselves').html(sum_up * 1.25)
     $('#construction_fee_sumup_themselves').html( sumup_themselves )
   }
+  function construction_table_proces(){
+    if( $('#whoset').find("option:selected").val() == "自行安裝" || $('#order_whoset').html()== "自行安裝" ){
+      $('#traffic_allowanc_block').hide();
+    }
+    else{
+      $('#traffic_allowanc_block').show()
+    }
+  }
   show_construction_fee_themselves()
+  construction_table_proces()
 </script>

@@ -268,4 +268,4 @@ Product.all.each do |x|
   end
 end
 
-p "done"
+p 'done'

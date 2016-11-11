@@ -4,6 +4,7 @@ class Pay2goController < ApplicationController
 
   def return
     result = nil
+    send_mail = false
     ActiveRecord::Base.transaction do
       @payment = Payment.find_and_process( json_data )
       result = @payment.save
@@ -18,14 +19,16 @@ class Pay2goController < ApplicationController
         @order.status = "處理中"
         @order.payment_status = "完成"
         @order.save!
-        OrderMailer.order_paid_notify(current_user,@order).deliver_later!
+        send_mail = true
       end
     end
+    OrderMailer.order_paid_notify(current_user,@order).deliver_later! if send_mail
     redirect_to thankyou_path(:order => @order)
   end
 
   def notify
     result = nil
+    send_mail = false
     ActiveRecord::Base.transaction do
       @payment = Payment.find_and_process( json_data )
       result = @payment.save
@@ -40,9 +43,10 @@ class Pay2goController < ApplicationController
         @order.status = "處理中"
         @order.payment_status = "完成"
         @order.save!
-        OrderMailer.order_paid_notify(current_user,@order).deliver_later!
+        send_mail = true
       end
     end
+    OrderMailer.order_paid_notify(current_user,@order).deliver_later! if send_mail
     redirect_to thankyou_path(:order => @order)
   end
 

@@ -101,7 +101,7 @@ class OrdersController < ApplicationController
   end
 
   def check_line_items_errors
-    current_cart.line_items.each {|item| item.destroy if item.construction_fee }
+    current_cart.line_items.each {|item| item.destroy if item.construction_fee.blank? }
   end
 
 end

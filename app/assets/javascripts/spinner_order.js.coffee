@@ -45,8 +45,9 @@ ready = ->
     product_item_input.attr("value", num)
 
   update_lineitem_num=() ->
-    val = $(this).closest('.product_item').find('#txtNum').val().trim();
-    id = $(this).siblings('input').attr('name')
+    input = $(this).closest('.product_item').find('input')
+    val = input.val().trim();
+    id = input.attr('name')
     num = if val isnt '' then parseInt(val) else 0
     $.ajax
       type: 'PUT',
@@ -55,6 +56,19 @@ ready = ->
         id: id
         qty: num
 
+  delete_lineitem=() ->
+    input = $(this).closest('.product_item').find('input')
+    val = input.val().trim();
+    id = input.attr('name')
+    console.log(id)
+    num = if val isnt '' then parseInt(val) else 0
+    $.ajax
+      type: 'DELETE',
+      url: "/line_items",
+      data:
+        id: id
+        qty: num        
+
   calc_construction_fee=(delete_fee = 0) ->
     product_items = $('.product_item')
     traffic_allowanc = calc_traffic_allowanc()
@@ -62,9 +76,9 @@ ready = ->
     $.each( product_items , () -> sum_up += $(this).find("#txtNum").val() * $(this).data('construction-fee') )
     sum_up -= delete_fee
     sum_up = 0 if $('#whoset').find("option:selected").val() == "自行安裝" || $('#order_whoset').html()== "自行安裝"
-    $('#construction_fee_by_our').html(sum_up)
+    $('#construction_fee_by_our span').html(sum_up)
     sumup_by_our = traffic_allowanc + sum_up
-    $('#construction_fee_sumup_by_our').html( sumup_by_our )
+    $('#construction_fee_sumup_by_our span').html( sumup_by_our )
 
   disabled_option=() ->
     if $('#whoset').dropdown('get value')[0] == "本公司派專業師傅安裝"
@@ -85,7 +99,7 @@ ready = ->
         ship_fee = $('#order').data('shipfee')
 
     if whoset.find("option:selected").val() == "本公司派專業師傅安裝"
-      construction_fee_sumup = parseInt($('#construction_fee_sumup_by_our').html())
+      construction_fee_sumup = parseInt($('#construction_fee_sumup_by_our span').html())
       items.slice(3).addClass('disabled')
       if $.inArray(selected.data('value'), ["台北市" , "桃園市" , "新北市"]) == -1
         $('#county').dropdown('clear')
@@ -119,7 +133,7 @@ ready = ->
       return 0
 
   show_construction_fee_themselves=()->
-    sum_up = $('#construction_fee_by_our').html()
+    sum_up = $('#construction_fee_by_our span').html()
     sumup_themselves = 3000 + (sum_up * 1.25)
     $('#construction_fee_themselves').html(sum_up * 1.25)
     $('#construction_fee_sumup_themselves').html( sumup_themselves )
@@ -140,7 +154,6 @@ ready = ->
     command = $(this).attr('command')
     update_spinner_input.bind(this)(command)
 
-
   $('.item_cancel').on "click", ->
     product_item = $(this).closest('.product_item')
     one_price = parseInt(product_item.find('.oneprice').html())
@@ -149,7 +162,7 @@ ready = ->
     price_sum(one_price,qty)
     qty_sum(qty)
     calc_traffic_allowanc()
-    update_lineitem_num.bind(this)()
+    delete_lineitem.bind(this)()
     calc_construction_fee(one_construction_fee * qty)
     after_ship_fee_and_check_county()
     show_construction_fee_themselves()
@@ -175,5 +188,9 @@ ready = ->
     if keyCode is 13
       e.preventDefault()
       return false
+
+  $('#detail_click').click ->
+    $('#construction_fee_detail').modal('show');
+
 
 $(document).ready(ready)

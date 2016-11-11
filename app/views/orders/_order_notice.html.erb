@@ -1,10 +1,12 @@
 <div class="ui segment">
   <div class="order_notice">
-    <h5>自行安裝者滿<%= Order.ship_fee_boundary %>免運費<%= Order.ship_fee %>元</h5>
+    <h6>自行安裝者滿 <span><%= Order.ship_fee_boundary %></span> 免運費 <span><%= Order.ship_fee %>元</span></h6>
     <!--<p>滿<%#= Order.ship_fee_boundary %>以上不管數量、重量、體積大小多重，通通一律 0 元</p>-->
   </div>
+</div>
+<div class="ui segment">
   <div class="order_notice">
-    <h5>師傅到府安裝者滿<%= Order.traffic_allowanc_boundary %>免車馬費<%= Order.traffic_allowanc %>元</h5>
+    <h6>師傅到府安裝者滿 <span><%= Order.traffic_allowanc_boundary %></span> 免車馬費 <span><%= Order.traffic_allowanc %>元</span></h6>
     <!--<p>滿<%#= Order.ship_fee_boundary %>以上不管數量、重量、體積大小多重，通通一律 0 元</p>-->
   </div>
 </div>

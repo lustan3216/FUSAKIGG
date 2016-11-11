@@ -13,10 +13,10 @@
           <div class="ui segment order_product_form">
             <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
             <div class="order_info">
+              <%= render 'order_info'%>
               <% @order.line_items.each  do |item| %>
                   <%= render 'product',item:item %>
               <% end %>
-              <%= render 'order_info'%>
             </div>
             <table class="ui definition table mt30">
               <tbody>

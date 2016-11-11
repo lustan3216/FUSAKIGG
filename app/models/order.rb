@@ -17,7 +17,7 @@ class Order < ApplicationRecord
   end
 
   def self.ship_fee_boundary
-    1500
+    3000
   end
 
   def self.traffic_allowanc_boundary
@@ -52,6 +52,17 @@ class Order < ApplicationRecord
     whoset == '本公司派專業師傅安裝'
   end
 
+  def update_data(id,qty)
+    line_item = self.line_items.find(id)
+    line_item.update(qty: qty )
+  end
+
+  def remove_product(item_id)
+    line_item = self.line_items.find( item_id )
+    line_item.destroy
+    # self.destroy if self.line_items.blank?
+  end
+
   def clone_line_items_by(cart)
     cart.line_items.each do |item|
       self.line_items.build( product: item.product,
@@ -84,12 +95,6 @@ class Order < ApplicationRecord
   def copy_info_to(user)
     user.assign_attributes( name:self.name , address:self.address , phone:self.phone,
                             postcode:self.postcode , alternate_email:self.email )
-  end
-
-  def remove_product(item_id)
-    line_item = self.line_items.find( item_id )
-    line_item.destroy
-    self.destroy if self.line_items.blank?
   end
 
   def full_address

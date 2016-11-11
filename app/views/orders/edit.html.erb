@@ -30,8 +30,27 @@
   </section>
 
 </div>
+
 <%= javascript_include_tag 'spinner_order' %>
+
 <script>
+  function update_construction_fee_detail(){
+    $.each($('.product_item'),function() {
+      var product_id = $(this).attr('id').replace('product_item_', '');
+      var construction_fee = $(this).data('construction-fee');
+      var qty = $(this).find('input').val();
+      var total_construction_fee = (qty * construction_fee);
+      this_tr = $("tr[name='" + product_id + "']");
+      this_tr.find("td[name='construction_fee']").html(construction_fee);
+      this_tr.find("td[name='qty']").html(qty);
+      this_tr.find("td[name='total_construction_fee']").html(total_construction_fee);
+    })
+    $("#traffic_allowanc_in_detail").html($('#traffic_allowanc').html());
+    $("#construction_fee_sum_up_in_detail").html($('#construction_fee_sumup_by_our span').html())
+  }
+
+  $('#construction_fee_detail').modal({'onVisible': function(){update_construction_fee_detail();}})
+
   $('form').tw_citySelector('#county', '#district', '#postcode');
   $("#county").dropdown('set selected', "<%= @order.county %>");
   $("#district").dropdown('set selected',$(".ui.form").data('district'));

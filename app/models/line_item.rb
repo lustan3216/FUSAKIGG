@@ -8,6 +8,7 @@ class LineItem < ApplicationRecord
     amount = 0
     voltage = self.voltage.gsub("V","")
     amount += self.product.send("v#{voltage}_price") * self.qty
+    amount
   end
 
   def show_price

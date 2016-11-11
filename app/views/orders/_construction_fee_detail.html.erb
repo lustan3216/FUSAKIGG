@@ -1,0 +1,60 @@
+<div class="ui basic modal" id="construction_fee_detail">
+  <i class="close icon"></i>
+  <div class="header">
+    施工費明細
+  </div>
+  <div class="image content">
+    <div class="image">
+      <i class="info circle icon"></i>
+    </div>
+    <div class="description">
+      <table class="ui inverted basic table">
+        <thead class="hidden-xs">
+        <tr>
+          <th>商品</th>
+          <th>施工費</th>
+          <th>個數</th>
+          <th>加總</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% cart_or_order.line_items.each do |item| %>
+            <tr name="<%= item.id %>" class="item_tr">
+              <td>
+                <div class="content"><%= item.product.name %></div>
+              </td>
+              <td name="construction_fee"><%= item.construction_fee %></td>
+              <td name="qty"><%= item.qty %></td>
+              <td name="total_construction_fee"><%= item.construction_fee * item.qty %></td>
+            </tr>
+        <% end %>
+        <tr>
+          <td>
+            <div class="content">車馬費</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td id="traffic_allowanc_in_detail"><%= cart_or_order.calc_traffic_allowanc %></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="content">總共</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td id="construction_fee_sum_up_in_detail"><%= cart_or_order.calc_construction_fee %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="two fluid ui inverted buttons">
+      <div class="ui cancel red basic inverted button">
+        <i class="remove icon"></i>
+        關閉
+      </div>
+    </div>
+  </div>
+</div>

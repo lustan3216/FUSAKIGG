@@ -93,9 +93,7 @@
 <%= javascript_include_tag 'spinner_order' %>
 
 <script type="text/javascript" charset="utf-8">
-  $('#atm_modal').click(function(){
-    $('.ui.basic.modal').modal('show');
-  })
+
   function show_construction_fee_themselves(){
     var sum_up = parseInt($('#construction_fee_by_our').html())
     var sumup_themselves = 3000 + (sum_up*1.25)
@@ -110,9 +108,13 @@
       $('#traffic_allowanc_block').show()
     }
   }
+
+  $('#atm_modal').click(function(){
+    $('.ui.basic.modal').modal('show');
+  })
   show_construction_fee_themselves()
   construction_table_proces()
-  $('#ui_atm_modal').modal({onHidden: function(){location.reload();}})
+  $('#ui_atm_modal').modal({'onHidden': function(){location.reload();}})
   $('#credit_link').click(function(e){
     e.preventDefault()
     location.reload();

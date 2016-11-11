@@ -1,4 +1,4 @@
-<table class="ui very basic celled table">
+<table class="ui very basic celled table fluid">
   <thead class="hidden-xs">
   <tr>
     <th>施工費試算表</th>
@@ -26,7 +26,8 @@
     <td>
       <div class="content">各開關安裝施作費用</div>
     </td>
-    <td id="construction_fee_by_our"><%= cart_or_order.calc_construction_fee %></td>
+    <td id="construction_fee_by_our"><span><%= cart_or_order.calc_construction_fee %></span>
+    </td>
     <td id="construction_fee_themselves"></td>
   </tr>
   <tr>
@@ -40,10 +41,17 @@
     <td>
       <div class="content">施工費總計</div>
     </td>
-    <td id="construction_fee_sumup_by_our" class="red"><%= cart_or_order.calc_construction_fee_allowanc %></td>
+    <td id="construction_fee_sumup_by_our" class="red">
+      <span><%= cart_or_order.calc_construction_fee_allowanc %></span>
+      <div class="ui left pointing red basic label" id="detail_click">
+        施工費用明細 點我！
+      </div>
+    </td>
     <td id="construction_fee_sumup_themselves"></td>
   </tr>
 
   </tbody>
 
 </table>
+
+

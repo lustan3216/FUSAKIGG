@@ -2,6 +2,10 @@
   background-color: #fff;
   border-radius: $radius;
   margin-bottom: 15px;
+  h6>span{
+    font-size: 18px;
+    color: red;
+  }
 }
 .order_product_form{
   padding:20px 30px 30px 30px !important;
@@ -75,13 +79,49 @@
     margin-bottom: -10px;
   }
 }
- #traffic_allowanc_block table tr>td:nth-child(2):after{
-   font:normal normal normal 16px/1 FontAwesome;
-   content: "\f091";
-   margin-left: 10px;
-   color: red;
- }
+#construction_fee_detail{
+  .description{
+    width: 100%;
+  }
+}
+#traffic_allowanc_block table tr>td:nth-child(2):after{
+  font:normal normal normal 16px/1 FontAwesome;
+  content: "\f091";
+  margin-left: 10px;
+  color: red;
+}
+#detail_click{
+  cursor: pointer;
+}
 @media (max-width: 767px) {
+  #construction_fee_detail{
+    table{
+      .item_tr{
+        margin-bottom: 15px;
+      }
+      td[name='construction_fee']{
+        float: left;
+        &::before{
+          content:'施工費單價 : ';
+        }
+      }
+      td[name='qty']{
+        float: left;
+        &::before{
+          content:'個數 : ';
+        }
+      }
+      td[name='total_construction_fee']{
+        float: right;
+        &::before{
+          content:'施工費總價 : ';
+        }
+      }
+      #traffic_allowanc_in_detail,#construction_fee_sum_up_in_detail{
+        float: right;
+      }
+    }
+  }
   #new_user input,#order input,.new_service_message input,.ui.dropdown{
     height: 44px;
   }
@@ -89,9 +129,9 @@
     .text{
       margin-top: 5px;
     }
-  .dropdown.icon{
-    margin-top: -5px !important;
-  }
+    .dropdown.icon{
+      margin-top: -5px !important;
+    }
   }
   #traffic_allowanc_block table{
     tr{

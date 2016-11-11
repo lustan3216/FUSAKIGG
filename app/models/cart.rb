@@ -31,7 +31,6 @@ class Cart < ApplicationRecord
 
   def update_data(id,qty)
     line_item = self.line_items.find(id)
-    # construction_fee = ( line_item.product.construction_fee * qty )
     line_item.update(qty: qty )
   end
 

@@ -86,6 +86,7 @@ ready = ->
     amount = parseInt($('#order').attr('data-cartamount'))
 
     if whoset.find("option:selected").val() == "自行安裝"
+      items.removeClass('disabled')
       if amount < data_ship_fee_boundary
         ship_fee = $('#order').data('shipfee')
 

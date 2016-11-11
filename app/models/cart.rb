@@ -27,6 +27,7 @@ class Cart < ApplicationRecord
   def remove_product(item_id)
     line_item = self.line_items.find(item_id)
     line_item.destroy
+    line_items.destroy if line_items.blank?
   end
 
   def update_data(id,qty)

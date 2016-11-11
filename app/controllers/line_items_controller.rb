@@ -13,8 +13,8 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    # byebug
-    @item_id = params[:id].to_i
+    return if params[:id].blank?
+    @item_id = params[:id].gsub(/order\[/,'').to_i
     url = request.referrer
     if url && url.include?('edit')
       order_id = url.match(/(\d*)\/edit/)[1].to_i
@@ -23,8 +23,7 @@ class LineItemsController < ApplicationController
       current_cart.remove_product(@item_id)
     end
     respond_to do |format|
-      format.html
-      format.js {render 'cancel' }
+      format.js { render 'cancel' }
     end
   end
 end

@@ -56,18 +56,15 @@ ready = ->
         id: id
         qty: num
 
-  delete_lineitem=() ->
+  delete_lineitem=(e) ->
     input = $(this).closest('.product_item').find('input')
-    val = input.val().trim();
     id = input.attr('name')
     console.log(id)
-    num = if val isnt '' then parseInt(val) else 0
     $.ajax
       type: 'DELETE',
-      url: "/line_items",
-      data:
-        id: id
-        qty: num        
+      url: "/line_items"
+#      data:
+#        id: id
 
   calc_construction_fee=(delete_fee = 0) ->
     product_items = $('.product_item')

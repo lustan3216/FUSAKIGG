@@ -56,15 +56,9 @@ ready = ->
         id: id
         qty: num
 
-  delete_lineitem=(e) ->
-    input = $(this).closest('.product_item').find('input')
-    id = input.attr('name')
-    console.log(id)
-    $.ajax
-      type: 'DELETE',
-      url: "/line_items"
-#      data:
-#        id: id
+  delete_item_in_construction_fee_detail=() ->
+    id = $(this).closest('.product_item').attr('id').replace('product_item_','')
+    $("#construction_fee_detail tr[name='" + id + "']").remove()
 
   calc_construction_fee=(delete_fee = 0) ->
     product_items = $('.product_item')
@@ -159,10 +153,10 @@ ready = ->
     price_sum(one_price,qty)
     qty_sum(qty)
     calc_traffic_allowanc()
-    delete_lineitem.bind(this)()
     calc_construction_fee(one_construction_fee * qty)
     after_ship_fee_and_check_county()
     show_construction_fee_themselves()
+    delete_item_in_construction_fee_detail.bind(this)()
 
   show_construction_fee_themselves()
   
@@ -171,11 +165,6 @@ ready = ->
     calc_construction_fee()
     after_ship_fee_and_check_county.bind(this)()
     show_construction_fee_themselves()
-
-#  if $('#order_whoset').html() == "自行安裝" || $('#whoset').siblings('.menu').find('.selected').html() == "自行安裝"
-#    $('#amount').css('text-decoration','line-through')
-#    $('#discount').css('display','inline')
-#    $('#traffic_allowanc_block').hide()
 
   $('#county').parent().one "click",->
     disabled_option()

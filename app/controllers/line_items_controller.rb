@@ -14,7 +14,7 @@ class LineItemsController < ApplicationController
 
   def destroy
     return if params[:id].blank?
-    @item_id = params[:id].gsub(/order\[/,'').to_i
+    @item_id = params[:id].to_i
     url = request.referrer
     if url && url.include?('edit')
       order_id = url.match(/(\d*)\/edit/)[1].to_i

@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_order , only: [:show, :finish, :edit, :update]
+  before_action :check_line_items_errors , only: :new
 
   def show
     if @order.paid? && @order.payment_paid.is_need_thank?
@@ -97,6 +98,10 @@ class OrdersController < ApplicationController
       params_lists <<  key.to_sym  if /\d/.match(key)
     end
     params.require(:order).permit(params_lists)
+  end
+
+  def check_line_items_errors
+    current_cart.line_items.each {|item| item.destroy if item.construction_fee }
   end
 
 end

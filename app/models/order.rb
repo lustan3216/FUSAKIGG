@@ -60,7 +60,7 @@ class Order < ApplicationRecord
   def remove_product(item_id)
     line_item = self.line_items.find( item_id )
     line_item.destroy
-    # self.destroy if self.line_items.blank?
+    self.destroy if self.line_items.blank?
   end
 
   def clone_line_items_by(cart)

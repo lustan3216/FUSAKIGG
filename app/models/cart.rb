@@ -20,7 +20,7 @@ class Cart < ApplicationRecord
       self.line_items.create!( product: product,
                                qty: qty, :voltage => voltage,
                                price: product.send("v#{voltage.gsub("V","")}_price"),
-                               construction_fee: product.construction_fee * qty )
+                               construction_fee: product.construction_fee )
     end
   end
 
@@ -31,8 +31,8 @@ class Cart < ApplicationRecord
 
   def update_data(id,qty)
     line_item = self.line_items.find(id)
-    construction_fee = ( line_item.product.construction_fee * qty )
-    line_item.update(qty: qty ,construction_fee: construction_fee)
+    # construction_fee = ( line_item.product.construction_fee * qty )
+    line_item.update(qty: qty )
   end
 
   def total
@@ -50,13 +50,17 @@ class Cart < ApplicationRecord
   end
 
   def calc_final_price(whoset = "本公司派專業師傅安裝")
-    amount(whoset) + calc_traffic_allowanc(whoset) + calc_shipfee(whoset) + calc_construction_fee
+    amount(whoset) + calc_traffic_allowanc(whoset) + calc_shipfee(whoset) + calc_construction_fee(whoset)
   end
 
-  def calc_construction_fee
+  def calc_construction_fee(whoset = "本公司派專業師傅安裝")
     sum = 0
-    line_items.each {|item| sum += item.construction_fee }
-    sum
+    if whoset == "本公司派專業師傅安裝"
+      line_items.each {|item| sum += item.construction_fee * item.qty }
+      return sum
+    else
+      sum
+    end
   end
 
   def calc_construction_fee_allowanc

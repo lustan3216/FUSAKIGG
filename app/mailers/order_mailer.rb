@@ -27,6 +27,7 @@ class OrderMailer < ApplicationMailer
     @qty = order.total
     @price = order.final_price
     @traffic_allowanc = order.traffic_allowanc
+    @construction_fee = order.calc_construction_fee
     @ship_fee = order.ship_fee
     @items = order.line_items
     geter = User.admins.collect(&:email).push( user.email ).uniq.join(',')

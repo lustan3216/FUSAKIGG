@@ -28,17 +28,17 @@
                 <% elsif @order.payments.last && @order.payments.last.payment_method == 'ATM' %>
                     <div class="col-xs-6 mb10"><%= button_tag "ATM", :class => "ui button fluid red",id:'atm_modal' %></div>
                 <% else %>
-                    <div class="col-xs-6 mb10"><%= link_to "信用卡結帳", checkout_pay2go_order_path(@order, :payment_method => "Credit"), :class => "ui button fluid red", :method => :post %></div>
+                    <div class="col-xs-6 mb10"><%= link_to "信用卡結帳", checkout_pay2go_order_path(@order, :payment_method => "Credit"), :class => "ui button fluid red", :id => 'credit_link', :method => :post %></div>
                     <div class="col-xs-6 mb10"><%= button_tag "ATM", :class => "ui button fluid red",id:'atm_modal' %></div>
                 <% end %>
               </div>
             </div>
             <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
             <div class="order_info">
-              <%= render 'order_info'%>
               <% @order.line_items.each  do |item| %>
                   <%= render 'product',item:item %>
               <% end %>
+              <%= render 'order_info'%>
             </div>
             <table class="ui definition table mt30">
               <tbody>
@@ -91,6 +91,7 @@
 <%= render 'atm_modal',order:@order %>
 
 <%= javascript_include_tag 'spinner_order' %>
+
 <script type="text/javascript" charset="utf-8">
   $('#atm_modal').click(function(){
     $('.ui.basic.modal').modal('show');
@@ -111,4 +112,9 @@
   }
   show_construction_fee_themselves()
   construction_table_proces()
+  $('#ui_atm_modal').modal({onHidden: function(){location.reload();}})
+  $('#credit_link').click(function(e){
+    e.preventDefault()
+    location.reload();
+  })
 </script>

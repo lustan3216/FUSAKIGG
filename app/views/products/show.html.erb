@@ -32,7 +32,7 @@
                             <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
                           </div>
                       <% else %>
-                          <div class="ui radio checkbox">
+                          <div class="ui radio checkbox mt15 mb15">
                             <% if @product.v000? %>
                                 <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
                             <% elsif @product.v110? %>

@@ -75,7 +75,12 @@
     margin-bottom: -10px;
   }
 }
-
+ #traffic_allowanc_block table tr>td:nth-child(2):after{
+   font:normal normal normal 16px/1 FontAwesome;
+   content: "\f091";
+   margin-left: 10px;
+   color: red;
+ }
 @media (max-width: 767px) {
   #new_user input,#order input,.new_service_message input,.ui.dropdown{
     height: 44px;

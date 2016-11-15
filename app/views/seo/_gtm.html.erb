@@ -1,4 +1,4 @@
-<% if Rails.env.production? %>
+<% if !Rails.env.production? %>
 		<!-- Google Tag Manager -->
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KRJ395"
 		                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -8,5 +8,9 @@
 			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-KRJ395');</script>
 		<!-- End Google Tag Manager -->
+<% else %>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRJ395"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <% end %>
-

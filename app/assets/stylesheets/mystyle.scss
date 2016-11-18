@@ -113,6 +113,9 @@ td a:hover {
 .secondNav .logo h1{
   color: #bc4c4c;
 }
+.secondNav .nav_header .logo{
+  margin-top: 4px;
+}
 a.anchor{
   display: block;
   position: relative;
@@ -202,7 +205,9 @@ a.anchor{
 .ui.segment{
   box-shadow: none !important;
 }
-
+.paginator{
+  margin-top: 30px;
+}
 @media (max-width: 767px) {
   .product_index_info{
     .ui.card.fluid{
@@ -255,5 +260,37 @@ a.anchor{
     transform: rotate(180deg);
 
     direction: ltr;
+  }
+}
+@media (min-width: 768px) and(max-width: 992px) {
+  .row.reorder-sm {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    direction: rtl;
+    margin-bottom: 30px;
+  }
+
+  .row.reorder-sm > [class*="col-"] {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    direction: ltr;
+  }
+}
+@media (max-width: 992px) {
+  .product_index.content-section{
+    padding: 10px 0 !important;
+  }
+  .row.page-title-row{
+    padding: 50px 10px;
+  }
+  .paginator{
+    margin-top: -40px;
   }
 }

@@ -10,7 +10,7 @@
 
         <div class="col-md-3 mt15">
           <ul class="list-group mb60 product_sidebar">
-            <li class="list-group-item">
+            <li class="list-group-item hidden">
               <%= link_to download_path(anchor: "price_list"),class:"item" do%>
                   <div>
                     <span>牌價表下載區</span>
@@ -39,8 +39,8 @@
         </div>
         <div class="col-md-9">
 
-          <a id="price_list" class="anchor"></a>
-          <table class="ui celled striped table">
+          <a id="price_list" class="anchor hidden"></a>
+          <table class="ui celled striped table hidden">
             <thead>
             <tr><th colspan="3">
               <%= t(".price_list") %>

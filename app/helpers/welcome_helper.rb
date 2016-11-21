@@ -16,7 +16,7 @@ module WelcomeHelper
       when 'qa'
         '提供常見、購物、技術上的解答 如有更多問題可諮詢客服'
       when 'download'
-        '下載牌價、商品目錄、線路圖'
+        '下載商品目錄、線路圖'
       when 'introduce'
         '對品質的的苛求 堅持台灣製造 '
     end

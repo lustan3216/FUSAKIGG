@@ -32,13 +32,13 @@ $(document).ready(function(){
                 identifier: 'order_phone',
                 rules: [{type   : 'empty', prompt : '請輸入電話'},
                     {type   : 'number', prompt : '請輸入數字'},
-                    {type   : 'minLength[9]', prompt : '請輸入至少9位數'}]
+                    {type   : 'minLength[10]', prompt : '請輸入至少10位數'}]
             },
             return_order_phone: {
                 identifier: 'return_order_phone',
                 rules: [{type   : 'empty', prompt : '請輸入電話'},
                     {type   : 'number', prompt : '請輸入數字'},
-                    {type   : 'minLength[9]', prompt : '請輸入至少9位數'}]
+                    {type   : 'minLength[10]', prompt : '請輸入至少10位數'}]
             },
             return_order_ps: {
                 identifier: 'return_order_ps',
@@ -74,7 +74,7 @@ $(document).ready(function(){
                 identifier: 'service_message_phone',
                 rules: [{type   : 'empty', prompt : '請輸入電話'},
                     {type   : 'number', prompt : '請輸入數字'},
-                    {type   : 'minLength[9]', prompt : '請輸入至少9位數'}]
+                    {type   : 'minLength[10]', prompt : '請輸入至少10位數'}]
             },
             service_message_email: {
                 identifier: 'service_message_email',
@@ -88,7 +88,7 @@ $(document).ready(function(){
                 identifier: 'user_phone',
                 rules: [{type   : 'empty', prompt : '請輸入電話'},
                     {type   : 'number', prompt : '請輸入數字'},
-                    {type   : 'minLength[9]', prompt : '請輸入至少9位數'}]
+                    {type   : 'minLength[10]', prompt : '請輸入至少10位數'}]
             },
             user_email: {
                 identifier: 'user_email',

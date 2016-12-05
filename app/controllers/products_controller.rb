@@ -4,29 +4,40 @@ class ProductsController < ApplicationController
   def index
     case params[:type]
     when 'qt'
-      @products = Product.qt
+      products = Product.qt
     when 't1'
-      @products = Product.t1
+      products = Product.t1
     when 'fk'
-      @products = Product.fk
+      products = Product.fk
     when 'switch'
-      @products = Product.switch
+      products = Product.switch
     when 'plug'
-      @products = Product.plug
+      products = Product.plug
     when 'rest'
-      @products = Product.rest
+      products = Product.rest
     when 'emergency'
-      @products = Product.emergency
+      products = Product.emergency
     when 'weak_power'
-      @products = Product.weak_power
+      products = Product.weak_power
     when 'arg'
-      @products = Product.arg
+      products = Product.arg
     when 'air_con'
-      @products = Product.air_con
+      products = Product.air_con
     else
-      @products = Product.all
+      products = Product.all
     end
-    @products = @products.page(params[:page]).per(12)
+    @type = params[:type]
+    @products = products.page(params[:page]).per(12)
+    if @products.last_page?
+      @next_page = nil
+    else
+      @next_page = @products.next_page
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

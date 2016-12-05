@@ -15,50 +15,22 @@
           </div>
 
           <div class="row">
-            <div class="ui special cards product_index_info">
-              <% @products.each do |product| %>
-                  <div class="col-md-4 col-xs-6">
-                    <%= link_to product_path(product),class:"shop-box" do %>
-                        <div class="ui card fluid">
-                          <div class="blurring dimmable image flex_cneter">
-                            <div class="ui dimmer">
-                              <div class="content">
-                                <div class="center">
-                                  <div class="ui inverted button">查看</div>
-                                </div>
-                              </div>
-                            </div>
-                            <%= image_tag "product/#{product.item_name}.png" %>
-                          </div>
-                          <div class="content">
-                            <div class="meta pull-right">
-                              <p><%= product.show_voltage %></p>
-                            </div>
-                            <div class="descriptison pull-left red">
-                              <%= product.show_price %>
-                            </div>
-                            <div class="description" >
-                              <%= product.name %>
-                            </div>
-                          </div>
-                          <!--<div class="extra content">-->
-                          <!--<i class="check icon"></i>-->
-                          <!--121 Votes-->
-                          <!--</div>-->
-                        </div>
-                    <% end %>
-                  </div> <!-- end col-md-4 -->
-              <% end %>
+            <div class="ui special cards product_index_info" id="products">
+              <%= render 'products',products:@products %>
             </div>
           </div>
-        </div> <!-- end col-md-9 -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-    <div class="paginator">
-      <%= paginate @products %>
+        </div>
+      </div>
     </div>
-  </section> <!-- end content-section -->
-</div> <!-- end main -->
+
+    <% if @next_page %>
+        <%= link_to "Load More", products_path(type:@type,:page => @next_page ), :remote => true, :class => "hidden", :id => "load-more" %>
+    <% end %>
+
+
+
+  </section>
+</div>
 <div class="ui item visible-xs visible-sm category_select">
   <div class="ui fluid selection dropdown">
     <div class="text"><%= show_category_name %></div>
@@ -144,7 +116,46 @@
   }
 </style>
 <script type="text/javascript" charset="utf-8">
-  $('.special.cards .image').dimmer({
-    on: 'hover'
-  });
+  $(document).ready(function(){
+    $('.special.cards .image').dimmer({
+      on: 'hover'
+    });
+    $.fn.isOnScreen = function(){
+
+      var win = $(window);
+      var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+      };
+      viewport.right = viewport.left + win.width();
+      viewport.bottom = viewport.top + win.height();
+
+      var bounds = this.offset();
+      bounds.right = bounds.left + this.outerWidth();
+      bounds.bottom = bounds.top + this.outerHeight();
+
+      return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+    };
+    var tmp = false
+    $(window).scroll(function(){
+      console.log(1)
+      if($('.footer').isOnScreen() && tmp == false ){
+        console.log(2)
+        tmp = true
+        var url = $("#load-more").attr("href");
+        if (url) {
+          $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "script"
+          })
+        }
+      }
+      console.log($('.footer').isOnScreen())
+      if(!$('.footer').isOnScreen()){
+        tmp = false
+      }
+    })
+  })
 </script>

@@ -1,0 +1,7 @@
+$('#products').append('<%=j render 'products',products:@products  %>')
+<% if @next_page %>
+$("#load-more").attr("href", "<%= products_path(type:@type, :page => @next_page) %>")
+console.log('page',<%= @next_page %>)
+<% else %>
+$("#load-more").remove();
+<% end %>

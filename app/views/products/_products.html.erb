@@ -1,0 +1,29 @@
+<% @products.each do |product| %>
+    <div class="col-md-4 col-xs-6">
+      <%= link_to product_path(product),class:"shop-box" do %>
+          <div class="ui card fluid">
+            <div class="blurring dimmable image flex_cneter">
+              <div class="ui dimmer">
+                <div class="content">
+                  <div class="center">
+                    <div class="ui inverted button">查看</div>
+                  </div>
+                </div>
+              </div>
+              <%= image_tag "product/#{product.item_name}.png" %>
+            </div>
+            <div class="content">
+              <div class="meta pull-right">
+                <p><%= product.show_voltage %></p>
+              </div>
+              <div class="descriptison pull-left red">
+                <%= product.show_price %>
+              </div>
+              <div class="description" >
+                <%= product.name %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+<% end %>

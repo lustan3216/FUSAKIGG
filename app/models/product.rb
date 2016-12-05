@@ -9,6 +9,7 @@ class Product < ApplicationRecord
   scope :emergency, -> { where( 'name  LIKE ? or name LIKE ?','%緊急接地%','%緊急押扣%') }
   scope :weak_power, -> { where( 'name  LIKE ? or name  LIKE ? or name  LIKE ?','%電視%','%網路%','%電話%') }
   scope :arg, -> { where( 'name  LIKE ? or name  LIKE ?','%電捲門%','%感應%') }
+  scope :waterproof, -> { where( 'name  LIKE ?','%防水蓋板%')[0] }
 
   has_attached_file :asset,
                     :styles => {

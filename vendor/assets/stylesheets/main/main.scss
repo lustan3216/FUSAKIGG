@@ -278,14 +278,14 @@ dl, ol, ul { list-style-position: outside }
 @media only screen and (max-width: 991px) {
   .nav_header .menu-item.cart-icon, .nav_header .menu-item.search-icon, .open-nav-button, .top-menu { display: none }
   .nav_header .logo { padding-bottom: 0 }
-  .menu-mobile { color: #fff; padding-top: 28px }
+  .menu-mobile { color: #787878; padding-top: 28px }
   .center-logo .menu-mobile { text-align: center }
   .center-logo .menu-mobile:after { float: none }
   .small-header .menu-mobile { padding-top: 20px }
   .light-header .menu-mobile { color: #787878 }
   .left-menu .menu-mobile { float: left }
   .secondNav .menu-mobile { color: #787878; padding-top: 17px }
-  .main-menu.show-on-mobile { background: #fff; text-align: left; color: #787878; max-height: 600px; overflow: scroll }
+  .main-menu.show-on-mobile { background: #fff; text-align: left; color: #787878; max-height: 600px; }
   .footer .col-md-6, .footer .text-right { text-align: center }
   .dark-header .main-menu.show-on-mobile, .dark-menu .main-menu.show-on-mobile { background: #2b2c2d }
   .nav_header .menu-item .mega-submenu { margin-left: 30px }

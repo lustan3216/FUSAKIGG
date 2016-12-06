@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'introduce' => 'welcome#introduce'
   get 'download' => 'welcome#download'
   resources :service_messages
+  resources :blogs
 
   resources :products do
     collection do

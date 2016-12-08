@@ -1,17 +1,127 @@
 <div class="main">
-  <div class="container">
-    <div class="col-xs-3 col-xs-9">
-      <div class="ui piled segments">
-        <div class="ui segment">
+  <%= render 'header' %>
+  <div class="container-fluid">
+    <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+      <div class="ui segmendts mb50 ">
 
-        </div>
         <div class="ui segment">
-          <p>Middle</p>
-        </div>
-        <div class="ui segment">
-          <p>Bottom</p>
+          <a class="ui orange right ribbon label">2016/12/07</a>
+          <div class="text_content">
+
+            <h2>【水電的開關插座施工費】又被敲詐了嗎？到底多少元才是合理？</h2>
+            <img src="<%= image_path 'blog/switch.jpg'%>" alt="" class="img-responsive">
+            <h4>水電安裝收費有四項</h4>
+            <table class="ui unstackable table tab-wrap">
+              <thead>
+              <tr>
+                <th>費用</th>
+                <th class="right aligned">價格</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>師傅費用</td>
+                <td class="right aligned">2000~2500元</td>
+              </tr>
+              <tr>
+                <td>師傅出勤費用</td>
+                <td class="right aligned">400~800元</td>
+              </tr>
+              <tr>
+                <td>各個器具的施工費用</td>
+                <td class="right aligned">開關插座50~120元/個</td>
+              </tr>
+              <tr>
+                <td>周邊耗材費用【螺絲、電線...】</td>
+                <td class="right aligned"><span style="font-size: 20px;">∞</span></td>
+              </tr>
+              </tbody>
+            </table>
+
+            <h4 class="mt30">最常被騙的師傅費用</h4>
+            <p>價格上需要先釐清的就是師父價格，一般來說北部師傅行情價格都2300~2500元，中南部則約2000元左右，正負五百以上都是比較偏向不合理的，
+              3000元以上的師傅建議再多問幾家和比價，一定可以問到2300~2500的好師傅，而少於1500元以下就要關心一下是否是學徒施作，雖然開關插座對水電來說是最常見也偏簡單的施工之一，
+              但突發狀況也是超多，像是螺絲斷牙(螺絲斷掉)或是滑牙(牙紋不見)，好的師傅經驗豐富則能事先準備齊全工具應付可能會發生的狀況，沒有經驗的學徒可能就真的帶個螺絲起子、老虎鉗就出發，
+              好的師傅知道用什麼工具快速解決，沒有經驗的學徒就算用對工具可能也已經浪費大半天更甚至帶來隱性危險(造成銅線受損導致過熱電線走火)，由於要更換電器的原因通常已經是年代久遠的老舊所造成，
+              需要的經驗或突發狀況不可能預知的，所以請勿貪圖便宜尋找過便宜的師傅．</p>
+
+            <h4>為什麼還要付師傅出勤費用？</h4>
+            <p>出勤費用通常可以用車程1~1.5小時400~800元左右計算，此費用是為了避免師傅到場之後只花不到30分鐘就解決，你當然不會想支付2500元，但師傅也不會想只拿安裝該電器的費用，<span id="pp"></span>
+              畢竟師傅也是騎車花時間現場勘查才了解的，理當這是人之常情該給的還是要給！</p>
+
+
+            <h4>與你想像中不同的施工費用</h4>
+            <p>而開關插座施工費用來說，一般民眾想像中算法是一個開關就是一個的費用，而一個開關上面有三個小開關也是一個的錢，錯！<br>
+              <span class="red">實際上一個開關上有三個小開關是算三個的錢喔，一開報價100元如上面有三個開關則是300元，插座亦即如此</span>！就開關而已其實同個開關上越多開關，技術與難度是倍增的，安裝時間自然也就會拉長，
+              而其他更複雜的器具安裝也都是依個別難易度做調整．</p>
+
+            <h4>周邊耗材費用【螺絲、電線...】</h4>
+            <p>安裝開關插座的週邊耗材，像是補長牙螺絲、補電線、甚至厲害的水電會順便幫你補油漆、補土，都是會發生的，而這部分價格浮動上就有大，在此就不討論</p>
+
+            <div class="only_one">
+              <%= image_tag 'blog/onlyone.jpg' %>
+              <h3>真相永遠只有一個</h3>
+            </div>
+            <h4 id="2" class="mt50">師傅費用、出勤費、施工費用我都應該要付嗎？</h4>
+            <p>不是的！ "一般正常" 的收費方式應該是2~4小時內用【師傅出勤費用 + 個物品施工費用 + 周邊耗材費用】計算，而超過4小時則用【師傅費用 + 周邊耗材費用】計算，那是根據什麼原因這樣計算呢？
+              一般建築業很少人在做半天，且加上中午休息一小時，再加上騎車到別的現場施工已所剩無幾，如果一個能讓師傅賺整天時數且不用一直騎車的錢，跟一個只能賺半天的錢甚至不到，你會選擇哪個呢？</p>
+            <p>"不一般的" 收費方式會包括很多因素，人力仲介抽成、天氣因素、現場施工難易度(較危險地方)、車程距離及地理因素、器具過於老舊難度增高、專業知識及技術成分極高等等都是有可能使價格倍增，
+              而撇開以上因素，<span class="red">最常發生就是不外乎就是 "不按常理收費" ，常有民眾每項費用都被索取，被坑了一筆又一筆也無力反擊．</span></p>
+            <table class="ui unstackable table tab-wrap">
+              <thead>
+              <tr>
+                <th>一般收費方式</th>
+                <th class="right aligned"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>2~4小時內</td>
+                <td class="right aligned">師傅出勤費用 + 個物品施工費用 + 周邊耗材費用</td>
+              </tr>
+              <tr>
+                <td>4小時以上</td>
+                <td class="right aligned">師傅費用 + 周邊耗材費用</td>
+              </tr>
+              </tbody>
+            </table>
+            <%= render 'compare_table' %>
+
+            <p>我們不收取任何【師傅施工費用免費】立即省2500元，開關插座80元/個(<a href="#pp">計價方式如上有說明</a>)，【螺絲免費、電線50cm內
+              免費】，開關插座材料費未滿3000元則會收取500元出勤費，因車輛出車會有停車費問題產生以及施工時間不到30分鐘等問題．
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  p{
+    padding:5px;
+    font-size:16px;
+    letter-spacing: 3px;
+    line-height: 1.7;
+  }
+  h4{
+    margin-top: 40px;
+  }
+  img{
+    -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;
+    margin: 30px auto;
+    width: 65%;
+  }
+  .ui.tab-wrap{
+    width: 80%;
+    margin: 2em auto;
+    transition: 0.3s box-shadow ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  }
+  .tab-wrap:hover {
+    box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19)!important;
+  }
+  .blogs_show .cart_block{
+    display: none;
+  }
+</style>

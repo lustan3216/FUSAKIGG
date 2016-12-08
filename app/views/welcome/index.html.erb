@@ -12,12 +12,12 @@
                 <p class="section-subtitle mb10"><%= t(".diy_cons_subtitle") %></p>
                 <p class="section-desc mb20">
                 <h5 class="mt15 fwl">關掉總電源</h5>
-                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>忘記關發生意外</span>
-                <h5 class="mt15 fwl">插座與牆壁分離拆解電線</h5>
-                <span class="red "> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>需要技巧性的拔除,如暴力施作會發生母體爆裂造成割傷</span><br>
-                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不正確施作導致銅線受損，導致長期氧化銅線過熱而帶來的過熱危險</span>
+                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>忘記關發生觸電意外</span>
+                <h5 class="mt15 fwl">拆解插座與牆壁分離</h5>
+                <span class="red "> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>此動作需有專業知識,如暴力施作會發生外殼爆裂造成割傷</span><br>
+                <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不正確施工將導致銅線受損，導致長期電線過熱而帶來的危險</span>
                 <h5 class="mt15 fwl">研究文字天書的電路圖</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不知哪條是電源線、燈具線、接地線 接錯導致故障</span>
-                <h5 class="mt15 fwl">將銅線插入母體裝回牆體</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>沒有插到底造成銅線鬆脫導致接觸不良發生高溫</span>
+                <h5 class="mt15 fwl">未將銅線正確插入</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>沒有插到底造成銅線鬆脫導致接觸不良發生高溫</span>
                 <p class="mt30">以上步驟為最簡單的插座施作方式非專業人士第一次施作二小時以上且還有出錯可能和危險！</p>
                 </p>
               </div> <!-- end col-md-6 -->
@@ -66,7 +66,6 @@
 <%= javascript_include_tag 'main/my_vendor'%>
 
 <script>
-  window.onbeforeunload = function(){ window.scrollTo(0,0); }
   $(function($) {
     "use strict";
 

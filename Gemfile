@@ -57,8 +57,8 @@ gem 'bootstrap-sass'
 gem 'premailer-rails'
 gem 'rollbar'
 gem 'sitemap_generator'
-
 gem 'whenever', :require => false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

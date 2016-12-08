@@ -1,3 +1,6 @@
+body{
+  font-family:"微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif;
+}
 hr{
   margin-top: 5px !important;
   margin-bottom:5px !important;
@@ -55,6 +58,9 @@ h1{
   font-weight:bolder;
   font-size: 15px;
   color: red;
+  i{
+    font-size: 14px;
+  }
 }
 .ui.form .disabled.fields .field, .ui.form .disabled.field, .ui.form .field :disabled{
   opacity:0.8 !important;
@@ -62,7 +68,6 @@ h1{
 tr:hover{
   background-color: rgba(150,150,150,0.07);
 }
-.flexcneter
 .pagination>li:last-child>a, .pagination>li:last-child>span {
   border-bottom-right-radius: 5px !important;
   border-top-right-radius: 5px !important;

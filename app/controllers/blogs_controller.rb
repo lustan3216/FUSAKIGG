@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   def show
-    @blog = Blog.find(1)
+    @blog = Blog.all.first
+    @view_counts = @blog.increment!(:view_counts).view_counts
   end
 end

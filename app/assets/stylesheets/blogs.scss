@@ -1,3 +1,47 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.blogs_show{
+  .ui.segmendts{
+    margin-top: -70px;
+    .text_content{
+      padding: 0 30px 30px;
+    }
+    img{
+      width: 90%;
+    }
+  }
+  .col-xs-12{
+    padding:0;
+  }
+  .only_one{
+    position: relative;
+    img{
+      display: block;
+    }
+    h3{
+      position: absolute;
+      color: white;
+      left: 50%;
+      bottom: 10%;
+      transform: translate(-50%);
+    }
+  }
+}
+@media (max-width: 768px){
+  .blogs_show{
+    .ui.segmendts{
+      .ui.tab-wrap{
+        width: 90%;
+      }
+      margin-top: -40px;
+      .text_content{
+        padding: 0 5px 15px;
+      }
+    }
+  }
+}
+@media (min-width: 768px)and (max-width: 992px){
+  .blogs_show{
+    .ui.segmendts{
+      margin-top: -40px;
+    }
+  }
+}

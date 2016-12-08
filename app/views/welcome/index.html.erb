@@ -18,7 +18,7 @@
                 <span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不正確施工將導致銅線受損，導致長期電線過熱而帶來的危險</span>
                 <h5 class="mt15 fwl">研究文字天書的電路圖</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>不知哪條是電源線、燈具線、接地線 接錯導致故障</span>
                 <h5 class="mt15 fwl">未將銅線正確插入</h5><span class="red "><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>沒有插到底造成銅線鬆脫導致接觸不良發生高溫</span>
-                <p class="mt30">以上步驟為最簡單的插座施作方式非專業人士第一次施作二小時以上且還有出錯可能和危險！</p>
+                <p class="mt30">以上步驟為最簡單的插座施作方式非專業人士第一次施作“單顆”需一小時以上且還有出錯可能和危險！</p>
                 </p>
               </div> <!-- end col-md-6 -->
             </div>
@@ -29,7 +29,17 @@
       </div> <!-- end row -->
     </div> <!-- end container-fluid -->
   </section>
-  <%#= render 'animation_header' %>
+  <section class="compare_table">
+   <div class="row mln mrn mb60 mt60">
+     <div class="col-sm-7 col-sm-offset-1 col-xs-12">
+     <%= render 'blogs/compare_table' %>
+     </div>
+     <div class="col-sm-4 hidden-xs">
+       <%= image_tag 'blog/money_question_1.jpg',class:'img-responsive' %>
+     </div>
+   </div>
+
+  </section>
   <section class="content-section pbn ptn three_feature">
     <div class="row mrn">
       <div class="col-sm-4  feature text-center pb60 pt60">

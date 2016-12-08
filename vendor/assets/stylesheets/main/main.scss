@@ -209,7 +209,7 @@ dl, ol, ul { list-style-position: outside }
 .nav_header .logo-img { max-height: 40px; transition: all .4s ease-in-out }
 .secondNav .nav_header .logo-img, .small-header .nav_header .logo-img { max-height: 30px }
 .nav_header .menu-item { float: none; display: inline-block; background: 0 0 }
-.nav_header .menu-item a { color: #fff; text-transform: uppercase; letter-spacing: 1px; padding: 0 20px; line-height: 80px; transition: all .4s ease-in-out }
+.nav_header .menu-item a { color: #fff; text-transform: uppercase; letter-spacing: 1px; padding: 0 20px; line-height: 80px; transition: all .4s ease-in-out; font-weight: bold;}
 .nav_header .menu-item .mega-submenu a { color: #787878; line-height: 22px; text-transform: capitalize; padding: 8px 10px; letter-spacing: .5; transition: all .4s ease-in-out }
 .nav_header .menu-item .mega-submenu a:hover { border-left: 3px solid #d9d9d9 }
 .nav_header .main-menu { text-align: right }

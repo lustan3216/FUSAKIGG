@@ -57,6 +57,7 @@ gem 'bootstrap-sass'
 gem 'premailer-rails'
 gem 'rollbar'
 gem 'sitemap_generator'
+gem 'ransack'
 gem 'whenever', :require => false
 
 group :development, :test do

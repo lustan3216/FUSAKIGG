@@ -3,30 +3,26 @@ class ProductsController < ApplicationController
 
   def index
     case params[:type]
-    when 'qt'
-      products = Product.qt
-    when 't1'
-      products = Product.t1
-    when 'fk'
-      products = Product.fk
-    when 'switch'
-      products = Product.switch
-    when 'plug'
-      products = Product.plug
-    when 'rest'
-      products = Product.rest
-    when 'emergency'
-      products = Product.emergency
-    when 'weak_power'
-      products = Product.weak_power
-    when 'arg'
-      products = Product.arg
-    when 'air_con'
-      products = Product.air_con
+    when 'qt' ;products = Product.qt
+    when 't1' ;products = Product.t1
+    when 'fk' ;products = Product.fk
+    when 'switch' ;products = Product.switch
+    when 'plug' ;products = Product.plug
+    when 'rest' ;products = Product.rest
+    when 'emergency' ;products = Product.emergency
+    when 'weak_power' ;products = Product.weak_power
+    when 'arg' ;products = Product.arg
+    when 'air_con' ;products = Product.air_con
     else
-      products = Product.all
+      if params[:q]
+        products = Product.ransack(params[:q]).result(distinct: true)
+        @keyword = params[:q][:name_cont_all]
+      else
+        products = Product.all
+      end
     end
     @type = params[:type]
+
     @products = products.page(params[:page]).per(12)
     if @products.last_page?
       @next_page = nil
@@ -44,7 +40,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-
   end
 
   def destroy

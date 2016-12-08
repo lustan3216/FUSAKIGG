@@ -3,9 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :store_current_location, :unless => :devise_controller?
+  before_action :search_params
   helper_method :current_cart
   after_action :store_location
+
   protected
+
+  def search_params
+    @q = Product.ransack(params[:q])
+  end
 
   def store_location
     return unless request.get?

@@ -12,60 +12,64 @@
         <div class="col-md-9 product_show_info">
           <div class="ui segment">
             <div class="row">
-            <div class="col-sm-7">
-              <div class="text-center">
-                <%= image_tag "product/#{@product.item_name}.png" ,class:"img-responsive"%>
+              <div class="col-sm-7">
+                <div class="text-center">
+                  <%= image_tag "product/#{@product.item_name}.png" ,class:"img-responsive"%>
+                </div>
               </div>
-            </div>
 
-            <div class="col-sm-5 product_show_order">
-              <%= form_tag buy_product_path(@product), remote: true do %>
-                  <h4><%= @product.name %></h4>
+              <div class="col-sm-5 product_show_order">
+                <%= form_tag buy_product_path(@product), remote: true do %>
+                    <h4><%= @product.name %></h4>
 
-                  <div class="inline fields">
-                    <div class="field">
-                      <% if @product.v110? && @product.v220? %>
-                          <div class="ui radio checkbox mt15 mb15">
-                            <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
-                          </div><br>
-                          <div class="ui radio checkbox mb15">
-                            <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
-                          </div>
-                      <% else %>
-                          <div class="ui radio checkbox mt15 mb15">
-                            <% if @product.v000? %>
-                                <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
-                            <% elsif @product.v110? %>
-                                <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
-                            <% elsif @product.v220? %>
-                                <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V',true%>
-                            <% end %>
-                          </div>
-                      <% end %>
+                    <div class="inline fields">
+                      <div class="field">
+                        <% if @product.v110? && @product.v220? %>
+                            <div class="ui radio checkbox mt15 mb15">
+                              <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
+                            </div><br>
+                            <div class="ui radio checkbox mb15">
+                              <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V'%>
+                            </div>
+                        <% else %>
+                            <div class="ui radio checkbox mt15 mb15">
+                              <% if @product.v000? %>
+                                  <label> 無電壓限制 : $<%= @product.v000_price %></label> <%= radio_button_tag 'voltage', '000V',true %>
+                              <% elsif @product.v110? %>
+                                  <label> 110V : $<%= @product.v110_price %></label> <%= radio_button_tag 'voltage', '110V',true %>
+                              <% elsif @product.v220? %>
+                                  <label> 220V : $<%= @product.v220_price %></label>  <%= radio_button_tag 'voltage', '220V',true%>
+                              <% end %>
+                            </div>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="product_item clearfix">
-                    <%= render "spinner" ,qty:1 %>
-                  </div>
-                  <button type="submit" class="ui compact labeled icon button red mt15" id="add_to_cart">
-                    <span id="add_to_cart_animate" ><i class="add To cart icon"></i><%= t('button.add_to_cart') %></span>
-                    <div id="check_wrapper" class="hidden">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                           viewBox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve">
-                        <path class="checkmark" id="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10" d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+                    <div class="product_item clearfix">
+                      <%= render "spinner" ,qty:1 %>
+                    </div>
+                    <button type="submit" class="ui compact labeled icon button red mt15" id="add_to_cart">
+                      <span id="add_to_cart_animate" ><i class="add To cart icon"></i><%= t('button.add_to_cart') %></span>
+                      <div id="check_wrapper" class="hidden">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             viewBox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+                          <path class="checkmark" id="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10" d="M81.7,17.8C73.5,9.3,62,4,49.2,4
 	C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3"/>
-                      </svg>
-                    </div>
-                  </button>
-              <% end %>
-            </div>
+                        </svg>
+                      </div>
+                    </button>
+                <% end %>
+              </div>
             </div>
             <div class="row">
               <div class="col-md-12 product_describle ">
                 <p><%= @product.description.try(:html_safe) %></p>
               </div>
             </div>
-            <%= render 'compare_table' %>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <%= render 'blogs/compare_table' %>
+              </div>
+            </div>
             <p class="text-center red mt30"><i class="fa fa-dot-circle-o mr10" aria-hidden="true"></i>以上產品如有特殊組合貨需求皆可來電詢問<br>包含正方形方式組合(兩個單聯合併 尺寸為 12cm * 12cm)</p>
           </div>
         </div>
@@ -85,9 +89,9 @@
     $('#checkmark').addClass('checkmark')
     setTimeout(function() {
 
-    $('#checkmark').removeClass('checkmark')
-    $('#check_wrapper').addClass('hidden');
-    $('#add_to_cart_animate').animate({opacity:1},400);
+      $('#checkmark').removeClass('checkmark')
+      $('#check_wrapper').addClass('hidden');
+      $('#add_to_cart_animate').animate({opacity:1},400);
     }, 900);
   })
 

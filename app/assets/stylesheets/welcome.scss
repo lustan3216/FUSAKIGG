@@ -80,9 +80,23 @@
 .feature-box-4 i{
   font-size: 40px;
 }
-.tp-parallax-wrap .index_header_link{border: 1px solid;
-  border-radius: 18px;}
-
+.tp-parallax-wrap .index_header_link{
+  border: 1px solid;
+  border-radius: 18px;
+}
+.compare_table{
+  .row{
+    display: flex;
+    display: -webkit-flex;
+  }
+  .col-sm-4 img{
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
 @media (max-width: 500px){
   .explodes_xs{
     .col-xs-8.col-xs-offset-2{

@@ -9,21 +9,16 @@
         <% end %>
       </div>
 
-      <div class="logo">
-          <div class="ui search">
-            <input class="prompt" type="text" placeholder="Common passwords...">
-            <div class="results"></div>
-          </div>
+      <div class="logo search">
+        <i class="fa fa-search fa-2x" aria-hidden="true" id="search_link"></i>
       </div> <!-- end logo -->
-
 
       <ul class="main-menu">
         <li class="menu-item">
           <%= link_to '購物', products_path %>
         </li>
         <li class="menu-item">
-
-          <%= link_to '公司介紹', introduce_path %>
+          <%= link_to '價格比較BLOG', blog_path(1) %>
         </li>
 
         <li class="menu-item">
@@ -56,3 +51,22 @@
   </div> <!-- end container-fluid -->
 </div>
 
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+//    $('#search_input').keypress(function (e) {
+//      console.log(1)
+//      if (e.which == 13) {
+//        console.log(2)
+//        $('form').submit();
+//        return false;
+//      }
+//    });
+    $('#search_link').click(function(){
+      $('.search.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
+    })
+    $(window).scroll(function(){
+      $('.search.sidebar').sidebar('hide')
+      $('nav .main-menu').removeClass('show-on-mobile')
+    })
+  })
+</script>

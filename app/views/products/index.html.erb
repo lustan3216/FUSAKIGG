@@ -139,9 +139,7 @@
     };
     var tmp = false
     $(window).scroll(function(){
-      console.log(1)
       if($('.footer').isOnScreen() && tmp == false ){
-        console.log(2)
         tmp = true
         var url = $("#load-more").attr("href");
         if (url) {
@@ -152,7 +150,6 @@
           })
         }
       }
-      console.log($('.footer').isOnScreen())
       if(!$('.footer').isOnScreen()){
         tmp = false
       }

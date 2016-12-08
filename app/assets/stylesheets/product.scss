@@ -46,11 +46,18 @@
   .ui.selection.dropdown .menu{
     max-height:inherit !important;
     div.item{
-      padding:0px !important;
+      padding:15px !important;
     }
     a.item{
       display: block;
       padding:15px !important;
+    }
+  }
+  .products_index {
+    .ui.selection.dropdown .menu {
+      div.item {
+        padding: 0px !important;
+      }
     }
   }
 }

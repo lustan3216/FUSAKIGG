@@ -1,14 +1,13 @@
+
 <div class="field mt30" id="order" data-shipfee="<%= Order.ship_fee %>" data-ship_fee_boundary="<%= Order.ship_fee_boundary %>" data-discount_percent="<%= Order.discount_percent %>" data-traffic_allowanc="<%= Order.traffic_allowanc %>" data-traffic_allowanc_boundary="<%= Order.traffic_allowanc_boundary %>" data-cartamount="<%= cart_or_order.amount %>">
-  <div class="two fields">
-    <div class="ten wide field">
-      <%= f.label :whoset ,t('form.who_set') %>
+
+  <%= content_for :whoset do %>
+      <div class="field whoset_modify">
+      <h4><%= f.label :whoset ,t('form.who_set') %></h4>
       <%= f.select :whoset, options_for_select([[ '本公司派專業師傅安裝'],['自行安裝'] ], select_default(@order)),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
-    </div>
-    <div class="six wide field">
-      <%= f.label :ship_time ,t('form.ship_time') %>
-      <%= f.select :ship_time, options_for_select([[ '都可以'],['早上'], ['下午'],['晚上'] ], '都可以'),{},class:"ui dropdown fluid" %>
-    </div>
-  </div>
+      </div>
+  <% end %>
+
   <div class="three fields">
     <div class="four wide field">
       <%= f.label :name ,t('form.name') %>
@@ -40,9 +39,15 @@
   <div class="field">
     <p class="red mbn"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 選擇本公司派師傅到府安裝僅限於台北市、新北市、桃園市</p>
   </div>
-  <div class="field">
-    <%= f.label :address ,t('form.address') %>
-    <%= f.text_field :address ,value: current_user.try(:address)%>
+  <div class="two fields">
+    <div class="eleven wide field">
+      <%= f.label :address ,t('form.address') %>
+      <%= f.text_field :address ,value: current_user.try(:address)%>
+    </div>
+    <div class="five wide field">
+      <%= f.label :ship_time ,t('form.ship_time') %>
+      <%= f.select :ship_time, options_for_select([[ '都可以'],['早上'], ['下午'],['晚上'] ], '都可以'),{},class:"ui dropdown fluid" %>
+    </div>
   </div>
 
   <div class="field">
@@ -56,4 +61,7 @@
   <% end %>
 
 </div>
+<%= content_for :whoset %>
+<style>
 
+</style>

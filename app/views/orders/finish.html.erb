@@ -77,7 +77,7 @@
 
 <script type="text/javascript" charset="utf-8">
   function show_construction_fee_themselves(){
-    var sum_up = parseInt($('#construction_fee_by_our').html())
+    var sum_up = parseInt($('#construction_fee_by_our span').html())
     var sumup_themselves = 3000 + (sum_up*1.25)
     $('#construction_fee_themselves').html(sum_up * 1.25)
     $('#construction_fee_sumup_themselves').html( sumup_themselves )
@@ -92,4 +92,8 @@
   }
   show_construction_fee_themselves()
   construction_table_proces()
+  $('#detail_click').click(function(){
+    $('#construction_fee_detail').modal('show');
+  })
+//  $('#construction_fee_detail').modal({'onVisible': function(){update_construction_fee_detail();}})
 </script>

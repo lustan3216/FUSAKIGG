@@ -193,6 +193,15 @@
     }
   }
 }
+form.new_order,form.edit_order{
+  margin-top: 85px;
+  position: relative;
+  .whoset_modify{
+    position: absolute;
+    top:-90px;
+    width: 100%;
+  }
+}
 @media (min-width: 767px) and (max-width: 992px) {
   .product_item{
     img{ margin: 0;}

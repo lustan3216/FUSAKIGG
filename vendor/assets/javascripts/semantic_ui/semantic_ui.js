@@ -15,7 +15,7 @@
 // require semantic_ui/definitions/modules/popup.js
 // require semantic_ui/definitions/modules/progress.js
 // require semantic_ui/definitions/modules/rating.js
-// require semantic_ui/definitions/modules/search.js
+//= require semantic_ui/definitions/modules/search.js
 // require semantic_ui/definitions/modules/shape.js
 // require semantic_ui/definitions/modules/sidebar.js
 // require semantic_ui/definitions/globals/site.js

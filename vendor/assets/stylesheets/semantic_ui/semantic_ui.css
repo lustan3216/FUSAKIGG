@@ -39,7 +39,7 @@
  * require semantic_ui/definitions/modules/rating.less
  * require semantic_ui/definitions/globals/reset.less
  * require semantic_ui/definitions/elements/reveal.less
- * require semantic_ui/definitions/modules/search.less
+ *= require semantic_ui/definitions/modules/search.less
  *= require semantic_ui/definitions/elements/segment.less
  * require semantic_ui/definitions/modules/shape.less
  * require semantic_ui/definitions/modules/sidebar.less

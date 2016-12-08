@@ -7,13 +7,20 @@
         <%= link_to root_path do  %>
             <h1 style="font-size: 26px;">FUSAKI <span style="font-size: 20px; vertical-align: text-top;">久欣順</span></h1>
         <% end %>
+      </div>
+
+      <div class="logo">
+          <div class="ui search">
+            <input class="prompt" type="text" placeholder="Common passwords...">
+            <div class="results"></div>
+          </div>
       </div> <!-- end logo -->
-      <!-- ========== MAIN MENU ========== -->
+
+
       <ul class="main-menu">
         <li class="menu-item">
           <%= link_to '購物', products_path %>
         </li>
-
         <li class="menu-item">
 
           <%= link_to '公司介紹', introduce_path %>

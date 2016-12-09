@@ -6,7 +6,7 @@
 .tab-wrap:hover {
   box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19)!important;
 }
-.blogs_show{
+.blogs_show .ui.segmendts{
   .ui.tab-wrap{
     width: 80%;
     margin:15px auto;
@@ -41,7 +41,6 @@
   .blogs_show .cart_block{
     display: none;
   }
-  .ui.segmendts{
     margin-top: -70px;
     .text_content{
       padding: 0 30px 30px;
@@ -49,7 +48,7 @@
     img{
       width: 90%;
     }
-  }
+
   .col-xs-12{
     padding:0;
   }

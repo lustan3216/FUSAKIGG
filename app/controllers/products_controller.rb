@@ -50,6 +50,7 @@ class ProductsController < ApplicationController
   def buy
     current_cart.add_product( @product , params)
     @current_qty = current_cart.total
+    @buy_now = true if params[:buy_now].class == String
     respond_to do |format|
       format.html
       format.js {render 'products/buy' }

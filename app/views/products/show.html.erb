@@ -47,7 +47,7 @@
                     <div class="product_item clearfix">
                       <%= render "spinner" ,qty:1 %>
                     </div>
-                    <button type="submit" class="ui compact labeled icon button red mt15" id="add_to_cart">
+                    <button type="submit" class="ui compact labeled icon button red mt15" id="add_to_cart" name="add_to_cart">
                       <span id="add_to_cart_animate" ><i class="add To cart icon"></i><%= t('button.add_to_cart') %></span>
                       <div id="check_wrapper" class="hidden">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -57,7 +57,10 @@
                         </svg>
                       </div>
                     </button>
-                <% end %>
+                    <button type="submit" class="ui positive labeled icon button red mt15" id="buy_now" name="buy_now">
+                      <span id="add_to_cart_animate" ><i class="fa fa-check-square-o" aria-hidden="true"></i></i>立即購買</span>
+                    </button>
+              <% end %>
               </div>
             </div>
             <div class="row">
@@ -81,7 +84,7 @@
 
 <%= javascript_include_tag 'spinner_order' %>
 <script type="text/javascript" charset="utf-8">
-
+$(document).ready(function(){
   $('.ui.radio.checkbox').checkbox();
   $('#add_to_cart').click(function(){
     $('#add_to_cart_animate').animate({opacity:0},300);
@@ -94,5 +97,5 @@
       $('#add_to_cart_animate').animate({opacity:1},400);
     }, 900);
   })
-
+})
 </script>

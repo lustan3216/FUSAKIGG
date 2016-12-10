@@ -1,11 +1,14 @@
-<% if controller_name == 'welcome' && action_name == 'index' %>
-	<meta itemprop="name" content="到府安裝並保固最高三年 FUSAKI輕觸型開關插座"/>
-	<meta itemprop="url" content="<%= request.url %>"/>
-	<meta itemprop="description" content="<%= t('meta.description') %>"/>
+<% if controller_name == 'welcome' %>
+    <meta itemprop="name" content="到府安裝並保固最高三年 FUSAKI輕觸型開關插座"/>
+    <meta itemprop="url" content="<%= request.url %>"/>
+    <meta itemprop="description" content="<%= t('meta.description') %>"/>
+<% elsif controller_name == 'blogs' && action_name == 'show' %>
+    <meta itemprop="name" content="【水電的開關插座施工費】又被敲詐了嗎？如何判斷收費是否合理？"/>
+    <meta itemprop="url" content="<%= request.url %>"/>
+    <meta itemprop="description" content="水電收費遇過、看過的收費模式百百種，網路查資料也查不到一個標準，每次聽師傅報價都有聽沒有懂，到底哪種才是合理才是恰當？ 此篇文章會詳細為您介紹有哪些費用是應該付，哪些費用是什麼情況下付才合理，或是哪些費用其實根本不用付．"/>
 <% end %>
-
 <% if controller_name == 'welcome' && action_name == 'qaxxxx' %>
-		<meta itemprop="name" content=""/>
-		<meta itemprop="url" content="<%= request.url %>"/>
-		<meta itemprop="description" content="<%= t('meta.description') %>"/>
+    <meta itemprop="name" content=""/>
+    <meta itemprop="url" content="<%= request.url %>"/>
+    <meta itemprop="description" content="<%= t('meta.description') %>"/>
 <% end %>

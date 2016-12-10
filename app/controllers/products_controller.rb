@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    prepare_meta_tags title: @product.name,description: @product.description
   end
 
   def create

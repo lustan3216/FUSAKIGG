@@ -4,10 +4,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :store_current_location, :unless => :devise_controller?
   before_action :search_params
+  before_action :prepare_meta_tags, if: "request.get?"
   helper_method :current_cart
   after_action :store_location
 
   protected
+
+  def prepare_meta_tags(options={})
+    site_name   = t('meta.site_name')
+    title       = t('meta.title')
+    current_url = request.url
+    defaults = {
+        site:        site_name,
+        title:       title,
+        canonical:   current_url
+    }
+    options.reverse_merge!(defaults)
+    set_meta_tags options
+  end
 
   def search_params
     @q = Product.ransack(params[:q])

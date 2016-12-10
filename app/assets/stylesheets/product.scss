@@ -4,6 +4,12 @@
 .product_show_order{
   padding-left: 30px;
   padding-top: 40px;
+  #buy_now{
+    padding-top: 9px;
+    i{
+      margin-right: 22px;
+    }
+  }
 }
 @media (max-width: 767px) {
   .product_show_order{

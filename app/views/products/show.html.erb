@@ -42,11 +42,21 @@
                               <% end %>
                             </div>
                         <% end %>
+
                       </div>
                     </div>
                     <div class="product_item clearfix">
                       <%= render "spinner" ,qty:1 %>
                     </div>
+                    <a href="<%= blog_path(1,anchor:'con_fee') %>" class="construction_fee_notice">
+                      <sapn>安裝費：$<%= @product.construction_fee %>
+                        <div class="ui left pointing label red">
+                          怎麼計算的？
+                        </div>
+                      </sapn>
+                      <p>僅需到府施工服務者才產生此費用，如自行安裝則無此費用</p>
+                    </a>
+
                     <button type="submit" class="ui compact labeled icon button red mt15" id="add_to_cart" name="add_to_cart">
                       <span id="add_to_cart_animate" ><i class="add To cart icon"></i><%= t('button.add_to_cart') %></span>
                       <div id="check_wrapper" class="hidden">
@@ -60,7 +70,7 @@
                     <button type="submit" class="ui positive labeled icon button red mt15" id="buy_now" name="buy_now">
                       <span id="add_to_cart_animate" ><i class="fa fa-check-square-o" aria-hidden="true"></i></i>立即購買</span>
                     </button>
-              <% end %>
+                <% end %>
               </div>
             </div>
             <div class="row">
@@ -84,18 +94,18 @@
 
 <%= javascript_include_tag 'spinner_order' %>
 <script type="text/javascript" charset="utf-8">
-$(document).ready(function(){
-  $('.ui.radio.checkbox').checkbox();
-  $('#add_to_cart').click(function(){
-    $('#add_to_cart_animate').animate({opacity:0},300);
-    $('#check_wrapper').removeClass('hidden');
-    $('#checkmark').addClass('checkmark')
-    setTimeout(function() {
+  $(document).ready(function(){
+    $('.ui.radio.checkbox').checkbox();
+    $('#add_to_cart').click(function(){
+      $('#add_to_cart_animate').animate({opacity:0},300);
+      $('#check_wrapper').removeClass('hidden');
+      $('#checkmark').addClass('checkmark')
+      setTimeout(function() {
 
-      $('#checkmark').removeClass('checkmark')
-      $('#check_wrapper').addClass('hidden');
-      $('#add_to_cart_animate').animate({opacity:1},400);
-    }, 900);
+        $('#checkmark').removeClass('checkmark')
+        $('#check_wrapper').addClass('hidden');
+        $('#add_to_cart_animate').animate({opacity:1},400);
+      }, 900);
+    })
   })
-})
 </script>

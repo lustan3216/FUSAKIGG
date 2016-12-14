@@ -2,7 +2,11 @@
   img{ width: 100%;}
 }
 .product_show_order{
-  padding-left: 30px;
+  .construction_fee_notice{
+    margin-top: 20px;
+    margin-bottom: -10px;
+    display: block;
+  }
   padding-top: 40px;
   #buy_now{
     padding-top: 9px;

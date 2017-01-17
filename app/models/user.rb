@@ -15,7 +15,7 @@ class User < ApplicationRecord
   before_create :generate_authentication_token
 
   def self.admins
-    self.where(admin: 1)
+    self.where('admin = ? or admin = ?',true,1)
   end
 
   def alternate_email_check

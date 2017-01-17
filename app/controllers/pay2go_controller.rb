@@ -22,7 +22,7 @@ class Pay2goController < ApplicationController
         send_mail = true
       end
     end
-    OrderMailer.order_paid_notify(current_user,@order).deliver_later! if send_mail
+    OrderMailer.order_paid_notify(current_user,@order).deliver_now! if send_mail
     redirect_to thankyou_path(:order => @order)
   end
 
@@ -46,7 +46,7 @@ class Pay2goController < ApplicationController
         send_mail = true
       end
     end
-    OrderMailer.order_paid_notify(current_user,@order).deliver_later! if send_mail
+    OrderMailer.order_paid_notify(current_user,@order).deliver_now! if send_mail
     redirect_to thankyou_path(:order => @order)
   end
 

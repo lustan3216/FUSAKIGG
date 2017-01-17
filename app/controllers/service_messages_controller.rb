@@ -16,7 +16,7 @@ class ServiceMessagesController < ApplicationController
       flash[:successful] = @message.problem
       send_mail = true
     end
-    CustomerServiceMailer.service_message_notify(current_user,@message).deliver_now! if send_mail
+    CustomerServiceMailer.service_message_notify(@message).deliver_now! if send_mail
     redirect_to :back
   end
 

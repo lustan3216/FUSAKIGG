@@ -130,6 +130,14 @@ ready = ->
     $('#construction_fee_themselves').html(sum_up * 1.25)
     $('#construction_fee_sumup_themselves').html( sumup_themselves )
 
+  check_ship_time=() ->
+    if $('#whoset').find("option:selected").val() == "本公司派專業師傅安裝"
+      $('#order_ship_time').parent('.dropdown').dropdown('set selected','都可以')
+      $('#order_ship_time').siblings('.menu').find('.item:last').addClass('disabled')
+    else
+      $('#order_ship_time').siblings('.menu').find('.item:last').removeClass('disabled')
+
+  check_ship_time()
 
   $('.order_spineer_button').on 'click', ->
     command = $(this).attr('command')
@@ -166,6 +174,7 @@ ready = ->
     calc_construction_fee()
     after_ship_fee_and_check_county.bind(this)()
     show_construction_fee_themselves()
+    check_ship_time()
 
   $('#county').parent().one "click",->
     disabled_option()

@@ -25,7 +25,7 @@ zh-TW:
     postcode: "郵遞區號"
     address: "地址"
     info: "訂單資訊"
-    ship_time: "送貨時間"
+    ship_time: "送貨/安裝時間"
     who_set: "自行安裝/專業師傅安裝"
     almost_20: "請輸入至少20字"
     pay_way: "結帳方式"

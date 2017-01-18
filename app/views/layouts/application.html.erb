@@ -22,13 +22,12 @@
 <body class="header-shadow <%= controller_name+'_'+action_name %>">
 <%= render 'seo/gtm' %>
 <%= render 'common/search' %>
-<div class="pusher">
-  <%= render 'common/navbar' %>
-  <%= yield %>
 
-  <%= render 'common/footer' %>
-  <%= render 'common/cart' %>
-</div>
+<%= render 'common/navbar' %>
+<%= yield %>
+<%= render 'common/footer' %>
+<%= render 'common/cart' %>
+
 </body>
 </html>
 

@@ -16,8 +16,7 @@ body, dt, html, legend, th { color: #2b2c2d }
 .clearfix, h1, h2, h3, h4, h5, h6 { clear: both }
 .nav_header .menu-item .mega-submenu, th { text-align: left }
 .ol-style-2, .ol-style-3, .ol-style-4, .ul-style-2, .ul-style-3, .ul-style-4 { list-style-type: none }
-body, html { font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 12px; line-height: 1.75em }
-.headline, h1, h2, h3, h4, h5, h6 { font-family: Lato, sans-serif }
+body, html {  font-weight: 400; font-size: 12px; line-height: 1.75em }
 a, body { color: #787878 }
 @media (min-width: 600px) {
   body, html { font-size: calc(12px + (14 - 12) * ((100vw - 600px) / (1140 - 600))) }
@@ -72,7 +71,7 @@ address, blockquote cite { font-style: normal }
 blockquote cite { display: block }
 pre { padding: .875em }
 pre code { padding: 0 }
-code { font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; padding: .0875em .2625em }
+code {  padding: .0875em .2625em }
 abbr, acronym { border-bottom: 1px dotted currentColor; cursor: help }
 dt, legend { font-weight: 700 }
 ul { padding-left: 1.1em }
@@ -101,7 +100,7 @@ table { width: 100%; border-spacing: 0; border-collapse: collapse; margin-bottom
   table { margin-bottom: 2.125em }
   td, th { padding: .4375em .875em }
 }
-body { font-family: "Open Sans", sans-serif; -webkit-font-smoothing: antialiased; background-color: #fff; text-rendering: optimizeLegibility !important; letter-spacing: .5px }
+body { -webkit-font-smoothing: antialiased; background-color: #fff; text-rendering: optimizeLegibility !important; letter-spacing: .5px }
 ::-moz-selection { background-color: #2b2c2d; color: #fff }
 ::selection { background-color: #2b2c2d; color: #fff }
 a { outline: 0 !important; text-decoration: none !important }
@@ -370,7 +369,7 @@ button { outline: 0 !important }
 .slideshow-div .full-content h1 { font-size: 60px; margin-bottom: 40px; font-weight: 700 }
 .carousel.slide h1, .carousel.slide h2, .carousel.slide h3, .carousel.slide h4, .carousel.slide h5, .carousel.slide h6 { color: #fff }
 .fill { width: 100%; background-position: center; background-size: cover; -o-background-size: cover }
-.rev-btn, .rev-btn:visited { font-family: "Open Sans", sans-serif }
+
 .acc-faq-2 .panel-heading, .carousel-style-4 .item { transition: all .4s ease-in-out }
 
 .highlight { background: #47b475; padding: 5px; color: #fff }

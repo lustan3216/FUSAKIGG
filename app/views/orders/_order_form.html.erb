@@ -5,6 +5,7 @@
       <div class="field whoset_modify">
       <h4><%= f.label :whoset ,t('form.who_set') %></h4>
       <%= f.select :whoset, options_for_select([[ '本公司派專業師傅安裝'],['自行安裝'] ], select_default(@order)),{},{class:"ui dropdown fluid" ,id:"whoset"}%>
+        <p class="red mbn mt5" style="font-weight: bold;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 本安裝服務不含拉線，僅限出線口施作更換</p>
       </div>
   <% end %>
 

@@ -11,9 +11,9 @@
           <div class="ui segment form order_product_form">
             <%= form_for @order  do |f| %>
                 <% if current_cart.total == 0 %>
-                    <h4 class="ui bold">您尚未訂購任何商品</h4>
+                    <h4 class="ui bold pt30">您尚未訂購任何商品</h4>
                 <% else %>
-                    <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
+                    <h4 class="ui dividing bold mb10 pt30"><%= t('form.info') %></h4>
                     <div class="order_info">
                       <% current_cart.line_items.each  do |item| %>
                           <%= render 'product',item:item %>

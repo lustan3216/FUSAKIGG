@@ -17,6 +17,10 @@
 * SEO    
     * Meta-tags & Sitemap
     * Hot jar
+*Server
+    *AWS
+    *Cloud Flare
+    
 
 
 

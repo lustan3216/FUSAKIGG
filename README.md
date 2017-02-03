@@ -9,11 +9,14 @@
     * Ransack搜尋功能
     * 會員訂單後臺（含退貨功能但已隱藏）
     * Rails admin後台
-* Jquery
-    * Jquery前端商業邏輯
+    * Devise會員系統
+    * Facebook登入
+* JQuery
+    * Jquery前端商業流程(商品增加減/金額即時更新/AJAX更新購物數量/客制商業邏輯)
     * Lazy Load
 * Css
-    * Boostrap & semantic-ui 併用
+    * Boostrap
+    * Semantic-ui
 * SEO    
     * Meta-tags & Sitemap
     * Hot jar

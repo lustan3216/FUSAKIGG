@@ -1,0 +1,76 @@
+<div class="main">
+
+  <section class="content-section">
+    <div class="container">
+      <%= render 'flash/alert' %>
+      <div class="row">
+        <% @paid_orders.each do |order| %>
+        <div class="col-sm-12">
+          <div class="ui segment order_product_form">
+            <h4 class="ui dividing bold mb10"><%= t('form.info') %></h4>
+            <div class="order_info">
+              <% order.line_items.each  do |item| %>
+                  <%= render 'product',item:item %>
+              <% end %>
+              <%= render 'order_info'%>
+            </div>
+            <table class="ui definition table mt30">
+              <tbody>
+              <tr>
+                <td>訂單編號</td>
+                <td><%= order.order_number %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.who_set') %></td>
+                <td id="order_whoset"><%= order.whoset %></td>
+              </tr>
+              <tr>
+                <td class="four wide column">交易狀態</td>
+                <td><%= order.payment_status %></td>
+              </tr>
+              <tr>
+                <td class="four wide column">出貨狀態</td>
+                <td><%= order.status %></td>
+              </tr>
+              <tr>
+                <td class="four wide column"><%= t('form.name') %></td>
+                <td><%= order.name %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.email') %></td>
+                <td><%= order.email %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.address') %></td>
+                <td><%= order.full_address %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.phone') %></td>
+                <td><%= order.phone %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.ship_time') %></td>
+                <td><%= order.ship_time %></td>
+              </tr>
+              <tr>
+                <td><%= t('form.pay_way') %></td>
+                <td><%= order.payment_paid.payment_method %></td>
+              </tr>
+              <% if order.ps.present? %>
+                  <tr>
+                    <td><%= t('form.ps') %></td>
+                    <td><%= order.ps %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+            <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+

@@ -27,7 +27,9 @@
 <%= yield %>
 <%= render 'common/footer' %>
 <%= render 'common/cart' %>
-
+<% if current_user.try(:admin)  %>
+    <%= render 'common/admin_order_view' %>
+<% end %>
 </body>
 </html>
 

@@ -2,6 +2,11 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_order , only: [:show, :finish, :edit, :update]
   before_action :check_line_items_errors , only: :new
+  before_action :check_admin , only: :index
+
+  def index
+    @paid_orders = Order.where(paid:true,status:'處理中')
+  end
 
   def show
     if @order.paid? && @order.payment_paid.is_need_thank?
@@ -86,6 +91,12 @@ class OrdersController < ApplicationController
   end
 
   protected
+
+  def check_admin
+    unless current_user.admin?
+      redirect_to raise ActionController::RoutingError.new('Not Found')
+    end
+  end
 
   def find_order
     @order = current_user.orders.find(params[:id])
